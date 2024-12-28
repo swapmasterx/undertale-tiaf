@@ -1,8 +1,6 @@
-[gd_resource type="Resource" script_class="StageLoad" load_steps=3 format=3 uid="uid://beyrfymou5cod"]
+[gd_resource type="Resource" script_class="StageLoad" load_steps=2 format=3 uid="uid://cv50adyf8eif6"]
 
-[ext_resource type="PackedScene" uid="uid://cbd22mnqignyg" path="res://stages/dev/dev_test_2.tscn" id="1_hj72n"]
-[ext_resource type="Script" path="res://stages/stage_load_slot_in/stage_load.gd" id="2_xmaxe"]
+[ext_resource type="Script" path="res://stages/stage_load_slot_in/stage_load.gd" id="1_353ve"]
 
 [resource]
-script = ExtResource("2_xmaxe")
-scene_to_load = ExtResource("1_hj72n")
+script = ExtResource("1_353ve")

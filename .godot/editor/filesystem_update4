@@ -1,17 +1,11 @@
+res://global_func/character_stats.tscn
+res://stages/room_load_trigger_stuff/change_room_trigger.gd
+res://character/player.tscn
+res://stages/loadscreen.tscn
 res://stages/world_engine.tscn
+res://stages/dev/dev_test.tscn
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://textbox stuff/dialog_set_resources/dev_1.tres
 res://tilemaps/ruins/ruins_toriel_home_livinroom.tres
 res://textbox stuff/dialog_set_resources/dev_2.tres
-res://stages/stage_load_slot_in/to_yellowHall.tres
 res://stages/dev/dev_test_2.tscn
-res://stages/room_load_trigger_stuff/change_room_trigger.gd
-res://stages/dev/dev_test.tscn
-res://stages/stage_load_slot_in/to_livingRoom.tres
-res://character/player.tscn
-res://stages/room_load_trigger_stuff/change_room_trigger.tscn
-res://global_func/character_stats.tscn
-res://stages/loadscreen.tscn
-res://stages/stage_load_slot_in/stage_load.gd
-res://stages/room_startup.gd
-res://stages/scenetransition.gd

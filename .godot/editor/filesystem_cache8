@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735352197
+::res://::1735375652
 default_bus_layout.tres::AudioBusLayout::2956266217040259178::1734659831::0::1::::<><>::
 icon.svg::CompressedTexture2D::2107369170911746076::1733943751::1733943754::1::::<><>::
 interaction_area.gd::GDScript::-1::1734666956::0::1::::InteractionArea<>Area2D<>::
 weh.tscn::PackedScene::858151093398329287::1734422681::0::1::::<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf
-::res://character/::1735352105
+::res://character/::1735355564
 cameracode.gd::GDScript::-1::1735345710::0::1::::<>Camera2D<>::
 camera_2d.tscn::PackedScene::1833619412781908738::1735351586::0::1::::<><>::res://character/cameracode.gd<>uid://dyh37belgvscq::::res://textbox stuff/textbox_control.tscn
 character_body_2d.gd::GDScript::-1::1734575032::0::1::::<>CharacterBody2D<>::
 node_2d.gd::GDScript::-1::1733953365::0::1::::<>Area2D<>::
-player.tscn::PackedScene::2602763595204380410::1735352105::0::1::::<><>::res://character/character_body_2d.gd<>uid://xrjkmswmvsq0::::res://sprites/dev/walk_0006.png<>uid://1ehpdcorkt51::::res://character/camera_2d.tscn
+player.tscn::PackedScene::2602763595204380410::1735355564::0::1::::<><>::res://character/character_body_2d.gd<>uid://xrjkmswmvsq0::::res://sprites/dev/walk_0006.png<>uid://1ehpdcorkt51::::res://character/camera_2d.tscn
 textbox.gd::GDScript::-1::1734918007::0::1::::<>Control<>::
 ::res://fonts/::1734419087
 determination.otf::FontFile::1663653631871181074::1723864076::1734418436::1::::<><>::
@@ -27,9 +27,9 @@ TiledImport.gd::GDScript::-1::1733944186::0::1::::<>EditorPlugin<>::
 TilemapCreator.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
 TilesetCreator.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
 XmlParserCtrl.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
-::res://global_func/::1735352105
+::res://global_func/::1735376217
 character_stats.gd::GDScript::-1::1735344562::0::1::::<>Node2D<>::
-character_stats.tscn::PackedScene::5237353092397393800::1735352105::0::1::::<><>::res://global_func/character_stats.gd
+character_stats.tscn::PackedScene::5237353092397393800::1735376217::0::1::::<><>::res://global_func/character_stats.gd
 global_flags.gd::GDScript::-1::1735350311::0::1::::<>Node2D<>::
 global_flags.tscn::PackedScene::6785135938003738961::1734670127::0::1::::<><>::res://global_func/global_flags.gd
 interaction_manager.gd::GDScript::-1::1734409746::0::1::::<>Node2D<>::
@@ -57,33 +57,32 @@ comicfurypageicon3.png::CompressedTexture2D::1892406222633972772::1734915697::17
 comicfurypageicon.png::CompressedTexture2D::90617002557532262::1733368725::1733949390::1::::<><>::
 undertale_text_box.png::CompressedTexture2D::4951558008382879499::1734397682::1734397704::1::::<><>::
 walk_0006.png::CompressedTexture2D::1650002795470851497::1733952614::1733952625::1::::<><>::
-::res://stages/::1735352105
-loadscreen.tscn::PackedScene::7424430447923622635::1735352105::0::1::::<><>::res://stages/scenetransition.gd
-room_startup.gd::GDScript::-1::1735345759::0::1::::<>Node2D<>::
-scenetransition.gd::GDScript::-1::1735350948::0::1::::<>CanvasLayer<>::
-world_engine.tscn::PackedScene::3275159675992822608::1735352105::0::1::::<><>::uid://bdc2evna15mle::::res://character/player.tscn<>uid://d4du14bbynftn::::res://stages/dev/dev_test.tscn
-::res://stages/dev/::1735352188
-dev_test.tscn::PackedScene::9202193945141261679::1735352153::0::1::::<><>::uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>res://stages/room_startup.gd<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://bjbb45hle13hg::::res://textbox stuff/dialog_set_resources/dev_1.tres<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://beyrfymou5cod::::res://stages/stage_load_slot_in/to_livingRoom.tres
-dev_test_2.tscn::PackedScene::4850911570627108826::1735352188::0::1::::<><>::uid://dmsd2p50rwekh::::res://tilemaps/ruins/ruins_toriel_home_livinroom.tres<>res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://drbqo1ms7ecfo::::res://textbox stuff/dialog_set_resources/dev_2.tres<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://b2v5cos8wcpmi::::res://stages/stage_load_slot_in/to_yellowHall.tres
-::res://stages/room_load_trigger_stuff/::1735352105
-change_room_trigger.gd::GDScript::-1::1735351839::0::1::::<>Area2D<>::
-change_room_trigger.tscn::PackedScene::5002739645681691699::1735352105::0::1::::<><>::res://stages/room_load_trigger_stuff/change_room_trigger.gd
-::res://stages/stage_load_slot_in/::1735352188
-stage_load.gd::GDScript::-1::1735352087::0::1::::StageLoad<>Resource<>::
-to_livingRoom.tres::Resource/StageLoad::2717763521951280599::1735351964::0::1::::<><>::uid://cbd22mnqignyg::::res://stages/dev/dev_test_2.tscn<>res://stages/stage_load_slot_in/stage_load.gd
-to_yellowHall.tres::Resource/StageLoad::4326697240788280684::1735352188::0::1::::<><>::res://stages/stage_load_slot_in/stage_load.gd
+::res://stages/::1735356301
+loadscreen.tscn::PackedScene::7424430447923622635::1735355564::0::1::::<><>::res://stages/scenetransition.gd
+room_startup.gd::GDScript::-1::1735354856::0::1::::<>Node2D<>::
+scenetransition.gd::GDScript::-1::1735355807::0::1::::<>CanvasLayer<>::
+world_engine.tscn::PackedScene::3275159675992822608::1735356301::0::1::::<><>::uid://cbd22mnqignyg::::res://stages/dev/dev_test_2.tscn<>uid://bdc2evna15mle::::res://character/player.tscn
+::res://stages/dev/::1735375525
+dev_test.tscn::PackedScene::9202193945141261679::1735375525::0::1::::<><>::uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>res://stages/room_startup.gd<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://bjbb45hle13hg::::res://textbox stuff/dialog_set_resources/dev_1.tres<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://cbd22mnqignyg::::res://stages/dev/dev_test_2.tscn
+dev_test_2.tscn::PackedScene::4850911570627108826::1735355564::0::1::::<><>::uid://dmsd2p50rwekh::::res://tilemaps/ruins/ruins_toriel_home_livinroom.tres<>res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://drbqo1ms7ecfo::::res://textbox stuff/dialog_set_resources/dev_2.tres<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://d4du14bbynftn::::res://stages/dev/dev_test.tscn
+::res://stages/room_load_trigger_stuff/::1735375427
+change_room_trigger.gd::GDScript::-1::1735375427::0::1::::<>Area2D<>::
+::res://stages/stage_load_slot_in/::1735376215
+to_yellowHall.tres::Resource/StageLoad::3078214494516237696::1735376240::0::1::::<><>::res://stages/stage_load_slot_in/stage_load.gd
+to_livingRoom.tres::Resource/StageLoad::6310256536142636345::1735376215::0::1::::<><>::res://stages/stage_load_slot_in/stage_load.gd
+stage_load.gd::GDScript::-1::1735354813::0::1::::StageLoad<>Resource<>::
 ::res://textbox stuff/::1735345285
 DialogHandler.tscn::PackedScene::5395472495300228275::1735291091::0::1::::<><>::res://textbox stuff/text_data.gd
 textbox_control.tscn::PackedScene::8860002223084138244::1735291091::0::1::::<><>::uid://ccsto4er6cwxf::::res://sprites/dev/undertale_text_box.png<>res://character/textbox.gd<>uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png
 text_data.gd::GDScript::-1::1735345285::0::1::::DialogHandler<>Node2D<>::
-::res://textbox stuff/dialog_set_resources/::1735342864
-dev_1.tres::Resource/DialogData::3020298746225785492::1735342864::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
-dev_2.tres::Resource/DialogData::8355534628684362272::1735342864::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
+::res://textbox stuff/dialog_set_resources/::1735352238
+dev_1.tres::Resource/DialogData::3020298746225785492::1735352238::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
+dev_2.tres::Resource/DialogData::8355534628684362272::1735352238::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
 dialog_data.gd::GDScript::-1::1734915538::0::1::::DialogData<>Resource<>::
 ::res://tilemaps/::1733943877
-::res://tilemaps/ruins/::1735342864
+::res://tilemaps/ruins/::1735352238
 ruins.png::CompressedTexture2D::7151588055304384524::1733943853::1733943882::1::::<><>::
-ruins_toriel_home_livinroom.tres::TileSet::8038918177076356939::1735342864::0::1::::<><>::uid://6wmjq8smqlya::::res://tilemaps/ruins/toriels_home_living_room.png
-ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1735342864::0::1::::<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png
+ruins_toriel_home_livinroom.tres::TileSet::8038918177076356939::1735352238::0::1::::<><>::uid://6wmjq8smqlya::::res://tilemaps/ruins/toriels_home_living_room.png
+ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1735352238::0::1::::<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png
 toriels_home_living_room.png::CompressedTexture2D::2222016031613324700::1735280287::1735280296::1::::<><>::
 toriels_home_yellow_hall.png::CompressedTexture2D::4703383537378175962::1735273833::1735273935::1::::<><>::
