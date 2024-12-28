@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdc2evna15mle"]
+
+[ext_resource type="Script" path="res://character/character_body_2d.gd" id="1_u6ucn"]
+[ext_resource type="Texture2D" uid="uid://xrjkmswmvsq0" path="res://sprites/dev/walk_0006.png" id="2_q8wny"]
+[ext_resource type="PackedScene" uid="uid://1ehpdcorkt51" path="res://character/camera_2d.tscn" id="3_nvei2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmj1"]
+radius = 6.66666
+height = 42.6667
+
+[node name="player" type="Node2D" groups=["player"]]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(0, -34)
+collision_layer = 2
+script = ExtResource("1_u6ucn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, 84)
+rotation = 1.5708
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_ffmj1")
+
+[node name="Walk0006" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(1, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_q8wny")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_nvei2")]

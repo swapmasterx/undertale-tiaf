@@ -1,0 +1,14 @@
+CollisionShape2D
+Area2D
+AnimationPlayer
+ColorRect
+CanvasLayer
+Node2D
+NinePatchRect
+Control
+TextureRect
+AudioStreamPlayer
+Timer
+MarginContainer
+Container
+RichTextLabel

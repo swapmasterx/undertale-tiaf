@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StageLoad" load_steps=3 format=3 uid="uid://b2v5cos8wcpmi"]
+
+[ext_resource type="Script" path="res://stages/stage_load_slot_in/stage_load.gd" id="1_r65i7"]
+[ext_resource type="PackedScene" uid="uid://d4du14bbynftn" path="res://stages/dev/dev_test.tscn" id="1_utspy"]
+
+[resource]
+script = ExtResource("1_r65i7")
+scene_to_load = ExtResource("1_utspy")
