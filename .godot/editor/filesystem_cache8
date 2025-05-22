@@ -1,16 +1,38 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735375652
-default_bus_layout.tres::AudioBusLayout::2956266217040259178::1734659831::0::1::::<><>::
+::res://::1740618136
+default_bus_layout.tres::AudioBusLayout::2956266217040259178::1735957960::0::1::::<><>::
 icon.svg::CompressedTexture2D::2107369170911746076::1733943751::1733943754::1::::<><>::
-interaction_area.gd::GDScript::-1::1734666956::0::1::::InteractionArea<>Area2D<>::
+snd_swallow.wav::AudioStreamWAV::8378408964413099923::1739233300::1739233300::1::::<><>::
 weh.tscn::PackedScene::858151093398329287::1734422681::0::1::::<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf
-::res://character/::1735355564
-cameracode.gd::GDScript::-1::1735345710::0::1::::<>Camera2D<>::
-camera_2d.tscn::PackedScene::1833619412781908738::1735351586::0::1::::<><>::res://character/cameracode.gd<>uid://dyh37belgvscq::::res://textbox stuff/textbox_control.tscn
-character_body_2d.gd::GDScript::-1::1734575032::0::1::::<>CharacterBody2D<>::
+::res://battle/::1738373943
+act.png::CompressedTexture2D::2649440441163654569::1735951617::1735951622::1::::<><>::
+act_selected.png::CompressedTexture2D::7380376711272887652::1735956748::1735956839::1::::<><>::
+battle box 9rect.png::CompressedTexture2D::8014349042364133788::1736585918::1736585949::1::::<><>::
+battle box.png::CompressedTexture2D::6444425638787401673::1735955950::1735955958::1::::<><>::
+battle_buttons.gd::GDScript::-1::1737062271::0::1::::<>TextureButton<>::
+battle_buttons.tscn::PackedScene::7308653068044984270::1738348972::0::1::::<><>::uid://dq4e8yinpv22c::::res://battle/fight_button_group.tres<>res://battle/battle_buttons.gd
+battle_scene.tscn::PackedScene::2138411756863362170::1737083005::0::1::::<><>::uid://danbyfhnw2aup::::res://battle/fight.png<>uid://dcempie7xxmhi::::res://battle/battle_buttons.tscn<>uid://r7c2gqdd6x1k::::res://battle/fight_selected.png<>uid://bd0n5q5227sgf::::res://battle/act.png<>uid://ddfdyxor5ji81::::res://battle/act_selected.png<>uid://js1c2mo2ocdl::::res://battle/item.png<>uid://d338fj40kg5b::::res://battle/item_selected.png<>uid://cvr7w7wus40je::::res://battle/mercy.png<>uid://bqiok11mefuit::::res://battle/mercy_selected.png<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://cx2y0psa2ajdp::::res://battle/battle box.png<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn
+fight back ground.png::CompressedTexture2D::6057440575514978015::1735951220::1735951240::1::::<><>::
+fight.png::CompressedTexture2D::7186202811980067663::1735951219::1735951239::1::::<><>::
+fight_button_group.tres::ButtonGroup::8342453576855884092::1735952316::0::1::::<><>::
+fight_selected.png::CompressedTexture2D::1259440420395961186::1735956748::1735956839::1::::<><>::
+his soul.png::CompressedTexture2D::5857212053895859147::1735951219::1735951239::1::::<><>::
+his_soul.tscn::PackedScene::6624379416609355799::1738348972::0::1::::<><>::res://battle/soul_movement.gd<>uid://cppjormdf3med::::res://battle/his soul.png
+item.png::CompressedTexture2D::670442043055941849::1735951220::1735951239::1::::<><>::
+item_selected.png::CompressedTexture2D::270128392895520597::1735956749::1735956839::1::::<><>::
+mercy.png::CompressedTexture2D::6283885452505166242::1735951219::1735951239::1::::<><>::
+mercy_selected.png::CompressedTexture2D::3526826506094685787::1735956749::1735956839::1::::<><>::
+placeholder toby fox - UNDERTALE Soundtrack - 07 Anticipation.mp3::AudioStreamMP3::4613168690478175540::1735957795::1735957826::1::::<><>::
+snd_select.wav::AudioStreamWAV::8651219426682388695::1566247405::1736038655::1::::<><>::
+snd_squeakfix.wav::AudioStreamWAV::663654450219884185::1640678228::1735959336::1::::<><>::
+soul_movement.gd::GDScript::-1::1738373943::0::1::::<>CharacterBody2D<>::
+::res://character/::1739842216
+cameracode.gd::GDScript::-1::1737433171::0::1::::<>Camera2D<>::
+camera_2d.tscn::PackedScene::1833619412781908738::1739842216::0::1::::<><>::res://character/cameracode.gd<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn<>uid://rgn47h2wk1p4::::res://UI/Menu/menu.tscn<>uid://c1m5tcx0d8mcl::::res://battle/his_soul.tscn
+character_body_2d.gd::GDScript::-1::1738373761::0::1::::<>CharacterBody2D<>::
 node_2d.gd::GDScript::-1::1733953365::0::1::::<>Area2D<>::
-player.tscn::PackedScene::2602763595204380410::1735355564::0::1::::<><>::res://character/character_body_2d.gd<>uid://xrjkmswmvsq0::::res://sprites/dev/walk_0006.png<>uid://1ehpdcorkt51::::res://character/camera_2d.tscn
-textbox.gd::GDScript::-1::1734918007::0::1::::<>Control<>::
+player.tscn::PackedScene::2602763595204380410::1739842216::0::1::::<><>::res://character/character_body_2d.gd<>uid://xrjkmswmvsq0::::res://sprites/dev/walk_0006.png<>uid://1ehpdcorkt51::::res://character/camera_2d.tscn
+textbox.gd::GDScript::-1::1739238810::0::1::::<>Control<>::
 ::res://fonts/::1734419087
 determination.otf::FontFile::1663653631871181074::1723864076::1734418436::1::::<><>::
 determination.ttf::FontFile::7754513257925411087::1723863916::1734419087::1::::<><>::
@@ -27,62 +49,100 @@ TiledImport.gd::GDScript::-1::1733944186::0::1::::<>EditorPlugin<>::
 TilemapCreator.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
 TilesetCreator.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
 XmlParserCtrl.gd::GDScript::-1::1733944186::0::1::::<>RefCounted<>::
-::res://global_func/::1735376217
-character_stats.gd::GDScript::-1::1735344562::0::1::::<>Node2D<>::
-character_stats.tscn::PackedScene::5237353092397393800::1735376217::0::1::::<><>::res://global_func/character_stats.gd
-global_flags.gd::GDScript::-1::1735350311::0::1::::<>Node2D<>::
-global_flags.tscn::PackedScene::6785135938003738961::1734670127::0::1::::<><>::res://global_func/global_flags.gd
-interaction_manager.gd::GDScript::-1::1734409746::0::1::::<>Node2D<>::
+::res://global_func/::1739842069
+character_stats.tscn::PackedScene::5237353092397393800::1736654840::0::1::::<><>::res://global_func/player_data.gd
+global_flags.gd::GDScript::-1::1739838360::0::1::::<>Node2D<>::
+global_flags.tscn::PackedScene::6785135938003738961::1736656391::0::1::::<><>::res://global_func/global_flags.gd
+interaction_area.gd::GDScript::-1::1736569536::0::1::::InteractionArea<>Area2D<>::
+interaction_manager.gd::GDScript::-1::1736575692::0::1::::<>Node2D<>::
 interaction_manager.tscn::PackedScene::2761734923930947843::1734504541::0::1::::<><>::res://global_func/interaction_manager.gd
-signal_manager.gd::GDScript::-1::1735350881::0::1::::<>Node<>::
+loadtrigger_area.gd::GDScript::-1::1736625583::0::1::::LoadTriggerArea<>Area2D<>::
+player_data.gd::GDScript::-1::1739842069::0::1::::<>Node2D<>::
+signal_manager.gd::GDScript::-1::1739136963::0::1::::<>Node<>::
 signal_manager.tscn::PackedScene::3008496520433630071::1735291091::0::1::::<><>::res://global_func/signal_manager.gd
-::res://interaction/::1735342187
-Interaction_Area.tscn::PackedScene::1727554617835877521::1735342187::0::1::::<><>::res://interaction_area.gd
+::res://interaction/::1735705755
+Interaction_Area.tscn::PackedScene::1727554617835877521::1735705755::0::1::::<><>::res://global_func/interaction_area.gd
+::res://items/::1736625603
+::res://items/classes/::1739231413
+armor.gd::GDScript::-1::1739231162::0::1::::Armor<>Resource<>::
+consumable.gd::GDScript::-1::1739231162::0::1::::Consumable<>Resource<>::
+item_class.gd::GDScript::-1::1739231413::0::1::::Item<>Resource<>::
+spell_base.gd::GDScript::-1::1739231162::0::1::::Spell<>Resource<>::
+weapon.gd::GDScript::-1::1736630798::0::1::::Weapon<>Resource<>::
+::res://items/repo/::1737937080
+test_heal2.tres::Resource/Consumable::483074626743317449::1737937080::0::1::::<><>::res://items/classes/consumable.gd
+test_heal.tres::Resource/Consumable::6020353237806130972::1737937080::0::1::::<><>::res://items/classes/consumable.gd
 ::res://music/::1734657737
-::res://object prefabs/::1735288947
-object_base.tscn::PackedScene::539355266097874534::1734905598::0::1::::<><>::res://object prefabs/object_core.gd
-object_core.gd::GDScript::-1::1735288947::0::1::::ObjectCore<>Node2D<>::
-::res://sound_effects/::1734658070
+::res://object prefabs/::1738371564
+object_base.tscn::PackedScene::539355266097874534::1735686032::0::1::::<><>::res://object prefabs/object_core.gd
+object_core.gd::GDScript::-1::1738371564::0::1::::ObjectCore<>Node2D<>::
+::res://sound_effects/::1739833670
 snd_floweylaugh.wav::AudioStreamWAV::6096231678065597037::1566247405::1734658070::1::::<><>::
 snd_floweytalk1.wav::AudioStreamWAV::4241240912099875885::1566247405::1734658070::1::::<><>::
 snd_floweytalk2.wav::AudioStreamWAV::8088369200495751636::1566247405::1734658070::1::::<><>::
+snd_heal_c.wav::AudioStreamWAV::5423958960769961863::1566247405::1739233380::1::::<><>::
+snd_power.wav::AudioStreamWAV::8872761319080042768::1566247405::1739233380::1::::<><>::
+snd_swallow.wav::AudioStreamWAV::665675228398656169::1566247405::1739233380::1::::<><>::
 SND_TXT1.wav::AudioStreamWAV::9065790197809436728::1566247405::1734658070::1::::<><>::
 SND_TXT2.wav::AudioStreamWAV::2309483357790934200::1566247405::1734658070::1::::<><>::
 snd_txtasr2.wav::AudioStreamWAV::6568627914187768224::1566247405::1734658070::1::::<><>::
 snd_txtasr.wav::AudioStreamWAV::2914059512480223309::1566247405::1734658070::1::::<><>::
-::res://sprites/::1733949387
+snd_victor.wav::AudioStreamWAV::6157750047637127172::1566247405::1739238228::1::::<><>::
+::res://sprites/::1740621401
+::res://sprites/character/::1740621408
+::res://sprites/character/flowreil/::1740622157
+sprite_sheet.png::CompressedTexture2D::9181216448614562474::1740622157::1740622159::1::::<><>::
 ::res://sprites/dev/::1734915712
 comicfurypageicon2.png::CompressedTexture2D::8870676720686864495::1734915375::1734915380::1::::<><>::
 comicfurypageicon3.png::CompressedTexture2D::1892406222633972772::1734915697::1734915712::1::::<><>::
 comicfurypageicon.png::CompressedTexture2D::90617002557532262::1733368725::1733949390::1::::<><>::
 undertale_text_box.png::CompressedTexture2D::4951558008382879499::1734397682::1734397704::1::::<><>::
 walk_0006.png::CompressedTexture2D::1650002795470851497::1733952614::1733952625::1::::<><>::
-::res://stages/::1735356301
-loadscreen.tscn::PackedScene::7424430447923622635::1735355564::0::1::::<><>::res://stages/scenetransition.gd
-room_startup.gd::GDScript::-1::1735354856::0::1::::<>Node2D<>::
-scenetransition.gd::GDScript::-1::1735355807::0::1::::<>CanvasLayer<>::
-world_engine.tscn::PackedScene::3275159675992822608::1735356301::0::1::::<><>::uid://cbd22mnqignyg::::res://stages/dev/dev_test_2.tscn<>uid://bdc2evna15mle::::res://character/player.tscn
-::res://stages/dev/::1735375525
-dev_test.tscn::PackedScene::9202193945141261679::1735375525::0::1::::<><>::uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>res://stages/room_startup.gd<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://bjbb45hle13hg::::res://textbox stuff/dialog_set_resources/dev_1.tres<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://cbd22mnqignyg::::res://stages/dev/dev_test_2.tscn
-dev_test_2.tscn::PackedScene::4850911570627108826::1735355564::0::1::::<><>::uid://dmsd2p50rwekh::::res://tilemaps/ruins/ruins_toriel_home_livinroom.tres<>res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://drbqo1ms7ecfo::::res://textbox stuff/dialog_set_resources/dev_2.tres<>uid://ci4uv5el1llbn::::res://textbox stuff/DialogHandler.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>res://stages/room_load_trigger_stuff/change_room_trigger.gd<>uid://d4du14bbynftn::::res://stages/dev/dev_test.tscn
-::res://stages/room_load_trigger_stuff/::1735375427
-change_room_trigger.gd::GDScript::-1::1735375427::0::1::::<>Area2D<>::
-::res://stages/stage_load_slot_in/::1735376215
-to_yellowHall.tres::Resource/StageLoad::3078214494516237696::1735376240::0::1::::<><>::res://stages/stage_load_slot_in/stage_load.gd
-to_livingRoom.tres::Resource/StageLoad::6310256536142636345::1735376215::0::1::::<><>::res://stages/stage_load_slot_in/stage_load.gd
-stage_load.gd::GDScript::-1::1735354813::0::1::::StageLoad<>Resource<>::
-::res://textbox stuff/::1735345285
-DialogHandler.tscn::PackedScene::5395472495300228275::1735291091::0::1::::<><>::res://textbox stuff/text_data.gd
-textbox_control.tscn::PackedScene::8860002223084138244::1735291091::0::1::::<><>::uid://ccsto4er6cwxf::::res://sprites/dev/undertale_text_box.png<>res://character/textbox.gd<>uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png
-text_data.gd::GDScript::-1::1735345285::0::1::::DialogHandler<>Node2D<>::
-::res://textbox stuff/dialog_set_resources/::1735352238
-dev_1.tres::Resource/DialogData::3020298746225785492::1735352238::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
-dev_2.tres::Resource/DialogData::8355534628684362272::1735352238::0::1::::<><>::res://textbox stuff/dialog_set_resources/dialog_data.gd
-dialog_data.gd::GDScript::-1::1734915538::0::1::::DialogData<>Resource<>::
+::res://stages/::1739842216
+loadscreen.tscn::PackedScene::7424430447923622635::1739833670::0::1::::<><>::res://stages/scenetransition.gd
+load_trigger_area.tscn::PackedScene::2249703547715003889::1736658153::0::1::::<><>::res://global_func/loadtrigger_area.gd
+room_startup.gd::GDScript::-1::1736629324::0::1::::<>Node2D<>::
+scenetransition.gd::GDScript::-1::1739834030::0::1::::<>CanvasLayer<>::
+world_engine.tscn::PackedScene::3275159675992822608::1739842216::0::1::::<><>::uid://d4du14bbynftn::::res://stages/ruins/dev_test.tscn<>uid://bdc2evna15mle::::res://character/player.tscn<>uid://jpqj6mijg5gv::::res://battle/snd_squeakfix.wav<>uid://ci4uv5el1llbn::::res://UI/textbox stuff/DialogHandler.tscn
+::res://stages/room_load_trigger_stuff/::1739833670
+change_room_trigger.gd::GDScript::-1::1736570841::0::1::::<>Node2D<>::
+load_room_trigger.tscn::PackedScene::1866545516778396103::1739833670::0::1::::<><>::res://stages/room_load_trigger_stuff/change_room_trigger.gd
+room_change_obj.tscn::PackedScene::3632775512240732314::1739833670::0::1::::<><>::res://stages/room_load_trigger_stuff/change_room_trigger.gd
+::res://stages/ruins/::1739833670
+dev_test.tscn::PackedScene::9202193945141261679::1739833670::0::1::::<><>::uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>res://stages/room_startup.gd<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://bjbb45hle13hg::::res://UI/textbox stuff/dialog_set_resources/dev_1.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn
+dev_test_2.tscn::PackedScene::4850911570627108826::1739833670::0::1::::<><>::uid://dmsd2p50rwekh::::res://tilemaps/ruins/ruins_toriel_home_livinroom.tres<>res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://drbqo1ms7ecfo::::res://UI/textbox stuff/dialog_set_resources/dev_2.tres<>uid://ci4uv5el1llbn::::res://UI/textbox stuff/DialogHandler.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn
+dev_test_3.tscn::PackedScene::720497612840947811::1739833670::0::1::::<><>::uid://cbd22mnqignyg::::res://stages/ruins/dev_test_2.tscn
 ::res://tilemaps/::1733943877
-::res://tilemaps/ruins/::1735352238
+::res://tilemaps/ruins/::1739833676
 ruins.png::CompressedTexture2D::7151588055304384524::1733943853::1733943882::1::::<><>::
-ruins_toriel_home_livinroom.tres::TileSet::8038918177076356939::1735352238::0::1::::<><>::uid://6wmjq8smqlya::::res://tilemaps/ruins/toriels_home_living_room.png
-ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1735352238::0::1::::<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png
-toriels_home_living_room.png::CompressedTexture2D::2222016031613324700::1735280287::1735280296::1::::<><>::
+ruins_toriel_home_livinroom.tres::TileSet::8038918177076356939::1736581022::0::1::::<><>::uid://6wmjq8smqlya::::res://tilemaps/ruins/toriels_home_living_room.png
+ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1739833676::0::1::::<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png
+toriels_home_living_room.png::CompressedTexture2D::2222016031613324700::1735616103::1735616111::1::::<><>::
 toriels_home_yellow_hall.png::CompressedTexture2D::4703383537378175962::1735273833::1735273935::1::::<><>::
+::res://UI/::1737424989
+::res://UI/Menu/::1739842261
+fallen_name.gd::GDScript::-1::1736653273::0::1::::<>Label<>::
+menu.tscn::PackedScene::1206439410117530195::1739842261::0::1::::<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png<>res://UI/Menu/menu_logic.gd<>uid://caw0k0vrpeinl::::res://UI/Menu/sub_menu.tscn<>uid://bvxfhiwix5rbg::::res://UI/textbox stuff/textbox_default_theme.tres<>res://UI/Menu/stats_ui_diplay.gd<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn
+menu_logic.gd::GDScript::-1::1739832381::0::1::::<>Control<>::
+stats_ui_diplay.gd::GDScript::-1::1739836968::0::1::::<>Label<>::
+sub_menu.gd::GDScript::-1::1739238317::0::1::::<>MarginContainer<>::
+sub_menu.tscn::PackedScene::4819794807050988245::1739842216::0::1::::<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png<>res://UI/Menu/sub_menu.gd<>uid://bvxfhiwix5rbg::::res://UI/textbox stuff/textbox_default_theme.tres<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png<>res://UI/Menu/stats_ui_diplay.gd
+::res://UI/textbox stuff/::1739842216
+DialogHandler.tscn::PackedScene::5395472495300228275::1736658186::0::1::::<><>::res://UI/textbox stuff/text_data.gd
+item_text_options.gd::GDScript::-1::1739217696::0::1::::<>TextButtonOption<>::
+item_text_options.tscn::PackedScene::3663689058279692554::1739842216::0::1::::<><>::uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>res://UI/textbox stuff/item_text_options.gd
+multi_choice.gd::GDScript::-1::1739842213::0::1::::<>MarginContainer<>::
+multi_choice.tscn::PackedScene::3881098390132304312::1739842216::0::1::::<><>::res://UI/textbox stuff/multi_choice.gd<>uid://djvuhgayxw2c2::::res://UI/textbox stuff/text_multi_option_button.tscn<>uid://bvxfhiwix5rbg::::res://UI/textbox stuff/textbox_default_theme.tres
+selectable_text_options.gd::GDScript::-1::1739134573::0::1::::TextButtonOption<>Button<>::
+selectable_text_options.tscn::PackedScene::2614370870991781542::1739842216::0::1::::<><>::uid://bvxfhiwix5rbg::::res://UI/textbox stuff/textbox_default_theme.tres<>res://UI/textbox stuff/selectable_text_options.gd
+textboxrect.tscn::PackedScene::1880230428619065878::1738353315::0::1::::<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png
+textbox_control.tscn::PackedScene::8860002223084138244::1739842216::0::1::::<><>::uid://112edilmbegs::::res://UI/textbox stuff/textboxrect.tscn<>res://character/textbox.gd<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png<>uid://bvxfhiwix5rbg::::res://UI/textbox stuff/textbox_default_theme.tres<>uid://bvkbegycs5yw3::::res://UI/textbox stuff/multi_choice.tscn
+textbox_default_theme.tres::Theme::3908183628524238796::1736568337::0::1::::<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf
+text_data.gd::GDScript::-1::1738368185::0::1::::<>Node2D<>::
+text_multioptions.gd::GDScript::-1::1739134759::0::1::::<>TextButtonOption<>::
+text_multi_option_button.tscn::PackedScene::7835540733331696235::1739833457::0::1::::<><>::uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>res://UI/textbox stuff/text_multioptions.gd
+::res://UI/textbox stuff/dialog_set_resources/::1739833676
+dev_1.tres::Resource/DialogData::3020298746225785492::1739833676::0::1::::<><>::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+dev_2.tres::Resource/DialogData::8355534628684362272::1736580995::0::1::::<><>::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+dev_2a.tres::Resource/DialogData::3763410513705064612::1736580995::0::1::::<><>::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+dialog_data.gd::GDScript::-1::1738360253::0::1::::DialogData<>Resource<>::

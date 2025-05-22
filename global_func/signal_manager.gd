@@ -1,5 +1,7 @@
 extends Node
 
+signal inv_updated()
+
 #To toggle player controls during dialog or cutscenes
 signal lockWasd()
 
@@ -14,7 +16,11 @@ signal overworld_mode()
 
 signal world_transition_mode()
 
+signal fake_world_transition_mode()
+
 signal battle_mode()
 
-#For room transition states
-signal fade_in_finished()
+#menu signals
+signal activate_choose_option()
+
+signal closed_choose_option()

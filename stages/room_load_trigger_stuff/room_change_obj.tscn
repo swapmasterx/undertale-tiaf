@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://br00jt6bfouqk"]
+
+[ext_resource type="Script" uid="uid://bljsa6u4ylopt" path="res://stages/room_load_trigger_stuff/change_room_trigger.gd" id="1_jf6su"]
+
+[node name="room_change_obj" type="Node2D"]
+script = ExtResource("1_jf6su")

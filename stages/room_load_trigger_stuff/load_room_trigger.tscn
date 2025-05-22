@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ufy5e1wjk60"]
+
+[ext_resource type="Script" uid="uid://bljsa6u4ylopt" path="res://stages/room_load_trigger_stuff/change_room_trigger.gd" id="1_0g63c"]
+
+[node name="Area2D2" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0g63c")
+scene_to_load = "res://stages/ruins/dev_test.tscn"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

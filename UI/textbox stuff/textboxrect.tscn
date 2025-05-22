@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://112edilmbegs"]
+
+[ext_resource type="Texture2D" uid="uid://dmghfmo3ee53m" path="res://battle/battle box 9rect.png" id="1_gv2yj"]
+
+[node name="textboxrect" type="NinePatchRect"]
+offset_right = 890.0
+offset_bottom = 224.0
+texture = ExtResource("1_gv2yj")
+region_rect = Rect2(0, 0, 700, 700)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://bjbb45hle13hg"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_vldhk"]
+
+[resource]
+script = ExtResource("1_vldhk")
+dialog_set = Array[Array]([["* A photo of me and {name}.", "* ...if it wasn't charred to black."], ["* ..."]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"]])
+char_talk_sprite_id = Array[Array]([["none", "none"], ["none"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [1, 0]])

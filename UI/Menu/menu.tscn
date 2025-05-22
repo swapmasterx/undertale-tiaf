@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=3 uid="uid://rgn47h2wk1p4"]
+
+[ext_resource type="Texture2D" uid="uid://dmghfmo3ee53m" path="res://battle/battle box 9rect.png" id="1_lsjmf"]
+[ext_resource type="Script" uid="uid://cklnwoxob43hw" path="res://UI/Menu/menu_logic.gd" id="1_vrhnu"]
+[ext_resource type="PackedScene" uid="uid://caw0k0vrpeinl" path="res://UI/Menu/sub_menu.tscn" id="2_cyhrr"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="3_heirn"]
+[ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="5_277wb"]
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="5_mr0k5"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrhnu")
+
+[node name="sub_menu" parent="." instance=ExtResource("2_cyhrr")]
+visible = false
+layout_mode = 1
+offset_left = -805.0
+
+[node name="main_menu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 365.0
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_bottom = 45
+
+[node name="uibackdrop" type="NinePatchRect" parent="main_menu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("1_lsjmf")
+region_rect = Rect2(0, 0, 700, 700)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="main_menu/uibackdrop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_menu/uibackdrop/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="FallenName" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_heirn")
+theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_constants/line_spacing = 10
+text = "{name}"
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_277wb")
+stat_line = "{name}"
+
+[node name="HisName" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer/FallenName"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 203.0
+offset_bottom = 109.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_heirn")
+theme_override_constants/line_spacing = 10
+text = "Asriel"
+autowrap_mode = 2
+text_direction = 1
+
+[node name="stats" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_heirn")
+theme_override_constants/line_spacing = 10
+text = "LV   1
+HP   35/35
+G     50"
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_277wb")
+stat_line = "LV   {LVnum} 
+HP   {HPcur} / {HPmax}
+Gold:   {Gnum}"
+
+[node name="buffer" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_heirn")
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 14
+text = "
+"
+autowrap_mode = 2
+text_direction = 1
+
+[node name="Item" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer" instance=ExtResource("5_mr0k5")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  ITEM"
+alignment = 2
+
+[node name="Stat" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer" instance=ExtResource("5_mr0k5")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  STATS"
+alignment = 2
+
+[node name="Magic" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer" instance=ExtResource("5_mr0k5")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  MAGIC"
+alignment = 2
+
+[node name="Options" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer" instance=ExtResource("5_mr0k5")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  OPTIONS"
+alignment = 2
+
+[connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Stat" to="." method="_on_stat_pressed"]
+[connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Magic" to="." method="_on_magic_pressed"]
+[connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

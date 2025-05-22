@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3w1gynu2h2yn"]
 
-[ext_resource type="Script" path="res://global_func/global_flags.gd" id="1_yu3ah"]
+[ext_resource type="Script" uid="uid://csd2q3u7asrwu" path="res://global_func/global_flags.gd" id="1_yu3ah"]
 
 [node name="GlobalFlags" type="Node2D"]
 script = ExtResource("1_yu3ah")

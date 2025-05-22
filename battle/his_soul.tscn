@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1m5tcx0d8mcl"]
+
+[ext_resource type="Script" uid="uid://c6qrl05ox02u" path="res://battle/soul_movement.gd" id="1_04ldk"]
+[ext_resource type="Texture2D" uid="uid://cppjormdf3med" path="res://battle/his soul.png" id="1_eycpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgn5w"]
+size = Vector2(100, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ry1s"]
+radius = 27.0
+
+[node name="player_soul" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_04ldk")
+
+[node name="HisSoul" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_eycpk")
+
+[node name="collision_hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_bgn5w")
+
+[node name="damage_hitbox" type="Area2D" parent="."]
+position = Vector2(0, 2)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_hitbox"]
+shape = SubResource("CircleShape2D_1ry1s")
+debug_color = Color(0.966178, 7.70092e-07, 0.482141, 0.42)

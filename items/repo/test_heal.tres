@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=2 format=3 uid="uid://cr1klraja87k7"]
+
+[ext_resource type="Script" uid="uid://dn4jnlq4f24x7" path="res://items/classes/consumable.gd" id="1_hq8tf"]
+
+[resource]
+script = ExtResource("1_hq8tf")
+health_restore = 15
+attack_bonus = 0
+defence_bonus = 0
+speed_buff = false
+effect_turn_duration = 0
+item_id = 0
+item_name = "Test Heal"
+item_discription = "A delicious test object
+
+Heals 15 hp"

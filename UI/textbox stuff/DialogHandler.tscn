@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci4uv5el1llbn"]
+
+[ext_resource type="Script" uid="uid://2keslwmnth26" path="res://UI/textbox stuff/text_data.gd" id="1_afo4s"]
+
+[node name="DialogHandler" type="Node2D"]
+script = ExtResource("1_afo4s")

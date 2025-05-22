@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dd1pjxf8uv1q2"]
 
-[ext_resource type="Script" path="res://stages/scenetransition.gd" id="1_ktcb1"]
+[ext_resource type="Script" uid="uid://b6pmhyanagjsn" path="res://stages/scenetransition.gd" id="1_ktcb1"]
 
 [sub_resource type="Animation" id="Animation_iqr8n"]
 resource_name = "RESET"
@@ -148,9 +148,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bjk4y"]
 _data = {
-"RESET": SubResource("Animation_iqr8n"),
-"fade_in": SubResource("Animation_gq41w"),
-"fade_out": SubResource("Animation_3kyqc")
+&"RESET": SubResource("Animation_iqr8n"),
+&"fade_in": SubResource("Animation_gq41w"),
+&"fade_out": SubResource("Animation_3kyqc")
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -167,7 +167,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_bjk4y")
 }

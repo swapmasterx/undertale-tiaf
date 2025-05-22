@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvkbegycs5yw3"]
+
+[ext_resource type="Script" uid="uid://b72w5p4n85alx" path="res://UI/textbox stuff/multi_choice.gd" id="1_uq7yl"]
+[ext_resource type="PackedScene" uid="uid://djvuhgayxw2c2" path="res://UI/textbox stuff/text_multi_option_button.tscn" id="3_yunnl"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="4_tyont"]
+
+[node name="choice_options" type="MarginContainer"]
+layout_direction = 2
+offset_right = 890.0
+offset_bottom = 232.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = -60
+script = ExtResource("1_uq7yl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(770, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("4_tyont")
+theme_override_constants/line_spacing = 10
+autowrap_mode = 2
+text_direction = 1
+
+[node name="HBoxContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 400
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="optionA" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_yunnl")]
+visible = false
+layout_mode = 2
+text = "  *Yes"
+option_selected = 1
+
+[node name="optionB" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_yunnl")]
+visible = false
+layout_mode = 2
+text = "  *No"
+option_selected = 2
+
+[node name="optionC" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_yunnl")]
+visible = false
+layout_mode = 2
+option_selected = 3
+
+[node name="optionD" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_yunnl")]
+visible = false
+layout_mode = 2
+option_selected = 4

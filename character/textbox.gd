@@ -1,7 +1,10 @@
 extends Control
 
 #Foundation of diolog display code from DashNothing. 
+@export var is_overworld : bool = true
 
+
+@onready var nine_patch_rect = $textboxrect
 @onready var textbox_control = $"."
 @onready var text_scroll_timer = $Text_scroller
 @onready var text_slot = $textbox/Text
@@ -43,6 +46,12 @@ var speechSFX_id: Array = []
 
 signal finished_dispo()
 
+func _ready():
+	if is_overworld == false:
+		nine_patch_rect.visible = false
+	elif is_overworld == true:
+		nine_patch_rect.visible = true
+
 func speech_n_face_ider(speech_id: Array, talk_char_id: Array, char_mood_id: Array):
 	#stops dialog from being reactivated if its already running
 	if GlobalFlags.dialogMode:
@@ -53,31 +62,37 @@ func speech_n_face_ider(speech_id: Array, talk_char_id: Array, char_mood_id: Arr
 	
 func start_dialog(use_cinima_mode: bool, boxes: Array):
 	#stops dialog from being reactivated if its already running
-	if GlobalFlags.dialogMode:
-		return
+	if GlobalFlags.dialogDisabled == false:
+		if GlobalFlags.dialogMode:
+			return
+		GlobalFlags.text_box_open = true
+		print(GlobalFlags.text_box_open)
+		dialog_boxes = boxes
+		can_advance_segment = false
+		#print(dialog_boxes[box_index])
 	
-	dialog_boxes = boxes
-	can_advance_segment = false
-	print(dialog_boxes[box_index])
+		self.visible = true
+		
+		print("self visible is", self.visible)
+		
+		use_talk_sprite()
+		display_text(dialog_boxes[box_index])
 	
-	textbox_control.visible = true
-	use_talk_sprite()
-	display_text(dialog_boxes[box_index])
-	
-	SignalManager.lockMenu.emit()
-	if use_cinima_mode == false:
-		print("cinatrue")
-		SignalManager.lockWasd.emit()
-	else:
-		print("cinafalse")
-	GlobalFlags.dialogMode = true
+		GlobalFlags.menu_lock = true
+		if use_cinima_mode == false:
+			print("cinafalse")
+			GlobalFlags.wasd_lock = true
+		else:
+			print("cinatrue")
+		GlobalFlags.dialogMode = true
+		#GlobalFlags.menu_lock = true
+		
 	
 	
 
 func display_text(text_to_dispo: String):
-	text_to_use = text_to_dispo
+	text_to_use = text_to_dispo.format(GlobalFlags.text_swaper)
 	text_slot.text = ""
-	#code for talk sprite handling will go here
 	_display_letter()
 
 func _display_letter():
@@ -128,19 +143,26 @@ func _unhandled_input(event):
 			cont_dialog()
 			
 		elif box_index >= dialog_boxes.size():
-			box_index = 0
-			letter_index = 0
-			speechSFX_id = []
-			character_face_id = []
-			face_mood_id = []
-			same_sound = "none"
-			SignalManager.unlockMenu.emit()
-			SignalManager.unlockWasd.emit()
-			textbox_control.visible = false
-			can_advance_segment = false
-			GlobalFlags.dialogMode = false
+			close_dialog_box()
 			
 			
+func close_dialog_box():
+	box_index = 0
+	letter_index = 0
+	speechSFX_id = []
+	character_face_id = []
+	face_mood_id = []
+	same_sound = "none"
+	GlobalFlags.text_box_open = false
+	if GlobalFlags.menu_active == false:
+		GlobalFlags.wasd_lock = false
+	if GlobalFlags.menu_active == true:
+		SignalManager.closed_choose_option.emit()
+	textbox_control.visible = false
+	GlobalFlags.dialogMode = false
+	can_advance_segment = false
+	GlobalFlags.menu_lock = false
+
 
 func _on_text_scroller_timeout():
 	_display_letter()

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcempie7xxmhi"]
+
+[ext_resource type="ButtonGroup" uid="uid://dq4e8yinpv22c" path="res://battle/fight_button_group.tres" id="1_r6blx"]
+[ext_resource type="Script" uid="uid://dbw8gaqt8fafl" path="res://battle/battle_buttons.gd" id="4_vq0ia"]
+
+[node name="battle_button" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("1_r6blx")
+stretch_mode = 0
+script = ExtResource("4_vq0ia")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

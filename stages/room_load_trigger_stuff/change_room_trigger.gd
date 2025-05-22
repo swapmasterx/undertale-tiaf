@@ -1,6 +1,6 @@
-extends Area2D
+extends Node2D
 
-@export var scene_to_load: PackedScene
+@export var scene_to_load: String = "0"
 
 @export var set_player_pos: Vector2
 
@@ -8,21 +8,22 @@ extends Area2D
 
 @export var veticalScrollModeSet = false
 
-@onready var current_room = get_tree().get_first_node_in_group("room")
+@export var load_trigger_area: LoadTriggerArea
 
-@onready var world_engine = get_tree().get_root().get_node("World_Engine") 
+
 
 func _ready():
-	SignalManager.fade_in_finished.connect(_anim_finished)
+	
+	if load_trigger_area:
+		if GlobalFlags.dev_mode == true:
+			print("interaction for ", self, " loaded")
+		load_trigger_area.interact = Callable(self, "_on_interact")
 
-func _on_body_entered(body):
+func _on_interact():
 	print("entered load zone")
+	GlobalFlags.room_changing = true
+	Loadscreen.scene_to_load = scene_to_load
+	Loadscreen.set_player_pos = set_player_pos
+	Loadscreen.sideScrollModeSet = sideScrollModeSet
+	Loadscreen.veticalScrollModeSet = veticalScrollModeSet
 	Loadscreen.change_scene()
-
-func _anim_finished():
-	var pre_load_scene = scene_to_load.instantiate()
-	current_room.queue_free()
-	CharacterStats.place_at = set_player_pos
-	GlobalFlags.sideScrollMode = sideScrollModeSet
-	GlobalFlags.veticalScrollMode = veticalScrollModeSet
-	world_engine.add_child.bind(pre_load_scene).call_deferred()

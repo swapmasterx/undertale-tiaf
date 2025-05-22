@@ -1,6 +1,0 @@
-[gd_resource type="Resource" script_class="StageLoad" load_steps=2 format=3 uid="uid://cv50adyf8eif6"]
-
-[ext_resource type="Script" path="res://stages/stage_load_slot_in/stage_load.gd" id="1_353ve"]
-
-[resource]
-script = ExtResource("1_353ve")

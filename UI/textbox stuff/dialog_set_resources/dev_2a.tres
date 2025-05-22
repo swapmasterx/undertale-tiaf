@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://btva26pe5xdyq"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_4aiyj"]
+
+[resource]
+script = ExtResource("1_4aiyj")
+dialog_set = Array[Array]([["This is a test to see if this works.", "But how does this handle multiple lines."], ["What about other sets of dialog.", "Getting spicy with it~"]])
+speech_noise_id = Array[Array]([["default1", "default2"], ["flowey", "flowey_evil"]])
+char_talk_sprite_id = Array[Array]([["none", "flowey"], ["flowey", "none"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [1, 0]])

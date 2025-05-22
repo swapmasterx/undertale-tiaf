@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://kjaqw6mr1cq2"]
+
+[ext_resource type="PackedScene" uid="uid://cbd22mnqignyg" path="res://stages/ruins/dev_test_2.tscn" id="1_vgk6o"]
+
+[node name="Room_Core" instance=ExtResource("1_vgk6o")]
+
+[node name="bookshelf" parent="Interactibles" index="0"]
+object_type = 0
+
+[editable path="Scripted Events/yellow_hall"]
+[editable path="Scripted Events/living_room"]
+[editable path="Scripted Events/front_yard"]

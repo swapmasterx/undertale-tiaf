@@ -7,6 +7,16 @@ var active_areas = []
 
 var can_interact = true
 
+func register_load_trigger(area: LoadTriggerArea):
+	active_areas.push_back(area)
+	if active_areas.size() > 0:
+		print(active_areas)
+		await active_areas[0].interact.call()
+		var index = active_areas.find(area)
+		if index != -1:
+			active_areas.remove_at(index)
+		print(active_areas)
+
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
 	
@@ -27,9 +37,9 @@ func _dist_to_player(area1, area2):
 	
 func _input(event):
 	if event.is_action_pressed("interact_confirm") && can_interact:
+		print("buh")
 		if active_areas.size() > 0:
 			can_interact = false
-			
 			await active_areas[0].interact.call()
-			
+			print(active_areas[0])
 			can_interact = true

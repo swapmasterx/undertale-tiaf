@@ -1,0 +1,229 @@
+[gd_scene load_steps=8 format=3 uid="uid://caw0k0vrpeinl"]
+
+[ext_resource type="Texture2D" uid="uid://dmghfmo3ee53m" path="res://battle/battle box 9rect.png" id="1_0yffc"]
+[ext_resource type="Script" uid="uid://b2hthcu6vwkfi" path="res://UI/Menu/sub_menu.gd" id="1_2iyp1"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="3_f0uho"]
+[ext_resource type="Texture2D" uid="uid://bj5pi2l80cok" path="res://sprites/dev/comicfurypageicon.png" id="5_ae8yd"]
+[ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="5_vguq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15102"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6vll"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="sub_menu" type="MarginContainer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -802.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 65
+theme_override_constants/margin_bottom = 60
+script = ExtResource("1_2iyp1")
+
+[node name="uibackdrop2" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("1_0yffc")
+region_rect = Rect2(0, 0, 700, 700)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="uibackdrop2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 34
+
+[node name="TabContainer" type="TabContainer" parent="uibackdrop2/MarginContainer"]
+layout_mode = 2
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6vll")
+current_tab = 0
+clip_tabs = false
+tabs_visible = false
+
+[node name="items" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+metadata/_tab_index = 0
+
+[node name="item_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/items"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 3
+
+[node name="item_details" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/items"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="item_discription" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_f0uho")
+theme_override_constants/line_spacing = 10
+text = "Filler"
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Filler"
+
+[node name="stats" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+metadata/_tab_index = 1
+
+[node name="stats_bar1" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/stats"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="statblock2" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_f0uho")
+theme_override_constants/line_spacing = 10
+text = "LV {LVnum} 
+HP   {HPcur} / {HPmax}
+"
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "EXP: {exp} / NEXT: 10
+
+ATK  {PlayerATK} (0)
+DEF  {PlayerDEF} (0)"
+
+[node name="buffer2" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_f0uho")
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 24
+text = "
+"
+autowrap_mode = 2
+text_direction = 1
+
+[node name="statblock1" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_f0uho")
+theme_override_constants/line_spacing = 10
+text = "LV {LVnum} 
+HP   {HPcur} / {HPmax}"
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Weapon: {weapon} 
+Armor:  {armor}"
+
+[node name="stats_bar2" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar2"]
+layout_mode = 2
+texture = ExtResource("5_ae8yd")
+stretch_mode = 3
+
+[node name="statusnthoughts" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_f0uho")
+theme_override_constants/line_spacing = 12
+theme_override_font_sizes/font_size = 24
+text = "Status: Panicking
+
+What happpend to me?
+Why am I a flower?
+Where is my soul?
+And why is {name}'s
+here...?"
+horizontal_alignment = 1
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Status: Panicking
+
+What happpend to me?
+Why am I a flower?
+Where is my soul?
+And why is {name}'s
+here...?"
+
+[node name="magic" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+metadata/_tab_index = 2
+
+[node name="spell_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/magic"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
+
+[node name="spell_details" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/magic"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="options" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+metadata/_tab_index = 3
+
+[node name="options_menu" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
+
+[node name="options_submenu" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50

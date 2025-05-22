@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://drbqo1ms7ecfo"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_wushs"]
+
+[resource]
+script = ExtResource("1_wushs")
+dialog_set = Array[Array]([["* Mom used to keep various books and old calendars in here.", "* But after I turned 15 we cleared the place out. We were spending all our time at the New Home House anyway."], ["* An empty bookshelf."]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey", "flowey"]])
+char_talk_sprite_id = Array[Array]([["none", "none"], ["none", "none"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [1, 0]])

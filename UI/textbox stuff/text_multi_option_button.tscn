@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvuhgayxw2c2"]
+
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="1_xu6px"]
+[ext_resource type="Script" uid="uid://clujwps2q44xq" path="res://UI/textbox stuff/text_multioptions.gd" id="2_0fwvb"]
+
+[node name="textoptionButton" instance=ExtResource("1_xu6px")]
+script = ExtResource("2_0fwvb")
+option_selected = 0

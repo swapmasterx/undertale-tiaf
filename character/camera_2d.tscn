@@ -1,17 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://1ehpdcorkt51"]
+[gd_scene load_steps=5 format=3 uid="uid://1ehpdcorkt51"]
 
-[ext_resource type="Script" path="res://character/cameracode.gd" id="1_a0ray"]
-[ext_resource type="PackedScene" uid="uid://dyh37belgvscq" path="res://textbox stuff/textbox_control.tscn" id="2_348n8"]
+[ext_resource type="Script" uid="uid://dbajgdm14rp54" path="res://character/cameracode.gd" id="1_a0ray"]
+[ext_resource type="PackedScene" uid="uid://dyh37belgvscq" path="res://UI/textbox stuff/textbox_control.tscn" id="2_348n8"]
+[ext_resource type="PackedScene" uid="uid://rgn47h2wk1p4" path="res://UI/Menu/menu.tscn" id="3_7w38l"]
+[ext_resource type="PackedScene" uid="uid://c1m5tcx0d8mcl" path="res://battle/his_soul.tscn" id="4_luura"]
 
 [node name="Camera2D" type="Camera2D"]
-position = Vector2(-2, 0)
 zoom = Vector2(0.657, 0.657)
+process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 30.0
 script = ExtResource("1_a0ray")
 SPEED = 20
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="menu" parent="CanvasLayer" instance=ExtResource("3_7w38l")]
+
 [node name="Textbox Control" parent="CanvasLayer" instance=ExtResource("2_348n8")]
 visible = false
+
+[node name="player_soul" parent="CanvasLayer" instance=ExtResource("4_luura")]
+position = Vector2(190, 338)
+scale = Vector2(0.4, 0.4)
+disable_mode = 1
+
+[node name="ui_sfx" type="AudioStreamPlayer" parent="."]

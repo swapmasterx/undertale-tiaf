@@ -1,1 +1,3 @@
-StageLoad
+TextFormat
+Consumable
+Item

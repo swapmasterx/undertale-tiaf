@@ -12,7 +12,8 @@ extends Camera2D
 	#set_camera_limits()
 
 func _process(delta):
-	position = lerp(position, player.position, SPEED*delta)
+	position = player.position
+	#position = lerp(position, player.position, SPEED*delta)
 
 func set_camera_limits():
 	#map = $"../../Room_Core/Map"

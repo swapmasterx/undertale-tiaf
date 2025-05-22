@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsgyont7u20ck"]
+
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="1_b8jxl"]
+[ext_resource type="Script" uid="uid://4vguhbnagh7n" path="res://UI/textbox stuff/item_text_options.gd" id="2_e743u"]
+
+[node name="itemButton" instance=ExtResource("1_b8jxl")]
+script = ExtResource("2_e743u")
+item = null

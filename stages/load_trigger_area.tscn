@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://7b1j213oon8l"]
+
+[ext_resource type="Script" uid="uid://1ubgdh6xadvf" path="res://global_func/loadtrigger_area.gd" id="1_tgw4l"]
+
+[node name="LoadTriggerArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_tgw4l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
