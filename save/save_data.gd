@@ -1,10 +1,12 @@
 extends Node
 
+var current_room = "res://stages/ruins/dev_test_2.tscn"
+
 const save_file_name: String = "user://file0.json"
 
 const default_save_file: Dictionary = {"current_hp": 30, "max_hp": 30, "LV": 1, "EXP": 0, 
 "attack": 10, "defence": 10, "gold": 0, "equip_weapon": "none", "equip_armor": "none", 
-"fallen_name": "Chara", "room_num": 0, "place_at": Vector2(0,0), "inventory": []}
+"fallen_name": "Chara", "room_num": "res://stages/ruins/dev_test_2.tscn", "place_at_x": 0, "place_at_y": 0, "inventory": []}
 
 func save_game(data: Dictionary) -> void:
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)

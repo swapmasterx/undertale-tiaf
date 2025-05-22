@@ -23,7 +23,11 @@ var equip_armor: String = "none"
 
 var fallen_name: String = "Chara"
 
-var room_num: int = 0
+var room_num: String 
+
+var x
+
+var y
 
 var place_at: Vector2 = Vector2(0,0)
 
@@ -31,9 +35,35 @@ var inventory: Array = [a, b, a]
 
 func _ready():
 	var dict: Dictionary = SaveData.load_game()
+	place_at = Vector2(1,1)
 	current_hp = dict["current_hp"]
+	GlobalFlags.text_swaper["HPcur"] = current_hp
 	max_hp = dict["max_hp"]
-	print(current_hp)
+	GlobalFlags.text_swaper["max_hp"] = max_hp
+	LV = dict["LV"]
+	GlobalFlags.text_swaper["LV"] = LV
+	EXP = dict["EXP"]
+	GlobalFlags.text_swaper["EXP"] = EXP
+	attack = dict["attack"]
+	GlobalFlags.text_swaper["attack"] = attack
+	defence = dict["defence"]
+	GlobalFlags.text_swaper["defence"] = defence
+	gold = dict["gold"]
+	GlobalFlags.text_swaper["gold"] = gold
+	equip_weapon = dict["equip_weapon"]
+	GlobalFlags.text_swaper["equip_weapon"] = equip_weapon
+	equip_armor = dict["equip_armor"]
+	GlobalFlags.text_swaper["equip_armor"] = equip_armor
+	fallen_name = dict["fallen_name"]
+	GlobalFlags.text_swaper["fallen_name"] = fallen_name
+	SaveData.current_room = dict["room_num"]
+	x = dict["place_at_x"]
+	y = dict["place_at_y"]
+	place_at = Vector2(x,y)
+	GlobalFlags.text_swaper["place_at"] = place_at
+	inventory = dict["inventory"]
+	GlobalFlags.text_swaper["inventory"] = inventory
+	
 
 func add_item(inv_item):
 	if inventory.size() < 8:
@@ -69,4 +99,4 @@ func health_change(hp_value):
 func _exit_tree():
 	SaveData.save_game({"current_hp": current_hp, "max_hp": max_hp, "LV": LV, "EXP": EXP, 
 "attack": attack, "defence": defence, "gold": gold, "equip_weapon": equip_weapon, "equip_armor": equip_armor, 
-"fallen_name": fallen_name, "room_num": room_num, "place_at": place_at, "inventory": inventory})
+"fallen_name": fallen_name, "room_num": SaveData.current_room, "place_at_x": x, "place_at_y": y, "inventory": inventory})

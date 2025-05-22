@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmwrnv76rxi1u"]
+[gd_scene load_steps=5 format=3 uid="uid://bmwrnv76rxi1u"]
 
-[ext_resource type="PackedScene" uid="uid://d4du14bbynftn" path="res://stages/ruins/dev_test.tscn" id="1_c8tk7"]
 [ext_resource type="Script" uid="uid://cmmanjm52rsi8" path="res://stages/world_engine.gd" id="1_grjrr"]
 [ext_resource type="PackedScene" uid="uid://bdc2evna15mle" path="res://character/player.tscn" id="1_lche1"]
 [ext_resource type="AudioStream" uid="uid://jpqj6mijg5gv" path="res://battle/snd_squeakfix.wav" id="4_ka27x"]
@@ -10,9 +9,6 @@
 script = ExtResource("1_grjrr")
 
 [node name="DialogHandler" parent="." instance=ExtResource("4_o1d58")]
-
-[node name="dev_test" parent="." instance=ExtResource("1_c8tk7")]
-texture_filter = 6
 
 [node name="player" parent="." instance=ExtResource("1_lche1")]
 

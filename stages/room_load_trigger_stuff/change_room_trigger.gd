@@ -27,3 +27,5 @@ func _on_interact():
 	Loadscreen.sideScrollModeSet = sideScrollModeSet
 	Loadscreen.veticalScrollModeSet = veticalScrollModeSet
 	Loadscreen.change_scene()
+	SaveData.current_room = scene_to_load
+	print (scene_to_load)
