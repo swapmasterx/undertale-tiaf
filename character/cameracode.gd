@@ -26,10 +26,10 @@ func set_camera_limits():
 		camera_2d.limit_left = map_limits.position.x * map_cellsize.x
 		camera_2d.limit_right = map_limits.end.x * map_cellsize.x
 		if GlobalFlags.sideScrollMode == true:
-			camera_2d.limit_top = map_limits.position.y * map_cellsize.y
-			camera_2d.limit_bottom = map_limits.end.y * map_cellsize.y
-			#camera_2d.limit_top = -540
-			#camera_2d.limit_bottom = 440
+			#camera_2d.limit_top = map_limits.position.y * map_cellsize.y
+			#camera_2d.limit_bottom = map_limits.end.y * map_cellsize.y
+			camera_2d.limit_top = -540
+			camera_2d.limit_bottom = 440
 		elif GlobalFlags.sideScrollMode == false:
 			camera_2d.limit_top = map_limits.position.y * map_cellsize.y
 			camera_2d.limit_bottom = map_limits.end.y * map_cellsize.y

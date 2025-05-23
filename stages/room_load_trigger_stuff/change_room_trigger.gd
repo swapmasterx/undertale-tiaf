@@ -23,6 +23,7 @@ func _on_interact():
 	print("entered load zone")
 	GlobalFlags.room_changing = true
 	Loadscreen.scene_to_load = scene_to_load
+	PlayerData.place_at_room_transition = set_player_pos
 	Loadscreen.set_player_pos = set_player_pos
 	Loadscreen.sideScrollModeSet = sideScrollModeSet
 	Loadscreen.veticalScrollModeSet = veticalScrollModeSet

@@ -9,15 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_xnvra"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="8_3hr3g"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="9_j54a3"]
+[ext_resource type="PackedScene" uid="uid://c6r887jpctdta" path="res://stages/loading_spot.tscn" id="10_roaph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asxrw"]
 size = Vector2(167.5, 82.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsags"]
 size = Vector2(85, 361.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o0nf"]
-size = Vector2(139, 364)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_dvhye")
@@ -63,16 +61,5 @@ load_trigger_area = NodePath("LoadTriggerArea")
 position = Vector2(1096, 90)
 shape = SubResource("RectangleShape2D_wsags")
 
-[node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("8_3hr3g")]
-scene_to_load = "res://stages/ruins/dev_test.tscn"
-sideScrollModeSet = true
-load_trigger_area = NodePath("LoadTriggerArea")
-
-[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("9_j54a3")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
-position = Vector2(-1033, 90)
-shape = SubResource("RectangleShape2D_0o0nf")
-
-[node name="transitionSpot" type="Node2D" parent="Scripted Events"]
-position = Vector2(954, 110)
+[node name="loading_spot" parent="Scripted Events" instance=ExtResource("10_roaph")]
+position = Vector2(973, 128)

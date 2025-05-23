@@ -31,11 +31,12 @@ var y
 
 var place_at: Vector2 = Vector2(0,0)
 
+var place_at_room_transition: Vector2 = Vector2(0,0)
+
 var inventory: Array = [a, b, a]
 
 func _ready():
 	var dict: Dictionary = SaveData.load_game()
-	place_at = Vector2(1,1)
 	current_hp = dict["current_hp"]
 	GlobalFlags.text_swaper["HPcur"] = current_hp
 	max_hp = dict["max_hp"]
