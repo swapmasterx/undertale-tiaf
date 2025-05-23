@@ -1,7 +1,7 @@
-res://stages/world_engine.tscn
+res://stages/ruins/Opening_room.tscn
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://tilemaps/ruins/ruins_toriel_home_livinroom.tres
-res://stages/scenetransition.gd
+res://stages/world_engine.tscn
 res://UI/Menu/sub_menu.tscn
 res://character/camera_2d.tscn
 res://UI/textbox stuff/textbox_control.tscn
