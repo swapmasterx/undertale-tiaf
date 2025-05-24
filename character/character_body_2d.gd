@@ -1,4 +1,42 @@
-extends CharacterBody2D
+class_name Player;extends CharacterBody2D
+
+# Globally accessable variables
+# (i aplogise for my difference in writing code); ~ Chris
+
+# Note note: i may need to wait until i have more time, digging into this deeper there are a few
+# things i may need to explain and modify, and i am currently feeling fatigue lol 
+# I'll need to study this source a lil more. ~ Chris at 3:40 in the morning
+
+## The node used in the overworld.
+static var this_node:Player;
+
+# im a little too tired to make a full port atm but im going to make sure the game still runs
+## The player's current health.
+static var health:int = 20;
+## The maximum player's health, determines how high you can heal using items.
+static var max_health:int = 20;
+## :3
+static var love:int = 1;
+static var exp:int = 0;
+
+static var attack:float = 10.0;
+static var defense:float = 10.0;
+
+static var gold:int = 0;
+
+# Note for the future: maybe make this an enum? not entirely sure what's planned.
+static var equip_weapon:String = "none"
+static var equip_armor:String = "none"
+## Name of the fallen child.
+static var fallen_name:String = "Chara"
+
+## Name of the node to spawn at? may change in the future.
+static var spawn_location:String;
+
+static var inventory:Array = [TEST_ITEM_HEAL_A,TEST_ITEM_HEAL_B,TEST_ITEM_HEAL_A];
+
+const TEST_ITEM_HEAL_A = preload("res://items/repo/test_heal.tres");
+const TEST_ITEM_HEAL_B = preload("res://items/repo/test_heal2.tres")
 
 # Set by the player if they want to sprint with the key is heald or if they want to toggle it on and off.
 @export var sprintToggleMode = true
@@ -11,6 +49,15 @@ var playback : AnimationNodeStateMachinePlayback
 # Sprint status
 var sprintActive = false
 var slowWalk = false
+
+func _notification(what:int)->void:
+	match(what):
+		# These 4 lines basically ensure that this player object is always accessable globally.
+		# The last 2 ensure that we don't keep a dead reference to the node after it's deleted.
+		NOTIFICATION_READY:
+			Player.this_node = self;
+		NOTIFICATION_PREDELETE:
+			if(Player.this_node == self): Player.this_node = null;
 
 func _ready():
 	playback = anim_tree["parameters/playback"]
