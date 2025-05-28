@@ -69,13 +69,13 @@ func item_type():
 		print("Item to remove not found")
 	else:
 		if index is Consumable:
-			var item = PlayerData.inventory.find(GlobalFlags.item_transit)
+			var item = Player.inventory.find(GlobalFlags.item_transit)
 			_close_choose_option()
 			GlobalFlags.text_swaper["itemHP"] = str(GlobalFlags.item_transit.health_restore, " HP")
 			textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
-			if PlayerData.current_hp + GlobalFlags.item_transit.health_restore < PlayerData.max_hp:
+			if Player.health + GlobalFlags.item_transit.health_restore < Player.max_health:
 				textbox_control.start_dialog(false, [dialog_responce_a])
-			elif PlayerData.current_hp + GlobalFlags.item_transit.health_restore >= PlayerData.max_hp:
+			elif Player.health + GlobalFlags.item_transit.health_restore >= Player.max_health:
 				textbox_control.start_dialog(false, [dialog_responce_b])
 			GlobalFlags.text_box_open = true
 			GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_swallow.wav")

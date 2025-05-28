@@ -1,7 +1,6 @@
-res://stages/ruins/Opening_room.tscn
+res://stages/world_engine.tscn
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://tilemaps/ruins/ruins_toriel_home_livinroom.tres
-res://stages/world_engine.tscn
 res://UI/Menu/sub_menu.tscn
 res://character/camera_2d.tscn
 res://UI/textbox stuff/textbox_control.tscn
@@ -10,3 +9,9 @@ res://stages/ruins/dev_test.tscn
 res://object prefabs/object_base.tscn
 res://stages/ruins/dev_test_2.tscn
 res://stages/loadscreen.tscn
+res://stages/ruins/Opening_room.tscn
+res://character/cameracode.gd
+res://global_func/global_flags.gd
+res://UI/Menu/fallen_name.gd
+res://UI/textbox stuff/multi_choice.gd
+res://UI/Menu/sub_menu.gd
