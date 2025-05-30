@@ -35,6 +35,20 @@ navigation_enabled = false
 tile_set = ExtResource("1_t48oc")
 navigation_enabled = false
 
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Bottom" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 448)
+gizmo_extents = 32.0
+
+[node name="Right" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(960, 96)
+gizmo_extents = 32.0
+
+[node name="Left" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-896, 96)
+gizmo_extents = 32.0
+
 [node name="Interactibles" type="Node2D" parent="."]
 
 [node name="bookshelf" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("3_aue7e")]
@@ -52,6 +66,7 @@ shape = SubResource("RectangleShape2D_asxrw")
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("8_3hr3g")]
 scene_to_load = "res://stages/ruins/dev_test.tscn"
+next_spawn_location = "Left"
 sideScrollModeSet = true
 load_trigger_area = NodePath("LoadTriggerArea")
 

@@ -30,7 +30,7 @@ static var equip_armor:String = "none"
 ## Name of the fallen child.
 static var fallen_name:String = "Chara"
 
-## Name of the node to spawn at? may change in the future.
+## Name of the node where the player will be placed. Note: If name is invalid, it will chose the first spawn in the group of spawns.
 static var spawn_location:String;
 
 static var inventory:Array = [TEST_ITEM_HEAL_A,TEST_ITEM_HEAL_B,TEST_ITEM_HEAL_A];

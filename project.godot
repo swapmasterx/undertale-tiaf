@@ -22,7 +22,6 @@ InteractionManager="*res://global_func/interaction_manager.tscn"
 SignalManager="*res://global_func/signal_manager.gd"
 GlobalFlags="*res://global_func/global_flags.tscn"
 Loadscreen="*res://stages/loadscreen.tscn"
-PlayerData="*res://global_func/player_data.gd"
 SaveData="*res://save/save_data.gd"
 RoomId="*res://global_func/room_id.gd"
 

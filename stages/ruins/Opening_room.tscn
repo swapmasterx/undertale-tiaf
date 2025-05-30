@@ -52,7 +52,6 @@ shape = SubResource("CapsuleShape2D_wg4lj")
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("6_u3xsr")]
 position = Vector2(1255, -131)
 scene_to_load = "res://stages/ruins/dev_test_2.tscn"
-set_player_pos = Vector2(2400, 60)
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("7_hv775")]
