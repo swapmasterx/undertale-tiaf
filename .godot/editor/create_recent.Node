@@ -1,3 +1,7 @@
+MarginContainer
+StaticBody2D
+CollisionShape2D
+RigidBody2D
 Node2D
 AnimationTree
 AnimationPlayer
@@ -6,9 +10,5 @@ GridContainer
 HBoxContainer
 TextureRect
 TabContainer
-MarginContainer
 Label
 AudioStreamPlayer
-NinePatchRect
-Control
-Button

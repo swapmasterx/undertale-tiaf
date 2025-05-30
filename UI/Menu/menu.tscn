@@ -16,11 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vrhnu")
 
-[node name="sub_menu" parent="." instance=ExtResource("2_cyhrr")]
-visible = false
-layout_mode = 1
-offset_left = -805.0
-
 [node name="main_menu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
@@ -161,6 +156,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 text = "  OPTIONS"
 alignment = 2
+
+[node name="sub_menu" parent="." instance=ExtResource("2_cyhrr")]
+visible = false
+layout_mode = 1
+offset_left = -805.0
 
 [connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Item" to="." method="_on_item_pressed"]
 [connection signal="pressed" from="main_menu/uibackdrop/MarginContainer/VBoxContainer/Stat" to="." method="_on_stat_pressed"]

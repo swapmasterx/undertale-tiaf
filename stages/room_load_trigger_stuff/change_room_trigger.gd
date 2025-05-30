@@ -4,9 +4,9 @@ extends Node2D
 
 @export var set_player_pos: Vector2
 
-@export var sideScrollModeSet = false
+#@export var sideScrollModeSet = false
 
-@export var veticalScrollModeSet = false
+#@export var veticalScrollModeSet = false
 
 @export var load_trigger_area: LoadTriggerArea
 
@@ -25,8 +25,8 @@ func _on_interact():
 	Loadscreen.scene_to_load = scene_to_load
 	PlayerData.place_at_room_transition = set_player_pos
 	Loadscreen.set_player_pos = set_player_pos
-	Loadscreen.sideScrollModeSet = sideScrollModeSet
-	Loadscreen.veticalScrollModeSet = veticalScrollModeSet
+	#Loadscreen.sideScrollModeSet = sideScrollModeSet
+	#Loadscreen.veticalScrollModeSet = veticalScrollModeSet
 	Loadscreen.change_scene()
 	SaveData.current_room = scene_to_load
 	print (scene_to_load)

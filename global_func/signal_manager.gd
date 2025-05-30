@@ -24,3 +24,7 @@ signal battle_mode()
 signal activate_choose_option()
 
 signal closed_choose_option()
+
+signal closed_dialog()
+
+signal save_activate()

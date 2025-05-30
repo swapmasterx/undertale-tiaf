@@ -10,12 +10,13 @@ extends Control
 @onready var tab_container = $sub_menu/uibackdrop2/MarginContainer/TabContainer
 #@onready var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/test_button"
 @onready var player_soul = $"../player_soul"
-
+@onready var save_box = $"../save_box"
 
 
 var menu_option_memory
 
 func _ready():
+	SignalManager.closed_dialog.connect(closed_dialog)
 	player_soul.visible = false
 	self.visible = false
 	item.grab_focus()
@@ -107,3 +108,9 @@ func enable_submenu(tab_num):
 	stat.focus_mode = FOCUS_NONE
 	magic.focus_mode = FOCUS_NONE
 	options.focus_mode = FOCUS_NONE
+
+#-------------------------
+
+func closed_dialog():
+	save_box.visible = true
+	GlobalFlags.wasd_lock = true

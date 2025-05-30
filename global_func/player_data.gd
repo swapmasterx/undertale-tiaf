@@ -21,7 +21,7 @@ var equip_weapon: String = "none"
 
 var equip_armor: String = "none"
 
-var fallen_name: String = "Chara"
+var fallen_name: String = "------"
 
 var room_num: String 
 

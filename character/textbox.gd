@@ -162,6 +162,8 @@ func close_dialog_box():
 	GlobalFlags.dialogMode = false
 	can_advance_segment = false
 	GlobalFlags.menu_lock = false
+	if GlobalFlags.is_saving == true:
+		SignalManager.closed_dialog.emit()
 
 
 func _on_text_scroller_timeout():

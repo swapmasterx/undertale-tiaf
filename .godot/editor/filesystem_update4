@@ -1,12 +1,6 @@
-res://stages/ruins/Opening_room.tscn
+res://UI/Menu/save_box.tscn
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
-res://tilemaps/ruins/ruins_toriel_home_livinroom.tres
-res://stages/world_engine.tscn
-res://UI/Menu/sub_menu.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_1.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_Openingroom2.tres
 res://character/camera_2d.tscn
-res://UI/textbox stuff/textbox_control.tscn
-res://UI/textbox stuff/multi_choice.tscn
-res://stages/ruins/dev_test.tscn
-res://object prefabs/object_base.tscn
-res://stages/ruins/dev_test_2.tscn
-res://stages/loadscreen.tscn

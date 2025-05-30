@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://b6qgsgyjc6ib3"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_kk46u"]
+
+[resource]
+script = ExtResource("1_kk46u")
+dialog_set = Array[Array]([["(In spite of the situation and the fact you returned from the dead.)", "(You are filled with determination.)", "(HP Fully restored.)"]])
+speech_noise_id = Array[Array]([["default1", "default1", "default"]])
+char_talk_sprite_id = Array[Array]([["none", "none", "none"]])
+char_mood_sprite_id = Array[Array]([[0, 0]])

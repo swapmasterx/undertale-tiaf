@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://djdedcygfwnv2"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_umcf3"]
+
+[resource]
+script = ExtResource("1_umcf3")
+dialog_set = Array[Array]([["* What used to be a bed of flowers.", "* It looks like it was overturned before someone filled it back in", "* {name} is that you?!", "* ..."], ["* A ruined bed of golden flowers.", "* ..."]])
+speech_noise_id = Array[Array]([["default1", "default1", "flowey", "flowey"], ["default1", "flowey"]])
+char_talk_sprite_id = Array[Array]([["none", "none", "flowey", "flowey"], ["none", "flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0, 0, 0], [0, 0]])

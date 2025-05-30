@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp4w5lai8y6qs"]
+
+[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="1_821da"]
+[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="2_qsfcb"]
+[ext_resource type="Texture2D" uid="uid://dsef88440cf7p" path="res://sprites/saving/savestar.png" id="3_lrxb3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_koihu"]
+radius = 69.0
+height = 138.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f564"]
+size = Vector2(90, 90)
+
+[node name="save point" node_paths=PackedStringArray("interaction_area") instance=ExtResource("1_821da")]
+object_type = 2
+interaction_area = NodePath("Interaction_Area")
+
+[node name="Interaction_Area" parent="." index="0" instance=ExtResource("2_qsfcb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_koihu")
+
+[node name="Savestar" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_lrxb3")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="Savestar" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Savestar/RigidBody2D" index="0"]
+shape = SubResource("RectangleShape2D_1f564")
