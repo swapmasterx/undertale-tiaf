@@ -80,8 +80,8 @@ func item_type():
 			GlobalFlags.text_box_open = true
 			GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_swallow.wav")
 			GlobalFlags.sfx_2_channel.play()
-			PlayerData.health_change(GlobalFlags.item_transit.health_restore)
-			PlayerData.remove_item(item)
+			Player.health_change(GlobalFlags.item_transit.health_restore)
+			Player.remove_item(item)
 		else:
 			print("no type set")
 

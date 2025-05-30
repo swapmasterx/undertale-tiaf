@@ -50,6 +50,44 @@ var playback : AnimationNodeStateMachinePlayback
 var sprintActive = false
 var slowWalk = false
 
+# Static functions
+
+static func add_item(inv_item):
+	if inventory.size() < 8:
+		inventory.append(inv_item)
+		SignalManager.inv_updated.emit()
+	else:
+		print("But your inventory was full.")
+		return
+	
+		
+static func remove_item(item_removed):
+	if inventory.size() > 0:
+		inventory.remove_at(item_removed)
+		SignalManager.inv_updated.emit()
+	else:
+		print("But your inventory was empty.")
+		return
+		
+static func health_change(hp_value):
+	if hp_value >= 0:
+		if health + hp_value >= max_health:
+			health = max_health
+		else:
+			health += hp_value
+		GlobalFlags.text_swaper["HPcur"] = health
+		SignalManager.inv_updated.emit()
+		# So "get_tree()" can't be called from static funcs
+		# what's my solution? use an autoload to call it lol
+		# this can work with any autoload i just chose interactionmanager because it's the longest.
+		await InteractionManager.get_tree().create_timer(0.2).timeout
+		GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_heal_c.wav")
+		GlobalFlags.sfx_2_channel.play()
+	elif hp_value < 0:
+		pass
+
+# Node functions
+
 func _notification(what:int)->void:
 	match(what):
 		# These 4 lines basically ensure that this player object is always accessable globally.
