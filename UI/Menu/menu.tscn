@@ -54,18 +54,16 @@ theme_override_constants/margin_bottom = 22
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="FallenName" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
+[node name="FallenName" type="RichTextLabel" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 100)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 theme = ExtResource("3_heirn")
-theme_override_colors/font_color = Color(0.28485, 0.28485, 0.28485, 1)
-theme_override_constants/line_spacing = 10
+theme_override_colors/default_color = Color(0.389287, 0.389287, 0.389287, 1)
 text = "{name}"
 autowrap_mode = 2
 text_direction = 1
@@ -91,20 +89,19 @@ text = "Asriel"
 autowrap_mode = 2
 text_direction = 1
 
-[node name="stats" type="Label" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
+[node name="stats" type="RichTextLabel" parent="main_menu/uibackdrop/MarginContainer/VBoxContainer"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 150)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 theme = ExtResource("3_heirn")
-theme_override_constants/line_spacing = 10
 text = "LV   1
 HP   35/35
 G     50"
+scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("5_277wb")
@@ -124,8 +121,6 @@ size_flags_vertical = 0
 theme = ExtResource("3_heirn")
 theme_override_constants/line_spacing = 10
 theme_override_font_sizes/font_size = 14
-text = "
-"
 autowrap_mode = 2
 text_direction = 1
 

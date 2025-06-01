@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdrq6exo5okly"]
+[gd_scene load_steps=7 format=3 uid="uid://dtckqk1qq0638"]
 
+[ext_resource type="Script" uid="uid://c0g4dkgxfk0l8" path="res://UI/Menu/save_box.gd" id="1_4th1w"]
 [ext_resource type="Texture2D" uid="uid://dmghfmo3ee53m" path="res://battle/battle box 9rect.png" id="1_hgf1x"]
-[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="2_wa6kc"]
 [ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="3_4th1w"]
-[ext_resource type="PackedScene" uid="uid://djvuhgayxw2c2" path="res://UI/textbox stuff/text_multi_option_button.tscn" id="4_wa6kc"]
+[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://UI/textbox stuff/textbox_default_theme_yellow.tres" id="3_6xaxk"]
+[ext_resource type="PackedScene" uid="uid://qijiqj4o2jvd" path="res://UI/Menu/text replacement.tscn" id="3_bkds0"]
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="5_4th1w"]
 
 [node name="save_box" type="MarginContainer"]
 anchors_preset = 15
@@ -15,6 +17,7 @@ theme_override_constants/margin_left = 250
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 250
 theme_override_constants/margin_bottom = 200
+script = ExtResource("1_4th1w")
 
 [node name="uibackdrop2" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(300, 0)
@@ -33,106 +36,155 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 61
+theme_override_constants/margin_left = 36
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 20
 
-[node name="metrics" type="HBoxContainer" parent="uibackdrop2/MarginContainer"]
+[node name="item_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="metrics" type="HBoxContainer" parent="uibackdrop2/MarginContainer/item_list"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="item_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer/metrics"]
+[node name="item_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer/item_list/metrics"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 3
 
-[node name="item_discription" type="Label" parent="uibackdrop2/MarginContainer/metrics/item_list"]
+[node name="item_discription" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list" instance=ExtResource("3_bkds0")]
+layout_mode = 2
+
+[node name="item_discription3" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(150, 45)
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_wa6kc")
-theme_override_constants/line_spacing = 10
-text = "{name}"
-autowrap_mode = 2
-text_direction = 1
-script = ExtResource("3_4th1w")
-stat_line = "{name}
-
-"
-
-[node name="item_discription2" type="Label" parent="uibackdrop2/MarginContainer/metrics/item_list"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-z_index = 20
-custom_minimum_size = Vector2(150, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("2_wa6kc")
-theme_override_constants/line_spacing = 10
+theme = ExtResource("3_6xaxk")
 text = "{roomname}"
+scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("3_4th1w")
-stat_line = "{roomname}
+stat_line = "{roomname}"
 
-
-"
-
-[node name="textoptionButton" parent="uibackdrop2/MarginContainer/metrics/item_list" instance=ExtResource("4_wa6kc")]
-layout_mode = 2
-text = "*Save"
-
-[node name="item_list2" type="VBoxContainer" parent="uibackdrop2/MarginContainer/metrics"]
+[node name="item_list2" type="VBoxContainer" parent="uibackdrop2/MarginContainer/item_list/metrics"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 3
 
-[node name="item_discription" type="Label" parent="uibackdrop2/MarginContainer/metrics/item_list2"]
+[node name="item_discription2" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list2"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(150, 45)
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_wa6kc")
-theme_override_constants/line_spacing = 10
-text = "LV {LVnum}"
+theme = ExtResource("3_6xaxk")
+text = "  LV {LVnum}"
+scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("3_4th1w")
 stat_line = "  LV {LVnum}"
 
-[node name="item_list3" type="VBoxContainer" parent="uibackdrop2/MarginContainer/metrics"]
+[node name="item_list3" type="VBoxContainer" parent="uibackdrop2/MarginContainer/item_list/metrics"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 3
 
-[node name="item_discription" type="Label" parent="uibackdrop2/MarginContainer/metrics/item_list3"]
+[node name="item_discription_4" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list3"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(150, 45)
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_wa6kc")
-theme_override_constants/line_spacing = 10
-text = " {time}"
+theme = ExtResource("3_6xaxk")
+text = "{name}"
+scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("3_4th1w")
 stat_line = " {time_played}"
 
-[node name="textoptionButton" parent="uibackdrop2/MarginContainer/metrics/item_list3" instance=ExtResource("4_wa6kc")]
+[node name="metrics3" type="HBoxContainer" parent="uibackdrop2/MarginContainer/item_list"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "*Cancel"
+theme_override_constants/separation = 30
+
+[node name="metrics2" type="HBoxContainer" parent="uibackdrop2/MarginContainer/item_list"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="spacer2" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(50, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_6xaxk")
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+
+[node name="save" parent="uibackdrop2/MarginContainer/item_list/metrics2" instance=ExtResource("5_4th1w")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "  Save"
+pressed_sound = "res://sound_effects/snd_save.wav"
+
+[node name="spacer" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_6xaxk")
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+
+[node name="cancel" parent="uibackdrop2/MarginContainer/item_list/metrics2" instance=ExtResource("5_4th1w")]
+unique_name_in_owner = true
+layout_mode = 2
+text = " Return"
+
+[node name="save_confirmation" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics2"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_6xaxk")
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+text = "File Saved."
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("3_4th1w")
+stat_line = "File Saved."
+
+[connection signal="pressed" from="uibackdrop2/MarginContainer/item_list/metrics2/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="uibackdrop2/MarginContainer/item_list/metrics2/cancel" to="." method="_on_cancel_pressed"]

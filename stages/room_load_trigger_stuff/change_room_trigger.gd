@@ -2,8 +2,7 @@ extends Node2D
 
 @export var scene_to_load: String = "0"
 
-@export var set_player_pos: Vector2
-
+@export var load_at: int = 0
 #@export var sideScrollModeSet = false
 
 #@export var veticalScrollModeSet = false
@@ -20,11 +19,11 @@ func _ready():
 		load_trigger_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
+	PlayerData.load_at_point = load_at
 	print("entered load zone")
 	GlobalFlags.room_changing = true
 	Loadscreen.scene_to_load = scene_to_load
-	PlayerData.place_at_room_transition = set_player_pos
-	Loadscreen.set_player_pos = set_player_pos
+	
 	#Loadscreen.sideScrollModeSet = sideScrollModeSet
 	#Loadscreen.veticalScrollModeSet = veticalScrollModeSet
 	Loadscreen.change_scene()

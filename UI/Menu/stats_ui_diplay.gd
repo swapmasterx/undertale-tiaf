@@ -1,4 +1,4 @@
-extends Label
+extends RichTextLabel
 
 
 @onready var format_text = stat_line.format(GlobalFlags.text_swaper)

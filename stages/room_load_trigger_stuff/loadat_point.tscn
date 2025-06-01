@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bigpom0yyw1m3"]
+
+[ext_resource type="Script" uid="uid://b2nrvfct51kjn" path="res://stages/room_load_trigger_stuff/loadat_point.gd" id="1_8vk8h"]
+
+[node name="LoadatPoint" type="Node2D"]
+script = ExtResource("1_8vk8h")

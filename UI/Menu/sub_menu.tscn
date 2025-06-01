@@ -50,11 +50,12 @@ theme_override_constants/margin_bottom = 34
 layout_mode = 2
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
 theme_override_styles/panel = SubResource("StyleBoxFlat_g6vll")
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 
 [node name="items" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 30
 metadata/_tab_index = 0
@@ -70,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 50
 
-[node name="item_discription" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details"]
+[node name="item_discription" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
@@ -79,15 +80,14 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_f0uho")
-theme_override_constants/line_spacing = 10
 text = "Filler"
+scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("5_vguq6")
 stat_line = "Filler"
 
 [node name="stats" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(650, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
@@ -99,7 +99,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 2
 
-[node name="statblock2" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
+[node name="statblock2" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
@@ -108,10 +108,10 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_f0uho")
-theme_override_constants/line_spacing = 10
-text = "LV {LVnum} 
-HP   {HPcur} / {HPmax}
-"
+text = "EXP: {exp} / NEXT: 10
+
+ATK  {PlayerATK} (0)
+DEF  {PlayerDEF} (0)"
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("5_vguq6")
@@ -137,7 +137,7 @@ text = "
 autowrap_mode = 2
 text_direction = 1
 
-[node name="statblock1" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
+[node name="statblock1" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar1"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
@@ -146,7 +146,6 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("3_f0uho")
-theme_override_constants/line_spacing = 10
 text = "LV {LVnum} 
 HP   {HPcur} / {HPmax}"
 autowrap_mode = 2
@@ -164,7 +163,7 @@ layout_mode = 2
 texture = ExtResource("5_ae8yd")
 stretch_mode = 3
 
-[node name="statusnthoughts" type="Label" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar2"]
+[node name="statusnthoughts" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/stats/stats_bar2"]
 modulate = Color(0.955963, 0.955963, 0.955963, 1)
 self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
 z_index = 20
@@ -173,17 +172,17 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_f0uho")
-theme_override_constants/line_spacing = 12
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/normal_font_size = 24
 text = "Status: Panicking
 
-What happpend to me?
+What happend to me?
 Why am I a flower?
 Where is my soul?
 And why is {name}'s
 here...?"
-horizontal_alignment = 1
+scroll_active = false
 autowrap_mode = 2
+horizontal_alignment = 1
 text_direction = 1
 script = ExtResource("5_vguq6")
 stat_line = "Status: Panicking

@@ -64,7 +64,12 @@ var items: Array = []
 
 var menu_layer: int = 0
 
-
+func save():
+	SaveData.save_game({"current_hp": PlayerData.current_hp, "max_hp": PlayerData.max_hp,
+	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
+	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
+	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
+	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory})
 
 func cutscene_mode(on_or_off: bool):
 	var cutscene_active:bool = false
@@ -78,3 +83,4 @@ func cutscene_mode(on_or_off: bool):
 		blockInteraction = false
 		wasd_lock = false
 		menu_lock = false
+		

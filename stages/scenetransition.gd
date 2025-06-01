@@ -32,14 +32,12 @@ func _on_animation_player_animation_finished(fade_in):
 
 func anim_finished():
 	var current_room = get_tree().get_first_node_in_group("room")
-	
-	var get_player = get_tree().get_first_node_in_group("player")
 	var pre_load_scene = load(scene_to_load)
 	var set_load_scene = pre_load_scene.instantiate()
 	
 	GlobalFlags.room_changing = false
 	#PlayerData.place_at_room_transition = set_player_pos
-	get_player.position = set_player_pos
+	#get_player.position = set_player_pos
 	current_room.queue_free()
 	GlobalFlags.sideScrollMode = sideScrollModeSet
 	GlobalFlags.veticalScrollMode = veticalScrollModeSet

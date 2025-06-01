@@ -3,6 +3,8 @@ extends Node2D
 var a = load("res://items/repo/test_heal.tres")
 var b = load("res://items/repo/test_heal2.tres")
 
+var load_at_point: int = 0
+
 var current_hp: int = 1
 
 var max_hp: int = 30
@@ -33,7 +35,7 @@ var place_at: Vector2 = Vector2(0,0)
 
 var place_at_room_transition: Vector2 = Vector2(0,0)
 
-var inventory: Array = [a, b, a]
+var inventory: Array = []
 
 func _ready():
 	var dict: Dictionary = SaveData.load_game()
@@ -98,6 +100,4 @@ func health_change(hp_value):
 		pass
 
 func _exit_tree():
-	SaveData.save_game({"current_hp": current_hp, "max_hp": max_hp, "LV": LV, "EXP": EXP, 
-"attack": attack, "defence": defence, "gold": gold, "equip_weapon": equip_weapon, "equip_armor": equip_armor, 
-"fallen_name": fallen_name, "room_num": SaveData.current_room, "place_at_x": x, "place_at_y": y, "inventory": inventory})
+	load_at_point = 0

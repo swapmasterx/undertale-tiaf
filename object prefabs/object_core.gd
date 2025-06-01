@@ -49,19 +49,16 @@ func text_interact():
 
 func save_point():
 	
-	if text_handlerr && GlobalFlags.dialogMode == false:
-		PlayerData.health_change(999)
-		GlobalFlags.is_saving = true
-		text_handlerr.dialog = dialog_data.dialog_set[interact_counter]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[interact_counter]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[interact_counter]
-		#text_handler.char_mood_sprite_id = speech[interact_counter]
-		text_handlerr.on_interact()
-		if interact_counter < max_interact:
-			interact_counter += 1
+	if GlobalFlags.is_saving == false:
+		if text_handlerr && GlobalFlags.dialogMode == false:
+			PlayerData.health_change(999)
+			GlobalFlags.is_saving = true
+			text_handlerr.dialog = dialog_data.dialog_set[interact_counter]
+			text_handlerr.speech_id = dialog_data.speech_noise_id[interact_counter]
+			text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[interact_counter]
+			#text_handler.char_mood_sprite_id = speech[interact_counter]
+			text_handlerr.on_interact()
+			if interact_counter < max_interact:
+				interact_counter += 1
 	
-	SaveData.save_game({"current_hp": PlayerData.current_hp, "max_hp": PlayerData.max_hp,
-	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
-	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
-	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
-	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory})
+	

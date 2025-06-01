@@ -16,7 +16,6 @@ extends Control
 var menu_option_memory
 
 func _ready():
-	SignalManager.closed_dialog.connect(closed_dialog)
 	player_soul.visible = false
 	self.visible = false
 	item.grab_focus()
@@ -24,22 +23,23 @@ func _ready():
 	
 
 func _input(event):
-	if event.is_action_pressed("menu") && GlobalFlags.menu_lock == false:
+	if GlobalFlags.is_saving == false:
+		if event.is_action_pressed("menu") && GlobalFlags.menu_lock == false:
 		
-		SignalManager.inv_updated.emit()
-		menu_flag_handler()
+			SignalManager.inv_updated.emit()
+			menu_flag_handler()
 		
-	if GlobalFlags.text_box_open == false && event.is_action_pressed("back_cancel") && GlobalFlags.menu_layer == 2 :
-		item.focus_mode = FOCUS_ALL
-		stat.focus_mode = FOCUS_ALL
-		magic.focus_mode = FOCUS_ALL
-		options.focus_mode = FOCUS_ALL
-		menu_option_memory.grab_focus()
-		SignalManager.inv_updated.emit()
-		sub_menu.visible = false
-		GlobalFlags.menu_layer = 1
-		GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
-		GlobalFlags.sfx_1_channel.play()
+		if GlobalFlags.text_box_open == false && event.is_action_pressed("back_cancel") && GlobalFlags.menu_layer == 2 :
+			item.focus_mode = FOCUS_ALL
+			stat.focus_mode = FOCUS_ALL
+			magic.focus_mode = FOCUS_ALL
+			options.focus_mode = FOCUS_ALL
+			menu_option_memory.grab_focus()
+			SignalManager.inv_updated.emit()
+			sub_menu.visible = false
+			GlobalFlags.menu_layer = 1
+			GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
+			GlobalFlags.sfx_1_channel.play()
 		
 func menu_flag_handler():
 	SignalManager.inv_updated.emit()
@@ -110,7 +110,3 @@ func enable_submenu(tab_num):
 	options.focus_mode = FOCUS_NONE
 
 #-------------------------
-
-func closed_dialog():
-	save_box.visible = true
-	GlobalFlags.wasd_lock = true
