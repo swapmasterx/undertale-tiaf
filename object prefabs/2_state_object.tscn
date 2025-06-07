@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnivq2krm7x17"]
+
+[ext_resource type="Script" uid="uid://dgjwl3fi3ldq7" path="res://object prefabs/2_state_object.gd" id="1_16r2s"]
+[ext_resource type="Texture2D" uid="uid://cpqs86i4pmhb6" path="res://sprites/dev/placeholder_Tile_1.png" id="2_o61kp"]
+[ext_resource type="Texture2D" uid="uid://da5i36j2qip88" path="res://sprites/dev/placeholder_Tile_2.png" id="3_sfm6g"]
+
+[node name="2_state_object" type="Node2D"]
+script = ExtResource("1_16r2s")
+
+[node name="state_a" type="Node2D" parent="."]
+
+[node name="PlaceholderTile1" type="Sprite2D" parent="state_a"]
+texture = ExtResource("2_o61kp")
+
+[node name="state_b" type="Node2D" parent="."]
+visible = false
+
+[node name="PlaceholderTile2" type="Sprite2D" parent="state_b"]
+texture = ExtResource("3_sfm6g")

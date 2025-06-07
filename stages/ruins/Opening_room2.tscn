@@ -45,7 +45,7 @@ max_interact = 0
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("6_cfegq")]
 position = Vector2(0, -733)
-scene_to_load = "res://stages/ruins/dev_test_2.tscn"
+scene_to_load = "res://stages/ruins/Ruins_room4.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 

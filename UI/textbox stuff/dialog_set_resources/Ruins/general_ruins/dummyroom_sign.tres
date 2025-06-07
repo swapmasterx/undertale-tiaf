@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://d2fc5ipujgjhd"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_ifsl6"]
+
+[resource]
+script = ExtResource("1_ifsl6")
+dialog_set = Array[Array]([["* If you are reading this please talk to the dummy.", "* ...what dummy?"], ["* ..."]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"]])
+char_talk_sprite_id = Array[Array]([["flowey", "flowey"], ["flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [1, 0]])

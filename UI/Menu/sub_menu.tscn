@@ -175,11 +175,9 @@ theme = ExtResource("3_f0uho")
 theme_override_font_sizes/normal_font_size = 24
 text = "Status: Panicking
 
-What happend to me?
+What happpend to me?
 Why am I a flower?
-Where is my soul?
-And why is {name}'s
-here...?"
+What is going on!?"
 scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 1
@@ -189,9 +187,7 @@ stat_line = "Status: Panicking
 
 What happpend to me?
 Why am I a flower?
-Where is my soul?
-And why is {name}'s
-here...?"
+What is going on!?"
 
 [node name="magic" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
 visible = false

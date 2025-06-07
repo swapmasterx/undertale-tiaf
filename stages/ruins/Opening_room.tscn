@@ -63,4 +63,3 @@ placepoint = 1
 [node name="LoadatPointspawn" parent="Scripted Events" instance=ExtResource("8_wg4lj")]
 position = Vector2(-813, -94)
 scale = Vector2(280.909, -5.05864)
-placepoint = 1

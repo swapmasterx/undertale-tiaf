@@ -12,7 +12,6 @@ extends Node2D
 
 
 func _ready():
-	
 	if load_trigger_area:
 		if GlobalFlags.dev_mode == true:
 			print("interaction for ", self, " loaded")

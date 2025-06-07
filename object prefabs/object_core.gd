@@ -31,6 +31,8 @@ func _on_interact():
 				text_interact()
 			2: 
 				save_point()
+			3: 
+				switch()
 
 func text_interact():
 	print(GlobalFlags.dialogMode)
@@ -62,3 +64,5 @@ func save_point():
 				interact_counter += 1
 	
 	
+func switch():
+	pass
