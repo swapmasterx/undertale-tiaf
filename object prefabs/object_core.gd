@@ -3,7 +3,7 @@ extends Node2D
 class_name ObjectCore
 
 #0 = unset, 1 = text interactible, 2 = room load trigger
-@export_enum("Unset", "Textbox", "SavePoint") var object_type: int
+@export_enum("Unset", "Textbox", "SavePoint", "Switch") var object_type: int
 @export var interaction_area: InteractionArea
 #@export var text_handler: DialogHandler
 @export var dialog_data: DialogData
@@ -13,12 +13,24 @@ class_name ObjectCore
 var interact_counter: int = 0
 @export var max_interact: int = 1
 
+@export var switch_state: bool = false
+
+@export var on_texture: Texture
+
+@export var off_texture: Texture 
+
+@export var sprite: Sprite2D
+
 func _ready():
 	if interaction_area:
+		
 		if GlobalFlags.dev_mode == true:
 			print("interaction for ", self, " loaded")
 		interaction_area.interact = Callable(self, "_on_interact")
 		print(interaction_area.interact)
+		if object_type == 3:
+			await self.ready
+			sprite.texture = off_texture
 
 func _on_interact():
 	
@@ -65,4 +77,10 @@ func save_point():
 	
 	
 func switch():
-	pass
+	if switch_state == false:
+		sprite.texture = on_texture
+		switch_state = true
+	else:
+		sprite.texture = off_texture
+		switch_state = false
+	print("touched the lever ", switch_state)

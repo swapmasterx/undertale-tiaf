@@ -1,20 +1,11 @@
-res://object prefabs/2_state_object.tscn
+res://object prefabs/floor_button.tscn
 res://UI/textbox stuff/textbox_default_theme_yellow.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_1.tres
-res://tilemaps/ruins/ruins_toriel_home_livinroom.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_Openingroom2.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres
-res://object prefabs/object_core.gd
-res://object prefabs/2_state_object.gd
-res://stages/ruins/Ruins_room5.tscn
-res://stages/ruins/Ruins_room6.tscn
-res://stages/world_engine.tscn
-res://stages/ruins/dev_test.tscn
-res://stages/ruins/dev_test_2.tscn
-res://stages/ruins/Opening_room1.tscn
-res://stages/ruins/Opening_room2.tscn
-res://stages/ruins/Opening_room.tscn
+res://floor_button.gd
 res://stages/ruins/Ruins_room4.tscn
-res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/dummyroom_sign.tres
+res://stages/world_engine.tscn
+res://stages/ruins/Opening_room.tscn
+res://stages/ruins/Ruins_room6.tscn
 res://stages/ruins/Ruins_room7.tscn
+res://object prefabs/object_base.tscn
+res://stages/room_load_trigger_stuff/room_change_obj.tscn

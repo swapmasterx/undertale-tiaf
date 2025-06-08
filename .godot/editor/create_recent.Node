@@ -1,4 +1,5 @@
 CollisionShape2D
+Sprite2D
 StaticBody2D
 Node2D
 AnimationTree
@@ -11,4 +12,3 @@ GridContainer
 HBoxContainer
 TextureRect
 TabContainer
-Label

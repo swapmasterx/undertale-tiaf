@@ -3,9 +3,6 @@ extends Node2D
 @export var scene_to_load: String = "0"
 
 @export var load_at: int = 0
-#@export var sideScrollModeSet = false
-
-#@export var veticalScrollModeSet = false
 
 @export var load_trigger_area: LoadTriggerArea
 
@@ -23,8 +20,6 @@ func _on_interact():
 	GlobalFlags.room_changing = true
 	Loadscreen.scene_to_load = scene_to_load
 	
-	#Loadscreen.sideScrollModeSet = sideScrollModeSet
-	#Loadscreen.veticalScrollModeSet = veticalScrollModeSet
 	Loadscreen.change_scene()
 	SaveData.current_room = scene_to_load
 	print (scene_to_load)

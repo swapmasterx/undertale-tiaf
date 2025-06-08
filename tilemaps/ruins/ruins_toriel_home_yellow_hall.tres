@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cll7x8gqf4262"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cll7x8gqf4262"]
 
 [ext_resource type="Texture2D" uid="uid://b8ambl45c0fkk" path="res://tilemaps/ruins/toriels_home_yellow_hall.png" id="1_hgjtb"]
 [ext_resource type="Texture2D" uid="uid://bss1smy163lmw" path="res://tilemaps/ruins/opening room.png" id="2_8tsk5"]
 [ext_resource type="Texture2D" uid="uid://c85ju0vt5ians" path="res://tilemaps/ruins/ruins.png" id="3_cm4ju"]
 [ext_resource type="PackedScene" uid="uid://cnivq2krm7x17" path="res://object prefabs/2_state_object.tscn" id="4_li2qj"]
+[ext_resource type="PackedScene" uid="uid://btt4wd80ld8g1" path="res://object prefabs/floor_button.tscn" id="5_wtx4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_su2mt"]
 resource_name = "ruins_toriel_home_yellow_hall"
@@ -662,6 +663,7 @@ texture_region_size = Vector2i(90, 90)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cm4ju"]
 resource_name = "Dynamic_objects"
 scenes/1/scene = ExtResource("4_li2qj")
+scenes/2/scene = ExtResource("5_wtx4o")
 
 [resource]
 tile_size = Vector2i(90, 90)
