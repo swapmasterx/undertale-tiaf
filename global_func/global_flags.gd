@@ -8,11 +8,17 @@ extends Node2D
 
 @onready var music_channel = get_tree().get_first_node_in_group("music")
 
+var roomname: String = "-------"
+
+var time_played: String = "00:00"
+
 @onready var text_swaper = {"LVnum": Player.love, "HPcur": Player.health,
 "HPmax": Player.max_health, "Gnum": Player.gold, "PlayerATK": Player.attack,
 "PlayerDEF": Player.defense, "name": Player.fallen_name, "weapon": Player.equip_weapon,
 "armor": Player.equip_armor,
 "exp": Player.exp, "item": item_transit.item_name, "action_ph": "Consume"}
+
+var is_saving = false
 
 var item_transit = preload("res://items/repo/test_heal.tres")
 

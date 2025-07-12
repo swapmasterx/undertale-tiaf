@@ -230,7 +230,7 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_3rk4p")
 states/walk/position = Vector2(379, 140)
 graph_offset = Vector2(-134, -4)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("anim_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_tree") groups=["player"]]
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_u6ucn")

@@ -10,7 +10,7 @@ script = ExtResource("1_grjrr")
 
 [node name="DialogHandler" parent="." instance=ExtResource("4_o1d58")]
 
-[node name="player" parent="." instance=ExtResource("1_lche1")]
+[node name="Player" parent="." instance=ExtResource("1_lche1")]
 
 [node name="SFX1" type="AudioStreamPlayer" parent="." groups=["sfx_1"]]
 stream = ExtResource("4_ka27x")
