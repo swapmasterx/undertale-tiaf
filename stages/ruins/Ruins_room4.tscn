@@ -74,6 +74,7 @@ texture = ExtResource("7_r8aih")
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0cutb")]
 position = Vector2(-90, -202)
 scene_to_load = "res://stages/ruins/Ruins_room5.tscn"
+next_spawn_location = "Bottom"
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_pfvh1")]
@@ -84,6 +85,7 @@ shape = SubResource("RectangleShape2D_1vgup")
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0cutb")]
 position = Vector2(0, 542)
 scene_to_load = "res://stages/ruins/Opening_room2.tscn"
+next_spawn_location = "Top"
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_pfvh1")]

@@ -77,6 +77,7 @@ gizmo_extents = 32.0
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0s80a")]
 position = Vector2(90, -358)
 scene_to_load = "res://stages/ruins/Ruins_room7.tscn"
+next_spawn_location = "Bottom"
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_gpvw3")]
@@ -89,6 +90,7 @@ shape = SubResource("RectangleShape2D_rf2lj")
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0s80a")]
 position = Vector2(-901, 181)
 scene_to_load = "res://stages/ruins/Ruins_room5.tscn"
+next_spawn_location = "Right"
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_gpvw3")]
