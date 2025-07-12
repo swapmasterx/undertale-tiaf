@@ -1,4 +1,4 @@
 extends Label
 
 func _ready():
-	self.text = PlayerData.fallen_name
+	self.text = Player.fallen_name
