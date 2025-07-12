@@ -34,7 +34,7 @@ navigation_enabled = false
 texture = ExtResource("3_3sng2")
 
 [node name="DecorB" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADAAAAAwAAAAAAAgACAP//AwAAAAAAAgABAAAAAwAAAAAAAgABAAIAAwAAAAAAAgADAAIAAwAAAAAAAgACAAMAAwAAAAAAAgACAAEAAwAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAADAAAAAwAAAAAAAgACAP//AwAAAAAAAgABAAAAAwAAAAAAAgABAAIAAwAAAAAAAgADAAIAAwAAAAAAAgACAAMAAwAAAAAAAgACAAEAAwAAAAAAAgD8//z/AgARAAcAAAA=")
 tile_set = ExtResource("2_rur2a")
 navigation_enabled = false
 

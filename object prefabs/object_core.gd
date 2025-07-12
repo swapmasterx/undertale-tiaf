@@ -21,6 +21,8 @@ var interact_counter: int = 0
 
 @export var sprite: Sprite2D
 
+@export var signal_id: int
+
 func _ready():
 	if interaction_area:
 		
@@ -29,6 +31,7 @@ func _ready():
 		interaction_area.interact = Callable(self, "_on_interact")
 		print(interaction_area.interact)
 		if object_type == 3:
+			
 			await self.ready
 			sprite.texture = off_texture
 

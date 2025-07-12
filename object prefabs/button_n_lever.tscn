@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvw32c1n2gyur"]
+
+[ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="1_12t4i"]
+[ext_resource type="Script" uid="uid://ddhuxh22yh1jc" path="res://floor_button.gd" id="2_qhhr4"]
+[ext_resource type="Texture2D" uid="uid://cxpc2p6v2yhd7" path="res://sprites/dev/button_down.png" id="3_a78ca"]
+[ext_resource type="Texture2D" uid="uid://csnfdo6xpp8n2" path="res://sprites/dev/button_up.png" id="4_rjry4"]
+[ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_lhcx6"]
+[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_gddsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk5ff"]
+size = Vector2(58, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58ta2"]
+size = Vector2(21, 98)
+
+[node name="button_n_lever" node_paths=PackedStringArray("load_trigger_area", "sprite") instance=ExtResource("1_12t4i")]
+script = ExtResource("2_qhhr4")
+load_trigger_area = NodePath("LoadTriggerArea")
+on_texture = ExtResource("3_a78ca")
+off_texture = ExtResource("4_rjry4")
+sprite = NodePath("Sprite2D")
+switch_state = false
+signal_id = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_rjry4")
+
+[node name="LoadTriggerArea" parent="." index="1" instance=ExtResource("5_lhcx6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadTriggerArea" index="0"]
+shape = SubResource("RectangleShape2D_nk5ff")
+
+[node name="Interaction_Area" parent="." index="2" instance=ExtResource("6_gddsh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area" index="0"]
+position = Vector2(0, 0.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_58ta2")

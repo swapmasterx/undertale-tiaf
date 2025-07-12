@@ -28,3 +28,8 @@ signal closed_choose_option()
 signal closed_dialog()
 
 signal save_activate()
+
+#switch/button signal
+signal switchon(int)
+
+signal switchoff(int)

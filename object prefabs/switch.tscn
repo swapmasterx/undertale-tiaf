@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ewpxxfoklbpo"]
+
+[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="1_u2s6c"]
+[ext_resource type="Texture2D" uid="uid://b88b78l8vow32" path="res://sprites/dev/ruins_lever_down.png" id="2_86g2w"]
+[ext_resource type="Texture2D" uid="uid://hvut31th7ghk" path="res://sprites/dev/ruins_lever_up.png" id="3_1qgqk"]
+[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="4_8himu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww7mk"]
+size = Vector2(21, 98)
+
+[node name="switch" node_paths=PackedStringArray("interaction_area", "sprite") instance=ExtResource("1_u2s6c")]
+object_type = 3
+interaction_area = NodePath("Interaction_Area")
+on_texture = ExtResource("2_86g2w")
+off_texture = ExtResource("3_1qgqk")
+sprite = NodePath("Switch2")
+
+[node name="Interaction_Area" parent="." index="0" instance=ExtResource("4_8himu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area" index="0"]
+position = Vector2(0, 0.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ww7mk")
+
+[node name="Switch2" type="Sprite2D" parent="." index="1"]
+position = Vector2(0, -95)
+texture = ExtResource("3_1qgqk")
