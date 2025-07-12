@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var camera = $"../player/Camera2D"
-@onready var player = $"../player"
+@onready var camera = $"../Player/Camera2D"
+@onready var player = $"../Player"
 #@onready var tranistionSpot = $"Scripted Events/transitionSpot"
 
 @export var sidescrollMode = false

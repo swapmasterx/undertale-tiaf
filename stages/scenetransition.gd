@@ -45,6 +45,13 @@ func anim_finished():
 	world_engine.add_child.bind(set_load_scene).call_deferred()
 	# Wait for the new scene to be loaded.
 	await set_load_scene.ready;
+	# Okay so for easier testing, if no spawnpoints are available it will just put the player at 0,0
+	if(not is_instance_valid(set_load_scene.get_node_or_null("SpawnPoints"))):
+		Player.this_node.global_position = Vector2();
+		return
+	if(set_load_scene.get_node_or_null("SpawnPoints").get_children().size() == 0):
+		Player.this_node.global_position = Vector2();
+		return
 	# Attempt to get the spawn location.
 	var location_to_use = set_load_scene.get_node_or_null("SpawnPoints/"+Player.spawn_location);
 	if(not is_instance_valid(location_to_use)):

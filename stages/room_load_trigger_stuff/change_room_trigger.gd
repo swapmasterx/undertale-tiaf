@@ -23,7 +23,7 @@ func _ready():
 		load_trigger_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	print("entered load zone")
+	print_debug("[DEV] Entering: '"+scene_to_load+"'\nUsing spawn: '"+next_spawn_location+"'")
 	GlobalFlags.room_changing = true
 	Loadscreen.scene_to_load = scene_to_load
 	Player.spawn_location = next_spawn_location;

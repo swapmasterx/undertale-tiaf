@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_brjy1"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_wg4lj"]
 [ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="3_1vgup"]
-[ext_resource type="Resource" uid="uid://bjbb45hle13hg" path="res://UI/textbox stuff/dialog_set_resources/dev_1.tres" id="4_lnijx"]
+[ext_resource type="Resource" uid="uid://bjbb45hle13hg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_1.tres" id="4_lnijx"]
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="5_pnebs"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="6_u3xsr"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="7_hv775"]
@@ -46,6 +46,16 @@ dialog_data = ExtResource("4_lnijx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/Flowers/Interaction_Area"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wg4lj")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Main" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-811, -95)
+gizmo_extents = 32.0
+
+[node name="Top" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(1260, -34)
+gizmo_extents = 32.0
 
 [node name="Scripted Events" type="Node2D" parent="."]
 

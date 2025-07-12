@@ -7,5 +7,5 @@ extends Node2D
 func _ready():
 	await self.ready
 	var get_player = get_tree().get_first_node_in_group("player")
-	if PlayerData.load_at_point == placepoint:
+	if Player.load_at_point == placepoint:
 		get_player.position = self.position

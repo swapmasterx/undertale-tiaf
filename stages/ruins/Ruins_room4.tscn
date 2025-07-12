@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cp7knendu7hxk"]
+[gd_scene load_steps=13 format=4 uid="uid://cp7knendu7hxk"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_hg0r0"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_rur2a"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://djdedcygfwnv2" path="res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres" id="5_exxb3"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_pfvh1"]
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_7lpse"]
-[ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="6_exxb3"]
 [ext_resource type="Texture2D" uid="uid://b88b78l8vow32" path="res://sprites/dev/ruins_lever_down.png" id="6_xig3i"]
 [ext_resource type="Texture2D" uid="uid://hvut31th7ghk" path="res://sprites/dev/ruins_lever_up.png" id="7_r8aih"]
 
@@ -38,6 +37,16 @@ tile_map_data = PackedByteArray("AAADAAAAAwAAAAAAAgACAP//AwAAAAAAAgABAAAAAwAAAAA
 tile_set = ExtResource("2_rur2a")
 navigation_enabled = false
 
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Bottom" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 448)
+gizmo_extents = 32.0
+
+[node name="Top" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-88, -120)
+gizmo_extents = 32.0
+
 [node name="Interactibles" type="Node2D" parent="."]
 
 [node name="Switch" parent="Interactibles" node_paths=PackedStringArray("interaction_area", "sprite") instance=ExtResource("4_pfvh1")]
@@ -65,7 +74,6 @@ texture = ExtResource("7_r8aih")
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0cutb")]
 position = Vector2(-90, -202)
 scene_to_load = "res://stages/ruins/Ruins_room5.tscn"
-load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_pfvh1")]
@@ -76,20 +84,9 @@ shape = SubResource("RectangleShape2D_1vgup")
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_0cutb")]
 position = Vector2(0, 542)
 scene_to_load = "res://stages/ruins/Opening_room2.tscn"
-load_at = 2
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_pfvh1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
 shape = SubResource("RectangleShape2D_1vgup")
-
-[node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("6_exxb3")]
-
-[node name="LoadatPoint_opening room 2" parent="Scripted Events" instance=ExtResource("6_exxb3")]
-position = Vector2(0, 446)
-placepoint = 1
-
-[node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("6_exxb3")]
-position = Vector2(-89, -118)
-placepoint = 2
