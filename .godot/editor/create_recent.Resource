@@ -1,3 +1,0 @@
-TextFormat
-Consumable
-Item
