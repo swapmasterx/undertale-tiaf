@@ -44,7 +44,6 @@ navigation_enabled = false
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
 position = Vector2(3150, 90)
 scene_to_load = "res://stages/ruins/dev_test_2.tscn"
-load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_jgrgn")]
@@ -56,7 +55,6 @@ shape = SubResource("RectangleShape2D_rf2lj")
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
 position = Vector2(-3150, 87)
 scene_to_load = "res://stages/ruins/Ruins_room7.tscn"
-load_at = 2
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_jgrgn")]
