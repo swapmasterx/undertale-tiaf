@@ -69,7 +69,7 @@ func save_point():
 	
 	if GlobalFlags.is_saving == false:
 		if text_handlerr && GlobalFlags.dialogMode == false:
-			PlayerData.health_change(999)
+			Player.health_change(999)
 			GlobalFlags.is_saving = true
 			text_handlerr.dialog = dialog_data.dialog_set[interact_counter]
 			text_handlerr.speech_id = dialog_data.speech_noise_id[interact_counter]

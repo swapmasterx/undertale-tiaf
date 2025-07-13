@@ -5,7 +5,7 @@ extends MarginContainer
 @onready var item_list = $uibackdrop2/MarginContainer/TabContainer/items/item_list
 @onready var item_discription = $uibackdrop2/MarginContainer/TabContainer/items/item_details/item_discription
 
-var items = PlayerData.inventory
+var items = Player.inventory
 var button
 
 func _ready():

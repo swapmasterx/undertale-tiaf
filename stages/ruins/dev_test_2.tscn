@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cbd22mnqignyg"]
+[gd_scene load_steps=13 format=4 uid="uid://cbd22mnqignyg"]
 
 [ext_resource type="TileSet" uid="uid://dmsd2p50rwekh" path="res://tilemaps/ruins/ruins_toriel_home_livinroom.tres" id="1_de4tb"]
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_dvhye"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_xnvra"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="8_3hr3g"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="9_j54a3"]
-[ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="10_roaph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asxrw"]
 size = Vector2(167.5, 82.125)
@@ -17,8 +16,8 @@ size = Vector2(167.5, 82.125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsags"]
 size = Vector2(85, 361.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s25y"]
-size = Vector2(180, 79)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roaph"]
+size = Vector2(192, 88)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_dvhye")
@@ -38,6 +37,20 @@ navigation_enabled = false
 tile_set = ExtResource("1_t48oc")
 navigation_enabled = false
 
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Bottom" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 448)
+gizmo_extents = 32.0
+
+[node name="Right" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(960, 96)
+gizmo_extents = 32.0
+
+[node name="Left" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-896, 96)
+gizmo_extents = 32.0
+
 [node name="Interactibles" type="Node2D" parent="."]
 
 [node name="bookshelf" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("3_aue7e")]
@@ -54,32 +67,25 @@ shape = SubResource("RectangleShape2D_asxrw")
 [node name="Scripted Events" type="Node2D" parent="."]
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("8_3hr3g")]
-position = Vector2(1077, 90)
 scene_to_load = "res://stages/ruins/dev_test.tscn"
-load_at = 1
+next_spawn_location = "Left"
+sideScrollModeSet = true
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("9_j54a3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj/LoadTriggerArea"]
+position = Vector2(1096, 90)
 shape = SubResource("RectangleShape2D_wsags")
 
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("8_3hr3g")]
-position = Vector2(0, 542)
 scene_to_load = "res://stages/ruins/Opening_room2.tscn"
-load_at = 2
+next_spawn_location = "Top"
+veticalScrollModeSet = true
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("9_j54a3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_8s25y")
-
-[node name="LoadatPoint front_lawn" parent="Scripted Events" instance=ExtResource("10_roaph")]
-position = Vector2(0, 378)
-placepoint = 1
-
-[node name="LoadatPoint yellowhall" parent="Scripted Events" instance=ExtResource("10_roaph")]
-position = Vector2(908, 89)
-placepoint = 2
+position = Vector2(0, 556)
+shape = SubResource("RectangleShape2D_roaph")

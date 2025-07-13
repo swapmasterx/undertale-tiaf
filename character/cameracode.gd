@@ -1,19 +1,9 @@
 extends Camera2D
 
-@onready var player = $"../CharacterBody2D"
+@onready var player = get_parent();
 @onready var camera_2d = $"."
-#@onready var map = get_tree().get_first_node_in_group("map_base")
-
-
 
 @export var SPEED = 10
-
-#func _ready():
-	#set_camera_limits()
-
-func _process(delta):
-	position = player.position
-	#position = lerp(position, player.position, SPEED*delta)
 
 func set_camera_limits():
 	#map = $"../../Room_Core/Map"

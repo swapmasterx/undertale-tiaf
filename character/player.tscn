@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmj1"]
 radius = 6.66666
-height = 27.3333
+height = 38.0
 
 [sub_resource type="Animation" id="Animation_1ub40"]
 length = 0.001
@@ -230,37 +230,29 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_3rk4p")
 states/walk/position = Vector2(379, 140)
 graph_offset = Vector2(-134, -4)
 
-[node name="player" type="Node2D"]
-y_sort_enabled = true
-texture_filter = 6
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("anim_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_tree") groups=["player"]]
 z_index = 1
-y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_u6ucn")
 anim_tree = NodePath("AnimationTree")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-y_sort_enabled = true
-position = Vector2(0, 10)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 55)
 rotation = 1.5708
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_ffmj1")
 
-[node name="sprite2d" type="Sprite2D" parent="CharacterBody2D"]
-y_sort_enabled = true
+[node name="sprite2d" type="Sprite2D" parent="."]
 texture = ExtResource("2_hp4im")
-offset = Vector2(0, -39.19)
 hframes = 5
 vframes = 4
 
-[node name="character_anim" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="character_anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_uiqsn")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+[node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_midrr")
 anim_player = NodePath("../character_anim")
 parameters/idel/blend_position = Vector2(0, 0)

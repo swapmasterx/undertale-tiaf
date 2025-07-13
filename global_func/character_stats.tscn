@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgvao76nextgy"]
-
-[ext_resource type="Script" uid="uid://wtknq4rp4vf2" path="res://global_func/player_data.gd" id="1_8mrgn"]
-
-[node name="CharacterStats" type="Node2D"]
-script = ExtResource("1_8mrgn")

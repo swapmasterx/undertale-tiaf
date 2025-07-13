@@ -12,12 +12,11 @@ var roomname: String = "-------"
 
 var time_played: String = "00:00"
 
-@onready var text_swaper = {"LVnum": PlayerData.LV, "HPcur": PlayerData.current_hp,
-"HPmax": PlayerData.max_hp, "Gnum": PlayerData.gold, "PlayerATK": PlayerData.attack,
-"PlayerDEF": PlayerData.defence, "name": PlayerData.fallen_name, "weapon": PlayerData.equip_weapon,
-"armor": PlayerData.equip_armor,
-"exp": PlayerData.EXP, "item": item_transit.item_name, "action_ph": "Consume", 
-"roomname": roomname, "time_played": time_played}
+@onready var text_swaper = {"LVnum": Player.love, "HPcur": Player.health,
+"HPmax": Player.max_health, "Gnum": Player.gold, "PlayerATK": Player.attack,
+"PlayerDEF": Player.defense, "name": Player.fallen_name, "weapon": Player.equip_weapon,
+"armor": Player.equip_armor,
+"exp": Player.exp, "item": item_transit.item_name, "action_ph": "Consume"}
 
 var is_saving = false
 
@@ -64,12 +63,7 @@ var items: Array = []
 
 var menu_layer: int = 0
 
-func save():
-	SaveData.save_game({"current_hp": PlayerData.current_hp, "max_hp": PlayerData.max_hp,
-	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
-	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
-	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
-	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory})
+
 
 func cutscene_mode(on_or_off: bool):
 	var cutscene_active:bool = false
@@ -83,4 +77,3 @@ func cutscene_mode(on_or_off: bool):
 		blockInteraction = false
 		wasd_lock = false
 		menu_lock = false
-		
