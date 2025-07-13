@@ -10,6 +10,7 @@ class_name ObjectCore
 @onready var text_handlerr = $"../../../DialogHandler"
 
 
+
 var interact_counter: int = 0
 @export var max_interact: int = 1
 

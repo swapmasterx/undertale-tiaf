@@ -231,22 +231,27 @@ states/walk/position = Vector2(379, 140)
 graph_offset = Vector2(-134, -4)
 
 [node name="player" type="Node2D"]
+y_sort_enabled = true
 texture_filter = 6
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("anim_tree") groups=["player"]]
 z_index = 1
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_u6ucn")
 anim_tree = NodePath("AnimationTree")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 55)
+y_sort_enabled = true
+position = Vector2(0, 10)
 rotation = 1.5708
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_ffmj1")
 
 [node name="sprite2d" type="Sprite2D" parent="CharacterBody2D"]
+y_sort_enabled = true
 texture = ExtResource("2_hp4im")
+offset = Vector2(0, -39.19)
 hframes = 5
 vframes = 4
 

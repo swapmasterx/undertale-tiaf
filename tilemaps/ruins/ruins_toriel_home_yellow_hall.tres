@@ -1,10 +1,13 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cll7x8gqf4262"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cll7x8gqf4262"]
 
 [ext_resource type="Texture2D" uid="uid://b8ambl45c0fkk" path="res://tilemaps/ruins/toriels_home_yellow_hall.png" id="1_hgjtb"]
 [ext_resource type="Texture2D" uid="uid://bss1smy163lmw" path="res://tilemaps/ruins/opening room.png" id="2_8tsk5"]
 [ext_resource type="Texture2D" uid="uid://c85ju0vt5ians" path="res://tilemaps/ruins/ruins.png" id="3_cm4ju"]
 [ext_resource type="PackedScene" uid="uid://cnivq2krm7x17" path="res://object prefabs/2_state_object.tscn" id="4_li2qj"]
 [ext_resource type="PackedScene" uid="uid://btt4wd80ld8g1" path="res://object prefabs/floor_button.tscn" id="5_wtx4o"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_wtx4o"]
+tile_data = PackedInt32Array(0, 786434, 2, 65536, 786434, 3, 131072, 786434, 4, 1, 851970, 2, 65537, 851970, 3, 131073, 851970, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_su2mt"]
 resource_name = "ruins_toriel_home_yellow_hall"
@@ -405,8 +408,6 @@ texture_region_size = Vector2i(90, 90)
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, 45, -45, 45)
 10:2/0 = 0
 11:2/0 = 0
-12:2/0 = 0
-13:2/0 = 0
 14:2/0 = 0
 15:2/0 = 0
 16:2/0 = 0
@@ -424,8 +425,6 @@ texture_region_size = Vector2i(90, 90)
 7:3/0 = 0
 8:3/0 = 0
 10:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
 14:3/0 = 0
 14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 15:3/0 = 0
@@ -448,8 +447,6 @@ texture_region_size = Vector2i(90, 90)
 7:4/0 = 0
 8:4/0 = 0
 10:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
 14:4/0 = 0
 14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 15:4/0 = 0
@@ -512,8 +509,6 @@ texture_region_size = Vector2i(90, 90)
 17:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 18:6/0 = 0
 18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
-19:6/0 = 0
-20:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -540,9 +535,6 @@ texture_region_size = Vector2i(90, 90)
 16:7/0 = 0
 16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 17:7/0 = 0
-18:7/0 = 0
-19:7/0 = 0
-20:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
@@ -566,10 +558,6 @@ texture_region_size = Vector2i(90, 90)
 14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 15:8/0 = 0
 15:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
-17:8/0 = 0
-18:8/0 = 0
-19:8/0 = 0
-20:8/0 = 0
 0:9/0 = 0
 1:9/0 = 0
 2:9/0 = 0
@@ -594,7 +582,6 @@ texture_region_size = Vector2i(90, 90)
 15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 16:9/0 = 0
 16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
-17:9/0 = 0
 18:9/0 = 0
 19:9/0 = 0
 20:9/0 = 0
@@ -659,6 +646,18 @@ texture_region_size = Vector2i(90, 90)
 16:8/0 = 0
 14:9/0 = 0
 14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+12:2/size_in_atlas = Vector2i(2, 3)
+12:2/0 = 0
+12:2/0/y_sort_origin = 80
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-67.5, 90, 67.5, 90, 67.5, 123.75, -67.5, 123.75)
+19:6/size_in_atlas = Vector2i(1, 3)
+19:6/0 = 0
+20:6/size_in_atlas = Vector2i(1, 3)
+20:6/0 = 0
+18:7/0 = 0
+18:8/0 = 0
+17:9/0 = 0
+17:8/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cm4ju"]
 resource_name = "Dynamic_objects"
@@ -673,3 +672,4 @@ sources/0 = SubResource("TileSetAtlasSource_su2mt")
 sources/1 = SubResource("TileSetAtlasSource_cm4ju")
 sources/2 = SubResource("TileSetAtlasSource_li2qj")
 sources/3 = SubResource("TileSetScenesCollectionSource_cm4ju")
+pattern_0 = SubResource("TileMapPattern_wtx4o")

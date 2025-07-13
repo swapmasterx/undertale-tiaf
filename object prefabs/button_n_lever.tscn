@@ -21,6 +21,7 @@ off_texture = ExtResource("4_rjry4")
 sprite = NodePath("Sprite2D")
 switch_state = false
 signal_id = 0
+single_press = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("4_rjry4")
