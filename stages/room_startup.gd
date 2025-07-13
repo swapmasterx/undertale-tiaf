@@ -15,4 +15,5 @@ func _ready():
 	GlobalFlags.sideScrollMode = sidescrollMode
 	GlobalFlags.roomname = roomname
 	camera.set_camera_limits()
+	print(GlobalFlags.roomname)
 	

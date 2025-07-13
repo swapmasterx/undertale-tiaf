@@ -40,6 +40,7 @@ func _on_save_pressed():
 	item_discription_2.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_3.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_4.add_theme_color_override("default_color", Color(1, 1, 0))
+	SignalManager.inv_updated.emit()
 	
 
 func _input(event):

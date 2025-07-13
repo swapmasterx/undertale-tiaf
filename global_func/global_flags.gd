@@ -17,7 +17,7 @@ var time_played: String = "00:00"
 "PlayerDEF": PlayerData.defence, "name": PlayerData.fallen_name, "weapon": PlayerData.equip_weapon,
 "armor": PlayerData.equip_armor,
 "exp": PlayerData.EXP, "item": item_transit.item_name, "action_ph": "Consume", 
-"roomname": roomname, "time_played": time_played, "roomflavorname": roomname}
+"roomname": roomname, "time_played": time_played}
 
 var is_saving = false
 

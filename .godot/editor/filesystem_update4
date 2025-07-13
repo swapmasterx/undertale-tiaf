@@ -11,3 +11,9 @@ res://UI/textbox stuff/textbox_control.tscn
 res://object prefabs/save_point.tscn
 res://UI/Menu/save_box.tscn
 res://global_func/global_flags.gd
+res://stages/room_startup.gd
+res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres
+res://object prefabs/object_core.gd
+res://stages/ruins/Opening_room2.tscn
+res://UI/Menu/save_box.gd
+res://stages/ruins/Ruins_room10.tscn

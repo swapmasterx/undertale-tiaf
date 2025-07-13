@@ -39,6 +39,7 @@ texture = ExtResource("8_sanxw")
 [node name="save point" parent="Interactibles" instance=ExtResource("4_pmqf1")]
 position = Vector2(0, -400)
 dialog_data = ExtResource("5_5r32h")
+roomname = "Ruins - Entrance"
 max_interact = 0
 
 [node name="Scripted Events" type="Node2D" parent="."]

@@ -9,7 +9,7 @@ class_name ObjectCore
 @export var dialog_data: DialogData
 @onready var text_handlerr = $"../../../DialogHandler"
 
-
+@export var roomname: String
 
 var interact_counter: int = 0
 @export var max_interact: int = 1
