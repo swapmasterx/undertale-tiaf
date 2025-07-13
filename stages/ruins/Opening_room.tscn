@@ -16,7 +16,7 @@ height = 294.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgup"]
 size = Vector2(190, 20)
 
-[node name="Room_Core" type="Node2D" groups=["room"]]
+[node name="Room_Core2" type="Node2D" groups=["room"]]
 script = ExtResource("1_brjy1")
 sidescrollMode = true
 
@@ -33,8 +33,8 @@ navigation_enabled = false
 [node name="Flowers" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("3_1vgup")]
 position = Vector2(-811, -95)
 object_type = 1
-interaction_area = NodePath("Interaction_Area")
 dialog_data = ExtResource("4_brjy1")
+interaction_area = NodePath("Interaction_Area")
 
 [node name="Interaction_Area" parent="Interactibles/Flowers" instance=ExtResource("5_pnebs")]
 

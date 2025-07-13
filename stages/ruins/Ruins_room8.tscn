@@ -28,6 +28,7 @@ y_sort_enabled = true
 texture = ExtResource("3_ig06e")
 
 [node name="DecorA" type="TileMapLayer" parent="."]
+z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAaAP7/AgAMAAIAAAA=")
 tile_set = ExtResource("2_8q8mr")
@@ -43,7 +44,7 @@ navigation_enabled = false
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
 position = Vector2(3150, 90)
-scene_to_load = "res://stages/ruins/dev_test_2.tscn"
+scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 

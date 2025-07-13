@@ -17,7 +17,7 @@ var time_played: String = "00:00"
 "PlayerDEF": PlayerData.defence, "name": PlayerData.fallen_name, "weapon": PlayerData.equip_weapon,
 "armor": PlayerData.equip_armor,
 "exp": PlayerData.EXP, "item": item_transit.item_name, "action_ph": "Consume", 
-"roomname": roomname, "time_played": time_played}
+"roomname": roomname, "time_played": time_played, "roomflavorname": roomname}
 
 var is_saving = false
 
@@ -65,11 +65,13 @@ var items: Array = []
 var menu_layer: int = 0
 
 func save():
+	
 	SaveData.save_game({"current_hp": PlayerData.current_hp, "max_hp": PlayerData.max_hp,
 	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
 	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
 	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
 	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory})
+	
 
 func cutscene_mode(on_or_off: bool):
 	var cutscene_active:bool = false

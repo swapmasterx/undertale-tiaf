@@ -52,6 +52,9 @@ _data = {
 [node name="save point" node_paths=PackedStringArray("interaction_area") instance=ExtResource("1_821da")]
 object_type = 2
 interaction_area = NodePath("Interaction_Area")
+max_interact = null
+switch_state = null
+signal_id = null
 
 [node name="Interaction_Area" parent="." index="0" instance=ExtResource("2_qsfcb")]
 

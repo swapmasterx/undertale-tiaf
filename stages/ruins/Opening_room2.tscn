@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgup"]
 size = Vector2(190, 20)
 
-[node name="Room_Core" type="Node2D" groups=["room"]]
+[node name="Room_Core2" type="Node2D" groups=["room"]]
 script = ExtResource("1_5r32h")
 roomname = "Ruins - Entrance"
 

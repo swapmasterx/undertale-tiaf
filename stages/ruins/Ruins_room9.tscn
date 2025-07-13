@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=4 uid="uid://cgrbkgv48yf6x"]
+
+[ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
+[ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
+[ext_resource type="Texture2D" uid="uid://dq1nqs1631fiu" path="res://tilemaps/ruins/tilesets/08b_ruins_leaves_froggit_save.png" id="3_u50cq"]
+[ext_resource type="PackedScene" uid="uid://bp4w5lai8y6qs" path="res://object prefabs/save_point.tscn" id="4_70h8x"]
+[ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="4_81pdr"]
+[ext_resource type="Resource" uid="uid://b6qgsgyjc6ib3" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_Openingroom2.tres" id="5_81pdr"]
+[ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_ktjmw"]
+[ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_81pdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
+size = Vector2(20, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
+size = Vector2(20, 198)
+
+[node name="Room_Core" type="Node2D" groups=["room"]]
+script = ExtResource("1_u50cq")
+roomname = "Ruins -  Leaf Pile"
+
+[node name="Map" type="TileMapLayer" parent="." groups=["map_base"]]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD5//j/AgAIAAcAAAD6//j/AgAIAAcAAAD7//j/AgAIAAcAAAD8//f/AgAIAAcAAAD9//f/AgAIAAcAAAD+//f/AgAIAAcAAAD///f/AgAIAAcAAAACAPf/AgAIAAcAAAADAPf/AgAIAAcAAAAEAPf/AgAIAAcAAAAFAPf/AgAIAAcAAAAGAPf/AgAIAAcAAAAGAPj/AgAIAAcAAAAGAPn/AgAIAAcAAAAGAPr/AgAIAAcAAAAGAPv/AgAIAAcAAAAGAPz/AgAIAAcAAAAGAP3/AgAIAAcAAAAGAP7/AgAIAAcAAAAGAP//AgAIAAcAAAAGAAAAAgAIAAcAAAAGAAEAAgAIAAcAAAAGAAIAAgAIAAcAAAAGAAMAAgAQAAUAAAAGAAQAAgAQAAYAAAAHAAQAAgAIAAcAAAAHAAcAAgAIAAcAAAAGAAcAAgAIAAcAAAAGAAgAAgAIAAcAAAAGAAkAAgAIAAcAAAAFAAkAAgAIAAcAAAAEAAkAAgAIAAcAAAADAAkAAgAIAAcAAAACAAkAAgAIAAcAAAABAAkAAgAIAAcAAAAAAAkAAgAIAAcAAAD//wkAAgAIAAcAAAD+/wkAAgAIAAcAAAD9/wkAAgAIAAcAAAD8/wkAAgAIAAcAAAD7/wkAAgAIAAcAAAD7/wgAAgAIAAcAAAD7/wcAAgAIAAcAAAD7/wYAAgAIAAcAAAD7/wUAAgAIAAcAAAD7/wQAAgAIAAcAAAD7/wMAAgAIAAcAAAD7/wIAAgAIAAcAAAD7/wEAAgAIAAcAAAD7/wAAAgAIAAcAAAD7////AgAIAAcAAAD7//7/AgAIAAcAAAD7//3/AgAIAAcAAAD7//z/AgAIAAcAAAD7//v/AgAIAAcAAAD5//v/AgAIAAcAAAD6//v/AgAIAAcAAAD5//T/AgAIAAcAAAD6//T/AgAIAAcAAAD7//T/AgAIAAcAAAD8//T/AgAIAAcAAAD9//T/AgAIAAcAAAD+//T/AgAIAAcAAAD///T/AgAIAAcAAAAAAPT/AgAIAAcAAAABAPT/AgAIAAcAAAACAPT/AgAIAAcAAAADAPT/AgAIAAcAAAAEAPT/AgAIAAcAAAAFAPT/AgAIAAcAAAAGAPT/AgAIAAcAAAAHAPT/AgAIAAcAAAAHAAMAAgATAAUAAAAHAAIAAgAIAAcAAAAHAAEAAgAIAAcAAAAHAAAAAgAIAAcAAAAHAP//AgAIAAcAAAAHAP7/AgAIAAcAAAAHAP3/AgAIAAcAAAAHAPz/AgAIAAcAAAAHAPv/AgAIAAcAAAAHAPr/AgAIAAcAAAAHAPn/AgAIAAcAAAAHAPj/AgAIAAcAAAAHAPf/AgAIAAcAAAAHAPb/AgAIAAcAAAAHAPX/AgAIAAcAAAD5//X/AgAIAAcAAAD5//b/AgAIAAcAAAD5//f/AgAIAAcAAAD5//z/AgAIAAcAAAD5//3/AgAIAAcAAAD5//7/AgAIAAcAAAD5////AgAIAAcAAAD5/wAAAgAIAAcAAAD5/wEAAgAIAAcAAAD5/wIAAgAIAAcAAAD5/wMAAgAIAAcAAAD5/wQAAgAIAAcAAAD5/wUAAgAIAAcAAAD5/wYAAgAIAAcAAAD5/wkAAgAIAAcAAAD5/wgAAgAIAAcAAAD5/wcAAgAIAAcAAAD4//f/AgAPAAMAAAD4//j/AgAPAAQAAAD4//b/AgAPAAMAAAD4//X/AgANAAcAAAD4//T/AgAIAAcAAAD4//n/AgAIAAUAAAD4//r/AgAIAAUAAAD4//v/AgAOAAkAAAD4//z/AgAIAAcAAAD4//3/AgAIAAcAAAD4//7/AgAIAAcAAAD4////AgAIAAcAAAD4/wAAAgAIAAcAAAD4/wEAAgAIAAcAAAD4/wIAAgAIAAcAAAD4/wMAAgAIAAcAAAD4/wQAAgAIAAcAAAD4/wUAAgAIAAcAAAD4/wYAAgAIAAcAAAD4/wcAAgAIAAcAAAD4/wgAAgAIAAcAAAD4/wkAAgAIAAcAAAD4/woAAgAIAAcAAAAIAAQAAgARAAYAAAAIAAIAAgARAAUAAAAIAAMAAgATAAUAAAAIAAYAAgAIAAUAAAAIAAUAAgAIAAYAAAAIAAcAAgAOAAkAAAAIAAgAAgAIAAcAAAAIAAkAAgAIAAcAAAAIAAoAAgAIAAcAAAAIAAEAAgANAAcAAAAIAAAAAgAIAAcAAAAIAP//AgAIAAcAAAAIAP7/AgAIAAcAAAAIAP3/AgAIAAcAAAAIAPz/AgAIAAcAAAAIAPv/AgAIAAcAAAAIAPr/AgAIAAcAAAAIAPn/AgAIAAcAAAAIAPj/AgAIAAcAAAAIAPf/AgAIAAcAAAAIAPb/AgAIAAcAAAAIAPX/AgAIAAcAAAAIAPT/AgAIAAcAAAAJAAgAAgAIAAcAAAAJAAkAAgAIAAcAAAAJAAoAAgAIAAcAAAAJAAAAAgAIAAcAAAAJAP//AgAIAAcAAAAJAP7/AgAIAAcAAAAJAP3/AgAIAAcAAAAJAPz/AgAIAAcAAAAJAPv/AgAIAAcAAAAJAPr/AgAIAAcAAAAJAPn/AgAIAAcAAAAJAPj/AgAIAAcAAAAJAPf/AgAIAAcAAAAJAPb/AgAIAAcAAAAJAPX/AgAIAAcAAAAJAPT/AgAIAAcAAAAJAAcAAgAOAAkAAAAJAAEAAgANAAcAAAAJAAIAAgATAAUAAAAJAAMAAgARAAUAAAAJAAQAAgARAAYAAAAJAAUAAgAIAAYAAAAJAAYAAgAIAAYAAAD3//X/AgANAAkAAAD3//v/AgAQAAoAAAD3//n/AgAIAAYAAAD3//r/AgAIAAYAAAD3//f/AgAOAAMAAAD3//j/AgAOAAQAAAD3//b/AgAOAAMAAAD3//T/AgAMAAcAADD3//z/AgAOAAgAAAD3//3/AgAMAAkAAAD3//7/AgAIAAcAAAD3////AgAIAAcAAAD3/wAAAgAIAAcAAAD3/wEAAgAIAAcAAAD3/wIAAgAIAAcAAAD3/wMAAgAIAAcAAAD3/wQAAgAIAAcAAAD3/wUAAgAIAAcAAAD3/wYAAgAIAAcAAAD3/wcAAgAIAAcAAAD3/wgAAgAIAAcAAAD3/wkAAgAIAAcAAAD3/woAAgAIAAcAAAAKAPT/AgAIAAcAAAAKAPX/AgAIAAcAAAAKAPb/AgAIAAcAAAAKAPf/AgAIAAcAAAAKAPj/AgAIAAcAAAAKAPn/AgAIAAcAAAAKAPr/AgAIAAcAAAAKAPv/AgAIAAcAAAAKAPz/AgAIAAcAAAAKAP3/AgAIAAcAAAAKAP7/AgAIAAcAAAAKAP//AgAIAAcAAAAKAAAAAgAIAAcAAAAKAAEAAgANAAcAAAAKAAQAAgARAAYAAAAKAAIAAgATAAUAAAAKAAMAAgATAAUAAAAKAAUAAgAIAAYAAAAKAAYAAgAIAAYAAAAKAAcAAgAOAAkAAAAKAAgAAgAIAAcAAAAKAAkAAgAIAAcAAAAKAAoAAgAIAAcAAAA=")
+tile_set = ExtResource("2_gy3nn")
+
+[node name="07aRuinslonghall" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(45, -45)
+texture = ExtResource("3_u50cq")
+
+[node name="DecorA" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("2_gy3nn")
+navigation_enabled = false
+
+[node name="DecorB" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_gy3nn")
+navigation_enabled = false
+
+[node name="Interactibles" type="Node2D" parent="."]
+
+[node name="save point" parent="Interactibles" instance=ExtResource("4_70h8x")]
+position = Vector2(361, -470)
+dialog_data = ExtResource("5_81pdr")
+max_interact = 0
+
+[node name="Scripted Events" type="Node2D" parent="."]
+
+[node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(991, 543)
+scene_to_load = "res://stages/ruins/dev_test_2.tscn"
+load_at = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj/LoadTriggerArea"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_rf2lj")
+
+[node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(-810, -539)
+scene_to_load = "res://stages/ruins/Ruins_room8.tscn"
+load_at = 2
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
+shape = SubResource("RectangleShape2D_v3g1j")
+
+[node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(361, -400)
+
+[node name="LoadatPoint_Ruins_room8" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(-705, -536)
+placepoint = 1
+
+[node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(900, 528)
+placepoint = 2
+
+[editable path="Interactibles/save point"]

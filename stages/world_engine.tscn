@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4uv5el1llbn" path="res://UI/textbox stuff/DialogHandler.tscn" id="4_o1d58"]
 
 [node name="World_Engine" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_grjrr")
 
 [node name="DialogHandler" parent="." instance=ExtResource("4_o1d58")]
