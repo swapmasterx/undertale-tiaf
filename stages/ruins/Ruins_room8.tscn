@@ -15,6 +15,7 @@ size = Vector2(20, 198)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_ig06e")
+sidescrollMode = true
 roomname = "Ruins - Entrance"
 
 [node name="Map" type="TileMapLayer" parent="." groups=["map_base"]]

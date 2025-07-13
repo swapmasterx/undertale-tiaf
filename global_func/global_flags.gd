@@ -8,7 +8,7 @@ extends Node2D
 
 @onready var music_channel = get_tree().get_first_node_in_group("music")
 
-var roomname: String = "-------"
+
 
 var time_played: String = "00:00"
 
@@ -17,7 +17,9 @@ var time_played: String = "00:00"
 "PlayerDEF": PlayerData.defence, "name": PlayerData.fallen_name, "weapon": PlayerData.equip_weapon,
 "armor": PlayerData.equip_armor,
 "exp": PlayerData.EXP, "item": item_transit.item_name, "action_ph": "Consume", 
-"roomname": roomname, "time_played": time_played}
+"room_name": roomname, "time_played": time_played}
+
+var roomname: String
 
 var is_saving = false
 
@@ -51,12 +53,6 @@ var room_changing: bool = false
 #enabled when text options are in play. Does not include battle buttons (Fight, act ect)
 var options_mode: bool = false
 
-var set_battle_option: Array = ["fight", "act", "item", "mercy"]
-
-var battle_lineup: Array = ["A", "B", ""]
-
-var battle_acts: Array = ["a","b","c","d","e","f"]
-
 var items: Array = []
 
 # 0 = no menu, 1 = overworld c menu, 2 = overworld c menu after option has been selected
@@ -64,13 +60,15 @@ var items: Array = []
 
 var menu_layer: int = 0
 
+
+
 func save():
 	
 	SaveData.save_game({"current_hp": PlayerData.current_hp, "max_hp": PlayerData.max_hp,
 	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
 	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
 	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
-	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory})
+	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory, "room_name": roomname})
 	
 
 func cutscene_mode(on_or_off: bool):

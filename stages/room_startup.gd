@@ -14,6 +14,8 @@ func _ready():
 	print(player.global_position)
 	GlobalFlags.sideScrollMode = sidescrollMode
 	GlobalFlags.roomname = roomname
+	
+	#SignalManager.inv_updated.emit()
 	camera.set_camera_limits()
 	print(GlobalFlags.roomname)
 	

@@ -61,22 +61,6 @@ theme_override_constants/separation = 3
 [node name="item_discription" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list" instance=ExtResource("3_bkds0")]
 layout_mode = 2
 
-[node name="item_discription3" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list/metrics/item_list"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-z_index = 20
-custom_minimum_size = Vector2(150, 45)
-layout_direction = 2
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("3_6xaxk")
-text = "{roomname}"
-scroll_active = false
-autowrap_mode = 2
-text_direction = 1
-script = ExtResource("3_4th1w")
-stat_line = "{roomname}"
-
 [node name="item_list2" type="VBoxContainer" parent="uibackdrop2/MarginContainer/item_list/metrics"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -120,6 +104,22 @@ autowrap_mode = 2
 text_direction = 1
 script = ExtResource("3_4th1w")
 stat_line = " {time_played}"
+
+[node name="item_discription3" type="RichTextLabel" parent="uibackdrop2/MarginContainer/item_list"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_6xaxk")
+text = "{roomname}"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("3_4th1w")
+stat_line = "{roomname}"
 
 [node name="metrics3" type="HBoxContainer" parent="uibackdrop2/MarginContainer/item_list"]
 custom_minimum_size = Vector2(0, 100)

@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://1ehpdcorkt51" path="res://character/camera_2d.tscn" id="3_nvei2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmj1"]
-radius = 6.66666
-height = 27.3333
+radius = 7.0
+height = 30.6667
 
 [sub_resource type="Animation" id="Animation_1ub40"]
 length = 0.001

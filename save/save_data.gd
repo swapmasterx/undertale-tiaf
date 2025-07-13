@@ -6,8 +6,8 @@ const save_file_name: String = "user://file0.json"
 
 const default_save_file: Dictionary = {"current_hp": 30, "max_hp": 30, "LV": 1, "EXP": 0, 
 "attack": 10, "defence": 10, "gold": 0, "equip_weapon": "none", "equip_armor": "none", 
-"fallen_name": "------", "room_num": "res://stages/ruins/dev_test_2.tscn", "place_at_x": 0, "place_at_y": 0,
-"inventory": []}
+"fallen_name": "------", "room_num": "res://stages/ruins/Opening_room.tscn", "place_at_x": 0, "place_at_y": 0,
+"inventory": [], "room_name": "------ - ------"}
 
 func save_game(data: Dictionary) -> void:
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)
@@ -29,6 +29,7 @@ func load_game() -> Dictionary:
 		if json.parse(string_data) == OK:
 			var data: Dictionary = json.get_data()
 			save_file.close()
+			
 			SignalManager.inv_updated.emit()
 			return data
 		push_error("Error, save data is not organized as expected.")

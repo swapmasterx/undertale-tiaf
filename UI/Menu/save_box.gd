@@ -5,7 +5,7 @@ var save_pressed = false
 @onready var player_soul = $"../player_soul"
 @onready var save_confirmation = %save_confirmation
 @onready var item_discription = $uibackdrop2/MarginContainer/item_list/metrics/item_list/item_discription
-@onready var item_discription_3 = $uibackdrop2/MarginContainer/item_list/metrics/item_list/item_discription3
+@onready var item_discription_3 = $uibackdrop2/MarginContainer/item_list/item_discription3
 @onready var item_discription_2 = $uibackdrop2/MarginContainer/item_list/metrics/item_list2/item_discription2
 @onready var item_discription_4 = $uibackdrop2/MarginContainer/item_list/metrics/item_list3/item_discription_4
 @onready var spacer_2 = $uibackdrop2/MarginContainer/item_list/metrics2/spacer2
@@ -13,6 +13,7 @@ var save_pressed = false
 
 func _ready():
 	SignalManager.closed_dialog.connect(closed_dialog)
+	
 	
 func closed_dialog():
 	
@@ -36,6 +37,7 @@ func _on_save_pressed():
 	cancel.visible = false
 	spacer_2.visible = false
 	spacer.visible = false
+	GlobalFlags.text_swaper["roomname"] = GlobalFlags.roomname
 	item_discription.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_2.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_3.add_theme_color_override("default_color", Color(1, 1, 0))

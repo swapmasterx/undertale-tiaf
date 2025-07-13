@@ -44,7 +44,6 @@ navigation_enabled = false
 [node name="save point" parent="Interactibles" instance=ExtResource("4_70h8x")]
 position = Vector2(361, -470)
 dialog_data = ExtResource("5_81pdr")
-roomname = "Ruins - Leaf Pile"
 max_interact = 0
 
 [node name="Scripted Events" type="Node2D" parent="."]
@@ -72,12 +71,28 @@ load_trigger_area = NodePath("LoadTriggerArea")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
 shape = SubResource("RectangleShape2D_v3g1j")
 
+[node name="room_change_obj3" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(90, -731)
+scene_to_load = "res://stages/ruins/Ruins_room9a.tscn"
+load_at = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj3" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj3/LoadTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v3g1j")
+
 [node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("8_81pdr")]
 position = Vector2(361, -400)
 
 [node name="LoadatPoint_Ruins_room8" parent="Scripted Events" instance=ExtResource("8_81pdr")]
 position = Vector2(-705, -536)
 placepoint = 1
+
+[node name="LoadatPoint_candyroom" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(89, -675)
+placepoint = 3
 
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("8_81pdr")]
 position = Vector2(894, 541)

@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=4 uid="uid://c8pl1khbbpdhc"]
+
+[ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_sa2vp"]
+[ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_oyh5l"]
+[ext_resource type="Texture2D" uid="uid://ba5dnxlruyr3c" path="res://tilemaps/ruins/tilesets/11a_ruins_rock_1.png" id="3_oyh5l"]
+[ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="3_x4p0l"]
+[ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="4_4i72w"]
+[ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="5_blth8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
+size = Vector2(20, 181)
+
+[node name="Room_Core" type="Node2D" groups=["room"]]
+script = ExtResource("1_sa2vp")
+roomname = "Ruins -  Leaf Pile"
+
+[node name="Map" type="TileMapLayer" parent="." groups=["map_base"]]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD0//7/AgAIAAcAAAD1//7/AgAIAAcAAAD2//3/AgAIAAcAAAD3//3/AgAIAAcAAAD4//3/AgAIAAcAAAD5//3/AgAIAAcAAAD6//3/AgAIAAcAAAD7//3/AgAIAAcAAAD8//3/AgAIAAcAAAD9//3/AgAIAAcAAAD+//3/AgAIAAcAAAD///3/AgAIAAcAAAAAAP3/AgAIAAcAAAABAP3/AgAIAAcAAAACAP3/AgAIAAcAAAADAP3/AgAIAAcAAAAEAP3/AgAIAAcAAAAFAP3/AgAIAAcAAAAGAP3/AgAIAAcAAAAHAP3/AgAIAAcAAAAIAP3/AgAIAAcAAAAJAP3/AgAIAAcAAAAKAP7/AgAIAAcAAAALAP7/AgAIAAcAAAALAAEAAgAIAAcAAAAKAAEAAgAIAAcAAAAKAAIAAgAIAAcAAAAKAAMAAgAIAAcAAAAKAAQAAgAIAAcAAAAJAAQAAgAIAAcAAAAIAAQAAgAIAAcAAAAHAAQAAgAIAAcAAAAGAAQAAgAIAAcAAAAFAAQAAgAIAAcAAAAEAAQAAgAIAAcAAAADAAQAAgAIAAcAAAACAAQAAgAIAAcAAAABAAQAAgAIAAcAAAAAAAQAAgAIAAcAAAD//wQAAgAIAAcAAAD+/wQAAgAIAAcAAAD9/wQAAgAIAAcAAAD8/wQAAgAIAAcAAAD7/wQAAgAIAAcAAAD6/wQAAgAIAAcAAAD5/wQAAgAIAAcAAAD4/wQAAgAIAAcAAAD3/wQAAgAIAAcAAAD2/wQAAgAIAAcAAAD1/wQAAgAIAAcAAAD0/wQAAgAIAAcAAAD0/wMAAgAIAAcAAAD0/wIAAgAIAAcAAAD0/wEAAgAIAAcAAAD1/wEAAgAIAAcAAAD1/wIAAgAIAAcAAAD1/wMAAgAIAAcAAAD0//r/AgAIAAcAAAD1//r/AgAIAAcAAAD2//r/AgAIAAcAAAD3//r/AgAIAAcAAAD4//r/AgAIAAcAAAD5//r/AgAIAAcAAAD6//r/AgAIAAcAAAD7//r/AgAIAAcAAAD8//r/AgAIAAcAAAD9//r/AgAIAAcAAAD+//r/AgAIAAcAAAD///r/AgAIAAcAAAAAAPr/AgAIAAcAAAABAPr/AgAIAAcAAAACAPr/AgAIAAcAAAADAPr/AgAIAAcAAAAEAPr/AgAIAAcAAAAFAPr/AgAIAAcAAAAGAPr/AgAIAAcAAAAHAPr/AgAIAAcAAAAIAPr/AgAIAAcAAAAJAPr/AgAIAAcAAAAKAPr/AgAIAAcAAAALAPr/AgAIAAcAAAALAPv/AgAIAAcAAAALAPz/AgAIAAcAAAALAP3/AgAIAAcAAAD0//v/AgAIAAcAAAD0//z/AgAIAAcAAAD0//3/AgAIAAcAAAADAP7/AgAIAAcAAAADAP//AgAIAAcAAAADAAAAAgAIAAcAAAADAAEAAgAIAAcAAAADAAIAAgAIAAcAAAADAAMAAgAIAAcAAAA=")
+tile_set = ExtResource("2_oyh5l")
+
+[node name="07aRuinslonghall" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -45)
+texture = ExtResource("3_oyh5l")
+
+[node name="DecorA" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("2_oyh5l")
+navigation_enabled = false
+
+[node name="DecorB" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_oyh5l")
+navigation_enabled = false
+
+[node name="Interactibles" type="Node2D" parent="."]
+
+[node name="Scripted Events" type="Node2D" parent="."]
+
+[node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("3_x4p0l")]
+position = Vector2(-1079, 2)
+scene_to_load = "res://stages/ruins/Ruins_room10.tscn"
+load_at = 2
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("4_4i72w")]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj/LoadTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_rf2lj")
+
+[node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("3_x4p0l")]
+position = Vector2(1080, 0)
+scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
+load_at = 3
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("4_4i72w")]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_rf2lj")
+
+[node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("5_blth8")]
+
+[node name="LoadatPoint_Ruins_room8" parent="Scripted Events" instance=ExtResource("5_blth8")]
+position = Vector2(-1003, 2)
+placepoint = 1
+
+[node name="LoadatPoint_Ruins_room9" parent="Scripted Events" instance=ExtResource("5_blth8")]
+position = Vector2(1013, 0)
+placepoint = 2

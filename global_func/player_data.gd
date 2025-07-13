@@ -66,6 +66,8 @@ func _ready():
 	GlobalFlags.text_swaper["place_at"] = place_at
 	inventory = dict["inventory"]
 	GlobalFlags.text_swaper["inventory"] = inventory
+	GlobalFlags.roomname = dict["room_name"]
+	GlobalFlags.text_swaper["roomname"] = GlobalFlags.roomname
 	
 
 func add_item(inv_item):
