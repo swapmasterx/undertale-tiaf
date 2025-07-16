@@ -10,6 +10,7 @@
 size = Vector2(20, 181)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
+y_sort_enabled = true
 script = ExtResource("1_h7c4j")
 roomname = "Ruins -  Leaf Pile"
 
@@ -30,6 +31,21 @@ tile_set = ExtResource("2_1ssoj")
 navigation_enabled = false
 
 [node name="DecorB" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD///3/AgAAAAEAAAD///7/AgAAAAIAAAAAAP3/AgABAAEAAAAAAP7/AgABAAIAAAA=")
+tile_set = ExtResource("2_1ssoj")
+navigation_enabled = false
+
+[node name="DecorB1" type="TileMapLayer" parent="DecorB"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD///3/AgAAAAAAAAAAAP3/AgABAAAAAAA=")
+tile_set = ExtResource("2_1ssoj")
+navigation_enabled = false
+
+[node name="DecorC" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAAAAP7/AgADAAMAAAABAP7/AgAEAAMAAAA=")
 tile_set = ExtResource("2_1ssoj")
 navigation_enabled = false
 
