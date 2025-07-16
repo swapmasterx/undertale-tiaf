@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_umcf3")
-dialog_set = Array[Array]([["* What used to be a bed of flowers.", "* It looks like it was overturned before someone filled it back in"], ["* A ruined bed of golden flowers."]])
+dialog_set = Array[Array]([["* What used to be a bed of flowers.", "* It looks like it was overturned before someone filled it back in."], ["* A ruined bed of golden flowers."]])
 speech_noise_id = Array[Array]([["default1", "default1"], ["default1"]])
 char_talk_sprite_id = Array[Array]([["none", "none"], ["none"]])
 char_mood_sprite_id = Array[Array]([[0, 0, 0, 0], [0, 0]])

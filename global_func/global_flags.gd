@@ -68,8 +68,11 @@ func save():
 	"LV": PlayerData.LV, "EXP": PlayerData.EXP, "attack": PlayerData.attack, "defence": PlayerData.defence,
 	"gold": PlayerData.gold, "equip_weapon": PlayerData.equip_weapon, "equip_armor": PlayerData.equip_armor,
 	"fallen_name": PlayerData.fallen_name, "room_num": SaveData.current_room,
-	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory, "room_name": roomname})
+	"place_at_x": PlayerData.x, "place_at_y": PlayerData.y, "inventory": PlayerData.inventory,
+	 "room_name": roomname})
 	
+	RoomPersistance.save_game({"first_puzzle": RoomPersistance.first_puzzle,
+	"switch_puzzle" : RoomPersistance.switch_puzzle})
 
 func cutscene_mode(on_or_off: bool):
 	var cutscene_active:bool = false

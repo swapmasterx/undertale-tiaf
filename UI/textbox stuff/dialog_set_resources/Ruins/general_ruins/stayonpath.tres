@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://cc5qdqy07u34u"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_1rl3l"]
+
+[resource]
+script = ExtResource("1_1rl3l")
+dialog_set = Array[Array]([["Stay on the path."]])
+speech_noise_id = Array[Array]([["default1"]])
+char_talk_sprite_id = Array[Array]([["none"]])
+char_mood_sprite_id = Array[Array]([[0]])
+metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

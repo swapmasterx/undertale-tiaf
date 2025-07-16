@@ -20,8 +20,6 @@ var interact_counter: int = 0
 
 @export var sprite: Sprite2D
 
-@export var signal_id: int
-
 func _ready():
 	if interaction_area:
 		
@@ -82,7 +80,12 @@ func switch():
 	if switch_state == false:
 		sprite.texture = on_texture
 		switch_state = true
+		GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_switchpull_n.wav")
+		GlobalFlags.sfx_1_channel.play()
+		SignalManager.switchpuzzle.emit()
 	else:
 		sprite.texture = off_texture
 		switch_state = false
-	print("touched the lever ", switch_state)
+		GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_test.wav")
+		GlobalFlags.sfx_1_channel.play()
+	#print("touched the lever ", switch_state)

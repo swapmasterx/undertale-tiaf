@@ -1,23 +1,9 @@
 res://stages/world_engine.tscn
 res://UI/textbox stuff/textbox_default_theme_yellow.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres
-res://stages/ruins/Ruins_room8.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/dummyroom_sign.tres
 res://character/player.tscn
-res://stages/ruins/Ruins_room7.tscn
 res://character/camera_2d.tscn
 res://UI/textbox stuff/textbox_control.tscn
-res://object prefabs/save_point.tscn
-res://stages/ruins/Ruins_room9.tscn
-res://UI/Menu/save_box.tscn
-res://stages/ruins/Ruins_room10.tscn
-res://stages/ruins/Ruins_room9a.tscn
-res://stages/ruins/Ruins_room11.tscn
-res://save/save_data.gd
-res://UI/Menu/save_box.gd
-res://global_func/global_flags.gd
-res://global_func/player_data.gd
-res://object prefabs/object_core.gd
-res://stages/room_startup.gd
-res://stages/ruins/Opening_room.tscn
-res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres
+res://global_func/signal_manager.tscn
+res://stages/ruins/Ruins_room6.tscn

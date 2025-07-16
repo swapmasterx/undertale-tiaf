@@ -30,6 +30,8 @@ signal closed_dialog()
 signal save_activate()
 
 #switch/button signal
+signal switchpuzzle()
+
 signal switchon(int)
 
 signal switchoff(int)

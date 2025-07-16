@@ -1,11 +1,25 @@
-[gd_scene load_steps=9 format=4 uid="uid://c5x60j4r461f2"]
+[gd_scene load_steps=19 format=4 uid="uid://c5x60j4r461f2"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_rf2lj"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_jae58"]
 [ext_resource type="Texture2D" uid="uid://b17oi2cjqujk0" path="res://tilemaps/ruins/tilesets/04ruins lever puzzle.png" id="3_xy3sa"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="4_27tts"]
+[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="4_x7bsl"]
+[ext_resource type="Resource" uid="uid://djdedcygfwnv2" path="res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres" id="5_10axi"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_xbwjd"]
+[ext_resource type="Texture2D" uid="uid://b88b78l8vow32" path="res://sprites/dev/ruins_lever_down.png" id="6_b7wex"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="6_x7bsl"]
+[ext_resource type="Texture2D" uid="uid://hvut31th7ghk" path="res://sprites/dev/ruins_lever_up.png" id="7_o7te0"]
+[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="8_1kuyl"]
+[ext_resource type="Resource" uid="uid://cc5qdqy07u34u" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/stayonpath.tres" id="9_b7wex"]
+[ext_resource type="Resource" uid="uid://2k27d5jiob68" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/jammedLever.tres" id="10_o7te0"]
+[ext_resource type="Script" uid="uid://cxoceinrki6i8" path="res://puzzleLogic/Ruins/ruins_switch_puzzle.gd" id="14_o7te0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tit4e"]
+size = Vector2(21, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7te0"]
+size = Vector2(20, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
 size = Vector2(20, 181)
@@ -31,10 +45,79 @@ tile_set = ExtResource("2_jae58")
 navigation_enabled = false
 
 [node name="DecorB" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAQAAEAAgASAAAAAAAQAAIAAgASAAAAAAA=")
 tile_set = ExtResource("2_jae58")
 navigation_enabled = false
 
 [node name="Interactibles" type="Node2D" parent="."]
+
+[node name="Switch" parent="Interactibles" node_paths=PackedStringArray("interaction_area", "sprite") instance=ExtResource("4_x7bsl")]
+position = Vector2(45, -175)
+object_type = 3
+interaction_area = NodePath("Interaction_Area")
+dialog_data = ExtResource("5_10axi")
+on_texture = ExtResource("6_b7wex")
+off_texture = ExtResource("7_o7te0")
+sprite = NodePath("Switch2")
+
+[node name="Interaction_Area" parent="Interactibles/Switch" instance=ExtResource("8_1kuyl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/Switch/Interaction_Area"]
+position = Vector2(0, 0.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tit4e")
+
+[node name="Switch2" type="Sprite2D" parent="Interactibles/Switch"]
+position = Vector2(0, -95)
+texture = ExtResource("7_o7te0")
+
+[node name="Switch2" parent="Interactibles" node_paths=PackedStringArray("interaction_area", "sprite") instance=ExtResource("4_x7bsl")]
+position = Vector2(945, -175)
+object_type = 3
+interaction_area = NodePath("Interaction_Area")
+dialog_data = ExtResource("5_10axi")
+on_texture = ExtResource("6_b7wex")
+off_texture = ExtResource("7_o7te0")
+sprite = NodePath("Switch2")
+
+[node name="Interaction_Area" parent="Interactibles/Switch2" instance=ExtResource("8_1kuyl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/Switch2/Interaction_Area"]
+position = Vector2(0, 0.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tit4e")
+
+[node name="Switch2" type="Sprite2D" parent="Interactibles/Switch2"]
+position = Vector2(0, -95)
+texture = ExtResource("7_o7te0")
+
+[node name="sign" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("4_x7bsl")]
+position = Vector2(-1219, -181)
+object_type = 1
+interaction_area = NodePath("Interaction_Area")
+dialog_data = ExtResource("9_b7wex")
+max_interact = 0
+
+[node name="Interaction_Area" parent="Interactibles/sign" instance=ExtResource("8_1kuyl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/sign/Interaction_Area"]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_o7te0")
+
+[node name="sign2" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("4_x7bsl")]
+position = Vector2(1123, -181)
+object_type = 1
+interaction_area = NodePath("Interaction_Area")
+dialog_data = ExtResource("10_o7te0")
+max_interact = 0
+
+[node name="Interaction_Area" parent="Interactibles/sign2" instance=ExtResource("8_1kuyl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/sign2/Interaction_Area"]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_o7te0")
 
 [node name="Scripted Events" type="Node2D" parent="."]
 
@@ -70,3 +153,7 @@ placepoint = 1
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("6_x7bsl")]
 position = Vector2(1530, 178)
 placepoint = 2
+
+[node name="puzzle_logic" type="Node2D" parent="."]
+script = ExtResource("14_o7te0")
+solution = 2
