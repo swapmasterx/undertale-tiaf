@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://clie8vu6e1lj6"]
+
+[ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="1_ty7ll"]
+[ext_resource type="Script" uid="uid://bgsl0k86gnys5" path="res://object prefabs/proximity_puzzle_pannel.gd" id="2_h5puw"]
+[ext_resource type="Texture2D" uid="uid://c7hyq8mcdmdml" path="res://sprites/dev/floor_barricade_closed.png" id="3_ty7ll"]
+[ext_resource type="Texture2D" uid="uid://iobuytiwrdbx" path="res://sprites/dev/floor_barricade_left_right.png" id="4_5nav0"]
+[ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_4hor3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpbs8"]
+size = Vector2(150, 150)
+
+[node name="puzzle_panel" node_paths=PackedStringArray("load_trigger_area", "sprite") instance=ExtResource("1_ty7ll")]
+script = ExtResource("2_h5puw")
+load_trigger_area = NodePath("LoadTriggerArea")
+on_texture = ExtResource("3_ty7ll")
+off_texture = ExtResource("4_5nav0")
+sprite = NodePath("Sprite2D")
+switch_state = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("4_5nav0")
+
+[node name="LoadTriggerArea" parent="." index="1" instance=ExtResource("5_4hor3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadTriggerArea" index="0"]
+shape = SubResource("RectangleShape2D_lpbs8")
+
+[connection signal="body_entered" from="LoadTriggerArea" to="." method="_on_load_trigger_area_body_entered"]
+[connection signal="body_exited" from="LoadTriggerArea" to="." method="_on_load_trigger_area_body_exited"]

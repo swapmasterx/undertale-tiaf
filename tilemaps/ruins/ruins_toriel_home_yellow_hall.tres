@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://cll7x8gqf4262"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://cll7x8gqf4262"]
 
 [ext_resource type="Texture2D" uid="uid://b8ambl45c0fkk" path="res://tilemaps/ruins/toriels_home_yellow_hall.png" id="1_hgjtb"]
 [ext_resource type="Texture2D" uid="uid://bss1smy163lmw" path="res://tilemaps/ruins/opening room.png" id="2_8tsk5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cnivq2krm7x17" path="res://object prefabs/2_state_object.tscn" id="4_li2qj"]
 [ext_resource type="PackedScene" uid="uid://btt4wd80ld8g1" path="res://object prefabs/floor_button_correct.tscn" id="5_2x2nl"]
 [ext_resource type="PackedScene" uid="uid://cjcwks2x02w6n" path="res://object prefabs/floor_button_wrong.tscn" id="6_a2jaj"]
+[ext_resource type="PackedScene" uid="uid://clie8vu6e1lj6" path="res://object prefabs/proximity_puzzle_pannel.tscn" id="7_a2jaj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wtx4o"]
 tile_data = PackedInt32Array(0, 786434, 2, 65536, 786434, 3, 131072, 786434, 4, 1, 851970, 2, 65537, 851970, 3, 131073, 851970, 4)
@@ -440,7 +441,9 @@ texture_region_size = Vector2i(90, 90)
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
+2:4/0/y_sort_origin = 30
 3:4/0 = 0
+3:4/0/y_sort_origin = 30
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45, -45, 45, -45, -45, 45)
 5:4/0 = 0
@@ -668,6 +671,7 @@ resource_name = "Dynamic_objects"
 scenes/1/scene = ExtResource("4_li2qj")
 scenes/2/scene = ExtResource("5_2x2nl")
 scenes/3/scene = ExtResource("6_a2jaj")
+scenes/4/scene = ExtResource("7_a2jaj")
 
 [resource]
 tile_size = Vector2i(90, 90)

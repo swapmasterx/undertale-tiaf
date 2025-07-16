@@ -6,5 +6,5 @@ var interact: Callable = func():
 	pass
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	InteractionManager.register_load_trigger(self)

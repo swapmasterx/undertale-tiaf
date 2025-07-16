@@ -20,7 +20,7 @@ func change_scene():
 	GlobalFlags.menu_lock = true
 	stop_repeat = false
 
-func _on_animation_player_animation_finished(fade_in):
+func _on_animation_player_animation_finished(_fade_in):
 	if stop_repeat == false:
 		anim_finished()
 		anim_player.play("fade_out")

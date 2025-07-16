@@ -7,3 +7,15 @@ res://character/camera_2d.tscn
 res://UI/textbox stuff/textbox_control.tscn
 res://global_func/signal_manager.tscn
 res://stages/ruins/Ruins_room6.tscn
+res://stages/ruins/Ruins_room7.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres
+res://stages/ruins/Ruins_room9.tscn
+res://stages/ruins/Ruins_room8.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres
+res://global_func/loadtrigger_area.gd
+res://global_func/interaction_area.gd
+res://stages/scenetransition.gd
+res://object prefabs/proximity_puzzle_pannel.tscn
+res://object prefabs/proximity_puzzle_pannel.gd
+res://object prefabs/floor_button_correct.tscn
+res://stages/ruins/Ruins_room9a.tscn
