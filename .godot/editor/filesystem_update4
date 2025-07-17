@@ -15,3 +15,9 @@ res://stages/ruins/Ruins_room9.tscn
 res://stages/ruins/Ruins_room6.tscn
 res://object prefabs/floor_button_correct.tscn
 res://object prefabs/proximity_puzzle_pannel.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9a.tres
+res://UI/textbox stuff/item_text_options.tscn
+res://global_func/player_data.gd
+res://UI/Menu/menu.tscn
+res://UI/Menu/sub_menu.tscn
+res://UI/textbox stuff/multi_choice.tscn
