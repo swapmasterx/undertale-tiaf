@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bj5pi2l80cok" path="res://sprites/dev/comicfurypageicon.png" id="5_ae8yd"]
 [ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="5_vguq6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15102"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6vll"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15102"]
 
 [node name="sub_menu" type="MarginContainer"]
 anchors_preset = 11
@@ -48,8 +48,8 @@ theme_override_constants/margin_bottom = 34
 
 [node name="TabContainer" type="TabContainer" parent="uibackdrop2/MarginContainer"]
 layout_mode = 2
-theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
 theme_override_styles/panel = SubResource("StyleBoxFlat_g6vll")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
 current_tab = 1
 clip_tabs = false
 tabs_visible = false

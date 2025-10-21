@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=2 format=3 uid="uid://di2jcahe7fwa1"]
+
+[ext_resource type="Script" uid="uid://dn4jnlq4f24x7" path="res://items/classes/consumable.gd" id="1_vf3ru"]
+
+[resource]
+script = ExtResource("1_vf3ru")
+health_restore = 10
+item_name = "Monster Candy"
+item_discription = "Has a distinct, non-licorice flavor.
+
+Heals 10 hp"

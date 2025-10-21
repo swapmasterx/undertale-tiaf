@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Undertale TiaF"
 run/main_scene="res://stages/world_engine.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=30
 config/icon="res://icon.svg"
 

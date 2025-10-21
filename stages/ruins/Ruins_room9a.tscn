@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://3nf4usitegi0"]
+[gd_scene load_steps=12 format=4 uid="uid://3nf4usitegi0"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_h7c4j"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_1ssoj"]
 [ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="3_h7c4j"]
 [ext_resource type="Resource" uid="uid://ctuyhnumjtqnw" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9a.tres" id="4_h7c4j"]
+[ext_resource type="Resource" uid="uid://di2jcahe7fwa1" path="res://items/repo/m_candy.tres" id="5_1ssoj"]
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="5_dbv7l"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="6_p5adl"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="7_bq2ny"]
@@ -58,7 +59,10 @@ position = Vector2(-1, -146)
 object_type = 1
 interaction_area = NodePath("Interaction_Area")
 dialog_data = ExtResource("4_h7c4j")
+item = ExtResource("5_1ssoj")
 max_interact = 0
+choice_prompt_type = 1
+enable_choice_prompt = true
 
 [node name="Interaction_Area" parent="Interactibles/puzzle_hint" instance=ExtResource("5_dbv7l")]
 

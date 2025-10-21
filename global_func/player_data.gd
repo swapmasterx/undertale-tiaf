@@ -71,8 +71,10 @@ func _ready():
 	
 
 func add_item(inv_item):
+	print("item added")
 	if inventory.size() < 8:
 		inventory.append(inv_item)
+		await get_tree().process_frame
 		SignalManager.inv_updated.emit()
 	else:
 		print("But your inventory was full.")

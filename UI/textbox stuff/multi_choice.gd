@@ -5,14 +5,15 @@ extends MarginContainer
 @onready var option_b = $VBoxContainer/HBoxContainer/optionB
 @onready var option_c = $VBoxContainer/HBoxContainer/optionC
 @onready var option_d = $VBoxContainer/HBoxContainer/optionD
-
+@onready var player_soul = $"../../../player_soul"
 
 var dialog_question: String = "{action_ph} the {item}?"
 var dialog_responce_a: String = "You consumed the {item}. You recovered {itemHP}."
 var dialog_responce_b: String = "You consumed the {item}. Your HP was maxed out."
+var dialog_responce_c: String = "You got the {item}."
 var option_count: int = 2
 var enabled = false
-@export_enum("consumeable", "weapon", "armor", "dialog") var option_type
+#@export_enum("consumeable", "weapon", "armor", "dialog") var option_type
 
 
 func _ready():
@@ -41,6 +42,7 @@ func _activate_choose_option():
 func _on_textbox_control_finished_dispo():
 	if enabled == true:
 		self.visible = true
+		player_soul.visible = true
 		match option_count:
 			2:
 				option_a.visible = true
@@ -57,11 +59,51 @@ func _on_textbox_control_finished_dispo():
 		option_a.call_deferred("grab_focus")
 
 func _option_chosen(option_selected: int):
+	GlobalFlags.enable_choice_prompt = false
+	
 	match option_selected:
 		1:
-			item_type()
+			option_1()
 		2:
+			option_2()
+		3:
+			option_3()
+		4:
+			option_4()
+			
+func option_1():
+	match GlobalFlags.choice_prompt_function:
+		0:
+			item_type()
+			print("option_1 0")
+		1:
+			obtain_item()
+			
+		2:
+			print("option_1 choice not implemented yet")
+
+func option_2():
+	match GlobalFlags.choice_prompt_function:
+		0:
 			_close_choose_option()
+		1:
+			_close_choose_option()
+		2:
+			print("option_2 choice not implemented yet")
+
+func option_3():
+	pass
+	
+func option_4():
+	pass
+
+func obtain_item():
+	print("option_1 1")
+	PlayerData.add_item(GlobalFlags.item_transit)
+	_close_choose_option()
+	textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
+	textbox_control.start_dialog(false, [dialog_responce_c])
+	GlobalFlags.text_box_open = true
 
 func item_type():
 	var index = GlobalFlags.item_transit
@@ -91,12 +133,16 @@ func _close_choose_option():
 	option_b.visible = false
 	option_c.visible = false
 	option_d.visible = false
+	
 	enabled = false
 	option_a.focus_mode = FOCUS_NONE
 	option_b.focus_mode = FOCUS_NONE
 	option_c.focus_mode = FOCUS_NONE
 	option_d.focus_mode = FOCUS_NONE
 	textbox_control.close_dialog_box()
-	GlobalFlags.set_deferred("menu_layer", 2)
+	if GlobalFlags.menu_layer == 3:
+		GlobalFlags.set_deferred("menu_layer", 2)
+	else:
+		player_soul.visible = false
 	SignalManager.closed_choose_option.emit()
 	await get_tree().process_frame

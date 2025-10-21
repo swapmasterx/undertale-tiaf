@@ -74,7 +74,7 @@ func menu_flag_handler():
 func _on_item_pressed():
 	GlobalFlags.options_mode = false
 	menu_option_memory = item
-	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/test_button"
+	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/itemButton"
 	if test_button == null:
 		GlobalFlags.menu_layer = 0
 		GlobalFlags.options_mode = true
@@ -82,6 +82,7 @@ func _on_item_pressed():
 		GlobalFlags.sfx_2_channel.play()
 		menu_flag_handler()
 		return
+		
 	test_button.grab_focus()
 	enable_submenu(0)
 	player_soul.global_position = Vector2(387,117.5)

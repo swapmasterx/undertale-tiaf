@@ -1,23 +1,14 @@
-res://stages/ruins/Ruins_room9a.tscn
+res://UI/textbox stuff/multi_choice.tscn
 res://UI/textbox stuff/textbox_default_theme_yellow.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres
-res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/dummyroom_sign.tres
-res://stages/world_engine.tscn
+res://UI/textbox stuff/multi_choice.gd
+res://character/textbox.gd
+res://stages/ruins/Ruins_room9a.tscn
+res://object prefabs/object_core.gd
+res://items/repo/m_candy.tres
+res://items/classes/item_class.gd
 res://character/player.tscn
-res://character/camera_2d.tscn
-res://UI/textbox stuff/textbox_control.tscn
-res://global_func/signal_manager.tscn
-res://stages/ruins/Ruins_room7.tscn
-res://stages/ruins/Ruins_room8.tscn
-res://stages/ruins/Ruins_room9.tscn
-res://stages/ruins/Ruins_room6.tscn
-res://object prefabs/floor_button_correct.tscn
-res://object prefabs/proximity_puzzle_pannel.tscn
-res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9a.tres
-res://UI/textbox stuff/item_text_options.tscn
+res://UI/Menu/sub_menu.tscn
 res://global_func/player_data.gd
 res://UI/Menu/menu.tscn
-res://UI/Menu/sub_menu.tscn
-res://UI/textbox stuff/multi_choice.tscn
+res://UI/Menu/menu_logic.gd

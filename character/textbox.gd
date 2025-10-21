@@ -164,6 +164,10 @@ func close_dialog_box():
 	GlobalFlags.menu_lock = false
 	if GlobalFlags.is_saving == true:
 		SignalManager.closed_dialog.emit()
+	if GlobalFlags.enable_choice_prompt == true:
+		#GlobalFlags.item_transit = item
+		#GlobalFlags.text_swaper["item"] = item.item_name
+		SignalManager.activate_choose_option.emit()
 
 
 func _on_text_scroller_timeout():

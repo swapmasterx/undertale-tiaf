@@ -9,6 +9,8 @@ class_name ObjectCore
 @export var dialog_data: DialogData
 @onready var text_handlerr = $"../../../DialogHandler"
 
+@export var item: Consumable
+
 var interact_counter: int = 0
 @export var max_interact: int = 1
 
@@ -17,6 +19,10 @@ var interact_counter: int = 0
 @export var on_texture: Texture
 
 @export var off_texture: Texture 
+
+@export_enum("ConsumeItem", "ObtainItem", "DialogueBranch") var choice_prompt_type: int
+
+@export var enable_choice_prompt: bool = false
 
 @export var sprite: Sprite2D
 
@@ -54,6 +60,15 @@ func text_interact():
 		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[interact_counter]
 		#text_handler.char_mood_sprite_id = speech[interact_counter]
 		text_handlerr.on_interact()
+		GlobalFlags.enable_choice_prompt = false
+		
+		if enable_choice_prompt:
+			GlobalFlags.enable_choice_prompt = true
+			GlobalFlags.item_transit = item
+			GlobalFlags.text_swaper["item"] = item.item_name
+			GlobalFlags.choice_prompt_function = choice_prompt_type
+			
+			
 		if interact_counter < max_interact:
 			interact_counter += 1
 		

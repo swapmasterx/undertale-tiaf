@@ -20,12 +20,13 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_qm5xb")
+is_overworld = null
 
 [node name="textboxrect" parent="." instance=ExtResource("2_k7ggn")]
 layout_mode = 0
 
 [node name="speech_sprite" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 15.0
 offset_top = 37.0
 offset_right = 165.0
@@ -37,7 +38,7 @@ stretch_mode = 3
 
 [node name="textbox" type="MarginContainer" parent="."]
 layout_direction = 2
-layout_mode = 2
+layout_mode = 0
 offset_top = -2.0
 offset_right = 890.0
 offset_bottom = 222.0

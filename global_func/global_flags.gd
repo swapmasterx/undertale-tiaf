@@ -23,6 +23,14 @@ var roomname: String
 
 var is_saving = false
 
+#Set true if a choice promt should appear when a set of text boxes are closed.
+var enable_choice_prompt = false
+
+#Sets the behaviour of how the multiple choice prompts operate
+	#Set in Object core and
+
+var choice_prompt_function: int
+
 var item_transit = preload("res://items/repo/test_heal.tres")
 
 var dialogMode: bool = false
