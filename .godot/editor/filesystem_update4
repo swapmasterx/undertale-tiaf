@@ -12,3 +12,4 @@ res://UI/Menu/sub_menu.tscn
 res://global_func/player_data.gd
 res://UI/Menu/menu.tscn
 res://UI/Menu/menu_logic.gd
+res://UI/Menu/sub_menu.gd
