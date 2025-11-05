@@ -26,6 +26,7 @@ PlayerData="*res://global_func/player_data.gd"
 SaveData="*res://save/save_data.gd"
 RoomId="*res://global_func/room_id.gd"
 RoomPersistance="*res://save/room_persistance.gd"
+ItemTable="*res://items/item_table.gd"
 
 [display]
 
@@ -37,6 +38,7 @@ window/vsync/vsync_mode=0
 room=""
 player=""
 map_base=""
+hurt_box="A collision box that checks if the player was hits with something"
 
 [input]
 

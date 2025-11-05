@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://caw0k0vrpeinl"]
+[gd_scene load_steps=11 format=3 uid="uid://caw0k0vrpeinl"]
 
 [ext_resource type="Texture2D" uid="uid://dmghfmo3ee53m" path="res://battle/battle box 9rect.png" id="1_0yffc"]
 [ext_resource type="Script" uid="uid://b2hthcu6vwkfi" path="res://UI/Menu/sub_menu.gd" id="1_2iyp1"]
-[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="3_f0uho"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="3_f0uho"]
 [ext_resource type="Texture2D" uid="uid://bj5pi2l80cok" path="res://sprites/dev/comicfurypageicon.png" id="5_ae8yd"]
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="5_f4dvu"]
 [ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="5_vguq6"]
+[ext_resource type="FontFile" uid="uid://diqlx2w5nbue6" path="res://fonts/determination.ttf" id="7_bm2jf"]
+[ext_resource type="PackedScene" uid="uid://cx1gjcnsc2p8r" path="res://volumesettings/Volume.tscn" id="8_mdcmd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6vll"]
 bg_color = Color(0, 0, 0, 1)
@@ -50,14 +53,14 @@ theme_override_constants/margin_bottom = 34
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g6vll")
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
-current_tab = 1
+current_tab = 3
 clip_tabs = false
 tabs_visible = false
 
 [node name="items" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 0
 metadata/_tab_index = 0
 
 [node name="item_list" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/items"]
@@ -80,14 +83,31 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_f0uho")
-text = "Filler"
 scroll_active = false
 autowrap_mode = 2
 text_direction = 1
 script = ExtResource("5_vguq6")
-stat_line = "Filler"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Use" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details/HBoxContainer" instance=ExtResource("5_f4dvu")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  Use"
+alignment = 2
+
+[node name="Toss" parent="uibackdrop2/MarginContainer/TabContainer/items/item_details/HBoxContainer" instance=ExtResource("5_f4dvu")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "  Toss"
+alignment = 2
 
 [node name="stats" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
 custom_minimum_size = Vector2(650, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
@@ -207,18 +227,95 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 50
 
 [node name="options" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 metadata/_tab_index = 3
 
-[node name="options_menu" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
-custom_minimum_size = Vector2(300, 0)
+[node name="VBoxContainer2" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MasterName" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_constants/separation = 50
+theme = ExtResource("3_f0uho")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_bm2jf")
+theme_override_font_sizes/normal_font_size = 32
+text = "Master Volume
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Master Volume
+"
 
-[node name="options_submenu" type="VBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer/options"]
+[node name="Master" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer" instance=ExtResource("8_mdcmd")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 50
+value = 0.5
+bus_name = "MasterCopy"
+
+[node name="sfxName" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_f0uho")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_bm2jf")
+theme_override_font_sizes/normal_font_size = 32
+text = "Sound Effects
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Sound Effects
+"
+
+[node name="sfx" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer" instance=ExtResource("8_mdcmd")]
+layout_mode = 2
+value = 0.5
+bus_name = "sfx"
+
+[node name="musicName" type="RichTextLabel" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_f0uho")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_bm2jf")
+theme_override_font_sizes/normal_font_size = 32
+text = "Music 
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("5_vguq6")
+stat_line = "Music "
+
+[node name="music" parent="uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer" instance=ExtResource("8_mdcmd")]
+layout_mode = 2
+value = 0.5
+bus_name = "music"
+
+[connection signal="pressed" from="uibackdrop2/MarginContainer/TabContainer/items/item_details/HBoxContainer/Use" to="." method="_on_use_pressed"]
+[connection signal="pressed" from="uibackdrop2/MarginContainer/TabContainer/items/item_details/HBoxContainer/Toss" to="." method="_on_toss_pressed"]

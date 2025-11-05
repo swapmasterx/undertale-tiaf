@@ -82,6 +82,7 @@ func start_dialog(use_cinima_mode: bool, boxes: Array):
 		if use_cinima_mode == false:
 			print("cinafalse")
 			GlobalFlags.wasd_lock = true
+			SignalManager.lockWasd.emit()
 		else:
 			print("cinatrue")
 		GlobalFlags.dialogMode = true
@@ -162,7 +163,8 @@ func close_dialog_box():
 	GlobalFlags.dialogMode = false
 	can_advance_segment = false
 	GlobalFlags.menu_lock = false
-	if GlobalFlags.is_saving == true:
+	
+	if GlobalFlags.is_saving == true or GlobalFlags.cutscene_active == true:
 		SignalManager.closed_dialog.emit()
 	if GlobalFlags.enable_choice_prompt == true:
 		#GlobalFlags.item_transit = item
@@ -213,4 +215,6 @@ func use_talk_sprite():
 		"flowey":
 			speech_sprite.texture = load("res://sprites/dev/comicfurypageicon.png")
 		"Asriel":
+			pass
+		"other_flowey":
 			pass

@@ -5,11 +5,11 @@ class_name ObjectCore
 #0 = unset, 1 = text interactible, 2 = room load trigger
 @export_enum("Unset", "Textbox", "SavePoint", "Switch") var object_type: int
 @export var interaction_area: InteractionArea
+@export var load_trigger_area: LoadTriggerArea
 #@export var text_handler: DialogHandler
 @export var dialog_data: DialogData
 @onready var text_handlerr = $"../../../DialogHandler"
-
-@export var item: Consumable
+@export var itempointer: String
 
 var interact_counter: int = 0
 @export var max_interact: int = 1
@@ -20,7 +20,7 @@ var interact_counter: int = 0
 
 @export var off_texture: Texture 
 
-@export_enum("ConsumeItem", "ObtainItem", "DialogueBranch") var choice_prompt_type: int
+@export_enum("ConsumeItem", "ObtainItem", "DiscardItem", "DialogueBranch") var choice_prompt_type: int
 
 @export var enable_choice_prompt: bool = false
 
@@ -28,7 +28,6 @@ var interact_counter: int = 0
 
 func _ready():
 	if interaction_area:
-		
 		if GlobalFlags.dev_mode == true:
 			print("interaction for ", self, " loaded")
 		interaction_area.interact = Callable(self, "_on_interact")
@@ -37,6 +36,10 @@ func _ready():
 			
 			await self.ready
 			sprite.texture = off_texture
+	if load_trigger_area:
+		if GlobalFlags.dev_mode == true:
+			print("interaction for ", self, " loaded")
+		load_trigger_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
 	
@@ -64,6 +67,10 @@ func text_interact():
 		
 		if enable_choice_prompt:
 			GlobalFlags.enable_choice_prompt = true
+			ItemTable.item_loaded_string = itempointer
+			ItemTable.load_item(itempointer)
+			var item = ItemTable.item_loaded
+			
 			GlobalFlags.item_transit = item
 			GlobalFlags.text_swaper["item"] = item.item_name
 			GlobalFlags.choice_prompt_function = choice_prompt_type

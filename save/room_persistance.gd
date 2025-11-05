@@ -3,7 +3,9 @@ extends Node
 
 const save_file_name: String = "user://fileP.json"
 
-const default_save_file: Dictionary = {"first_puzzle": false, "switch_puzzle" : false}
+const default_save_file: Dictionary = {"opening_cutscene_played": false,
+"first_puzzle": false, "switch_puzzle" : false,
+"candy_counter": 0, "save_question": false, "spike_question": false, "other_flower_cutscene": false}
 
 func save_game(data: Dictionary) -> void:
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)
@@ -32,12 +34,30 @@ func load_game() -> Dictionary:
 	return default_save_file
 	
 func _ready():
+	load_the_game()
+	
+func load_the_game():
 	var dict: Dictionary = load_game()
 	first_puzzle = dict["first_puzzle"]
 	switch_puzzle = dict["switch_puzzle"]
+	candy_counter = dict["candy_counter"]
+	opening_cutscene = dict["opening_cutscene_played"]
+	save_question = dict["save_question"]
+	spike_question = dict["spike_question"]
+	other_flower_cutscene = dict["other_flower_cutscene"]
 
 #room persistancy
+
+var opening_cutscene = false
 
 var first_puzzle = false
 
 var switch_puzzle = false
+
+var candy_counter: int = 0
+
+var save_question = false
+
+var spike_question = false
+
+var other_flower_cutscene = false

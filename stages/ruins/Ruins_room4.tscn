@@ -70,7 +70,6 @@ position = Vector2(-320, -184)
 object_type = 1
 interaction_area = NodePath("Interaction_Area")
 dialog_data = ExtResource("9_xig3i")
-max_interact = 0
 
 [node name="Interaction_Area" parent="Interactibles/sign" instance=ExtResource("6_7lpse")]
 

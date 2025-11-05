@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://bg2a83hwrlhif"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_dhrcf"]
+
+[resource]
+script = ExtResource("1_dhrcf")
+dialog_set = Array[Array]([["Ok... Deep breaths...", "I'm alive... a flower but alive...", "At least with {name}'s soul I can walk now.", "But what are we doing all the way in the Ruins?"]])
+speech_noise_id = Array[Array]([["flowey", "flowey", "flowey", "flowey"]])
+char_talk_sprite_id = Array[Array]([["flowey", "flowey", "flowey", "flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0, 0, 0]])
+metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

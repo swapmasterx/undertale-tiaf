@@ -5,7 +5,7 @@ class_name DialogData
 	#default1, default2, flowey, flowey evil, Asriel
 
 #Talk sprites id
-	#none, flowey, Asriel
+	#none, flowey, Asriel, other_flowey
 
 #Talk sprite expression
 #0 = default, 1 = looking to the side, 2 = shocked, 3 = happy, 4 = sad, 5 = angry

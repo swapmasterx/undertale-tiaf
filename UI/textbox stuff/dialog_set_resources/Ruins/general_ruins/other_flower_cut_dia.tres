@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://dfy5jqq30aakv"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_l0c1h"]
+
+[resource]
+script = ExtResource("1_l0c1h")
+dialog_set = Array[Array]([["Rrrrrrrrr, come on!", "Why can't I load my old save!"], ["Another flower?"], ["WHAT!!? HOW ARE YOU...?! HOW IS THERE ANOTHER?! ", "Sorry if I'm interupting something but are you able to help m-", "No wonder why I couldn't load my save.", "Their determination must exceed mine!"], ["What are you talking about?", "But why are they so much larger then I am... Unless...", "What's your name?", "Um its... Asreil. Asreil Dreemurr."], ["...", "WHAT?!", "I know, its rather hard to believe...", "No I believe you.", "And thats the problem.", "!!!"]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey_evil", "flowey", "flowey_evil", "flowey_evil"], ["flowey", "flowey_evil", "flowey_evil", "flowey"], ["flowey_evil", "flowey_evil", "flowey", "flowey", "flowey_evil", "flowey"]])
+char_talk_sprite_id = Array[Array]([["none", "none"], ["flowey"], ["none", "flowey", "none", "none"], ["flowey", "none", "none", "flowey"], ["none", "none", "flowey", "none", "none", "flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])
+metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

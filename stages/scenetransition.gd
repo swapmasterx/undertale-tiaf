@@ -17,6 +17,7 @@ var stop_repeat = true
 func change_scene():
 	anim_player.play("fade_in")
 	GlobalFlags.wasd_lock = true
+	SignalManager.lockWasd.emit()
 	GlobalFlags.menu_lock = true
 	stop_repeat = false
 

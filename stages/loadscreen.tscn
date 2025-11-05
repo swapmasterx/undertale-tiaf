@@ -154,6 +154,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_ktcb1")
 
 [node name="dissolve_rect" type="ColorRect" parent="."]

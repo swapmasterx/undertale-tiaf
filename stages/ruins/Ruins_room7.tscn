@@ -1,14 +1,18 @@
-[gd_scene load_steps=13 format=4 uid="uid://cunlkdv43rdmp"]
+[gd_scene load_steps=20 format=4 uid="uid://cunlkdv43rdmp"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_n4b7k"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_bekcf"]
 [ext_resource type="Texture2D" uid="uid://ponf8mcm5sdt" path="res://tilemaps/ruins/tilesets/06ruins water pit.png" id="3_60juc"]
 [ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="4_n4b7k"]
-[ext_resource type="Resource" uid="uid://ctuyhnumjtqnw" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9a.tres" id="5_n4b7k"]
+[ext_resource type="Resource" uid="uid://bwtj1fjvy1edg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres" id="5_n4b7k"]
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_fqoa0"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="7_0s1eb"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="8_rnf03"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="9_y0req"]
+[ext_resource type="Script" uid="uid://cm3cciivg21dw" path="res://cutscenes/cutscene_the_other_flower.gd" id="10_bekcf"]
+[ext_resource type="Resource" uid="uid://dfy5jqq30aakv" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres" id="11_fqoa0"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="12_osd82"]
+[ext_resource type="Script" uid="uid://nuhw50lei6cp" path="res://cutscenes/loadFailed.gd" id="13_jcupv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osd82"]
 size = Vector2(31.5, 168)
@@ -18,6 +22,70 @@ size = Vector2(20, 181)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
 size = Vector2(20, 198)
+
+[sub_resource type="Animation" id="Animation_n4b7k"]
+resource_name = "the_other_flower"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.5, 1.4333333, 1.4666667, 2.1, 2.1666667, 2.6666667, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"adjust_camera"
+}, {
+"args": [],
+"method": &"dialogue_1"
+}, {
+"args": [],
+"method": &"dialogue_2"
+}, {
+"args": [],
+"method": &"alert"
+}, {
+"args": [],
+"method": &"dialogue_3"
+}, {
+"args": [],
+"method": &"dialogue_4"
+}, {
+"args": [],
+"method": &"dialogue_5"
+}, {
+"args": [],
+"method": &"adjust_camera"
+}, {
+"args": [],
+"method": &"cutscene_end"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneCamera/CanvasLayer/RichTextLabel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"loadfailed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bekcf"]
+_data = {
+&"the_other_flower": SubResource("Animation_n4b7k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bekcf"]
+size = Vector2(179.99994, 226)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_n4b7k")
@@ -91,3 +159,43 @@ placepoint = 1
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("9_y0req")]
 position = Vector2(2505, 0)
 placepoint = 2
+
+[node name="Cutscene The Other Flower" type="Node2D" parent="." node_paths=PackedStringArray("load_trigger_area")]
+script = ExtResource("10_bekcf")
+load_trigger_area = NodePath("CutSceneTriggerArea")
+dialog_data = ExtResource("11_fqoa0")
+
+[node name="CutsceneCamera" type="Camera2D" parent="Cutscene The Other Flower"]
+position = Vector2(-1733, 45)
+enabled = false
+zoom = Vector2(0.657, 0.657)
+limit_left = -2610
+limit_top = -540
+limit_right = 2610
+limit_bottom = 540
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Cutscene The Other Flower/CutsceneCamera"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscene The Other Flower/CutsceneCamera/CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_right = 1.2118056
+offset_right = -1151.0
+offset_bottom = 40.0
+theme = ExtResource("12_osd82")
+text = "  LOAD FAILED"
+scroll_active = false
+script = ExtResource("13_jcupv")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene The Other Flower"]
+libraries = {
+&"": SubResource("AnimationLibrary_bekcf")
+}
+
+[node name="CutSceneTriggerArea" parent="Cutscene The Other Flower" instance=ExtResource("8_rnf03")]
+position = Vector2(-1980, 434)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene The Other Flower/CutSceneTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_bekcf")

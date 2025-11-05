@@ -13,21 +13,27 @@ extends Control
 @onready var save_box = $"../save_box"
 
 
+
 var menu_option_memory
 
 func _ready():
 	player_soul.visible = false
 	self.visible = false
-	item.grab_focus()
 	menu_option_memory = item
+	
 	
 
 func _input(event):
 	if GlobalFlags.is_saving == false:
 		if event.is_action_pressed("menu") && GlobalFlags.menu_lock == false:
-		
+			
 			SignalManager.inv_updated.emit()
 			menu_flag_handler()
+		
+		if GlobalFlags.text_box_open == false && GlobalFlags.use_or_toss == true && event.is_action_pressed("back_cancel") && GlobalFlags.menu_layer == 3:
+		
+			SignalManager.closed_choose_option.emit()
+			GlobalFlags.set_deferred("menu_layer", 2)
 		
 		if GlobalFlags.text_box_open == false && event.is_action_pressed("back_cancel") && GlobalFlags.menu_layer == 2 :
 			item.focus_mode = FOCUS_ALL
@@ -48,12 +54,16 @@ func menu_flag_handler():
 		0:
 			GlobalFlags.blockInteraction = true
 			GlobalFlags.wasd_lock = true
+			SignalManager.lockWasd.emit()
 			self.visible = true
+			
 			player_soul.visible = true
+			
 			item.focus_mode = FOCUS_ALL
 			stat.focus_mode = FOCUS_ALL
 			magic.focus_mode = FOCUS_ALL
 			options.focus_mode = FOCUS_ALL
+			
 			GlobalFlags.menu_layer = 1
 			GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
 			GlobalFlags.sfx_1_channel.play()
@@ -74,12 +84,14 @@ func menu_flag_handler():
 func _on_item_pressed():
 	GlobalFlags.options_mode = false
 	menu_option_memory = item
-	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/itemButton"
+	GlobalFlags.choice_prompt_function = 0
+	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/test_button"
 	if test_button == null:
 		GlobalFlags.menu_layer = 0
 		GlobalFlags.options_mode = true
 		GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_victor.wav")
 		GlobalFlags.sfx_2_channel.play()
+		
 		menu_flag_handler()
 		return
 		
@@ -96,7 +108,11 @@ func _on_magic_pressed():
 	enable_submenu(2)
 	
 func _on_options_pressed():
+	var master = $sub_menu/uibackdrop2/MarginContainer/TabContainer/options/VBoxContainer/Master
+	if master == null:
+		return
 	enable_submenu(3)
+	master.call_deferred("grab_focus")
 	menu_option_memory = options
 	
 func enable_submenu(tab_num):

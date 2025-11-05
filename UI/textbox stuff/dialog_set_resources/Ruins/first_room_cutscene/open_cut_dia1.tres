@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://c23af5mu3bhys"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_tkr3a"]
+
+[resource]
+script = ExtResource("1_tkr3a")
+dialog_set = Array[Array]([["Ughg, what happend...", "Why can't I feel my arms or legs...?"], ["What happend to my body?!"], ["HELP!!!", "Mom?! Dad?!", "{name}?!"], ["{name}? Is that you?"]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey", "flowey", "flowey"], ["flowey"]])
+char_talk_sprite_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey", "flowey", "flowey"], ["flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [0], [0, 0, 0], [0]])
+metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

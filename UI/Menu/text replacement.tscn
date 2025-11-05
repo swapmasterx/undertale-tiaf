@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://qijiqj4o2jvd"]
 
-[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://UI/textbox stuff/textbox_default_theme_yellow.tres" id="1_upyhx"]
+[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://theme/textbox_default_theme_yellow.tres" id="1_upyhx"]
 [ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="2_ucrul"]
 
 [node name="item_discription" type="RichTextLabel"]

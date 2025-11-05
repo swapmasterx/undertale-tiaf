@@ -1,17 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://bvaicqevvm75r"]
+[gd_scene load_steps=7 format=4 uid="uid://bvaicqevvm75r"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_cv264"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_g7tmw"]
-[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="3_iaoe3"]
-[ext_resource type="Resource" uid="uid://bjbb45hle13hg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_1.tres" id="4_5kldv"]
-[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="5_1dful"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="6_1pmfd"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="7_mh3xw"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_cv264"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wg4lj"]
-radius = 87.0
-height = 294.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgup"]
 size = Vector2(190, 20)
@@ -28,18 +21,6 @@ tile_set = ExtResource("2_g7tmw")
 navigation_enabled = false
 
 [node name="Interactibles" type="Node2D" parent="."]
-
-[node name="Flowers" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("3_iaoe3")]
-position = Vector2(-1228, -76)
-object_type = 1
-interaction_area = NodePath("Interaction_Area")
-dialog_data = ExtResource("4_5kldv")
-
-[node name="Interaction_Area" parent="Interactibles/Flowers" instance=ExtResource("5_1dful")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/Flowers/Interaction_Area"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_wg4lj")
 
 [node name="Scripted Events" type="Node2D" parent="."]
 

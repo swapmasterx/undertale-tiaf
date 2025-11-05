@@ -11,6 +11,7 @@ var dialog_question: String = "{action_ph} the {item}?"
 var dialog_responce_a: String = "You consumed the {item}. You recovered {itemHP}."
 var dialog_responce_b: String = "You consumed the {item}. Your HP was maxed out."
 var dialog_responce_c: String = "You got the {item}."
+var dialog_responce_d: String = "You tossed the {item}."
 var option_count: int = 2
 var enabled = false
 #@export_enum("consumeable", "weapon", "armor", "dialog") var option_type
@@ -21,7 +22,9 @@ func _ready():
 	SignalManager.activate_choose_option.connect(_activate_choose_option)
 
 func _activate_choose_option():
+	
 	enabled = true
+	player_soul.visible = false
 	match option_count:
 		2:
 			option_a.focus_mode = FOCUS_ALL
@@ -36,8 +39,22 @@ func _activate_choose_option():
 			option_c.focus_mode = FOCUS_ALL
 			option_d.focus_mode = FOCUS_ALL
 			
-	textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
-	textbox_control.start_dialog(false, [dialog_question])
+	match GlobalFlags.choice_prompt_function:
+		0:
+			GlobalFlags.text_swaper["action_ph"] = "Consume"
+			SignalManager.inv_updated.emit()
+			textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
+			textbox_control.start_dialog(false, [dialog_question])
+		1:
+			GlobalFlags.text_swaper["action_ph"] = "Take"
+			SignalManager.inv_updated.emit()
+			textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
+			textbox_control.start_dialog(false, [dialog_question])
+		2:
+			GlobalFlags.text_swaper["action_ph"] = "Toss"
+			SignalManager.inv_updated.emit()
+			textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
+			textbox_control.start_dialog(false, [dialog_question])
 	
 func _on_textbox_control_finished_dispo():
 	if enabled == true:
@@ -80,7 +97,7 @@ func option_1():
 			obtain_item()
 			
 		2:
-			print("option_1 choice not implemented yet")
+			toss_item()
 
 func option_2():
 	match GlobalFlags.choice_prompt_function:
@@ -89,7 +106,7 @@ func option_2():
 		1:
 			_close_choose_option()
 		2:
-			print("option_2 choice not implemented yet")
+			_close_choose_option()
 
 func option_3():
 	pass
@@ -99,11 +116,23 @@ func option_4():
 
 func obtain_item():
 	print("option_1 1")
-	PlayerData.add_item(GlobalFlags.item_transit)
+	PlayerData.add_item(ItemTable.item_loaded_string)
 	_close_choose_option()
 	textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
 	textbox_control.start_dialog(false, [dialog_responce_c])
 	GlobalFlags.text_box_open = true
+
+func toss_item():
+	var index = GlobalFlags.item_transit
+	if index == null:
+		print("Item to remove not found")
+	else:
+		var item = PlayerData.inventory.find(GlobalFlags.item_transit)
+		_close_choose_option()
+		textbox_control.speech_n_face_ider(["default1"], ["none"], [0])
+		textbox_control.start_dialog(false, [dialog_responce_d])
+		GlobalFlags.text_box_open = true
+		PlayerData.remove_item(item)
 
 func item_type():
 	var index = GlobalFlags.item_transit
@@ -120,8 +149,8 @@ func item_type():
 			elif PlayerData.current_hp + GlobalFlags.item_transit.health_restore >= PlayerData.max_hp:
 				textbox_control.start_dialog(false, [dialog_responce_b])
 			GlobalFlags.text_box_open = true
-			GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_swallow.wav")
-			GlobalFlags.sfx_2_channel.play()
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_swallow.wav")
+			GlobalFlags.sfx_1_channel.play()
 			
 			PlayerData.health_change(GlobalFlags.item_transit.health_restore)
 			PlayerData.remove_item(item)

@@ -5,4 +5,3 @@
 
 [node name="itemButton" instance=ExtResource("1_b8jxl")]
 script = ExtResource("2_e743u")
-item = null

@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dfshmqtc0vvp6"]
+
+[ext_resource type="Shader" uid="uid://dey278c6qnqyq" path="res://shaders/echo.gdshader" id="1_c6i72"]
+[ext_resource type="Texture2D" uid="uid://8akff0pfgxwn" path="res://sprites/dev/soul red.png" id="2_mv2yx"]
+
+[resource]
+shader = ExtResource("1_c6i72")
+shader_parameter/Scroll_Texture = ExtResource("2_mv2yx")
+shader_parameter/Use_Original_Texture = true
+shader_parameter/Scrolling_Speed = Vector2(-1, -1)
+shader_parameter/Time_Scale = 0.0
+shader_parameter/Texture_Scale = 1.0
+shader_parameter/Height = 16.0
+shader_parameter/Cycles = 0.4
+shader_parameter/Offset = 0.0
+shader_parameter/Distance = 83.80000124872056
+shader_parameter/Count = 4
+shader_parameter/Fade = 0.25
+shader_parameter/Start_Alpha = 0.8
+shader_parameter/Tint_Amount = 0.22999999485904
+shader_parameter/Tint = Color(1, 0, 0, 1)
+shader_parameter/Pulse_both_Directions = true
+shader_parameter/Diagonal_Angle = 0.0
+shader_parameter/Echo_Blend_Mode = 0

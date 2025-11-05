@@ -1,0 +1,1472 @@
+[gd_scene load_steps=24 format=3 uid="uid://qr0higa5tln7"]
+
+[ext_resource type="Texture2D" uid="uid://dj0tdshxh6p07" path="res://mainmenu/p10 23 2025.png" id="1_8vcyq"]
+[ext_resource type="Script" uid="uid://bttxk88l124h5" path="res://mainmenu/main_menu_fab.gd" id="1_btskj"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="3_gb46f"]
+[ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="4_d1yry"]
+[ext_resource type="FontFile" uid="uid://diqlx2w5nbue6" path="res://fonts/determination.ttf" id="5_d1yry"]
+[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="6_eiujm"]
+[ext_resource type="Script" uid="uid://cm3hf0cu3a4um" path="res://mainmenu/name_creation.gd" id="7_8t1aa"]
+[ext_resource type="PackedScene" uid="uid://cr3780rumm76p" path="res://UI/textbox stuff/selectable_text_options_letters.tscn" id="7_vik2k"]
+[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://theme/textbox_default_theme_yellow.tres" id="8_kk0hu"]
+[ext_resource type="PackedScene" uid="uid://cx1gjcnsc2p8r" path="res://volumesettings/Volume.tscn" id="10_hjk4b"]
+[ext_resource type="Texture2D" uid="uid://doox4v18kd2s8" path="res://tilemaps/ruins/01opening room.png" id="11_5ho8n"]
+[ext_resource type="PackedScene" uid="uid://qijiqj4o2jvd" path="res://UI/Menu/text replacement.tscn" id="13_20v70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiujm"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vik2k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4a3nm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uui6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6myfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l7jw"]
+
+[sub_resource type="Animation" id="Animation_5ho8n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/whitefadeObj:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(426, 100)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5l7jw"]
+resource_name = "enlarge"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.6, 1.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(426, 100), Vector2(350, 250)]
+}
+
+[sub_resource type="Animation" id="Animation_hjk4b"]
+resource_name = "fade_to_white"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/whitefadeObj:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6myfo"]
+resource_name = "text shake"
+length = 0.139
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/TabContainer/confirm_name/nameEntryfinal:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.01396263401595483, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ho8n"]
+_data = {
+&"RESET": SubResource("Animation_5ho8n"),
+&"enlarge": SubResource("Animation_5l7jw"),
+&"fade_to_white": SubResource("Animation_hjk4b"),
+&"text shake": SubResource("Animation_6myfo")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_btskj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="background" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eiujm")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_vik2k")
+current_tab = 4
+clip_tabs = false
+tabs_visible = false
+
+[node name="titleCard" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="P10232025" type="Sprite2D" parent="CanvasLayer/TabContainer/titleCard"]
+scale = Vector2(0.59999996, 0.5999999)
+texture = ExtResource("1_8vcyq")
+centered = false
+
+[node name="ZorEnter" type="RichTextLabel" parent="CanvasLayer/TabContainer/titleCard"]
+visible = false
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 50)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -142.0
+offset_right = 162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "[PRESS Z OR ENTER]"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "[PRESS Z OR ENTER]"
+
+[node name="instructions" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="credit2" type="RichTextLabel" parent="CanvasLayer/TabContainer/instructions/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 400)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "--- Instructions ---
+
+[Z or ENTER] - Confirm
+[X or Shift] - Cancel
+[C or CTRL] - Menu (In-game)
+[Hold ESC] - Quit
+When HP is 0, you lose.
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "--- Instructions ---
+
+[Z or ENTER] - Confirm
+[X or Shift] - Cancel
+[C or CTRL] - Menu (In-game)
+[Hold ESC] - Quit
+When HP is 0, you lose.
+"
+
+[node name="startgame" parent="CanvasLayer/TabContainer/instructions/VBoxContainer" instance=ExtResource("6_eiujm")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+disabled = true
+text = "Begin Game"
+alignment = 1
+
+[node name="settings" parent="CanvasLayer/TabContainer/instructions/VBoxContainer" instance=ExtResource("6_eiujm")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+disabled = true
+text = "Settings"
+alignment = 1
+
+[node name="credit" type="RichTextLabel" parent="CanvasLayer/TabContainer/instructions/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Undertale by Toby Fox and  Temmie Chang
+TiAF by IzzytehWolf"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "Undertale by Toby Fox and  Temmie Chang
+TiAF by IzzytehWolf"
+
+[node name="nameCreation" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("7_8t1aa")
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/nameCreation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer"]
+layout_mode = 2
+
+[node name="namethehuman" type="RichTextLabel" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 93.68)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "
+Name the fallen human
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+Name the fallen human"
+
+[node name="nameEntry" type="RichTextLabel" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "placeholder"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 2.98
+theme_override_constants/h_separation = 50
+columns = 7
+
+[node name="A" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+
+[node name="B" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "B"
+
+[node name="C" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "C"
+
+[node name="D" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "D"
+
+[node name="E" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "E"
+
+[node name="F" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "F"
+
+[node name="G" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "G"
+
+[node name="H" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "H"
+
+[node name="I" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "I"
+
+[node name="J" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "J"
+
+[node name="K" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "K"
+
+[node name="L" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "L"
+
+[node name="M" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "M"
+
+[node name="N" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "N"
+
+[node name="O" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "O"
+
+[node name="P" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "P"
+
+[node name="Q" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "Q"
+
+[node name="R" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "R"
+
+[node name="S" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "S"
+
+[node name="T" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "T"
+
+[node name="U" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "U"
+
+[node name="V" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "V"
+
+[node name="W" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "W"
+
+[node name="X" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_neighbor_left = NodePath("../W")
+focus_neighbor_right = NodePath("../Y")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "X"
+
+[node name="Y" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+focus_neighbor_left = NodePath("../X")
+focus_neighbor_right = NodePath("../Z")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "Y"
+
+[node name="Z" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "Z"
+
+[node name="GridContainer2" type="GridContainer" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.86
+theme_override_constants/h_separation = 50
+columns = 7
+
+[node name="A" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "a"
+
+[node name="B" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "b"
+
+[node name="C" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "c"
+
+[node name="D" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "d"
+
+[node name="E" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "e"
+
+[node name="F" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "f"
+
+[node name="G" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "g"
+
+[node name="H" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "h"
+
+[node name="I" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "i"
+
+[node name="J" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "j"
+
+[node name="K" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "k"
+
+[node name="L" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "l"
+
+[node name="M" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "m"
+
+[node name="N" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "n"
+
+[node name="O" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "o"
+
+[node name="P" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "p"
+
+[node name="Q" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "q"
+
+[node name="R" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "r"
+
+[node name="S" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "s"
+
+[node name="T" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "t"
+
+[node name="U" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "u"
+
+[node name="V" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath("../W")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/Quit")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "v"
+
+[node name="W" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../V")
+focus_neighbor_right = NodePath("../X")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/Quit")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "w"
+
+[node name="X" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../W")
+focus_neighbor_right = NodePath("../Y")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/BackSpace")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "x"
+
+[node name="Y" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../X")
+focus_neighbor_right = NodePath("../Z")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/BackSpace")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "y"
+
+[node name="Z" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/GridContainer2" instance=ExtResource("7_vik2k")]
+custom_minimum_size = Vector2(40, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Y")
+focus_neighbor_right = NodePath("../T")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = ""
+Letter = "z"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Quit" type="Button" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+disabled = true
+action_mode = 0
+button_mask = 0
+text = "Quit"
+flat = true
+
+[node name="BackSpace" type="Button" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_right = NodePath("../done_name")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+disabled = true
+action_mode = 0
+button_mask = 0
+text = "Backspace"
+flat = true
+
+[node name="done_name" type="Button" parent="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+disabled = true
+action_mode = 0
+button_mask = 0
+text = "Done"
+flat = true
+
+[node name="Settings" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/Settings/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="filler" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+"
+
+[node name="MasterName" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "Master Volume
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "Master Volume
+"
+
+[node name="Master" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_hjk4b")]
+layout_mode = 2
+value = 0.5
+bus_name = "MasterCopy"
+
+[node name="sfxName" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "Sound Effects
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "Sound Effects
+"
+
+[node name="sfx" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_hjk4b")]
+layout_mode = 2
+value = 0.5
+bus_name = "sfx"
+
+[node name="musicName" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "Music 
+"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "Music "
+
+[node name="music" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_hjk4b")]
+layout_mode = 2
+value = 0.5
+bus_name = "music"
+
+[node name="filler2" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(400, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+"
+
+[node name="done" type="Button" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+action_mode = 0
+button_mask = 0
+text = "Done"
+flat = true
+alignment = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MasterName" type="RichTextLabel" parent="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(600, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "Settings
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "Settings
+"
+
+[node name="confirm_name" type="Control" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="nameEntryfinal" type="RichTextLabel" parent="CanvasLayer/TabContainer/confirm_name"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(300, 50)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 100.0
+offset_right = 150.00012
+offset_bottom = 150.00008
+grow_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "placeholder"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+"
+
+[node name="confirm_box" type="MarginContainer" parent="CanvasLayer/TabContainer/confirm_name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/confirm_name/confirm_box"]
+layout_mode = 2
+
+[node name="confirmit" type="RichTextLabel" parent="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 93.68)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "
+Is this name correct?
+"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+Is this name correct?
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="yes" type="Button" parent="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+action_mode = 0
+button_mask = 0
+text = "Yes"
+flat = true
+
+[node name="BackSpace" type="Button" parent="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../yes")
+focus_neighbor_right = NodePath("../no")
+focus_mode = 0
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+disabled = true
+action_mode = 0
+button_mask = 0
+flat = true
+
+[node name="no" type="Button" parent="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+action_mode = 0
+button_mask = 0
+text = "No"
+flat = true
+
+[node name="activeSave" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="01OpeningRoom" type="Sprite2D" parent="CanvasLayer/TabContainer/activeSave"]
+position = Vector2(576, 324)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("11_5ho8n")
+
+[node name="save_box" type="MarginContainer" parent="CanvasLayer/TabContainer/activeSave"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 56.0
+offset_right = 84.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 200
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/activeSave/save_box"]
+layout_mode = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="item_list" type="VBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="metrics" type="HBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="item_list" type="VBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="item_discription" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics/item_list" instance=ExtResource("13_20v70")]
+layout_mode = 2
+
+[node name="item_list2" type="VBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="item_discription2" type="RichTextLabel" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics/item_list2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_kk0hu")
+text = "  LV {LVnum}"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "  LV {LVnum}"
+
+[node name="item_list3" type="VBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="item_discription_4" type="RichTextLabel" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics/item_list3"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_kk0hu")
+text = "{name}"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = " {time_played}"
+
+[node name="item_discription3" type="RichTextLabel" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(150, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_kk0hu")
+text = "{roomname}"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "{roomname}"
+
+[node name="metrics2" type="HBoxContainer" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Continuation" type="Button" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics2"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../reset")
+focus_neighbor_bottom = NodePath("../../Settings")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6myfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5l7jw")
+action_mode = 0
+button_mask = 0
+text = "Continue"
+flat = true
+alignment = 0
+
+[node name="spacer" type="RichTextLabel" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(100, 45)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_kk0hu")
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+
+[node name="reset" type="Button" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics2"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Continuation")
+focus_neighbor_bottom = NodePath("../../Settings")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6myfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5l7jw")
+action_mode = 0
+button_mask = 0
+text = "Reset"
+flat = true
+alignment = 0
+
+[node name="Settings" type="Button" parent="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../metrics2/Continuation")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6myfo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5l7jw")
+action_mode = 0
+button_mask = 0
+text = "Settings"
+flat = true
+
+[node name="resetConfirmation" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="confirm_box" type="MarginContainer" parent="CanvasLayer/TabContainer/resetConfirmation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box"]
+layout_mode = 2
+
+[node name="confirmit" type="RichTextLabel" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 93.68)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_gb46f")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_d1yry")
+theme_override_font_sizes/normal_font_size = 32
+text = "
+Are you sure you want to Reset?
+You will lose all progress
+you have gained."
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+text_direction = 1
+script = ExtResource("4_d1yry")
+stat_line = "
+Are you sure you want to Reset?
+You will lose all progress
+you have gained."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="yesToReset" type="Button" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+action_mode = 0
+button_mask = 0
+text = "Yes"
+flat = true
+
+[node name="BackSpace" type="Button" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../yesToReset")
+focus_neighbor_right = NodePath("../noToReset")
+focus_mode = 0
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+disabled = true
+action_mode = 0
+button_mask = 0
+flat = true
+
+[node name="noToReset" type="Button" parent="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../BackSpace")
+mouse_filter = 2
+theme = ExtResource("8_kk0hu")
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
+action_mode = 0
+button_mask = 0
+text = "No"
+flat = true
+
+[node name="whitefadeObj" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5ho8n")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5ho8n")
+}
+
+[node name="whitefade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5ho8n")
+}
+
+[connection signal="pressed" from="CanvasLayer/TabContainer/instructions/VBoxContainer/startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/instructions/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/Quit" method="_on_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/Quit" method="_on_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/BackSpace" to="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/BackSpace" method="_on_focus_entered"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/BackSpace" to="CanvasLayer/TabContainer/nameCreation" method="_on_back_space_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/BackSpace" to="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/BackSpace" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/nameCreation/MarginContainer/VBoxContainer/HBoxContainer/done_name" to="." method="_on_done_name_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/done" to="." method="_on_done_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer/HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/confirm_name/confirm_box/VBoxContainer/HBoxContainer/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics2/Continuation" to="." method="_on_continuation_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/metrics2/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/activeSave/save_box/MarginContainer/item_list/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer/HBoxContainer/yesToReset" to="." method="_on_yes_to_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/resetConfirmation/confirm_box/VBoxContainer/HBoxContainer/noToReset" to="." method="_on_no_to_reset_pressed"]

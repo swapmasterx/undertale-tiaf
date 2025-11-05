@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdiokoccfgw5s"]
 
-[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://UI/textbox stuff/textbox_default_theme_yellow.tres" id="1_4lpcn"]
+[ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://theme/textbox_default_theme_yellow.tres" id="1_4lpcn"]
 [ext_resource type="Script" uid="uid://figd42j0f7op" path="res://UI/textbox stuff/selectable_text_options.gd" id="2_v51tb"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uui6k"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4a3nm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uui6k"]
 
 [node name="textButton" type="Button"]
 anchors_preset = 8
@@ -21,8 +21,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_4lpcn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uui6k")
 action_mode = 0
 button_mask = 0
 text = "*Spare"

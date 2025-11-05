@@ -1,3 +1,4 @@
-TextFormat
+ShaderMaterial
+DialogData
 Consumable
 Item

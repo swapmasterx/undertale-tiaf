@@ -13,22 +13,31 @@ var save_pressed = false
 
 func _ready():
 	SignalManager.closed_dialog.connect(closed_dialog)
+	if GlobalFlags.HasSaved == false:
+		item_discription.stat_line = "------"
+		item_discription.text = "------"
 	
 	
 func closed_dialog():
-	
-	save_confirmation.visible = false
-	spacer_2.visible = true
-	spacer.visible = true
-	save.visible = true
-	cancel.visible = true
-	self.visible = true
-	GlobalFlags.wasd_lock = true
-	player_soul.visible = true
-	save.call_deferred("grab_focus")
-
+	if GlobalFlags.is_saving == true:
+		GlobalFlags.text_swaper["name"] = PlayerData.fallen_name
+		SignalManager.inv_updated.emit()
+		save_confirmation.visible = false
+		spacer_2.visible = true
+		spacer.visible = true
+		save.visible = true
+		cancel.visible = true
+		self.visible = true
+		GlobalFlags.wasd_lock = true
+		SignalManager.lockWasd.emit()
+		player_soul.visible = true
+		save.call_deferred("grab_focus")
 
 func _on_save_pressed():
+	if GlobalFlags.HasSaved == false:
+		GlobalFlags.HasSaved = true
+		item_discription.stat_line = "{name}"
+		item_discription.text = "{name}"
 	GlobalFlags.save()
 	player_soul.visible = false
 	save_pressed = true
@@ -38,7 +47,9 @@ func _on_save_pressed():
 	spacer_2.visible = false
 	spacer.visible = false
 	GlobalFlags.text_swaper["roomname"] = GlobalFlags.roomname
-	item_discription.add_theme_color_override("default_color", Color(1, 1, 0))
+	GlobalFlags.text_swaper["name"] = PlayerData.fallen_name
+	
+	item_discription.add_theme_color_override("default_color", Color(1.0, 1.0, 0.0, 1.0))
 	item_discription_2.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_3.add_theme_color_override("default_color", Color(1, 1, 0))
 	item_discription_4.add_theme_color_override("default_color", Color(1, 1, 0))

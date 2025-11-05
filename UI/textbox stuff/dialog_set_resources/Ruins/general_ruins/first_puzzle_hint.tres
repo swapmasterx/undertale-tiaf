@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_pil3i")
-dialog_set = Array[Array]([["Only the fearless may proceed. Brave ones, foolish ones. Both walk not the middle road."]])
-speech_noise_id = Array[Array]([["default1"]])
-char_talk_sprite_id = Array[Array]([["none"]])
-char_mood_sprite_id = Array[Array]([[0]])
+dialog_set = Array[Array]([["Only the fearless may proceed. Brave ones, foolish ones. Both walk not the middle road.", "I remember passing through this puzzle to get a glimpse of the sun.", "Mom would always do the puzzle herself on the way back though."], ["Only the fearless may proceed. Brave ones, foolish ones. Both walk not the middle road."]])
+speech_noise_id = Array[Array]([["default1", "flowey", "flowey"], ["default1"]])
+char_talk_sprite_id = Array[Array]([["none", "flowey", "flowey"], ["none"]])
+char_mood_sprite_id = Array[Array]([[0, 0, 0], [0]])
 metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

@@ -1,20 +1,285 @@
-[gd_scene load_steps=11 format=4 uid="uid://cyrnvyvicej86"]
+[gd_scene load_steps=23 format=4 uid="uid://cyrnvyvicej86"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_brjy1"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_wg4lj"]
 [ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="3_1vgup"]
 [ext_resource type="Resource" uid="uid://djdedcygfwnv2" path="res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres" id="4_brjy1"]
 [ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="5_pnebs"]
+[ext_resource type="Resource" uid="uid://bg2a83hwrlhif" path="res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/usedtowalking.tres" id="6_2ftl1"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="6_u3xsr"]
+[ext_resource type="Script" uid="uid://ovtt1axj3xsd" path="res://misc_scripts/self_remove.gd" id="7_3fisy"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="7_hv775"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_wg4lj"]
+[ext_resource type="Script" uid="uid://6ydmtkgmy5ga" path="res://cutscenes/cutscene_opening_room.gd" id="9_1vgup"]
+[ext_resource type="Resource" uid="uid://c23af5mu3bhys" path="res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/open_cut_dia1.tres" id="10_lnijx"]
+[ext_resource type="Texture2D" uid="uid://k6gmhh5nnpl2" path="res://sprites/character/flowreil/p10 29a 2025.png" id="11_pnebs"]
+[ext_resource type="Material" uid="uid://dfshmqtc0vvp6" path="res://shaders/echo.tres" id="12_i5x6i"]
+[ext_resource type="Texture2D" uid="uid://8akff0pfgxwn" path="res://sprites/dev/soul red.png" id="12_u3xsr"]
+[ext_resource type="Texture2D" uid="uid://6tjfng584mq0" path="res://sprites/character/flowreil/p10 29c 2025.png" id="14_3fisy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wg4lj"]
 radius = 87.0
 height = 294.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5x6i"]
+size = Vector2(180, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgup"]
 size = Vector2(190, 20)
+
+[sub_resource type="Animation" id="Animation_lnijx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("P1029a2025:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoulRed:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SoulRed:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-811, -95)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("P1029a2025:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-532, -63)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("P1029a2025:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("P1029c2025:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("P1029c2025:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1vgup"]
+resource_name = "opening_cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6.79, 8.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.657, 0.657), Vector2(0.657, 0.657)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(8.433333, 10.199999, 10.266666, 10.3, 13.166667, 14.666667, 17.866667, 19, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"dialogue_1"
+}, {
+"args": [],
+"method": &"dialogue_2"
+}, {
+"args": [],
+"method": &"dialogue_3"
+}, {
+"args": [],
+"method": &"great_shine"
+}, {
+"args": [],
+"method": &"dialogue_4"
+}, {
+"args": [],
+"method": &"impact"
+}, {
+"args": [],
+"method": &"generate"
+}, {
+"args": [],
+"method": &"adjust_camera"
+}, {
+"args": [],
+"method": &"cutscene_end"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("P1029a2025:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.9881907, 2.03029, 2.2, 2.5176544, 3.2, 3.5117497, 3.8683276, 4.3113484, 4.702886, 5.0000196, 8.466666, 10.104927, 10.233334, 10.3, 14.666755),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 2, 3, 2, 3, 2, 4, 5, 6, 7, 8, 9]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoulRed:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(10.266666, 10.300274, 14.633333, 14.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SoulRed:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10.299872, 10.350356, 10.4609995, 10.533334, 10.766666, 14.233893, 14.23449, 14.5, 14.53057, 14.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-811, -95), Vector2(-811, -150), Vector2(-811, -180.4264), Vector2(-811, -187.50465), Vector2(-811, -145.23), Vector2(-811, -145.23), Vector2(-811, -145.23), Vector2(-851.86676, -162.53734), Vector2(-811, -149.28549), Vector2(-543, -62)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("P1029a2025:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(14.666755, 14.8, 14.866667, 15, 15.1, 15.233334, 15.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-532, -63), Vector2(-498.86865, -63), Vector2(-488.86584, -63), Vector2(-469.49484, -63), Vector2(-462.7602, -63), Vector2(-452.36194, -63), Vector2(-450, -63)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("P1029a2025:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(15.366667, 15.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("P1029c2025:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15.366667, 15.3999195, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("P1029c2025:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.4, 15.866667, 16.392696, 16.83605, 17.233334, 17.366665, 17.466665, 17.533333, 17.633333, 17.733332, 17.866665, 17.933332, 17.999998, 18.066666, 18.133333, 18.2, 18.266666, 18.333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnijx"]
+_data = {
+&"RESET": SubResource("Animation_lnijx"),
+&"opening_cutscene": SubResource("Animation_1vgup")
+}
 
 [node name="Room_Core2" type="Node2D" groups=["room"]]
 script = ExtResource("1_brjy1")
@@ -42,6 +307,33 @@ dialog_data = ExtResource("4_brjy1")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wg4lj")
 
+[node name="walkingComment" parent="Interactibles" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("3_1vgup")]
+position = Vector2(-811, -95)
+object_type = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+dialog_data = ExtResource("6_2ftl1")
+
+[node name="LoadTriggerArea" parent="Interactibles/walkingComment" instance=ExtResource("7_hv775")]
+position = Vector2(634, 103)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/walkingComment/LoadTriggerArea"]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_i5x6i")
+
+[node name="self_remove_opening_room" type="Node2D" parent="Interactibles/walkingComment" node_paths=PackedStringArray("load_trigger_area")]
+script = ExtResource("7_3fisy")
+load_trigger_area = NodePath("../LoadTriggerArea2")
+save_flag = 0
+
+[node name="LoadTriggerArea2" parent="Interactibles/walkingComment" instance=ExtResource("7_hv775")]
+position = Vector2(634, 103)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/walkingComment/LoadTriggerArea2"]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_i5x6i")
+
 [node name="Scripted Events" type="Node2D" parent="."]
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("6_u3xsr")]
@@ -61,5 +353,43 @@ position = Vector2(1265, -56)
 placepoint = 1
 
 [node name="LoadatPointspawn" parent="Scripted Events" instance=ExtResource("8_wg4lj")]
-position = Vector2(-813, -94)
-scale = Vector2(280.909, -5.05864)
+position = Vector2(-450, -73)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Cutscene Opening Room" type="Node2D" parent="."]
+script = ExtResource("9_1vgup")
+dialog_data_1 = ExtResource("10_lnijx")
+
+[node name="CutsceneCamera" type="Camera2D" parent="Cutscene Opening Room"]
+position = Vector2(-532, -64)
+enabled = false
+limit_left = -1530
+limit_top = -540
+limit_right = 1620
+limit_bottom = 440
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene Opening Room"]
+libraries = {
+&"": SubResource("AnimationLibrary_lnijx")
+}
+
+[node name="P1029a2025" type="Sprite2D" parent="Cutscene Opening Room"]
+position = Vector2(-532, -63)
+texture = ExtResource("11_pnebs")
+hframes = 5
+vframes = 2
+
+[node name="SoulRed" type="Sprite2D" parent="Cutscene Opening Room"]
+visible = false
+material = ExtResource("12_i5x6i")
+position = Vector2(-811, -95)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("12_u3xsr")
+
+[node name="P1029c2025" type="Sprite2D" parent="Cutscene Opening Room"]
+visible = false
+position = Vector2(-450, -73)
+texture = ExtResource("14_3fisy")
+offset = Vector2(0, -40)
+hframes = 5
+vframes = 2

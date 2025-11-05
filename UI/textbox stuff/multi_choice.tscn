@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b72w5p4n85alx" path="res://UI/textbox stuff/multi_choice.gd" id="1_uq7yl"]
 [ext_resource type="PackedScene" uid="uid://djvuhgayxw2c2" path="res://UI/textbox stuff/text_multi_option_button.tscn" id="3_yunnl"]
-[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://UI/textbox stuff/textbox_default_theme.tres" id="4_tyont"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="4_tyont"]
 
 [node name="choice_options" type="MarginContainer"]
 layout_direction = 2

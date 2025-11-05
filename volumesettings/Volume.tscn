@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx1gjcnsc2p8r"]
+
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="1_h31lt"]
+[ext_resource type="Script" uid="uid://btnamig0uxipy" path="res://volumesettings/volume.gd" id="1_wnrvq"]
+[ext_resource type="Texture2D" uid="uid://b7bbm7p02stwg" path="res://volumesettings/blank.png" id="2_l4pvt"]
+
+[node name="HSlider" type="HSlider"]
+offset_right = 8.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme = ExtResource("1_h31lt")
+theme_override_icons/grabber = ExtResource("2_l4pvt")
+theme_override_icons/grabber_highlight = ExtResource("2_l4pvt")
+theme_override_icons/grabber_disabled = ExtResource("2_l4pvt")
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_wnrvq")
+bus_name = null

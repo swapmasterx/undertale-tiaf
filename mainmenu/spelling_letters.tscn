@@ -1,0 +1,164 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ic8pweqxqhr"]
+
+[ext_resource type="PackedScene" uid="uid://cr3780rumm76p" path="res://UI/textbox stuff/selectable_text_options_letters.tscn" id="1_xh8yw"]
+
+[node name="GridContainer" type="GridContainer"]
+theme_override_constants/h_separation = 50
+columns = 7
+
+[node name="A" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "A"
+
+[node name="B" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "B"
+
+[node name="C" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "C"
+
+[node name="D" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "D"
+
+[node name="E" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "E"
+
+[node name="F" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "F"
+
+[node name="G" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "G"
+
+[node name="H" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "H"
+
+[node name="I" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "I"
+
+[node name="J" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "J"
+
+[node name="K" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "K"
+
+[node name="L" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "L"
+
+[node name="M" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "M"
+
+[node name="N" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "N"
+
+[node name="O" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "O"
+
+[node name="P" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "P"
+
+[node name="Q" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Q"
+
+[node name="R" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "R"
+
+[node name="S" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "S"
+
+[node name="T" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "T"
+
+[node name="U" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "U"
+
+[node name="V" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "V"
+
+[node name="W" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "W"
+
+[node name="X" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="Y" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Y
+"
+
+[node name="Z" parent="." instance=ExtResource("1_xh8yw")]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Z"

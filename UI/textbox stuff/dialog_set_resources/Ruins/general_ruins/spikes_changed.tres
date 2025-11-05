@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://b0jkl0g22gtqn"]
+
+[ext_resource type="Script" uid="uid://bb5ymk2j4kmnx" path="res://UI/textbox stuff/dialog_set_resources/dialog_data.gd" id="1_474mw"]
+
+[resource]
+script = ExtResource("1_474mw")
+dialog_set = Array[Array]([["Huh, someone swapped the spikes for blocking plates.", "As dangerous as the spikes were I kinda miss them.", "Makes me wonder how long I've been \"dead\" for though..."]])
+speech_noise_id = Array[Array]([["flowey", "flowey", "flowey"]])
+char_talk_sprite_id = Array[Array]([["flowey", "flowey", "flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0, 0]])
+metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

@@ -1,6 +1,6 @@
 extends Camera2D
 
-@onready var player = $"../CharacterBody2D"
+@onready var player = $".."
 @onready var camera_2d = $"."
 #@onready var map = get_tree().get_first_node_in_group("map_base")
 
@@ -8,12 +8,15 @@ extends Camera2D
 
 @export var SPEED = 10
 
-#func _ready():
-	#set_camera_limits()
+func _ready():
+	SignalManager.startCutscene.connect(_on_start_cutscene)
+	SignalManager.endCutscene.connect(_on_end_cutscene)
 
-#func _process(delta):
-	#position = player.position
-	##position = lerp(position, player.position, SPEED*delta)
+func _on_start_cutscene():
+	self.enabled = false
+
+func _on_end_cutscene():
+	self.enabled = true
 
 func set_camera_limits():
 	#map = $"../../Room_Core/Map"

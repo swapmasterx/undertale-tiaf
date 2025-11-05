@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c5x60j4r461f2"]
+[gd_scene load_steps=22 format=4 uid="uid://c5x60j4r461f2"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_rf2lj"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_jae58"]
@@ -14,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://cc5qdqy07u34u" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/stayonpath.tres" id="9_b7wex"]
 [ext_resource type="Resource" uid="uid://2k27d5jiob68" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/jammedLever.tres" id="10_o7te0"]
 [ext_resource type="Script" uid="uid://cxoceinrki6i8" path="res://puzzleLogic/Ruins/ruins_switch_puzzle.gd" id="14_o7te0"]
+[ext_resource type="Resource" uid="uid://b0jkl0g22gtqn" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/spikes_changed.tres" id="14_tit4e"]
+[ext_resource type="Script" uid="uid://ovtt1axj3xsd" path="res://misc_scripts/self_remove.gd" id="15_tit4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tit4e"]
 size = Vector2(21, 98)
@@ -26,6 +28,9 @@ size = Vector2(20, 181)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgup"]
 size = Vector2(190, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dm6e"]
+size = Vector2(180, 151)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_rf2lj")
@@ -153,6 +158,33 @@ placepoint = 1
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("6_x7bsl")]
 position = Vector2(1530, 178)
 placepoint = 2
+
+[node name="walkingComment" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_x7bsl")]
+position = Vector2(729, 79)
+object_type = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+dialog_data = ExtResource("14_tit4e")
+
+[node name="LoadTriggerArea" parent="Scripted Events/walkingComment" instance=ExtResource("5_xbwjd")]
+position = Vector2(634, 103)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/walkingComment/LoadTriggerArea"]
+position = Vector2(-4, 0.5)
+shape = SubResource("RectangleShape2D_3dm6e")
+
+[node name="self_remove_opening_room" type="Node2D" parent="Scripted Events/walkingComment" node_paths=PackedStringArray("load_trigger_area")]
+script = ExtResource("15_tit4e")
+load_trigger_area = NodePath("../LoadTriggerArea2")
+save_flag = 2
+
+[node name="LoadTriggerArea2" parent="Scripted Events/walkingComment" instance=ExtResource("5_xbwjd")]
+position = Vector2(634, 103)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/walkingComment/LoadTriggerArea2"]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_3dm6e")
 
 [node name="puzzle_logic" type="Node2D" parent="."]
 script = ExtResource("14_o7te0")
