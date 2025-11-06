@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_tkr3a")
-dialog_set = Array[Array]([["Ughg, what happend...", "Why can't I feel my arms or legs...?"], ["What happend to my body?!"], ["HELP!!!", "Mom?! Dad?!", "{name}?!"], ["{name}? Is that you?"]])
+dialog_set = Array[Array]([["* Ughg, what happend...", "* Why can't I feel my arms or legs...?"], ["* What happend to my body?!"], ["* HELP!!!", "* Mom?! ||||||||| Dad?!", "$* {name}?!-="], ["#* {name}? |||||||||||| Is that you?"]])
 speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey", "flowey", "flowey"], ["flowey"]])
 char_talk_sprite_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey", "flowey", "flowey"], ["flowey"]])
 char_mood_sprite_id = Array[Array]([[0, 0], [0], [0, 0, 0], [0]])

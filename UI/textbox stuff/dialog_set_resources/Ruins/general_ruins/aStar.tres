@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_fxhj7")
-dialog_set = Array[Array]([["...we must have died...", "I remember... collapsing in the throne room.", "Something sharp, then nothing.", "Uhg, what is with my voice!?", "Yeah, thats the biggest consern right now.", "Way to have your priorities straight Asreil.", "...Whats that star thing?"]])
+dialog_set = Array[Array]([["* ...||||||||we must have died...", "* I remember.||.||.||||||||||||||||||| collapsing in the throne room.", "* Something sharp, then nothing.", "* Uhg, what is with my voice!?", "* Yeah|||, thats the biggest consern right now.", "*Way to have your priorities straight Asreil.", "*...Whats that star thing?"]])
 speech_noise_id = Array[Array]([["flowey", "flowey", "flowey", "flowey", "flowey", "flowey", "flowey"]])
 char_talk_sprite_id = Array[Array]([["flowey", "flowey", "flowey", "flowey", "flowey", "flowey", "flowey"]])
 char_mood_sprite_id = Array[Array]([[0, 0, 0, 0, 0, 0, 0]])

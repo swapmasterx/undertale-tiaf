@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_l0c1h")
-dialog_set = Array[Array]([["Rrrrrrrrr, come on!", "Why can't I load my old save!"], ["Another flower?"], ["WHAT!!? HOW ARE YOU...?! HOW IS THERE ANOTHER?! ", "Sorry if I'm interupting something but are you able to help m-", "No wonder why I couldn't load my save.", "Their determination must exceed mine!"], ["What are you talking about?", "But why are they so much larger then I am... Unless...", "What's your name?", "Um its... Asreil. Asreil Dreemurr."], ["...", "WHAT?!", "I know, its rather hard to believe...", "No I believe you.", "And thats the problem.", "!!!"]])
-speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey_evil", "flowey", "flowey_evil", "flowey_evil"], ["flowey", "flowey_evil", "flowey_evil", "flowey"], ["flowey_evil", "flowey_evil", "flowey", "flowey", "flowey_evil", "flowey"]])
-char_talk_sprite_id = Array[Array]([["none", "none"], ["flowey"], ["none", "flowey", "none", "none"], ["flowey", "none", "none", "flowey"], ["none", "none", "flowey", "none", "none", "flowey"]])
-char_mood_sprite_id = Array[Array]([[0, 0], [0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])
+dialog_set = Array[Array]([["* Rrrrrrrrr||||||, come on!", "* Why can't I load my old save!"], ["* Another talking golden flower?"], ["* WHAT!!? |||||||HOW ARE YOU...?! ||||||| HOW IS THERE ANOTHER?! ", "* Look are you able to tell me what is going on?", "$* Because I can't tell if this is the after life or I am genuinely loosing my-="], ["#* No wonder why I couldn't load my save.", "* Their determination must exceed mine!"], ["* ...|||||||||||come again?"], ["* Who are you?|||||||||||| Whats your name?", "* Um ||||||its... |||||||| Asreil.||||||||||||||| Asreil Dreemurr."], ["* .||||||||.||||||||."], ["* WHAT?!", "* I know, |||||||||||its rather hard to believe..."], ["* No I believe you."], ["* And thats the problem.", "* !!!"]])
+speech_noise_id = Array[Array]([["flowey", "flowey"], ["flowey"], ["flowey_evil", "flowey", "flowey"], ["flowey_evil", "flowey_evil"], ["flowey"], ["flowey_evil", "flowey"], ["flowey_evil"], ["flowey_evil", "flowey"], ["flowey"], ["flowey_evil", "flowey"]])
+char_talk_sprite_id = Array[Array]([["none", "none"], ["flowey"], ["none", "flowey", "flowey"], ["none", "none"], ["flowey"], ["none", "flowey"], ["none"], ["none", "flowey"], ["none"], ["none", "flowey"]])
+char_mood_sprite_id = Array[Array]([[0, 0], [0], [0, 0, 0], [0, 0], [0], [0, 0], [0], [0, 0], [0], [0, 0]])
 metadata/_custom_type_script = "uid://bb5ymk2j4kmnx"

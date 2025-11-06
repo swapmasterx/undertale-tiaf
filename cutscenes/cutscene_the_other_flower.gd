@@ -9,6 +9,8 @@ extends Node2D
 @onready var player_camera = $"../../player/Camera2D"
 @onready var player = $"../../player"
 @export var dialog_data: DialogData
+@onready var exclaim = $Exclaim
+var dialog_count: int = 0
 
 func _ready():
 	SignalManager.closed_dialog.connect(_closed_dialog)
@@ -43,6 +45,8 @@ func cutscene_end():
 	cutscene_camera.enabled = false
 	SignalManager.endCutscene.emit()
 	SignalManager.enter_overworld_hazard.emit()
+
+func cutscene_close():
 	self.queue_free()
 
 func pause_cutscene():
@@ -53,50 +57,19 @@ func adjust_camera():
 	tween.tween_property(cutscene_camera, "global_position", player_camera.global_position, 0.25)
 
 func alert():
+	exclaim.visible = true
 	GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_b.wav")
 	GlobalFlags.sfx_2_channel.play()
+	await get_tree().create_timer(1).timeout
+	exclaim.visible = false
 
-func dialogue_1():
+func dialogue():
 	animation_player.pause()
 	text_box.character_time = 0.03
 	if text_handlerr && GlobalFlags.dialogMode == false:
-		text_handlerr.dialog = dialog_data.dialog_set[0]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[0]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[0]
+		text_handlerr.dialog = dialog_data.dialog_set[dialog_count]
+		text_handlerr.speech_id = dialog_data.speech_noise_id[dialog_count]
+		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[dialog_count]
 		text_handlerr.on_interact()
-
-func dialogue_2():
-	animation_player.pause()
-	if text_handlerr && GlobalFlags.dialogMode == false:
-		text_handlerr.dialog = dialog_data.dialog_set[1]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[1]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[1]
-		text_handlerr.on_interact()
+		dialog_count += 1
 		
-func dialogue_3():
-	animation_player.pause()
-	if text_handlerr && GlobalFlags.dialogMode == false:
-		text_handlerr.dialog = dialog_data.dialog_set[2]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[2]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[2]
-		text_handlerr.on_interact()
-
-		
-func dialogue_4():
-	animation_player.pause()
-	if text_handlerr && GlobalFlags.dialogMode == false:
-		text_handlerr.dialog = dialog_data.dialog_set[3]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[3]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[3]
-		text_handlerr.on_interact()
-	player.direction = Vector2(0, -0.1)
-	await get_tree().create_timer(2).timeout
-	player.direction = Vector2(0, 0)
-
-func dialogue_5():
-	animation_player.pause()
-	if text_handlerr && GlobalFlags.dialogMode == false:
-		text_handlerr.dialog = dialog_data.dialog_set[4]
-		text_handlerr.speech_id = dialog_data.speech_noise_id[4]
-		text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[4]
-		text_handlerr.on_interact()

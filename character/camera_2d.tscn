@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1ehpdcorkt51"]
+[gd_scene load_steps=16 format=3 uid="uid://1ehpdcorkt51"]
 
 [ext_resource type="Script" uid="uid://dbajgdm14rp54" path="res://character/cameracode.gd" id="1_a0ray"]
 [ext_resource type="PackedScene" uid="uid://dyh37belgvscq" path="res://UI/textbox stuff/textbox_control.tscn" id="2_348n8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://ct8lhfxr4io63" path="res://theme/battle_desc.tres" id="6_mg8no"]
 [ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://theme/textbox_default_theme_yellow.tres" id="6_osb1d"]
 [ext_resource type="Script" uid="uid://032rp4bnt5ji" path="res://character/quit_text.gd" id="7_1lelf"]
+[ext_resource type="Script" uid="uid://cjjw3cyrxo2fc" path="res://character/hpbar.gd" id="8_by260"]
 
 [sub_resource type="Gradient" id="Gradient_u6wnt"]
 colors = PackedColorArray(1, 0.05882353, 0, 1, 1, 0.05882353, 0, 1)
@@ -47,7 +48,6 @@ is_overworld = true
 visible = false
 
 [node name="overworld_hazard" type="Control" parent="CanvasLayer"]
-visible = false
 visibility_layer = 2
 layout_mode = 3
 anchors_preset = 15
@@ -56,15 +56,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_by260")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/overworld_hazard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.39215687)
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/overworld_hazard"]
 layout_mode = 1
@@ -105,6 +96,7 @@ max_value = 30.0
 value = 30.0
 texture_under = SubResource("GradientTexture2D_n53aa")
 texture_progress = SubResource("GradientTexture2D_vbpf2")
+script = ExtResource("8_by260")
 
 [node name="item_discription2" parent="CanvasLayer/overworld_hazard/MarginContainer/HBoxContainer" instance=ExtResource("5_4f5tb")]
 custom_minimum_size = Vector2(130, 45)

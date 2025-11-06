@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_474mw")
-dialog_set = Array[Array]([["Huh, someone swapped the spikes for blocking plates.", "As dangerous as the spikes were I kinda miss them.", "Makes me wonder how long I've been \"dead\" for though..."]])
+dialog_set = Array[Array]([["* Huh, someone swapped the spikes for blocking plates.", "* As dangerous as the spikes were I kinda miss them.", "* Makes me wonder how long I've been \"dead\" for though..."]])
 speech_noise_id = Array[Array]([["flowey", "flowey", "flowey"]])
 char_talk_sprite_id = Array[Array]([["flowey", "flowey", "flowey"]])
 char_mood_sprite_id = Array[Array]([[0, 0, 0]])

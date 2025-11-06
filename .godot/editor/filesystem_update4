@@ -1,5 +1,21 @@
-res://stages/ruins/Ruins_room7.tscn
+res://attacks/monster_bullet_base.tscn
 res://theme/textbox_default_theme_yellow.tres
 res://theme/battle_desc.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://shaders/echo.gdshader
+res://attacks/monster_bullet_base.gd
+res://character/player.tscn
+res://stages/ruins/Ruins_room7.tscn
+res://character/camera_2d.tscn
+res://character/hpbar.gd
+res://character/overworld_hazard.gd
+res://character/overworld_soul.gd
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres
+res://cutscenes/cutscene_the_other_flower.gd
+res://character/textbox.gd
+res://mainmenu/main_menu_fab.tscn
+res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/open_cut_dia1.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/usedtowalking.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/aStar.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/first_puzzle_hint.tres
+res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/spikes_changed.tres

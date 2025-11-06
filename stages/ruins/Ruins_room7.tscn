@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cunlkdv43rdmp"]
+[gd_scene load_steps=23 format=4 uid="uid://cunlkdv43rdmp"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_n4b7k"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_bekcf"]
@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://dfy5jqq30aakv" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres" id="11_fqoa0"]
 [ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="12_osd82"]
 [ext_resource type="Script" uid="uid://nuhw50lei6cp" path="res://cutscenes/loadFailed.gd" id="13_jcupv"]
+[ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="14_adxwo"]
+[ext_resource type="Texture2D" uid="uid://ccrn68eg6hu0u" path="res://sprites/dev/exclaim.png" id="15_0s1eb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osd82"]
 size = Vector2(31.5, 168)
@@ -25,7 +27,7 @@ size = Vector2(20, 198)
 
 [sub_resource type="Animation" id="Animation_n4b7k"]
 resource_name = "the_other_flower"
-length = 3.0
+length = 3.6
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,35 +35,53 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.03333333, 0.5, 1.4333333, 1.4666667, 2.1, 2.1666667, 2.6666667, 2.7, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.03333333, 0.5, 1.4333333, 1.4666667, 2.1, 2.1666667, 2.2, 2.2666667, 2.6666667, 2.7666667, 2.8666666, 2.9666667, 3.1000001, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"adjust_camera"
 }, {
 "args": [],
-"method": &"dialogue_1"
+"method": &"dialogue"
 }, {
 "args": [],
-"method": &"dialogue_2"
+"method": &"dialogue"
 }, {
 "args": [],
 "method": &"alert"
 }, {
 "args": [],
-"method": &"dialogue_3"
+"method": &"dialogue"
 }, {
 "args": [],
-"method": &"dialogue_4"
+"method": &"dialogue"
 }, {
 "args": [],
-"method": &"dialogue_5"
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
 }, {
 "args": [],
 "method": &"adjust_camera"
 }, {
 "args": [],
 "method": &"cutscene_end"
+}, {
+"args": [],
+"method": &"cutscene_close"
 }]
 }
 tracks/1/type = "method"
@@ -78,9 +98,37 @@ tracks/1/keys = {
 "method": &"loadfailed"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("otherFlower:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4666667, 2.0666666, 2.1333334, 2.2296267, 2.6333334, 2.7, 2.8, 2.9, 3, 3.0666666, 3.1333334, 3.2, 3.2666667, 3.3333333, 3.4, 3.4666667, 3.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 1, 4, 1, 2, 1, 17, 1, 17, 16, 15, 14, 13, 12, 11, 10, 18]
+}
+
+[sub_resource type="Animation" id="Animation_adxwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("otherFlower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bekcf"]
 _data = {
+&"RESET": SubResource("Animation_adxwo"),
 &"the_other_flower": SubResource("Animation_n4b7k")
 }
 
@@ -199,3 +247,15 @@ position = Vector2(-1980, 434)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene The Other Flower/CutSceneTriggerArea"]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bekcf")
+
+[node name="otherFlower" type="Sprite2D" parent="Cutscene The Other Flower"]
+position = Vector2(-2081, 0)
+texture = ExtResource("14_adxwo")
+hframes = 5
+vframes = 5
+
+[node name="Exclaim" type="Sprite2D" parent="Cutscene The Other Flower"]
+visible = false
+position = Vector2(-2081, -74)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_0s1eb")

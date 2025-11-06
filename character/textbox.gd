@@ -97,19 +97,34 @@ func display_text(text_to_dispo: String):
 	_display_letter()
 
 func _display_letter():
-	text_slot.text += text_to_use[letter_index]
+	
 	
 	match text_to_use[letter_index]:
+		"#":
+			skipable = true
+			pass
+		"$":
+			skipable = false
+			pass
+		"=":
+			finished_dispo.emit()
+			next_box()
+			return
+		"|":
+			pass
 		" ": 
+			text_slot.text += text_to_use[letter_index]
 			pass
 		_:
+			text_slot.text += text_to_use[letter_index]
 			play_speech_sound()
-			
+
 	letter_index += 1
 	
 	if Input.is_action_pressed("back_cancel"):
-		finished_dispo.emit()
-		return
+		if skipable == true:
+			finished_dispo.emit()
+			return
 	if letter_index >= text_to_use.length():
 		finished_dispo.emit()
 		return
@@ -133,20 +148,27 @@ func _unhandled_input(event):
 		if Input.is_action_pressed("back_cancel"):
 			if text_scroll_timer:
 				text_scroll_timer.stop()
+			text_to_use = text_to_use.replace("|","")
+			text_to_use = text_to_use.replace("=","")
+			text_to_use = text_to_use.replace("$","")
+			text_to_use = text_to_use.replace("#","")
 			text_slot.text = text_to_use
+			
 			finished_dispo.emit()
 			return
 			
 	if (event.is_action_pressed("interact_confirm") && GlobalFlags.dialogMode && can_advance_segment):
-		box_index += 1
-		if box_index < dialog_boxes.size():
-			letter_index = 0
-			cont_dialog()
+		next_box()
 			
-		elif box_index >= dialog_boxes.size():
-			close_dialog_box()
+func next_box():
+	box_index += 1
+	if box_index < dialog_boxes.size():
+		letter_index = 0
+		cont_dialog()
 			
-			
+	elif box_index >= dialog_boxes.size():
+		close_dialog_box()
+
 func close_dialog_box():
 	box_index = 0
 	letter_index = 0

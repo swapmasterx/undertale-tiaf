@@ -1,17 +1,31 @@
 extends Sprite2D
 
-@onready var character_body_2d = $"../../.."
-@onready var overworld_soul_layer = $".."
+@onready var color_rect = $"../../ColorRect"
+@onready var glow = $glow
 
 func _ready():
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property(color_rect, "modulate:a", 0, 0.1)
+	tween.tween_property(self, "modulate:a", 0, 0.1)
+	tween.tween_property(glow, "modulate:a", 0, 0.1)
+	color_rect.visible = false
+	self.visible = false
 	SignalManager.enter_overworld_hazard.connect(enter_overworld_hazard)
 	SignalManager.exit_overworld_hazard.connect(exit_overworld_hazard)
 
 func enter_overworld_hazard():
-	overworld_soul_layer.visible = true
-
+	self.visible = true
+	color_rect.visible = true
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property(color_rect, "modulate:a", 1, 0.5)
+	tween.tween_property(self, "modulate:a", 1, 0.5)
+	tween.tween_property(glow, "modulate:a", 1, 0.5)
+	
 func exit_overworld_hazard():
-	overworld_soul_layer.visible = false
-
-func _physics_process(delta):
-	self.global_position = Vector2(character_body_2d.global_position)+Vector2(0,-50)
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property(color_rect, "modulate:a", 0, 0.5)
+	tween.tween_property(self, "modulate:a", 0, 0.5)
+	tween.tween_property(glow, "modulate:a", 0, 0.5)
+	await get_tree().create_timer(0.51).timeout
+	self.visible = false
+	color_rect.visible = false

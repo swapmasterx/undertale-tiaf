@@ -31,7 +31,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -60,7 +60,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -89,7 +89,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -118,7 +118,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -147,7 +147,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -177,7 +177,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -261,7 +261,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -291,7 +291,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -321,7 +321,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -351,7 +351,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite2d/overworld soul layer/soul/glow:frame")
+tracks/1/path = NodePath("sprite2d/soul/glow:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -447,6 +447,20 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_ffmj1")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3133.9998
+offset_top = -3022.9998
+offset_right = 2866.0002
+offset_bottom = 2977.0002
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
 [node name="sprite2d" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("2_hp4im")
@@ -454,12 +468,8 @@ offset = Vector2(0, -40)
 hframes = 5
 vframes = 4
 
-[node name="overworld soul layer" type="CanvasLayer" parent="sprite2d"]
-layer = 2
+[node name="soul" type="Sprite2D" parent="sprite2d"]
 visible = false
-follow_viewport_enabled = true
-
-[node name="soul" type="Sprite2D" parent="sprite2d/overworld soul layer"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -50)
@@ -467,15 +477,15 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_hhoun")
 script = ExtResource("4_bdyh8")
 
-[node name="damage_hitbox" type="Area2D" parent="sprite2d/overworld soul layer/soul" groups=["hurt_box"]]
-collision_layer = 0
-collision_mask = 4
+[node name="damage_hitbox" type="Area2D" parent="sprite2d/soul" groups=["hurt_box"]]
+collision_layer = 4
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite2d/overworld soul layer/soul/damage_hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite2d/soul/damage_hitbox"]
 shape = SubResource("CircleShape2D_hhoun")
 debug_color = Color(0.966178, 7.70092e-07, 0.482141, 0.42)
 
-[node name="glow" type="Sprite2D" parent="sprite2d/overworld soul layer/soul"]
+[node name="glow" type="Sprite2D" parent="sprite2d/soul"]
 position = Vector2(0, 249.99997)
 scale = Vector2(4.9999995, 4.9999995)
 texture = ExtResource("5_qe16m")

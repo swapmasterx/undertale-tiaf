@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_dhrcf")
-dialog_set = Array[Array]([["Ok... Deep breaths...", "I'm alive... a flower but alive...", "At least with {name}'s soul I can walk now.", "But what are we doing all the way in the Ruins?"]])
+dialog_set = Array[Array]([["* Ok... ||||Deep breaths...", "* I'm alive... a flower but alive...", "* At least with {name}'s soul I can walk now.", "* But what are we doing all the way in the Ruins?"]])
 speech_noise_id = Array[Array]([["flowey", "flowey", "flowey", "flowey"]])
 char_talk_sprite_id = Array[Array]([["flowey", "flowey", "flowey", "flowey"]])
 char_mood_sprite_id = Array[Array]([[0, 0, 0, 0]])
