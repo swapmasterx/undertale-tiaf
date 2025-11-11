@@ -27,11 +27,16 @@ SaveData="*res://save/save_data.gd"
 RoomId="*res://global_func/room_id.gd"
 RoomPersistance="*res://save/room_persistance.gd"
 ItemTable="*res://items/item_table.gd"
+Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 
 [display]
 
 window/frame_pacing/android/enable_frame_pacing=false
 window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
 [global_group]
 
