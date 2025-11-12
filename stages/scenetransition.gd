@@ -23,6 +23,7 @@ func change_scene():
 
 func _on_animation_player_animation_finished(_fade_in):
 	if stop_repeat == false:
+		Spawning.reset()
 		anim_finished()
 		anim_player.play("fade_out")
 		GlobalFlags.wasd_lock = false

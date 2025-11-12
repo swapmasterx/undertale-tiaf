@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cvx1mnumf2p38"]
+[gd_scene load_steps=27 format=3 uid="uid://cvx1mnumf2p38"]
 
 [ext_resource type="Script" uid="uid://2ros5ncw4mo1" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_3jldb"]
 [ext_resource type="Script" uid="uid://dhnbj11e216q3" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_ah2t8"]
@@ -31,25 +31,26 @@ cooldown_spawn = 5.0
 resource_name = "PatternCircle"
 source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("4_3qlmj")
+radius = 50.0
 angle_total = 6.28319
+angle_decal = 0.0004
 bullet = "1"
 nbr = 5
 iterations = -1
 cooldown_spawn = 5.0
+forced_angle = -1.6466
+forced_pattern_lookat = false
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_txvqr"]
 resource_name = "PatternLine"
 source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("5_vvcng")
 offset = Vector2(0, 15)
-symmetric = false
+center = 1
 bullet = "1"
-nbr = 7
+nbr = 5
 iterations = -1
 cooldown_spawn = 5.0
-cooldown_shoot = 0.2
-cooldown_next_spawn = 0.1
-cooldown_next_shoot = 0.1
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8sitp"]
 resource_name = "PatternCustomPoints"
@@ -68,17 +69,14 @@ point_count = 11
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pxg84"]
 resource_name = "PatternCustomShape"
-parsed_collision_mask = 1
 source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("7_aiav0")
 closed_shape = true
 center_pos = Vector2(760, 280)
 bullet = "1"
 nbr = 5
+iterations = -1
 cooldown_spawn = 5.0
-cooldown_shoot = 1.0
-cooldown_next_spawn = 1.0
-cooldown_next_shoot = 2.0
 
 [sub_resource type="Curve2D" id="Curve2D_qvlio"]
 _data = {
@@ -98,42 +96,24 @@ cooldown_spawn = 5.0
 
 [sub_resource type="Curve2D" id="Curve2D_kjhx3"]
 
-[sub_resource type="Curve" id="Curve_ae60u"]
-
 [sub_resource type="Curve" id="Curve_6myam"]
+
+[sub_resource type="Curve" id="Curve_gmsvh"]
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_yktta"]
 script = ExtResource("10_tkfof")
-damage = 1.0
-speed = 100.0
-scale = 1.0
-angle = 0.0
-groups = PackedStringArray()
-spec_bounces = 0
-spec_no_collision = false
-spec_modulate_loop = 0.0
-spec_trail_length = 0.0
-spec_trail_width = 0.0
-spec_trail_modulate = Color(1, 1, 1, 1)
-spec_rotating_speed = 0.0
-death_after_time = 30.0
-death_outside_box = Rect2(0, 0, 0, 0)
-death_from_collision = true
-a_direction_equation = ""
-a_curve_movement = 0
-a_speed_multiplier = SubResource("Curve_ae60u")
-a_speed_multi_iterations = 0
-a_speed_multi_scale = 0.0
-trigger_container = ""
-trigger_wait_for_shot = true
+custom_data = {}
+a_speed_multiplier = SubResource("Curve_6myam")
+scale_multiplier = SubResource("Curve_gmsvh")
 homing_type = 0
 homing_target = NodePath("")
 homing_steer = 0.0
 homing_time_start = 0.0
 homing_duration = 999.0
-scale_multi_iterations = 0
-scale_multiplier = SubResource("Curve_6myam")
-scale_multi_scale = 1.0
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
 r_randomisation_chances = 1.0
 r_speed_choice = PackedFloat32Array()
 r_speed_variation = Vector3(0, 0, 0)
@@ -173,6 +153,9 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fti2u"]
+size = Vector2(122, 97.9995)
+
 [node name="Node2D" type="Node2D"]
 rotation = 6.28319
 script = ExtResource("1_3jldb")
@@ -184,6 +167,7 @@ curve = SubResource("Curve2D_u3j77")
 script = ExtResource("2_ah2t8")
 id = "one"
 pattern = SubResource("NavigationPolygon_kt31x")
+preview_spawn = true
 
 [node name="SpawnPattern2" type="Path2D" parent="Patterns"]
 curve = SubResource("Curve2D_u3j77")
@@ -228,88 +212,79 @@ props = SubResource("PackedDataContainer_yktta")
 [node name="SpawnPoint" type="Node2D" parent="SpawnPoints"]
 position = Vector2(86, 58)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "one"
-shared_area_name = "0"
 rotating_speed = 1.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(86, 307)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "circle"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(83, 510)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "line"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(746, 119)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "points"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint5" type="Node2D" parent="SpawnPoints"]
 position = Vector2(748, 271)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "shape"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint6" type="Node2D" parent="SpawnPoints"]
 position = Vector2(746, 465)
 script = ExtResource("11_iv1jv")
-active = true
 auto_pattern_id = "area"
-shared_area_name = "0"
-rotating_speed = 0.0
-pool_amount = 50
-auto_start_on_cam = true
-auto_start_after_time = 0.0
-auto_start_at_distance = 5.0
-auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 17
+collision_mask = 33
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(1024, -8, 1024, 600, 0, 600, 0, 0, -56, 0, -48, 656, 1072, 640, 1056, -64, 0, -64, 8, 0)
@@ -330,3 +305,10 @@ https://docs.google.com/document/d/1y2aPsn72dOxQ-wBNGqLlQvrw9-SV_z12a1MradBglF4/
 
 You can modify the properties of those patterns to create any pattern ever."
 autowrap_mode = 1
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(240.003, 687.999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(51.0002, 38.9997)
+shape = SubResource("RectangleShape2D_fti2u")

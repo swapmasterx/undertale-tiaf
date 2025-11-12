@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdc2evna15mle"]
+[gd_scene load_steps=35 format=3 uid="uid://bdc2evna15mle"]
 
 [ext_resource type="Script" uid="uid://br84w08yp621a" path="res://character/character_body_2d.gd" id="1_u6ucn"]
 [ext_resource type="Texture2D" uid="uid://d32pj8kmhxngc" path="res://sprites/character/flowreil/sprite_sheet.png" id="2_hp4im"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://1ehpdcorkt51" path="res://character/camera_2d.tscn" id="3_nvei2"]
 [ext_resource type="Script" uid="uid://dt6fsk3mw2fj5" path="res://character/overworld_soul.gd" id="4_bdyh8"]
 [ext_resource type="Texture2D" uid="uid://dvtlypipd4igy" path="res://sprites/character/flowreil/p2 26 2025.png" id="5_qe16m"]
+[ext_resource type="PackedScene" uid="uid://2u5iskf8oquj" path="res://attacks/other_Flowey/overworld_other_flowey_ruins_attacks.tscn" id="7_dkowc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmj1"]
 radius = 7.0
 height = 24.6667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhoun"]
-radius = 50.249374
+radius = 67.41249
 
 [sub_resource type="Animation" id="Animation_1ub40"]
 length = 0.001
@@ -473,7 +474,7 @@ visible = false
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -50)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_hhoun")
 script = ExtResource("4_bdyh8")
 
@@ -487,9 +488,9 @@ debug_color = Color(0.966178, 7.70092e-07, 0.482141, 0.42)
 
 [node name="glow" type="Sprite2D" parent="sprite2d/soul"]
 position = Vector2(0, 249.99997)
-scale = Vector2(4.9999995, 4.9999995)
+scale = Vector2(3.3333333, 3.3333333)
 texture = ExtResource("5_qe16m")
-offset = Vector2(0, -40)
+offset = Vector2(0, -65)
 hframes = 5
 vframes = 4
 
@@ -506,3 +507,5 @@ parameters/walk/blend_position = Vector2(-0.0260286, 0.054945)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_nvei2")]
 SPEED = 10
+
+[node name="overworld_other_flowey_attacks" parent="." instance=ExtResource("7_dkowc")]

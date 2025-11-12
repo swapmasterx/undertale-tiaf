@@ -3,3 +3,7 @@ res://theme/textbox_default_theme_yellow.tres
 res://theme/battle_desc.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://shaders/echo.gdshader
+res://character/player.tscn
+res://addons/BulletUpHell/BuHSpawner.gd
+res://attacks/other_Flowey/overworld_other_flowey_ruins_attacks.tscn
+res://addons/BulletUpHell/Spawning.tscn

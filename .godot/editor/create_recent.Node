@@ -1,6 +1,9 @@
-Node2D
-Sprite2D
 CollisionShape2D
+Node2D
+BulletPattern
+SpawnPoint
+BulletNode
+Sprite2D
 Area2D
 Timer
 RigidBody2D
@@ -9,6 +12,3 @@ HBoxContainer
 TextureProgressBar
 MarginContainer
 Control
-ColorRect
-RichTextLabel
-AnimationPlayer

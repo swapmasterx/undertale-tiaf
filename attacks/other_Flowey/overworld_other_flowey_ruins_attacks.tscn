@@ -1,0 +1,206 @@
+[gd_scene load_steps=13 format=3 uid="uid://2u5iskf8oquj"]
+
+[ext_resource type="Script" uid="uid://bpddv1t2btwnk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="1_gdc2s"]
+[ext_resource type="Script" uid="uid://dhnbj11e216q3" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_hipjx"]
+[ext_resource type="Script" uid="uid://lm6ur52dpq82" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="3_fywpc"]
+[ext_resource type="Script" uid="uid://c0br7kcgmtx6x" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_s0p1d"]
+[ext_resource type="Script" uid="uid://bt2c262fcwmiy" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_clu07"]
+[ext_resource type="Script" uid="uid://brb4wds8atbgi" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_bp5oh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vn6hf"]
+resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("3_fywpc")
+offset = Vector2(-50, 0)
+symmetric = false
+bullet = "1"
+nbr = 6
+iterations = -1
+cooldown_spawn = 5.0
+cooldown_shoot = 0.1
+cooldown_next_spawn = 0.06
+cooldown_next_shoot = 0.1
+wait_behavior = 1
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hipjx"]
+resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("3_fywpc")
+offset = Vector2(50, 0)
+symmetric = false
+bullet = "1"
+nbr = 6
+iterations = -1
+cooldown_spawn = 5.0
+cooldown_shoot = 0.1
+cooldown_next_spawn = 0.06
+cooldown_next_shoot = 0.1
+wait_behavior = 1
+
+[sub_resource type="Curve" id="Curve_6myam"]
+
+[sub_resource type="Resource" id="Resource_hipjx"]
+script = ExtResource("5_clu07")
+ID = "f_pellet_idle"
+texture = "f_pellet"
+collision = "f_pellet"
+metadata/_custom_type_script = "uid://bt2c262fcwmiy"
+
+[sub_resource type="Curve" id="Curve_gmsvh"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_qv1fh"]
+script = ExtResource("6_bp5oh")
+damage = -4.0
+speed = 500.0
+custom_data = {
+"Iframes": 1.0,
+"persistent": false
+}
+no_rotation = true
+anim_idle = SubResource("Resource_hipjx")
+a_speed_multiplier = SubResource("Curve_6myam")
+scale_multiplier = SubResource("Curve_gmsvh")
+homing_type = 3
+homing_group = "hurt_box"
+homing_select_in_group = 0
+homing_steer = 500.0
+homing_time_start = 0.0
+homing_duration = 0.3
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array()
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
+[node name="overworld_other_flowey_attacks" type="Node2D"]
+
+[node name="spawners" type="Node2D" parent="."]
+
+[node name="player_L" type="Node2D" parent="spawners"]
+position = Vector2(-400, 0)
+script = ExtResource("1_gdc2s")
+auto_pattern_id = "player_U"
+pool_amount = 25
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="player_R" type="Node2D" parent="spawners"]
+position = Vector2(400, 0)
+script = ExtResource("1_gdc2s")
+auto_pattern_id = "player_U"
+pool_amount = 25
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="player_B" type="Node2D" parent="spawners"]
+position = Vector2(150, 400)
+script = ExtResource("1_gdc2s")
+auto_pattern_id = "player_B"
+pool_amount = 25
+auto_start_after_time = 1.0
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="player_U" type="Node2D" parent="spawners"]
+position = Vector2(-150, -400)
+script = ExtResource("1_gdc2s")
+auto_pattern_id = "player_U"
+pool_amount = 25
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="player_C" type="Node2D" parent="spawners"]
+script = ExtResource("1_gdc2s")
+auto_pattern_id = "player_U"
+pool_amount = 25
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="patterns" type="Node2D" parent="."]
+
+[node name="SpawnPatternU" type="Path2D" parent="patterns"]
+script = ExtResource("2_hipjx")
+id = "player_U"
+pattern = SubResource("NavigationPolygon_vn6hf")
+
+[node name="SpawnPatternB" type="Path2D" parent="patterns"]
+script = ExtResource("2_hipjx")
+id = "player_B"
+pattern = SubResource("NavigationPolygon_hipjx")
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="BulletPattern" type="Path2D" parent="bullets"]
+script = ExtResource("4_s0p1d")
+id = "1"
+props = SubResource("PackedDataContainer_qv1fh")

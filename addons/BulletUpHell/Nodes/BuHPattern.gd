@@ -1,102 +1,184 @@
 @tool
 extends Path2D
+class_name SpawnPattern
 
-@export var id:String = ""
+@export_placeholder("ID") var id:String = ""
 @export var pattern:Pattern
+@export var keep_upon_load:bool = false
 @export var preview_spawn:bool = false
 @export var preview_shoot:bool = false : set = set_pre_shoot
+@export var show_id_warning:bool = true
+
+@export_group("Equation")
+@export var equation:String
+@export var start_sample:Vector2
+@export var end_sample:Vector2
+@export var sample_step:float
+@export_tool_button("Update") var sample = sample_curve
+var expr:Expression = Expression.new()
+var points:Array[Vector2]
 
 var preview_bullet:BulletProps
 
 
+
+func sample_curve():
+	var parse_err = expr.parse(equation, ["x", "y"])
+	if parse_err != OK:
+		push_error(expr.get_error_text())
+		return []
+	
+	points.clear()
+	if equation.find("y") == -1:
+		# function of x only: y = f(x)
+		return sample_function()
+	else:
+		# implicit equation f(x,y) = 0
+		return sample_implicit()
+
+func sample_function():
+	# Step 1: pick domain to explore
+	# We don't know the function's domain, so take symmetric interval
+	var xmin: float = -200.0
+	var xmax: float = 200.0
+	var raw_points: Array[Vector2] = []
+
+	# Step 2: sample many raw points along x
+	var samples = pattern.nbr * 10
+	var step = (xmax - xmin) / float(samples)
+	for i in range(samples+1):
+		var x = xmin + i * step
+		var y = expr.execute([x])
+		if typeof(y) == TYPE_FLOAT and y == y: # not NaN
+			raw_points.append(Vector2(x, y))
+
+	if raw_points.size() < 2:
+		return raw_points
+	#points = raw_points
+	# Step 3: resample evenly by arc length
+	return resample_by_arclength(raw_points)
+
+
+func sample_implicit() -> Array[Vector2]:
+	var start = find_start_point(expr)
+	if start == Vector2.ZERO:
+		push_error("No starting point found on curve. Try adjusting search_xmin/xmax/ymin/ymax or search_step.")
+		return []
+
+	var raw_points: Array[Vector2] = [start]
+	var p = start
+	var tangent = Vector2(1,0)
+	var step: float = 2.0
+	var max_iter: int = 5000
+
+	for i in range(max_iter):
+		# numerical gradient
+		var gx = expr.execute([p.x+1, p.y]) - expr.execute([p.x-1, p.y])
+		var gy = expr.execute([p.x, p.y+1]) - expr.execute([p.x, p.y-1])
+		var grad = Vector2(gx, gy).normalized()
+		if grad == Vector2.ZERO: break
+
+		# tangent = perpendicular
+		tangent = Vector2(-grad.y, grad.x).normalized()
+		p += tangent * step
+
+		# project back to curve
+		for j in range(3):
+			var fval = expr.execute([p.x, p.y])
+			gx = expr.execute([p.x+1, p.y]) - expr.execute([p.x-1, p.y])
+			gy = expr.execute([p.x, p.y+1]) - expr.execute([p.x, p.y-1])
+			grad = Vector2(gx, gy)
+			var denom = grad.length_squared()
+			if denom < 0.0001: break
+			p -= grad * (fval/denom)
+			if abs(expr.execute([p.x, p.y])) < 0.01: break
+
+		if p.distance_to(raw_points.back()) > step*0.5:
+			raw_points.append(p)
+
+		# if closed loop, stop early
+		if raw_points.size() > 20 and p.distance_to(start) < step*2:
+			break
+
+	return resample_by_arclength(raw_points)
+
+
+func resample_by_arclength(raw_points: Array[Vector2]) -> Array[Vector2]:
+	if raw_points.size() < 2:
+		return raw_points
+
+	var total_len = 0.0
+	for i in range(1, raw_points.size()):
+		total_len += raw_points[i].distance_to(raw_points[i-1])
+
+	var segment_len = total_len / float(pattern.nbr)
+	var dist_accum = 0.0
+	var next_target = 0.0
+
+	for i in range(1, raw_points.size()):
+		var a = raw_points[i-1]
+		var b = raw_points[i]
+		var d = a.distance_to(b)
+		while next_target <= dist_accum + d and points.size() < pattern.nbr:
+			var t = (next_target - dist_accum) / d
+			points.append(a.lerp(b, t))
+			next_target += segment_len
+		dist_accum += d
+	print(points)
+	return points
+
+func find_start_point(expr: Expression) -> Vector2:
+	var prev_val: float
+	var prev_pos: Vector2
+	var y:float = start_sample.y
+	while y <= end_sample.y:
+		var x = start_sample.x
+		prev_val = expr.execute([x, y])
+		prev_pos = Vector2(x, y)
+		x += sample_step
+		while x <= end_sample.x:
+			var val = expr.execute([x, y])
+			if (val == null): 
+				x += sample_step
+				continue
+			# Look for sign change = crossing the curve
+			if sign(prev_val) != sign(val):
+				# Interpolate between prev_pos and (x,y) for better accuracy
+				var t = abs(prev_val) / (abs(prev_val) + abs(val))
+				return prev_pos.lerp(Vector2(x, y), t)
+			prev_val = val
+			prev_pos = Vector2(x, y)
+			x += sample_step
+		y += sample_step
+	return Vector2.ZERO  # nothing found
+
 func _ready():
-	if not Engine.is_editor_hint() and pattern:
-		if pattern.forced_target: pattern.node_target = get_node(pattern.forced_target)
-		if pattern.resource_name in ["PatternCustomShape","PatternCustomPoints"]:
-			pattern.shape = curve
-		if pattern.resource_name == "PatternCustomShape":
-			if pattern.closed_shape: pattern.symmetry_type = 0
-			
-			var follow = PathFollow2D.new()
-			add_child(follow)
-			var length = curve.get_baked_length()
-			for b in pattern.nbr:
-				var pos_on_curve
-				if pattern.closed_shape: pos_on_curve = length/pattern.nbr*b
-				else: pos_on_curve = length/(pattern.nbr-1)*b
-				follow.h_offset = pos_on_curve
-				pattern.pos.append(pattern.shape.sample_baked(pos_on_curve).rotated(pattern.pattern_angle)-pattern.center_pos)
-				pattern.angles.append(follow.rotation-PI/2)
-			remove_child(follow)
-			
-		elif pattern.resource_name == "PatternCustomPoints":
-			var point_count = curve.get_point_count()
-			pattern.nbr = point_count
-			pattern.shape = curve
-			var angle;
-			for point in point_count:
-				var pos = curve.get_point_position(point)
-				if pattern.calculate_angles == pattern.ANGLE_TYPE.FromTangeant:
-					if point == point_count-1:
-						angle = pos.angle_to_point(curve.get_point_position(point-1))+PI/2
-					elif point == 0: angle = curve.get_point_position(point+1).angle_to_point(pos)+PI/2
-					else: angle = curve.get_point_position(point+1).angle_to_point(curve.get_point_position(point-1))+PI/2
-				elif pattern.calculate_angles == pattern.ANGLE_TYPE.FromCenter:
-					angle = pattern.center_pos.angle_to_point(pos)+PI
-				pattern.pos.append(pos-pattern.center_pos)
-				if pattern.calculate_angles != pattern.ANGLE_TYPE.Custom: pattern.angles.append(angle+(PI*int(pattern.reversed_angle)))
-		
-		elif pattern.resource_name == "PatternCustomArea":
-			curve_to_polygon()
-			if pattern.grid_spawning == Vector2(0,0): area_pooling()
-			else: grid_spawning()
-		
-#		var dict:Dictionary = {}
-#		var P
-#		for p in pattern.get_property_list():
-##			print(p["name"])
-#			P = p["name"]
-#			if P in ["__data__","spec_top_level","spec_ally","spec_states","a_angular_equation","mask",
-#					"RefCounted","Resource","resource_local_to_scene","resource_path","Resource", "node_container",
-#					"resource_name","PackedDataContainer","script","Script Variables","homing_position",
-#					"Advanced Movement","Advanced Scale","Animations","Homing","Special Properties","Triggers"]:
-#						continue
-#			elif P in ["a_direction_equation","trigger_container", "anim_spawn_texture","anim_waiting_texture",\
-#				"anim_delete_texture","anim_spawn_collision","anim_waiting_collision","anim_delete_collision"] \
-#				and pattern.get(P) == "": continue
-#			elif P in ["a_speed_multi_iterations","scale_multi_iterations","spec_bounces","spec_rotating_speed", \
-#						"spec_warn","spec_explo"] and pattern.get(P) == 0: continue
-#			elif P in ["spec_tourment","spec_no_collision"] \
-#				and pattern.get(P) == false: continue
-#			elif P == "homing_target" and pattern.get(P) == NodePath(): continue
-#			elif P == "homing_position" and pattern.get(P) == Vector2(): continue
-#			elif P in ["homing_steer","homing_time_start","homing_duration","node_homing"] \
-#				and not (dict.get("homing_target",false) or dict.get("homing_position",false)): continue
-#			elif P in ["a_speed_multiplier","a_speed_multi_scale"] \
-#				and not dict.get("a_speed_multi_iterations",false): continue
-#			elif P in ["scale_multiplier","scale_multi_scale"] \
-#				and not dict.get("scale_multi_iterations",false): continue
-#			elif P == "trigger_wait_for_shot" and not dict.get("trigger_container",false): continue
-#
-#			dict[P] = pattern.get(P)
-#			if P == "homing_target": print(pattern.get(P))
-#		print(dict)
-#		Spawning.new_pattern(id, dict)
-		Spawning.new_pattern(id, pattern)
-		queue_free()
+	if not (!Engine.is_editor_hint() and pattern): return
+	if pattern.resource_name in ["PatternCustomShape","PatternCustomPoints"]:
+		pattern.shape = curve
+	if pattern.resource_name == "PatternCustomShape":
+		var follow:PathFollow2D = PathFollow2D.new()
+		add_child(follow)
+		Spawning.shape_distribute(pattern, curve, follow)
+	elif pattern.resource_name == "PatternCustomPoints":
+		Spawning.points_distribute(pattern, curve)
+	elif pattern.resource_name == "PatternCustomArea":
+		Spawning.curve_to_polygon(pattern, curve)
+		var function:StringName = "area_distribute" if pattern.grid_spawning == Vector2(0,0) else "grid_distribute"
+		Spawning.call(function, pattern)
+	
+	Spawning.new_pattern(id, Spawning.sanitize_pattern(pattern, self), !show_id_warning)
+	if not keep_upon_load: queue_free()
 
 func _process(delta):
-	if preview_spawn and Engine.is_editor_hint():
+	if preview_spawn:# and Engine.is_editor_hint():
 		queue_redraw()
-#	if pattern != null and pattern.resource_name == "PatternCustomPoints" and pattern.calculate_angles == pattern.ANGLE_TYPE.Custom:
-#		print(pattern.angles)
-#		while curve.get_point_count() > pattern.angles.size():
-#			pattern.angles.append(0.0)
 
 func set_pre_shoot(value):
 	preview_shoot = value
 
 func _draw():
+	for i in points: draw_circle(i, 10, Color.VIOLET)
 	if not preview_spawn or pattern == null: return
 	if pattern.resource_name in ["PatternCustomShape"]:
 		var length = curve.get_baked_length()
@@ -107,61 +189,17 @@ func _draw():
 			
 		draw_circle(pattern.center_pos, 10, Color.YELLOW)
 		for b in pattern.nbr:
-			var pos_on_curve
-			if pattern.closed_shape: pos_on_curve = length/pattern.nbr*b
-			else: pos_on_curve = length/(pattern.nbr-1)*b
+			var pos_on_curve = length/pattern.nbr*b if pattern.closed_shape \
+						else length/(pattern.nbr-1)*b
 			var pos = curve.sample_baked(pos_on_curve)
 			draw_circle(pos, 10, Color.RED)
 			
 			if preview_shoot:
 				follow.h_offset = pos_on_curve
 				draw_line(pos, pos+Vector2(32,0).rotated(follow.rotation-PI/2),Color.YELLOW,3)
-	#			var points = curve.get_baked_points()
-	#			for p in points.size():
-	#				points.set(p, points[p])
-	#			draw_polyline(points, Color.RED, 2.0)
 		if preview_shoot:
 			remove_child(follow)
 	elif pattern.resource_name in ["PatternCustomPoints"]:
 		draw_circle(pattern.center_pos, 10, Color.YELLOW)
-#		for p in curve.get_point_count(): #TODO PORT GODOT 4
-#			draw_string(Label.new().get_font(""), curve.get_point_position(p), str(p), color=Color.RED)
-#			draw_string()
-
-
-func area_pooling():
-	var can_loop = false
-	var maybe_pos; var tries:int
-	for i in pattern.pooling:
-		pattern.pos.append([])
-		for j in pattern.nbr:
-			maybe_pos = Vector2(randf_range(pattern.limit_rect.position.x,pattern.limit_rect.size.x),\
-								randf_range(pattern.limit_rect.position.y,pattern.limit_rect.size.y))
-			tries = pattern.tries_max
-			while tries > 0 and not Geometry2D.is_point_in_polygon(maybe_pos, pattern.polygon):
-				tries -= 1
-				maybe_pos = Vector2(randf_range(pattern.limit_rect.position.x,pattern.limit_rect.size.x),\
-									randf_range(pattern.limit_rect.position.y,pattern.limit_rect.size.y))
-			pattern.pos[i].append(maybe_pos-pattern.center_pos)
-
-func grid_spawning():
-	pattern.pos.append([])
-	var maybe_pos
-	for x in (pattern.limit_rect.size.x-pattern.limit_rect.position.x)/pattern.grid_spawning.x:
-		for y in (pattern.limit_rect.size.y-pattern.limit_rect.position.y)/pattern.grid_spawning.y:
-			maybe_pos = pattern.limit_rect.position+Vector2(pattern.grid_spawning.x*x,pattern.grid_spawning.y*y)
-			if Geometry2D.is_point_in_polygon(maybe_pos, pattern.polygon):
-				pattern.pos[0].append(maybe_pos-pattern.center_pos)
-	pattern.nbr = pattern.pos[0].size()
-	pattern.pooling = 1
-
-func curve_to_polygon():
-	var point:Vector2; var poly:Array
-	for p in curve.get_point_count():
-		point = curve.get_point_position(p)
-		poly.append(point)
-		if point.x < pattern.limit_rect.position.x: pattern.limit_rect.position.x = point.x
-		if point.x > pattern.limit_rect.size.x: pattern.limit_rect.size.x = point.x
-		if point.y < pattern.limit_rect.position.y: pattern.limit_rect.position.y = point.y
-		if point.y > pattern.limit_rect.size.y: pattern.limit_rect.size.y = point.y
-	pattern.polygon = PackedVector2Array(poly)
+	else:
+		for i in pattern.nbr: draw_circle(Spawning.get_spawn_position_from_pattern(pattern, i, 0), 10, Color.RED)
