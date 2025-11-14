@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cunlkdv43rdmp"]
+[gd_scene load_steps=23 format=4 uid="uid://cunlkdv43rdmp"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_n4b7k"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_bekcf"]
@@ -15,12 +15,6 @@
 [ext_resource type="Script" uid="uid://nuhw50lei6cp" path="res://cutscenes/loadFailed.gd" id="13_jcupv"]
 [ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="14_adxwo"]
 [ext_resource type="Texture2D" uid="uid://ccrn68eg6hu0u" path="res://sprites/dev/exclaim.png" id="15_0s1eb"]
-[ext_resource type="Script" uid="uid://dhnbj11e216q3" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="16_iun4v"]
-[ext_resource type="Script" uid="uid://cqjgrpefdpxgs" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="17_mch7h"]
-[ext_resource type="Script" uid="uid://c0br7kcgmtx6x" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="18_47awi"]
-[ext_resource type="Script" uid="uid://bt2c262fcwmiy" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="19_65rk7"]
-[ext_resource type="Script" uid="uid://brb4wds8atbgi" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="20_0m7km"]
-[ext_resource type="Script" uid="uid://bpddv1t2btwnk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="21_d02hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osd82"]
 size = Vector2(31.5, 168)
@@ -140,78 +134,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bekcf"]
 size = Vector2(179.99994, 226)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_mch7h"]
-resource_name = "PatternOne"
-source_geometry_group_name = &"navigation_polygon_source_group"
-script = ExtResource("17_mch7h")
-bullet = "1"
-iterations = -1
-
-[sub_resource type="Curve2D" id="Curve2D_47awi"]
-
-[sub_resource type="Curve" id="Curve_vbs6u"]
-
-[sub_resource type="Curve" id="Curve_2xsyn"]
-
-[sub_resource type="PackedDataContainer" id="PackedDataContainer_65rk7"]
-script = ExtResource("20_0m7km")
-damage = -4.0
-custom_data = {
-"Iframes": 1.0,
-"persistent": false
-}
-z_index = 3
-a_speed_multiplier = SubResource("Curve_vbs6u")
-spec_no_collision = true
-scale_multiplier = SubResource("Curve_2xsyn")
-homing_type = 0
-homing_target = NodePath("")
-homing_steer = 0.0
-homing_time_start = 0.0
-homing_duration = 999.0
-homing_detection_dist = 0.0
-homing_start_signal = ""
-homing_range = Vector2(9999, 20)
-homing_imprecision = Vector2(0, 0)
-r_randomisation_chances = 1.0
-r_speed_choice = PackedFloat32Array()
-r_speed_variation = Vector3(0, 0, 0)
-r_scale_choice = PackedFloat32Array()
-r_scale_variation = Vector3(0, 0, 0)
-r_angle_choice = PackedFloat32Array()
-r_angle_variation = Vector3(0, 0, 0)
-r_group_choice = []
-r_bounce_choice = PackedInt32Array()
-r_bounce_variation = Vector3(0, 0, 0)
-r_no_coll_chances = 0.0
-r_modulate_variation = Vector3(0, 0, 0)
-r_trail_length_variation = Vector3(0, 0, 0)
-r_trail_color_variation = Vector3(0, 0, 0)
-r_rotating_variation = Vector3(0, 0, 0)
-r_death_after_choice = PackedFloat32Array()
-r_death_after_variation = Vector3(0, 0, 0)
-r_death_outside_chances = 0.0
-r_dir_equation_choice = PackedStringArray()
-r_curve_choice = []
-r_speed_multi_curve_choice = []
-r_speed_multi_iter_variation = Vector3(0, 0, 0)
-r_speed_multi_scale_variation = Vector3(0, 0, 0)
-r_trigger_choice = PackedStringArray()
-r_wait_for_shot_chances = 0.0
-r_homing_target_choice = []
-r_special_target_choice = PackedStringArray()
-r_group_target_choice = PackedStringArray()
-r_pos_target_choice = PackedVector2Array()
-r_steer_choice = PackedFloat32Array()
-r_steer_variation = Vector3(0, 0, 0)
-r_homing_delay_choice = PackedFloat32Array()
-r_homing_delay_variation = Vector3(0, 0, 0)
-r_homing_dur_choice = PackedFloat32Array()
-r_homing_dur_variation = Vector3(0, 0, 0)
-r_scale_multi_curve_choice = []
-r_scale_multi_iter_variation = Vector3(0, 0, 0)
-r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_n4b7k")
@@ -337,28 +259,3 @@ visible = false
 position = Vector2(-2081, -74)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("15_0s1eb")
-
-[node name="bullet_test" type="Node2D" parent="."]
-
-[node name="SpawnPattern" type="Path2D" parent="bullet_test"]
-script = ExtResource("16_iun4v")
-id = "one"
-pattern = SubResource("NavigationPolygon_mch7h")
-
-[node name="BulletPattern" type="Path2D" parent="bullet_test"]
-curve = SubResource("Curve2D_47awi")
-script = ExtResource("18_47awi")
-id = "1"
-props = SubResource("PackedDataContainer_65rk7")
-
-[node name="SpawnPoint" type="Node2D" parent="bullet_test"]
-position = Vector2(-1489, 86)
-script = ExtResource("21_d02hc")
-auto_pattern_id = "one"
-r_active_chances = 1.0
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
-r_start_distance_choice = ""
-r_start_distance_variation = Vector3(0, 0, 0)

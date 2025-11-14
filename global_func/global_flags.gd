@@ -94,7 +94,8 @@ func save():
 	"switch_puzzle" : RoomPersistance.switch_puzzle, "candy_counter": RoomPersistance.candy_counter,
 	"save_question": RoomPersistance.save_question,
 	"spike_question": RoomPersistance.spike_question,
-	"other_flower_cutscene": RoomPersistance.other_flower_cutscene})
+	"other_flower_cutscene": RoomPersistance.other_flower_cutscene,
+	"plot_value": RoomPersistance.plot_value})
 var cutscene_active: bool = false
 
 func cutscene_mode(on_or_off: bool):

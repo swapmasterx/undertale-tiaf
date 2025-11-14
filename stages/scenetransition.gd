@@ -23,7 +23,10 @@ func change_scene():
 
 func _on_animation_player_animation_finished(_fade_in):
 	if stop_repeat == false:
+		Spawning.clear_all_offscreen_bullets()
+		Spawning.clear_all_bullets()
 		Spawning.reset()
+		SignalManager.delete_player_tracking_hazard.emit()
 		anim_finished()
 		anim_player.play("fade_out")
 		GlobalFlags.wasd_lock = false

@@ -6,6 +6,7 @@ extends Node2D
 
 @export var load_trigger_area: LoadTriggerArea
 
+@export var set_plot_value: int = 0
 
 
 func _ready():
@@ -19,7 +20,9 @@ func _on_interact():
 	print("entered load zone")
 	GlobalFlags.room_changing = true
 	Loadscreen.scene_to_load = scene_to_load
-	
+	if set_plot_value != 0:
+		if set_plot_value > RoomPersistance.plot_value:
+			RoomPersistance.plot_value = set_plot_value
 	Loadscreen.change_scene()
 	SaveData.current_room = scene_to_load
 	print (scene_to_load)

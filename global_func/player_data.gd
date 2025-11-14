@@ -42,6 +42,11 @@ var master_volume: float
 var sfx_volume: float
 var music_volume: float
 
+var overworld_hazard_type: int = 0
+
+#makes overworld hazards persist through rooms. Usally for player tracking patterns
+var chase_sequence: bool = false
+
 func _ready():
 	load_the_game()
 	SignalManager.damaged.connect(on_damaged)

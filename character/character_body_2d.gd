@@ -10,10 +10,30 @@ var playback : AnimationNodeStateMachinePlayback
 # Sprint status
 var sprintActive = false
 @onready var quit = $Camera2D/CanvasLayer/item_discription
+@onready var damage_hitbox = $sprite2d/soul/damage_hitbox
 
 
 func _ready():
 	playback = anim_tree["parameters/playback"]
+	damage_hitbox.monitoring = false
+	damage_hitbox.monitorable = false
+	SignalManager.enter_overworld_hazard.connect(entered_over_hazard)
+	SignalManager.exit_overworld_hazard.connect(exited_over_hazard)
+
+func entered_over_hazard():
+	damage_hitbox.monitoring = true
+	damage_hitbox.monitorable = true
+	match PlayerData.overworld_hazard_type:
+		0:
+			print("no player centered hazard defined")
+		1:
+			var flowey_prep = preload("res://attacks/other_Flowey/overworld_other_flowey_ruins_attacks.tscn")
+			var flowey = flowey_prep.instantiate()
+			add_child(flowey)
+
+func exited_over_hazard():
+	damage_hitbox.monitoring = false
+	damage_hitbox.set_deferred("monitorable", false)
 
 func _process(delta):
 	if Input.is_action_pressed("quit"):

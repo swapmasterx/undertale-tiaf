@@ -59,14 +59,16 @@ func _on_save_pressed():
 func _input(event):
 	if save_pressed == true:
 		if event.is_action_pressed("interact_confirm"):
-			
+			SignalManager.saved_menu_closed.emit()
 			save_pressed = false
 			close_save_box()
 
 func _on_cancel_pressed():
+	SignalManager.saved_menu_closed.emit()
 	close_save_box()
 	
 func close_save_box():
+	
 	self.visible = false
 	GlobalFlags.wasd_lock = false
 	player_soul.visible = false

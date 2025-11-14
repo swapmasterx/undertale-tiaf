@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dyvmrtk6u53hg"]
+[gd_scene load_steps=11 format=4 uid="uid://dyvmrtk6u53hg"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_ig06e"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_8q8mr"]
 [ext_resource type="Texture2D" uid="uid://0mc1ej5uqfjb" path="res://tilemaps/ruins/tilesets/07a_ruinslonghall.png" id="3_ig06e"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="4_1r2hu"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_jgrgn"]
+[ext_resource type="PackedScene" uid="uid://jk47gfxf7lso" path="res://interaction/overworld_hazard_trigger.tscn" id="6_8q8mr"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="6_var26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
@@ -12,6 +13,9 @@ size = Vector2(20, 181)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
 size = Vector2(20, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q8mr"]
+size = Vector2(35, 219)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_ig06e")
@@ -48,6 +52,7 @@ position = Vector2(3150, 90)
 scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
+set_plot_value = 1
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_jgrgn")]
 
@@ -65,6 +70,16 @@ load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
 shape = SubResource("RectangleShape2D_v3g1j")
+
+[node name="overworld_hazard_trigger" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("6_8q8mr")]
+is_exit_hazard = true
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/overworld_hazard_trigger" instance=ExtResource("5_jgrgn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/overworld_hazard_trigger/LoadTriggerArea"]
+position = Vector2(2995.5, 85.5)
+shape = SubResource("RectangleShape2D_8q8mr")
 
 [node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("6_var26")]
 

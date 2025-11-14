@@ -7,48 +7,40 @@ extends Node2D
 @onready var text_handlerr = $"../../DialogHandler"
 @onready var text_box = $"../../player/Camera2D/CanvasLayer/Textbox Control"
 @onready var player_camera = $"../../player/Camera2D"
+@onready var player_hurtbox = $"../../player/sprite2d/soul/damage_hitbox"
 @onready var player = $"../../player"
 @export var dialog_data: DialogData
-@onready var exclaim = $Exclaim
-@onready var other_flower_attack = preload("res://attacks/other_Flowey/overworld_other_flowey_ruins_attacks.tscn")
-
+@onready var cornered_spawn = $"cornered spawn"
+var trap_sprung: bool = false
 var dialog_count: int = 0
 
 func _ready():
 	SignalManager.closed_dialog.connect(_closed_dialog)
-	if interaction_area:
-		if GlobalFlags.dev_mode == true:
-			print("interaction for ", self, " loaded")
-		interaction_area.interact = Callable(self, "_on_interact")
-		print(interaction_area.interact)
-	if load_trigger_area:
-		if GlobalFlags.dev_mode == true:
-			print("interaction for ", self, " loaded")
-		load_trigger_area.interact = Callable(self, "_on_interact")
-	if RoomPersistance.other_flower_cutscene == true:
+	SignalManager.saved_menu_closed.connect(_on_finished_saving)
+	if RoomPersistance.plot_value >= 5:
 		self.queue_free()
 
 
-func _on_interact():
-	cutscene_start()
+func _on_finished_saving():
+	trap_sprung = true
+	adjust_camera_start()
 	await get_tree().create_timer(0.1).timeout
+	cutscene_start()
 	SignalManager.startCutscene.emit()
 
 func _closed_dialog():
-	animation_player.play("the_other_flower")
-	GlobalFlags.cutscene_mode(true)
+	if trap_sprung == true:
+		animation_player.play("cutscene_save_trap")
+		GlobalFlags.cutscene_mode(true)
 
 func cutscene_start():
 	cutscene_camera.enabled = true
-	animation_player.play("the_other_flower")
+	animation_player.play("cutscene_save_trap")
 	
 func cutscene_end():
-	RoomPersistance.other_flower_cutscene = true
+	RoomPersistance.plot_value = 5
 	cutscene_camera.enabled = false
 	SignalManager.endCutscene.emit()
-	PlayerData.overworld_hazard_type = 1
-	PlayerData.chase_sequence = true
-	SignalManager.enter_overworld_hazard.emit()
 
 func cutscene_close():
 	self.queue_free()
@@ -56,16 +48,13 @@ func cutscene_close():
 func pause_cutscene():
 	animation_player.pause()
 
-func adjust_camera():
+func adjust_camera_start():
+	var tween = get_tree().create_tween()
+	tween.tween_property(cutscene_camera, "global_position", player_camera.global_position, 0.05)
+
+func adjust_camera_end():
 	var tween = get_tree().create_tween()
 	tween.tween_property(cutscene_camera, "global_position", player_camera.global_position, 0.25)
-
-func alert():
-	exclaim.visible = true
-	GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_b.wav")
-	GlobalFlags.sfx_2_channel.play()
-	await get_tree().create_timer(1).timeout
-	exclaim.visible = false
 
 func dialogue():
 	animation_player.pause()
@@ -77,3 +66,6 @@ func dialogue():
 		text_handlerr.on_interact()
 		dialog_count += 1
 		
+func cornered_pattern():
+	cornered_spawn.global_position = player_hurtbox.global_position
+	cornered_spawn.spawn()

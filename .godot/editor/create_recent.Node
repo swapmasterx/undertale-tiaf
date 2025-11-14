@@ -1,5 +1,8 @@
-CollisionShape2D
+TriggerContainer
+AnimationPlayer
 Node2D
+AudioStreamPlayer
+CollisionShape2D
 BulletPattern
 SpawnPoint
 BulletNode
@@ -10,5 +13,3 @@ RigidBody2D
 CanvasLayer
 HBoxContainer
 TextureProgressBar
-MarginContainer
-Control

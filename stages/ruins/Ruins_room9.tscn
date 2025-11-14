@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cgrbkgv48yf6x"]
+[gd_scene load_steps=28 format=4 uid="uid://cgrbkgv48yf6x"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
@@ -8,12 +8,147 @@
 [ext_resource type="Resource" uid="uid://q7dmqk3701jo" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres" id="5_81pdr"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_ktjmw"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_81pdr"]
+[ext_resource type="Script" uid="uid://c1a4tdvycabix" path="res://cutscenes/cutscene_save_trap.gd" id="9_noije"]
+[ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="11_hnl5s"]
+[ext_resource type="Script" uid="uid://bpddv1t2btwnk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="11_xn102"]
+[ext_resource type="Script" uid="uid://dhnbj11e216q3" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="12_hrm8e"]
+[ext_resource type="Script" uid="uid://bjk8co11wvtsh" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="13_1r2ri"]
+[ext_resource type="Script" uid="uid://c0br7kcgmtx6x" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="14_rilwp"]
+[ext_resource type="Script" uid="uid://bt2c262fcwmiy" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="15_epodm"]
+[ext_resource type="Script" uid="uid://brb4wds8atbgi" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="16_m8gm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
 size = Vector2(20, 181)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
 size = Vector2(20, 198)
+
+[sub_resource type="Animation" id="Animation_bkk83"]
+resource_name = "cutscene_save_trap"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.16666669),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"adjust_camera_start"
+}, {
+"args": [],
+"method": &"cornered_pattern"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bt8m"]
+_data = {
+&"cutscene_save_trap": SubResource("Animation_bkk83")
+}
+
+[sub_resource type="Resource" id="Resource_1dma2"]
+resource_name = "PatternCircle"
+script = ExtResource("13_1r2ri")
+radius = 300.0
+bullet = "f_pellet_track"
+nbr = 30
+cooldown_shoot = 999.0
+cooldown_next_spawn = 0.06
+cooldown_next_shoot = 9999.0
+wait_behavior = 1
+metadata/_custom_type_script = "uid://bjk8co11wvtsh"
+
+[sub_resource type="Curve" id="Curve_6myam"]
+
+[sub_resource type="Resource" id="Resource_clu07"]
+script = ExtResource("15_epodm")
+texture = "NoRot"
+collision = "f_pellet"
+metadata/_custom_type_script = "uid://bt2c262fcwmiy"
+
+[sub_resource type="Resource" id="Resource_hipjx"]
+script = ExtResource("15_epodm")
+ID = "f_pellet_idle"
+texture = "f_pellet"
+collision = "f_pellet"
+SFX = "f_pellet_spawn"
+metadata/_custom_type_script = "uid://bt2c262fcwmiy"
+
+[sub_resource type="Resource" id="Resource_fywpc"]
+script = ExtResource("15_epodm")
+texture = "f_pellet"
+collision = "f_pellet"
+metadata/_custom_type_script = "uid://bt2c262fcwmiy"
+
+[sub_resource type="Curve" id="Curve_gmsvh"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_pc3gi"]
+script = ExtResource("16_m8gm5")
+damage = -4.0
+speed = 500.0
+custom_data = {
+"Iframes": 1.0,
+"persistent": false
+}
+death_after_time = 10.0
+no_rotation = true
+z_index = 3
+anim_idle = SubResource("Resource_hipjx")
+anim_shoot = SubResource("Resource_fywpc")
+anim_delete = SubResource("Resource_clu07")
+a_speed_multiplier = SubResource("Curve_6myam")
+scale_multiplier = SubResource("Curve_gmsvh")
+homing_type = 3
+homing_group = "hurt_box"
+homing_select_in_group = 0
+homing_steer = 500.0
+homing_time_start = 0.0
+homing_duration = 0.3
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array()
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_u50cq")
@@ -97,5 +232,53 @@ placepoint = 3
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("8_81pdr")]
 position = Vector2(894, 541)
 placepoint = 2
+
+[node name="Cutscene Save Trap" type="Node2D" parent="."]
+script = ExtResource("9_noije")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene Save Trap"]
+libraries = {
+&"": SubResource("AnimationLibrary_3bt8m")
+}
+
+[node name="CutsceneCamera" type="Camera2D" parent="Cutscene Save Trap"]
+position = Vector2(-1733, 45)
+enabled = false
+zoom = Vector2(0.657, 0.657)
+limit_left = -810
+limit_top = -1080
+limit_right = 990
+limit_bottom = 990
+
+[node name="otherFlower" type="Sprite2D" parent="Cutscene Save Trap"]
+position = Vector2(-2081, 0)
+texture = ExtResource("11_hnl5s")
+hframes = 5
+vframes = 5
+
+[node name="cornered spawn" type="Node2D" parent="Cutscene Save Trap"]
+position = Vector2(0, -50)
+script = ExtResource("11_xn102")
+auto_pattern_id = "cornered"
+pool_amount = 30
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://bpddv1t2btwnk"
+
+[node name="cornered pattern" type="Path2D" parent="Cutscene Save Trap"]
+script = ExtResource("12_hrm8e")
+id = "cornered"
+pattern = SubResource("Resource_1dma2")
+
+[node name="BulletPatterntracking" type="Path2D" parent="Cutscene Save Trap"]
+script = ExtResource("14_rilwp")
+id = "f_pellet_track"
+props = SubResource("PackedDataContainer_pc3gi")
 
 [editable path="Interactibles/save point"]
