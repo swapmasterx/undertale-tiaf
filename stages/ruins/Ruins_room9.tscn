@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cgrbkgv48yf6x"]
+[gd_scene load_steps=27 format=4 uid="uid://cgrbkgv48yf6x"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
@@ -77,15 +77,9 @@ collision = "f_pellet"
 SFX = "f_pellet_spawn"
 metadata/_custom_type_script = "uid://bt2c262fcwmiy"
 
-[sub_resource type="Resource" id="Resource_fywpc"]
-script = ExtResource("15_epodm")
-texture = "f_pellet"
-collision = "f_pellet"
-metadata/_custom_type_script = "uid://bt2c262fcwmiy"
-
 [sub_resource type="Curve" id="Curve_gmsvh"]
 
-[sub_resource type="PackedDataContainer" id="PackedDataContainer_pc3gi"]
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_xn102"]
 script = ExtResource("16_m8gm5")
 damage = -4.0
 speed = 500.0
@@ -97,7 +91,6 @@ death_after_time = 10.0
 no_rotation = true
 z_index = 3
 anim_idle = SubResource("Resource_hipjx")
-anim_shoot = SubResource("Resource_fywpc")
 anim_delete = SubResource("Resource_clu07")
 a_speed_multiplier = SubResource("Curve_6myam")
 scale_multiplier = SubResource("Curve_gmsvh")
@@ -279,6 +272,6 @@ pattern = SubResource("Resource_1dma2")
 [node name="BulletPatterntracking" type="Path2D" parent="Cutscene Save Trap"]
 script = ExtResource("14_rilwp")
 id = "f_pellet_track"
-props = SubResource("PackedDataContainer_pc3gi")
+props = SubResource("PackedDataContainer_xn102")
 
 [editable path="Interactibles/save point"]
