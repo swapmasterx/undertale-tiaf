@@ -31,3 +31,5 @@ res://UI/textbox stuff/textbox_control.tscn
 res://volumesettings/volume.gd
 res://attacks/other_Flowey/bullet_trap_overworld.tscn
 res://UI/textbox stuff/textbox_control_sprite.tres
+res://battle/battle_scene.tscn
+res://addons/BulletUpHell/Spawning.tscn

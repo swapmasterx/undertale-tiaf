@@ -66,7 +66,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_yjq6l"]
@@ -452,6 +452,7 @@ script = ExtResource("16_f5t32")
 stat_line = "  {HPcur} / {HPmax}"
 
 [node name="fade_in_out" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_left = -859.0
 offset_top = -467.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cgrbkgv48yf6x"]
+[gd_scene load_steps=21 format=4 uid="uid://cgrbkgv48yf6x"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
@@ -9,7 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_ktjmw"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_81pdr"]
 [ext_resource type="Script" path="res://cutscenes/cutscene_save_trap.gd" id="9_noije"]
+[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="9_yt3j1"]
+[ext_resource type="Resource" uid="uid://bwtj1fjvy1edg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres" id="10_hnl5s"]
+[ext_resource type="PackedScene" uid="uid://3w05nprxkkvh" path="res://npcs/moving_npc/toriel.tscn" id="11_bkk83"]
 [ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="11_hnl5s"]
+[ext_resource type="Resource" uid="uid://bc16ie0ds2qm8" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save_trap_dialouge/save_trap.tres" id="12_hnl5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
 size = Vector2(20, 181)
@@ -17,12 +21,84 @@ size = Vector2(20, 181)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
 size = Vector2(20, 198)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt3j1"]
+size = Vector2(53.00154, 1088.9998)
+
 [sub_resource type="Animation" id="Animation_bkk83"]
 resource_name = "cutscene_save_trap"
 length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"cornered_pattern"
+}, {
+"args": [],
+"method": &"dialogue"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("otherFlower:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333335, 0.3, 0.36666667, 0.43333337, 0.5, 0.56666666, 0.6333334, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16, 17, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("otherFlower:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16327754),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_yt3j1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("otherFlower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("otherFlower:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3bt8m"]
 _data = {
+&"RESET": SubResource("Animation_yt3j1"),
 &"cutscene_save_trap": SubResource("Animation_bkk83")
 }
 
@@ -54,6 +130,7 @@ navigation_enabled = false
 
 [node name="save point" parent="Interactibles" instance=ExtResource("4_70h8x")]
 position = Vector2(361, -470)
+set_plot_value = 5
 dialog_data = ExtResource("5_81pdr")
 max_interact = 0
 
@@ -109,8 +186,24 @@ placepoint = 3
 position = Vector2(894, 541)
 placepoint = 2
 
+[node name="puzzle_hint" parent="Scripted Events" node_paths=PackedStringArray("interaction_area", "load_trigger_area") instance=ExtResource("9_yt3j1")]
+position = Vector2(-8, 166)
+object_type = 4
+interaction_area = NodePath("")
+load_trigger_area = NodePath("LoadTriggerArea")
+dialog_data = ExtResource("10_hnl5s")
+max_interact = 0
+
+[node name="LoadTriggerArea" parent="Scripted Events/puzzle_hint" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/puzzle_hint/LoadTriggerArea"]
+position = Vector2(116.499954, 16.501205)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yt3j1")
+
 [node name="Cutscene Save Trap" type="Node2D" parent="."]
 script = ExtResource("9_noije")
+dialog_data = ExtResource("12_hnl5s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene Save Trap"]
 libraries = {
@@ -127,9 +220,13 @@ limit_right = 990
 limit_bottom = 990
 
 [node name="otherFlower" type="Sprite2D" parent="Cutscene Save Trap"]
-position = Vector2(52, -688)
+visible = false
+position = Vector2(-34, -688)
 texture = ExtResource("11_hnl5s")
 hframes = 5
 vframes = 8
+
+[node name="Toriel" parent="Cutscene Save Trap" instance=ExtResource("11_bkk83")]
+position = Vector2(186, 427)
 
 [editable path="Interactibles/save point"]

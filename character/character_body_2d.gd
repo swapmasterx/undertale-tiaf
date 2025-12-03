@@ -24,6 +24,7 @@ var sprintActive = false
 func _ready():
 	playback = anim_tree["parameters/playback"]
 	exclaim.visible = false
+	soul_battle.visible = false
 	damage_hitbox.monitoring = false
 	damage_hitbox.monitorable = false
 	SignalManager.overworld_to_battle.connect(battle_fall)

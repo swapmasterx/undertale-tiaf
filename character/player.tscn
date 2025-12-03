@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cix5wxc4dohlp"]
+[gd_scene load_steps=42 format=3 uid="uid://cix5wxc4dohlp"]
 
 [ext_resource type="Script" uid="uid://br84w08yp621a" path="res://character/character_body_2d.gd" id="1_u6ucn"]
 [ext_resource type="Texture2D" uid="uid://ccrn68eg6hu0u" path="res://sprites/dev/exclaim.png" id="2_dkowc"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://1ehpdcorkt51" path="res://character/camera_2d.tscn" id="3_nvei2"]
 [ext_resource type="Script" uid="uid://dt6fsk3mw2fj5" path="res://character/overworld_soul.gd" id="4_bdyh8"]
 [ext_resource type="Texture2D" uid="uid://dvtlypipd4igy" path="res://sprites/character/flowreil/p2 26 2025.png" id="5_qe16m"]
+[ext_resource type="AudioStream" uid="uid://ceayofjnckt23" path="res://sound_effects/snd_b.wav" id="8_pw6nv"]
+[ext_resource type="AudioStream" uid="uid://2y6ain603mr7" path="res://sound_effects/snd_test.wav" id="9_tpic6"]
+[ext_resource type="AudioStream" uid="uid://dw28am8fnhj3y" path="res://sound_effects/snd_battlefall.wav" id="10_b6pse"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmj1"]
 radius = 7.0
@@ -433,6 +436,213 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_3rk4p")
 states/walk/position = Vector2(382, 162)
 graph_offset = Vector2(-196, -23)
 
+[sub_resource type="Animation" id="Animation_tpic6"]
+resource_name = "battle_fall_generic"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BattleFall")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pw6nv")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_tpic6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_tpic6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_tpic6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_b6pse")
+}],
+"times": PackedFloat32Array(0.03333333, 1, 1.1333333, 1.2333332, 1.2666667)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("exclaim:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 1.0037332),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("battle_fall_blackout:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0037332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("soul_battle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0087519, 1.0728358, 1.1330334, 1.1971173, 1.2657651),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprite2d:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2663329),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"soul_tween"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b6pse"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("exclaim:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("battle_fall_blackout:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("soul_battle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite2d:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i6sb3"]
+resource_name = "battle_fall_reset"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("exclaim:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("battle_fall_blackout:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("soul_battle:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite2d:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6pse"]
+_data = {
+&"RESET": SubResource("Animation_b6pse"),
+&"battle_fall_generic": SubResource("Animation_tpic6"),
+&"battle_fall_reset": SubResource("Animation_i6sb3")
+}
+
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("anim_tree", "anim_player") groups=["player"]]
 z_index = 1
 y_sort_enabled = true
@@ -442,6 +652,7 @@ anim_tree = NodePath("AnimationTree")
 anim_player = NodePath("character_anim")
 
 [node name="exclaim" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -145)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_dkowc")
@@ -467,6 +678,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
 
+[node name="battle_fall_blackout" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3179.0
+offset_top = -3143.0
+offset_right = 2821.0
+offset_bottom = 2857.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="sprite2d" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("2_hp4im")
@@ -475,6 +699,7 @@ hframes = 5
 vframes = 4
 
 [node name="soul" type="Sprite2D" parent="sprite2d"]
+visible = false
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -50)
@@ -512,3 +737,19 @@ parameters/idel/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(-0.0260286, 0.054945)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_nvei2")]
+
+[node name="soul_battle" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, -50)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hhoun")
+
+[node name="BattleFall" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="battle_transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b6pse")
+}
