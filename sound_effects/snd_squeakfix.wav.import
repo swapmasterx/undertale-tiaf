@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://jpqj6mijg5gv"
-path="res://.godot/imported/snd_squeakfix.wav-a5542e2a2d65991eef93ad5dfcfcd1cf.sample"
+path="res://.godot/imported/snd_squeakfix.wav-308868790cbf4888f1dd9fca808a4757.sample"
 
 [deps]
 
-source_file="res://battle/snd_squeakfix.wav"
-dest_files=["res://.godot/imported/snd_squeakfix.wav-a5542e2a2d65991eef93ad5dfcfcd1cf.sample"]
+source_file="res://sound_effects/snd_squeakfix.wav"
+dest_files=["res://.godot/imported/snd_squeakfix.wav-308868790cbf4888f1dd9fca808a4757.sample"]
 
 [params]
 

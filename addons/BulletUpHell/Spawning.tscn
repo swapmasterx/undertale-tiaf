@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=18 format=3 uid="uid://gixop20d1d75"]
+=======
+[gd_scene load_steps=27 format=3 uid="uid://gixop20d1d75"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://d1u5mg3r7epxy" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c1pdefy16l27t" path="res://addons/BulletUpHell/Bullet/Sprites/Bullet_3.png" id="2_3slxn"]
@@ -6,9 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://cd6m8cvmryn7h" path="res://addons/BulletUpHell/Bullet/Sprites/Bullet_06.png" id="3_6fafs"]
 [ext_resource type="Texture2D" uid="uid://dfpcp4dx0p05w" path="res://addons/BulletUpHell/Bullet/Sprites/Bullet_11.png" id="4_gntuv"]
 [ext_resource type="AudioStream" uid="uid://cart1u265r542" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
-[ext_resource type="Texture2D" uid="uid://bbkrry72kaigq" path="res://attacks/other_Flowey/pellet.png" id="6_78yhu"]
-[ext_resource type="Texture2D" uid="uid://cqqr4ptjmth0a" path="res://attacks/other_Flowey/pellet2.png" id="7_hmrcn"]
+[ext_resource type="Texture2D" uid="uid://bbkrry72kaigq" path="res://sprites/bullets/f_pellets/pellet.png" id="6_ekyys"]
+[ext_resource type="Texture2D" uid="uid://cqqr4ptjmth0a" path="res://sprites/bullets/f_pellets/pellet2.png" id="7_nuj4b"]
 [ext_resource type="Script" uid="uid://bdo2lrcnxk0yl" path="res://addons/BulletUpHell/Drawer.gd" id="8_pebki"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://dncmlwcqsbqte" path="res://sprites/bullets/fireball/p11 19a 2025.png" id="9_ekyys"]
+[ext_resource type="AudioStream" uid="uid://bec6skt7454ep" path="res://sound_effects/snd_chug.wav" id="9_hmrcn"]
+[ext_resource type="Texture2D" uid="uid://c2wknf2kgwn2h" path="res://sprites/bullets/blank_bullet.png" id="9_nuj4b"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Resource" id="Resource_s2qvk"]
 script = ExtResource("2_ai2re")
@@ -24,7 +34,6 @@ collision = "0"
 script = ExtResource("2_ai2re")
 texture = "0"
 collision = "0"
-SFX = "0"
 
 [sub_resource type="Resource" id="Resource_6xvhl"]
 script = ExtResource("2_ai2re")
@@ -35,6 +44,26 @@ collision = "0"
 script = ExtResource("2_ai2re")
 texture = "0"
 collision = "0"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kntm"]
+atlas = ExtResource("9_ekyys")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekyys"]
+atlas = ExtResource("9_ekyys")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuj4b"]
+atlas = ExtResource("9_ekyys")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostyn"]
+atlas = ExtResource("9_ekyys")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f7cb"]
+atlas = ExtResource("9_ekyys")
+region = Rect2(0, 0, 64, 96)
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -84,20 +113,78 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_78yhu")
+"texture": ExtResource("6_ekyys")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_hmrcn")
+"texture": ExtResource("7_nuj4b")
 }],
 "loop": true,
 "name": &"f_pellet",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kntm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekyys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ostyn")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nuj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f7cb")
+}],
+"loop": false,
+"name": &"over_firespawn",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fi84t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78yhu"]
 radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kntm"]
+radius = 17.75
 
 [node name="BulletHellManager" type="Node2D"]
 z_index = 1
@@ -124,13 +211,20 @@ collision_mask = 4
 visible = false
 texture_filter = 3
 sprite_frames = SubResource("1")
+<<<<<<< Updated upstream
 animation = &"f_pellet"
+=======
+animation = &"over_firespawn"
+>>>>>>> Stashed changes
 
 [node name="0" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("RectangleShape2D_fi84t")
 
 [node name="f_pellet" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("CircleShape2D_78yhu")
+
+[node name="fireball" type="CollisionShape2D" parent="ShapeManager"]
+shape = SubResource("CircleShape2D_7kntm")
 
 [node name="SFX" type="Node2D" parent="."]
 

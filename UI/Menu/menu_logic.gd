@@ -44,7 +44,7 @@ func _input(event):
 			SignalManager.inv_updated.emit()
 			sub_menu.visible = false
 			GlobalFlags.menu_layer = 1
-			GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_squeakfix.wav")
 			GlobalFlags.sfx_1_channel.play()
 		
 func menu_flag_handler():
@@ -65,7 +65,7 @@ func menu_flag_handler():
 			options.focus_mode = FOCUS_ALL
 			
 			GlobalFlags.menu_layer = 1
-			GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_squeakfix.wav")
 			GlobalFlags.sfx_1_channel.play()
 			menu_option_memory.call_deferred("grab_focus")
 		1:
@@ -76,7 +76,7 @@ func menu_flag_handler():
 			GlobalFlags.wasd_lock = false
 			GlobalFlags.menu_active = false
 			GlobalFlags.menu_layer = 0
-			GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_squeakfix.wav")
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_squeakfix.wav")
 			GlobalFlags.sfx_1_channel.play()
 		_:
 			return
@@ -116,7 +116,7 @@ func _on_options_pressed():
 	menu_option_memory = options
 	
 func enable_submenu(tab_num):
-	GlobalFlags.sfx_1_channel.stream = load("res://battle/snd_select.wav")
+	GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_select.wav")
 	GlobalFlags.sfx_1_channel.play()
 	GlobalFlags.menu_layer = 2
 	tab_container.current_tab = tab_num

@@ -54,7 +54,7 @@ func _on_focus_changed(node:Control):
 	if GlobalFlags.wasd_lock == true:
 		if get_viewport().gui_get_focus_owner() is TextureButton:
 			self.global_position = (focused_pos + Vector2(-focused_size.x/7.25,0)) + ((focused_size/2)*0.4)
-
+			
 		else:
 			self.global_position = (focused_pos + Vector2(-focused_size.x/1.5,0)) + (focused_size/2)
 			

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqqr4ptjmth0a"
-path="res://.godot/imported/pellet2.png-fbc4c859842167d9a5ee34cef9bb927b.ctex"
+uid="uid://dncmlwcqsbqte"
+path="res://.godot/imported/p11 19a 2025.png-6c3234c608271383195cf78a6cc0514e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://attacks/other_Flowey/pellet2.png"
-dest_files=["res://.godot/imported/pellet2.png-fbc4c859842167d9a5ee34cef9bb927b.ctex"]
+source_file="res://sprites/bullets/fireball/p11 19a 2025.png"
+dest_files=["res://.godot/imported/p11 19a 2025.png-6c3234c608271383195cf78a6cc0514e.ctex"]
 
 [params]
 

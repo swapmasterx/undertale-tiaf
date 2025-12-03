@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbkrry72kaigq"
-path="res://.godot/imported/pellet.png-9d2773c84451cb62d54741ffab028c10.ctex"
+uid="uid://bb72prttgo2e3"
+path="res://.godot/imported/p11 17 2025.png-b1d54ed0f3a95ccad115c28808562897.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://attacks/other_Flowey/pellet.png"
-dest_files=["res://.godot/imported/pellet.png-9d2773c84451cb62d54741ffab028c10.ctex"]
+source_file="res://sprites/character/toriel/p11 17 2025.png"
+dest_files=["res://.godot/imported/p11 17 2025.png-b1d54ed0f3a95ccad115c28808562897.ctex"]
 
 [params]
 

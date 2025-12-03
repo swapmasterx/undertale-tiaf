@@ -10,6 +10,8 @@ extends Node2D
 @onready var player = $"../../player"
 @export var dialog_data: DialogData
 @onready var exclaim = $Exclaim
+@onready var other_flower_attack = preload("res://attacks/other_Flowey/overworld_other_flowey_ruins_attacks.tscn")
+
 var dialog_count: int = 0
 
 func _ready():
@@ -44,6 +46,8 @@ func cutscene_end():
 	RoomPersistance.other_flower_cutscene = true
 	cutscene_camera.enabled = false
 	SignalManager.endCutscene.emit()
+	PlayerData.overworld_hazard_type = 1
+	PlayerData.chase_sequence = true
 	SignalManager.enter_overworld_hazard.emit()
 
 func cutscene_close():

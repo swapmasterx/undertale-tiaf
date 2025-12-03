@@ -1,11 +1,23 @@
-[gd_scene load_steps=9 format=4 uid="uid://dyvmrtk6u53hg"]
+[gd_scene load_steps=23 format=4 uid="uid://dyvmrtk6u53hg"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_ig06e"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_8q8mr"]
-[ext_resource type="Texture2D" uid="uid://0mc1ej5uqfjb" path="res://tilemaps/ruins/tilesets/07a_ruinslonghall.png" id="3_ig06e"]
+[ext_resource type="Texture2D" uid="uid://ponf8mcm5sdt" path="res://tilemaps/ruins/tilesets/06ruins water pit.png" id="3_nx8r5"]
 [ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="4_1r2hu"]
+[ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="4_2oxf6"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_jgrgn"]
+[ext_resource type="Resource" uid="uid://bwtj1fjvy1edg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres" id="5_vt66r"]
+[ext_resource type="PackedScene" uid="uid://yu3tpob26bu4" path="res://interaction/Interaction_Area.tscn" id="6_je4m7"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="6_var26"]
+[ext_resource type="Script" uid="uid://cm3cciivg21dw" path="res://cutscenes/cutscene_the_other_flower.gd" id="10_plfxg"]
+[ext_resource type="Resource" uid="uid://dfy5jqq30aakv" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres" id="11_gk61t"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="12_xy5x5"]
+[ext_resource type="Script" uid="uid://nuhw50lei6cp" path="res://cutscenes/loadFailed.gd" id="13_w53gs"]
+[ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="14_8f226"]
+[ext_resource type="Texture2D" uid="uid://ccrn68eg6hu0u" path="res://sprites/dev/exclaim.png" id="15_dtuml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osd82"]
+size = Vector2(31.5, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
 size = Vector2(20, 181)
@@ -13,25 +25,129 @@ size = Vector2(20, 181)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
 size = Vector2(20, 198)
 
+[sub_resource type="Animation" id="Animation_adxwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("otherFlower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n4b7k"]
+resource_name = "the_other_flower"
+length = 3.6
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.5, 1.4333333, 1.4666667, 2.1, 2.1666667, 2.2, 2.2666667, 2.6666667, 2.7666667, 2.8666666, 2.9666667, 3.1000001, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"adjust_camera"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"alert"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"adjust_camera"
+}, {
+"args": [],
+"method": &"cutscene_end"
+}, {
+"args": [],
+"method": &"cutscene_close"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneCamera/CanvasLayer/RichTextLabel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"loadfailed"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("otherFlower:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4666667, 2.0666666, 2.1333334, 2.2296267, 2.6333334, 2.7, 2.8, 2.9, 3, 3.0666666, 3.1333334, 3.2, 3.2666667, 3.3333333, 3.4, 3.4666667, 3.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 1, 4, 1, 2, 2, 17, 1, 17, 16, 15, 14, 13, 12, 11, 10, 18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bekcf"]
+_data = {
+&"RESET": SubResource("Animation_adxwo"),
+&"the_other_flower": SubResource("Animation_n4b7k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bekcf"]
+size = Vector2(179.99994, 226)
+
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_ig06e")
-sidescrollMode = true
 roomname = "Ruins - Entrance"
 
 [node name="Map" type="TileMapLayer" parent="." groups=["map_base"]]
-z_index = -1
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAP7/AgAIAAcAAAD///7/AgAIAAcAAAD+//7/AgAIAAcAAAD9//7/AgAIAAcAAAD8//7/AgAIAAcAAAD7//7/AgAIAAcAAAD6//7/AgAIAAcAAAD5//7/AgAIAAcAAAD4//7/AgAIAAcAAAD3//7/AgAIAAcAAAD2//7/AgAIAAcAAAD1//7/AgAIAAcAAAD0//7/AgAIAAcAAADz//7/AgAIAAcAAADy//7/AgAIAAcAAADx//7/AgAIAAcAAADw//7/AgAIAAcAAADv//7/AgAIAAcAAADu//7/AgAIAAcAAADt//7/AgAIAAcAAADs//7/AgAIAAcAAADr//7/AgAIAAcAAADq//7/AgAIAAcAAADp//7/AgAIAAcAAADo//7/AgAIAAcAAADn//7/AgAIAAcAAADm//7/AgAIAAcAAADl//7/AgAIAAcAAADk//7/AgAIAAcAAADj//7/AgAIAAcAAADi//7/AgAIAAcAAADh//7/AgAIAAcAAADg//7/AgAIAAcAAADf//7/AgAIAAcAAADe//7/AgAIAAcAAADe////AgAIAAcAAADd////AgAIAAcAAADd/wIAAgAIAAcAAADe/wIAAgAIAAcAAADe/wMAAgAIAAcAAADe/wQAAgAIAAcAAADf/wQAAgAIAAcAAADg/wQAAgAIAAcAAADh/wQAAgAIAAcAAADi/wQAAgAIAAcAAADj/wQAAgAIAAcAAADk/wQAAgAIAAcAAADl/wQAAgAIAAcAAADm/wQAAgAIAAcAAADn/wQAAgAIAAcAAADo/wQAAgAIAAcAAADp/wQAAgAIAAcAAADq/wQAAgAIAAcAAADr/wQAAgAIAAcAAADs/wQAAgAIAAcAAADt/wQAAgAIAAcAAADu/wQAAgAIAAcAAADv/wQAAgAIAAcAAADw/wQAAgAIAAcAAADx/wQAAgAIAAcAAADy/wQAAgAIAAcAAADz/wQAAgAIAAcAAAD0/wQAAgAIAAcAAAD1/wQAAgAIAAcAAAD2/wQAAgAIAAcAAAD3/wQAAgAIAAcAAAD4/wQAAgAIAAcAAAD5/wQAAgAIAAcAAAD6/wQAAgAIAAcAAAD7/wQAAgAIAAcAAAD8/wQAAgAIAAcAAAD9/wQAAgAIAAcAAAD+/wQAAgAIAAcAAAD//wQAAgAIAAcAAAAAAAQAAgAIAAcAAAABAAQAAgAIAAcAAAACAAQAAgAIAAcAAAADAAQAAgAIAAcAAAAEAAQAAgAIAAcAAAAFAAQAAgAIAAcAAAAGAAQAAgAIAAcAAAAHAAQAAgAIAAcAAAAIAAQAAgAIAAcAAAAJAAQAAgAIAAcAAAAKAAQAAgAIAAcAAAALAAQAAgAIAAcAAAAMAAQAAgAIAAcAAAANAAQAAgAIAAcAAAAOAAQAAgAIAAcAAAAPAAQAAgAIAAcAAAAQAAQAAgAIAAcAAAARAAQAAgAIAAcAAAASAAQAAgAIAAcAAAATAAQAAgAIAAcAAAAUAAQAAgAIAAcAAAAVAAQAAgAIAAcAAAAWAAQAAgAIAAcAAAAXAAQAAgAIAAcAAAAYAAQAAgAIAAcAAAAZAAQAAgAIAAcAAAAaAAQAAgAIAAcAAAAbAAQAAgAIAAcAAAAcAAQAAgAIAAcAAAAdAAQAAgAIAAcAAAAeAAQAAgAIAAcAAAAfAAQAAgAIAAcAAAAgAAQAAgAIAAcAAAAhAAQAAgAIAAcAAAAiAAQAAgAIAAcAAAAhAAMAAgAIAAcAAAAhAAIAAgAIAAcAAAAiAAIAAgAIAAcAAAAiAP//AgAIAAcAAAAhAP//AgAIAAcAAAAiAP7/AgAIAAcAAAAhAP7/AgAIAAcAAAAgAP7/AgAIAAcAAAAfAP7/AgAIAAcAAAAeAP7/AgAIAAcAAAAdAP7/AgAIAAcAAAAcAP7/AgAIAAcAAAAbAP7/AgAIAAcAAAAaAP7/AgAIAAcAAAAZAP7/AgAIAAcAAAAYAP7/AgAIAAcAAAAXAP7/AgAIAAcAAAAWAP7/AgAIAAcAAAAVAP7/AgAIAAcAAAAUAP7/AgAIAAcAAAATAP7/AgAIAAcAAAASAP7/AgAIAAcAAAARAP7/AgAIAAcAAAAQAP7/AgAIAAcAAAAPAP7/AgAIAAcAAAAOAP7/AgAIAAcAAAANAP7/AgAIAAcAAAAMAP7/AgAIAAcAAAALAP7/AgAIAAcAAAAKAP7/AgAIAAcAAAAJAP7/AgAIAAcAAAAIAP7/AgAIAAcAAAAHAP7/AgAIAAcAAAAGAP7/AgAIAAcAAAAFAP7/AgAIAAcAAAAEAP7/AgAIAAcAAAADAP7/AgAIAAcAAAACAP7/AgAIAAcAAAABAP7/AgAIAAcAAADd//7/AgAIAAcAAADd//v/AgAIAAcA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")
+tile_map_data = PackedByteArray("AAD8/wUAAgAOAAkAAAD9/wUAAgAOAAkAAAD+/wUAAgAOAAkAAAD//wUAAgAOAAkAAAAAAAUAAgAOAAkAAAABAAUAAgAOAAkAAAACAAUAAgAOAAkAAAADAAUAAgAOAAkAAAAEAAUAAgAOAAkAAAAFAAUAAgAMAAkAAAAGAAQAAgAMAAkAAAD7/wUAAgAMAAcAAAAFAAQAAgAQAAoAAAAIAPr/AgAIAAcAAAAIAAQAAgAIAAcAAAAJAAQAAgAIAAcAAAAJAPr/AgAIAAcAAAD3//r/AgAIAAcAAAD2//r/AgAIAAcAAADj//v/AgAOAAcAAADj/wQAAgAOAAcAAADk/wQAAgAOAAkAAADl/wQAAgAOAAkAAADm/wQAAgAOAAkAAADn/wQAAgAOAAkAAADs/wQAAgAOAAkAAADv/wQAAgAOAAkAAADw/wQAAgAOAAkAAADz/wQAAgAOAAkAAAD0/wQAAgAOAAkAAAD1/wQAAgAOAAkAAAAKAAQAAgAIAAcAAAALAAQAAgAIAAcAAAAMAAQAAgAIAAcAAAANAAQAAgAIAAcAAAAOAAQAAgAIAAcAAAAPAAQAAgAIAAcAAAAQAAQAAgAIAAcAAAARAAQAAgAIAAcAAAASAAQAAgAIAAcAAAATAAQAAgAIAAcAAAAUAAQAAgAIAAcAAAAVAAQAAgAIAAcAAAAWAAQAAgAIAAcAAAAXAAQAAgAIAAcAAAAYAAQAAgAIAAcAAAAZAAQAAgAIAAcAAAAaAAQAAgAIAAcAAAAKAPr/AgAIAAcAAAALAPr/AgAIAAcAAAAMAPr/AgAIAAcAAAANAPr/AgAIAAcAAAAOAPr/AgAIAAcAAAAPAPr/AgAIAAcAAAAQAPr/AgAIAAcAAAARAPr/AgAIAAcAAAASAPr/AgAIAAcAAAATAPr/AgAIAAcAAAAUAPr/AgAIAAcAAAAVAPr/AgAIAAcAAAAWAPr/AgAIAAcAAAAXAPr/AgAIAAcAAAAYAPr/AgAIAAcAAAAZAPr/AgAIAAcAAAAaAPr/AgAIAAcAAADk//r/AgANAAcAAAD1//r/AgANAAcAAADl//r/AgANAAcAAADm//r/AgANAAcAAADn//r/AgANAAcAAADo//r/AgANAAcAAADp//r/AgANAAcAAADq//r/AgANAAcAAADr//r/AgANAAcAAADs//r/AgANAAcAAADt//r/AgANAAcAAADu//r/AgANAAcAAADv//r/AgANAAcAAADw//r/AgANAAcAAADx//r/AgANAAcAAADy//r/AgANAAcAAADz//r/AgANAAcAAAD0//r/AgANAAcAAADt/wQAAgAOAAkAAADu/wQAAgAOAAkAAADx/wQAAgAOAAkAAADy/wQAAgAOAAkAAADo/wQAAgAQAAsAAADr/wQAAgAQAAoAAADo/wUAAgAOAAcAAADr/wUAAgAOAAgAAADp/wEAAgAKAAcAAADp/wAAAgAIAAYAAADp////AgAIAAYAAADo/wAAAgAIAAYAAADq/wAAAgAHAAYAAADo////AgAJAAYAAADj//z/AgAOAAcAAADj//3/AgAOAAcAAADj//7/AgAOAAcAAADj////AgAOAAcAAADj/wAAAgAOAAcAAADj/wEAAgAOAAcAAADj/wIAAgAOAAcAAADj/wMAAgAOAAcAAAD2/wIAAgAIAAcAAAD2/wMAAgAIAAcAAAD2/wQAAgAIAAcAAAD3/wIAAgAIAAcAAAD3/wMAAgAIAAcAAAD3/wQAAgAIAAcAAAD4/wIAAgAIAAcAAAD4/wMAAgAIAAcAAAD4/wQAAgAIAAcAAAD2//z/AgAIAAcAAAD6//z/AgAIAAcAAAD7//z/AgAIAAcAAADn//3/AgAIAAcAAADo//3/AgAIAAcAAADp//3/AgAIAAcAAADq//3/AgAIAAcAAADr//3/AgAIAAcAAADs//3/AgAIAAcAAADt//3/AgAIAAcAAADu//3/AgAIAAcAAADv//3/AgAIAAcAAADw//3/AgAIAAcAAADx//3/AgAIAAcAAADy//3/AgAIAAcAAADz//3/AgAIAAcAAAD0//3/AgAIAAcAAAD1//3/AgAIAAcAAAD2//3/AgAIAAcAAAD2//7/AgAIAAcAAAD2////AgAIAAcAAAD3////AgAIAAcAAAD4////AgAIAAcAAAD5////AgAIAAcAAAD6////AgAIAAcAAAD7////AgAIAAcAAAD8////AgAIAAcAAAD8/wAAAgAIAAcAAAD8/wEAAgAIAAcAAAD9/wEAAgAIAAcAAAD+/wEAAgAIAAcAAAD//wEAAgAIAAcAAAAAAAEAAgAIAAcAAAABAAEAAgAIAAcAAAACAAEAAgAIAAcAAAADAAAAAgAIAAcAAAAEAAAAAgAIAAcAAAAFAAAAAgAIAAcAAAAGAAAAAgAIAAcAAAAHAAAAAgAIAAcAAAAIAAAAAgAIAAcAAAAIAP7/AgAIAAcAAAAIAP//AgAIAAcAAAAFAAMAAgAIAAcAAAAGAAMAAgAIAAcAAAAHAAMAAgAIAAcAAAAIAAMAAgAIAAcAAAAbAAQAAgAIAAcAAAAbAAEAAgAIAAcAAAAbAAIAAgAIAAcAAAAbAAMAAgAIAAcAAAAcAAEAAgAIAAcAAAAJAAMAAgAIAAcAAAAKAAMAAgAIAAcAAAALAAMAAgAIAAcAAAAMAAMAAgAIAAcAAAANAAMAAgAIAAcAAAAOAAMAAgAIAAcAAAAPAAMAAgAIAAcAAAAQAAMAAgAIAAcAAAARAAMAAgAIAAcAAAASAAMAAgAIAAcAAAATAAMAAgAIAAcAAAAUAAMAAgAIAAcAAAAVAAMAAgAIAAcAAAAWAAMAAgAIAAcAAAAXAAMAAgAIAAcAAAAYAAMAAgAIAAcAAAAZAAMAAgAIAAcAAAAaAAMAAgAIAAcAAAAJAP7/AgAIAAcAAAAKAP7/AgAIAAcAAAALAP7/AgAIAAcAAAAMAP7/AgAIAAcAAAANAP7/AgAIAAcAAAAOAP7/AgAIAAcAAAAPAP7/AgAIAAcAAAAQAP7/AgAIAAcAAAARAP7/AgAIAAcAAAASAP7/AgAIAAcAAAATAP7/AgAIAAcAAAAUAP7/AgAIAAcAAAAVAP7/AgAIAAcAAAAWAP7/AgAIAAcAAAAXAP7/AgAIAAcAAAAYAP7/AgAIAAcAAAAZAP7/AgAIAAcAAAAaAP7/AgAIAAcAAAAJAPv/AgAIAAcAAAAJAPz/AgAIAAcAAAAJAP3/AgAIAAcAAAAKAPv/AgAIAAcAAAAKAPz/AgAIAAcAAAAKAP3/AgAIAAcAAAALAPv/AgAIAAcAAAALAPz/AgAIAAcAAAALAP3/AgAIAAcAAAAMAPv/AgAIAAcAAAAMAPz/AgAIAAcAAAAMAP3/AgAIAAcAAAANAPv/AgAIAAcAAAANAPz/AgAIAAcAAAANAP3/AgAIAAcAAAAOAPv/AgAIAAcAAAAOAPz/AgAIAAcAAAAOAP3/AgAIAAcAAAAPAPv/AgAIAAcAAAAPAPz/AgAIAAcAAAAPAP3/AgAIAAcAAAAQAPv/AgAIAAcAAAAQAPz/AgAIAAcAAAAQAP3/AgAIAAcAAAARAPv/AgAIAAcAAAARAPz/AgAIAAcAAAARAP3/AgAIAAcAAAASAPv/AgAIAAcAAAASAPz/AgAIAAcAAAASAP3/AgAIAAcAAAATAPv/AgAIAAcAAAATAPz/AgAIAAcAAAATAP3/AgAIAAcAAAAUAPv/AgAIAAcAAAAUAPz/AgAIAAcAAAAUAP3/AgAIAAcAAAAVAPv/AgAIAAcAAAAVAPz/AgAIAAcAAAAVAP3/AgAIAAcAAAAWAPv/AgAIAAcAAAAWAPz/AgAIAAcAAAAWAP3/AgAIAAcAAAAXAPv/AgAIAAcAAAAXAPz/AgAIAAcAAAAXAP3/AgAIAAcAAAAYAPv/AgAIAAcAAAAYAPz/AgAIAAcAAAAYAP3/AgAIAAcAAAAZAPv/AgAIAAcAAAAZAPz/AgAIAAcAAAAZAP3/AgAIAAcAAAAaAPv/AgAIAAcAAAAaAPz/AgAIAAcAAAAaAP3/AgAIAAcAAAAbAPr/AgAIAAcAAAAbAPv/AgAIAAcAAAAbAPz/AgAIAAcAAAAbAP3/AgAIAAcAAAAbAP7/AgAIAAcAAAAcAPr/AgAIAAcAAAAcAPv/AgAIAAcAAAAcAPz/AgAIAAcAAAAcAP3/AgAIAAcAAAAcAP7/AgAIAAcAAAD5/wIAAgAIAAcAAAD5/wMAAgAIAAcAAAD5/wQAAgAIAAcAAAD6/wQAAgAIAAcAAAD7/wQAAgAIAAcAAAD8/wQAAgAIAAcAAAD9/wQAAgAIAAcAAAD+/wQAAgAIAAcAAAD//wQAAgAIAAcAAAAAAAQAAgAIAAcAAAABAAQAAgAIAAcAAAACAAQAAgAIAAcAAAADAAQAAgAIAAcAAAAEAAQAAgAIAAcAAADk//3/AgAIAAcAAADl//3/AgAIAAcAAADm//3/AgAIAAcAAAALAAIAAgAIAAcAAAAMAAIAAgAIAAcAAAANAAIAAgAIAAcAAAAOAAIAAgAIAAcAAAAPAAIAAgAIAAcAAAAQAAIAAgAIAAcAAAALAP//AgAIAAcAAAAMAP//AgAIAAcAAAAPAAAAAgAIAAcAAAAPAAEAAgAIAAcAAAALAAAAAgAJAAYAAAALAAEAAgAJAAcAAAAMAAAAAgAIAAYAAAAMAAEAAgAIAAYAAAANAP//AgAJAAYAAAANAAAAAgAIAAYAAAANAAEAAgAIAAUAAAAOAP//AgAIAAYAAAAOAAAAAgAIAAYAAAAOAAEAAgAKAAcAAAAPAP//AgAIAAUAAAAQAP//AgAIAAYAAAAQAAAAAgAIAAYAAAAQAAEAAgAJAAcAAAARAP//AgAKAAgAAAARAAAAAgAIAAYAAAARAAEAAgAIAAYAAAARAAIAAgAJAAcAAAASAP//AgAIAAcAAAASAAAAAgAIAAcAAAASAAEAAgAIAAcAAAASAAIAAgAIAAYAAAATAP//AgAJAAYAAAATAAAAAgAIAAYAAAATAAEAAgAIAAYAAAATAAIAAgAKAAcAAAAUAP//AgAIAAYAAAAUAAAAAgAIAAYAAAAUAAEAAgAKAAcAAAAVAP//AgAIAAYAAAAWAP//AgAKAAYAAAAWAAAAAgAIAAYAAAAWAAEAAgAJAAcAAAAXAAEAAgAIAAYAAAAXAAIAAgAJAAcAAAAYAAEAAgAKAAYAAAAYAAIAAgAKAAcAAAAVAAAAAgAIAAcAAAAVAAEAAgAIAAcAAAAVAAIAAgAIAAcAAAAUAAIAAgAIAAcAAAAWAAIAAgAIAAcAAAAYAAAAAgAIAAcAAAAYAP//AgAIAAcAAAAXAP//AgAIAAcAAAAXAAAAAgAIAAcAAAA=")
 tile_set = ExtResource("2_8q8mr")
 
-[node name="07aRuinslonghall" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture = ExtResource("3_ig06e")
+[node name="02RuinsFirstSave" type="Sprite2D" parent="."]
+texture = ExtResource("3_nx8r5")
 
 [node name="DecorA" type="TileMapLayer" parent="."]
-z_index = 1
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAaAP7/AgAMAAIAAAA=")
+tile_map_data = PackedByteArray("AADk//3/AgAPAAQAAADl//3/AgAPAAQAAADm//3/AgAPAAQAAADk////AgAHAAYAAADl////AgAHAAYAAADl//7/AgAHAAYAAADk//7/AgAHAAYAAADt//7/AgAHAAYAAADn//7/AgAHAAYAAADo//7/AgAHAAYAAADp//7/AgAHAAYAAADq//7/AgAHAAYAAADr//7/AgAHAAYAAADs//7/AgAHAAYAAADm//7/AgAHAAYAAADl/wAAAgAHAAYAAADl/wEAAgAHAAYAAADl/wIAAgAHAAYAAADp/wUAAgAIAAYAAADq/wUAAgAIAAUAAADp/wQAAgAJAAYAAADq/wQAAgAKAAYAAADp/wMAAgAHAAYAAADq/wMAAgAHAAYAAADm////AgAHAAYAAADm/wAAAgAJAAYAAADm/wEAAgAJAAcAAADm/wIAAgAHAAYAAADn////AgAHAAYAAADn/wAAAgAIAAYAAADn/wEAAgAIAAYAAADn/wIAAgAHAAYAAADo////AgAJAAYAAADo/wAAAgAIAAYAAADo/wEAAgAIAAUAAADo/wIAAgAHAAYAAADp////AgAIAAYAAADp/wAAAgAIAAYAAADp/wEAAgAKAAcAAADp/wIAAgAHAAYAAADq////AgAIAAUAAADq/wAAAgAHAAYAAADq/wEAAgAHAAYAAADq/wIAAgAHAAYAAADr////AgAIAAYAAADr/wAAAgAIAAYAAADr/wEAAgAJAAcAAADr/wIAAgAHAAYAAADs////AgAKAAgAAADs/wAAAgAIAAYAAADs/wEAAgAIAAYAAADs/wIAAgAJAAcAAADt////AgAHAAYAAADt/wAAAgAHAAYAAADt/wEAAgAHAAYAAADt/wIAAgAIAAYAAADu////AgAJAAYAAADu/wAAAgAIAAYAAADu/wEAAgAIAAYAAADu/wIAAgAKAAcAAADv////AgAIAAYAAADv/wAAAgAIAAYAAADv/wEAAgAKAAcAAADw////AgAIAAYAAADx////AgAKAAYAAADx/wAAAgAIAAYAAADx/wEAAgAJAAcAAADy/wEAAgAIAAYAAADy/wIAAgAJAAcAAADz/wEAAgAKAAYAAADz/wIAAgAKAAcAAAD0/wEAAgAHAAYAAAD0/wIAAgAHAAYAAAAPAP//AwAAAAAABAAQAP//AwAAAAAABAARAP//AwAAAAAABAARAAAAAwAAAAAABAAQAAAAAwAAAAAABAAQAAEAAwAAAAAABAARAAEAAwAAAAAABAARAAIAAwAAAAAABAASAAIAAwAAAAAABAATAAIAAwAAAAAABAATAAEAAwAAAAAABAATAAAAAwAAAAAABAATAP//AwAAAAAABAAUAAAAAwAAAAAABAAUAAEAAwAAAAAABAAUAP//AwAAAAAABAAVAP//AwAAAAAABAAWAP//AwAAAAAABAAWAAAAAwAAAAAABAAWAAEAAwAAAAAABAAXAAEAAwAAAAAABAAYAAEAAwAAAAAABAAYAAIAAwAAAAAABAAXAAIAAwAAAAAABAALAAAAAwAAAAAABAAMAAAAAwAAAAAABAAMAAEAAwAAAAAABAANAAEAAwAAAAAABAANAAAAAwAAAAAABAANAP//AwAAAAAABAAOAP//AwAAAAAABAAOAAAAAwAAAAAABAAOAAEAAwAAAAAABAALAAEAAwAAAAAABAA=")
 tile_set = ExtResource("2_8q8mr")
 navigation_enabled = false
 
@@ -41,11 +157,25 @@ navigation_enabled = false
 
 [node name="Interactibles" type="Node2D" parent="."]
 
+[node name="puzzle_hint" parent="Interactibles" node_paths=PackedStringArray("interaction_area") instance=ExtResource("4_2oxf6")]
+position = Vector2(-8, 166)
+object_type = 1
+interaction_area = NodePath("Interaction_Area")
+dialog_data = ExtResource("5_vt66r")
+max_interact = 0
+
+[node name="Interaction_Area" parent="Interactibles/puzzle_hint" instance=ExtResource("6_je4m7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactibles/puzzle_hint/Interaction_Area"]
+position = Vector2(8.99997, 3.25003)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_osd82")
+
 [node name="Scripted Events" type="Node2D" parent="."]
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
-position = Vector2(3150, 90)
-scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
+position = Vector2(2610, 3)
+scene_to_load = "res://stages/ruins/Ruins_room8.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 
@@ -56,22 +186,76 @@ position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_rf2lj")
 
 [node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
-position = Vector2(-3150, 87)
-scene_to_load = "res://stages/ruins/Ruins_room7.tscn"
+position = Vector2(-1981, 541)
+scene_to_load = "res://stages/ruins/Ruins_room6.tscn"
 load_at = 2
 load_trigger_area = NodePath("LoadTriggerArea")
 
 [node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_jgrgn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_v3g1j")
 
 [node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("6_var26")]
+position = Vector2(0, 282)
 
-[node name="LoadatPoint_Ruins_room8" parent="Scripted Events" instance=ExtResource("6_var26")]
-position = Vector2(-3035, 88)
+[node name="LoadatPoint_opening room 2" parent="Scripted Events" instance=ExtResource("6_var26")]
+position = Vector2(-1978, 423)
 placepoint = 1
 
 [node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("6_var26")]
-position = Vector2(3016, 89)
+position = Vector2(2505, 0)
 placepoint = 2
+
+[node name="Cutscene The Other Flower" type="Node2D" parent="." node_paths=PackedStringArray("load_trigger_area")]
+script = ExtResource("10_plfxg")
+load_trigger_area = NodePath("CutSceneTriggerArea")
+dialog_data = ExtResource("11_gk61t")
+
+[node name="CutsceneCamera" type="Camera2D" parent="Cutscene The Other Flower"]
+position = Vector2(-1733, 45)
+enabled = false
+zoom = Vector2(0.657, 0.657)
+limit_left = -2610
+limit_top = -540
+limit_right = 2610
+limit_bottom = 540
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Cutscene The Other Flower/CutsceneCamera"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cutscene The Other Flower/CutsceneCamera/CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_right = 1.2118056
+offset_right = -1151.0
+offset_bottom = 40.0
+theme = ExtResource("12_xy5x5")
+text = "  LOAD FAILED"
+scroll_active = false
+script = ExtResource("13_w53gs")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene The Other Flower"]
+libraries = {
+&"": SubResource("AnimationLibrary_bekcf")
+}
+
+[node name="CutSceneTriggerArea" parent="Cutscene The Other Flower" instance=ExtResource("5_jgrgn")]
+position = Vector2(-1980, 434)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene The Other Flower/CutSceneTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_bekcf")
+
+[node name="otherFlower" type="Sprite2D" parent="Cutscene The Other Flower"]
+position = Vector2(-2081, 0)
+texture = ExtResource("14_8f226")
+hframes = 5
+vframes = 8
+
+[node name="Exclaim" type="Sprite2D" parent="Cutscene The Other Flower"]
+visible = false
+position = Vector2(-2081, -74)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_dtuml")

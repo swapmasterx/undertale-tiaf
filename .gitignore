@@ -9,3 +9,9 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 data_*/
+.godot/editor/create_recent.Node
+.godot/editor/create_recent.Node
+.godot/editor/filesystem_cache10
+.godot/editor/overworld_other_flowey_ruins_attacks.tscn-folding-c10e24b955cf51471fcfde2b9e9bbc60.cfg
+.godot/editor/overworld_other_flowey_ruins_attacks.tscn-editstate-c10e24b955cf51471fcfde2b9e9bbc60.cfg
+.godot/uid_cache.bin

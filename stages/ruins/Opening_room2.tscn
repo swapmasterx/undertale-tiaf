@@ -47,6 +47,7 @@ texture = ExtResource("8_sanxw")
 
 [node name="save point" parent="Interactibles" instance=ExtResource("4_pmqf1")]
 position = Vector2(0, -400)
+set_plot_value = 1
 dialog_data = ExtResource("5_5r32h")
 max_interact = 0
 

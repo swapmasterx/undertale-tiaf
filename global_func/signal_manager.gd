@@ -38,23 +38,23 @@ func enter_overworld_hazard_func():
 	GlobalFlags.menu_lock = true
 	GlobalFlags.overworld_hazard = true
 
+signal exit_overworld_hazard()
+
 func exit_overworld_hazard_func():
 	GlobalFlags.menu_lock = false
 	GlobalFlags.overworld_hazard = false
+	delete_player_tracking_hazard.emit()
 
-signal exit_overworld_hazard()
-
+signal delete_player_tracking_hazard()
 #tells the game that you got hurt
 signal damaged()
 
 #Used to set game state and when its changing.
-signal overworld_mode()
+signal overworld_to_battle(int)
 
-signal world_transition_mode()
+signal battle_loaded()
 
 signal fake_world_transition_mode()
-
-signal battle_mode()
 
 #menu signals
 signal activate_choose_option()
@@ -75,3 +75,9 @@ signal switchpuzzle()
 signal switchon(int)
 
 signal switchoff(int)
+
+#used to make talk sprites and applicable overworld sprites animate during dialogue
+signal character_talking(int, bool)
+
+#used to tell when a save point box has been closed
+signal saved_menu_closed

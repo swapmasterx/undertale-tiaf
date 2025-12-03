@@ -11,6 +11,8 @@ extends Control
 @onready var speech_sprite = $speech_sprite
 @onready var text_sounds = $text_sounds
 @onready var textbox_containter = $textbox
+var is_talking_id: int = 0
+var is_talking: bool = false
 
 # Controls how fast the dialog scrolls by. Shouldn't be changed too much outside DRAMATICLY SPACED SPEECH! (woh)
 var character_time = 0.03
@@ -81,7 +83,6 @@ func start_dialog(use_cinima_mode: bool, boxes: Array):
 		GlobalFlags.menu_lock = true
 		if use_cinima_mode == false:
 			print("cinafalse")
-			GlobalFlags.wasd_lock = true
 			SignalManager.lockWasd.emit()
 		else:
 			print("cinatrue")
@@ -96,26 +97,45 @@ func display_text(text_to_dispo: String):
 	text_slot.text = ""
 	_display_letter()
 
+
 func _display_letter():
-	
-	
 	match text_to_use[letter_index]:
+		#puts textbox at the top
+		"~":
+			self.global_position = Vector2(131,30)
+			pass
+		#Puts text box at the bottom
+		"`":
+			self.global_position = Vector2(131,395)
+			pass
+		#make textboxes after this symbol is used to be skipable
 		"#":
 			skipable = true
 			pass
+		#make textboxes after this symbol is used to be unskipable
 		"$":
 			skipable = false
 			pass
+		#Forces the next text box to display as soon as this symbol appears
 		"=":
 			finished_dispo.emit()
 			next_box()
 			return
+		#Used for pauses in dialogue. They last as long as a normal text character 
+		#so multiple might be needed
 		"|":
+			is_talking_false()
 			pass
+		#Used so spaces don't generate speak noise
 		" ": 
 			text_slot.text += text_to_use[letter_index]
 			pass
+		
+		#Everything else
 		_:
+			if is_talking == false:
+				is_talking = true
+				SignalManager.character_talking.emit(is_talking_id, true)
 			text_slot.text += text_to_use[letter_index]
 			play_speech_sound()
 
@@ -132,6 +152,7 @@ func _display_letter():
 	text_scroll_timer.start(character_time)
 
 func _on_finished_dispo():
+	is_talking_false()
 	if GlobalFlags.dialogMode == true:
 		can_advance_segment = true
 
@@ -143,6 +164,12 @@ func cont_dialog():
 	display_text(dialog_boxes[box_index])
 
 
+func is_talking_false():
+	if is_talking == true:
+		is_talking = false
+		SignalManager.character_talking.emit(is_talking_id, false)
+
+
 func _unhandled_input(event):
 	if skipable == true && GlobalFlags.dialogMode == true && can_advance_segment == false:
 		if Input.is_action_pressed("back_cancel"):
@@ -152,6 +179,8 @@ func _unhandled_input(event):
 			text_to_use = text_to_use.replace("=","")
 			text_to_use = text_to_use.replace("$","")
 			text_to_use = text_to_use.replace("#","")
+			text_to_use = text_to_use.replace("`","")
+			text_to_use = text_to_use.replace("~","")
 			text_slot.text = text_to_use
 			
 			finished_dispo.emit()
@@ -216,6 +245,8 @@ func play_speech_sound():
 				speech_in_use = load("res://sound_effects/snd_floweytalk2.wav")
 			"Asriel":
 				speech_in_use = load("res://sound_effects/snd_txtasr2.wav")
+			"toriel":
+				speech_in_use = load("res://sound_effects/snd_txttor.wav")
 				
 		same_sound = speechSFX_id[box_index]
 		text_sounds.stream = speech_in_use
@@ -235,8 +266,10 @@ func use_talk_sprite():
 		"none":
 			pass
 		"flowey":
-			speech_sprite.texture = load("res://sprites/dev/comicfurypageicon.png")
+			speech_sprite.play("default", 1, false)
 		"Asriel":
 			pass
-		"other_flowey":
+		"other_flower":
 			pass
+		"toriel":
+			is_talking_id = 1

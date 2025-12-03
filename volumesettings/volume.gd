@@ -25,9 +25,13 @@ func _on_value_changed(value: float):
 	match bus_index:
 		1:
 			PlayerData.master_volume = value
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_test.wav")
+			GlobalFlags.sfx_1_channel.play()
 		2:
 			PlayerData.sfx_volume = value
 			AudioServer.set_bus_volume_db(4, linear_to_db(value))
+			GlobalFlags.sfx_1_channel.stream = load("res://sound_effects/snd_test.wav")
+			GlobalFlags.sfx_1_channel.play()
 		3:
 			PlayerData.music_volume = value
 		

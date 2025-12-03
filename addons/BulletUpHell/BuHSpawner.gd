@@ -1566,13 +1566,14 @@ func _apply_movement(B:Dictionary, props:Dictionary):
 
 func _switch_to_next_anim(b:Dictionary):
 	var new_anim_instant:bool
-	if b["state"] == BState.Spawning:
-		b["state"] = BState.Spawned
-		new_anim_instant = change_animation(b, "waiting")
-	elif b["state"] == BState.Spawned:
+	
+	if b["state"] == BState.Spawned:
 		b["state"] = BState.Shooting
 		new_anim_instant = change_animation(b, "shoot")
 		if new_anim_instant: new_anim_instant = _switch_to_next_anim(b)
+	elif b["state"] == BState.Spawning:
+		b["state"] = BState.Spawned
+		new_anim_instant = change_animation(b, "waiting")
 	elif b["state"] == BState.Shooting:
 		b["state"] = BState.Moving
 		new_anim_instant = change_animation(b, "idle")
@@ -1592,7 +1593,8 @@ func get_texture_frame(b:Dictionary, spriteframes:SpriteFrames=textures):
 			b["anim_counter"] = 0
 			b["anim_frame"] += 1
 			if b["anim_frame"] >= b["anim_length"]: # reached anim end
-				if _switch_to_next_anim(b): # next anim is single framed
+				if b.get("anim_loop"): b["anim_frame"] = 0
+				elif _switch_to_next_anim(b): # next anim is single framed
 					return spriteframes.get_frame_texture(b["anim"][ANIM.TEXTURE], 0)
 				else: b["anim_frame"] = 0 if b.get("anim_loop") else b["anim_length"]-1
 		return spriteframes.get_frame_texture(b["anim"][ANIM.TEXTURE], b.get("anim_frame"))
@@ -1675,6 +1677,7 @@ func _draw_bullet(B:Dictionary, props:Dictionary):
 
 	if props.has("spec_modulate"):
 		modulate_bullet(B, texture, depth_scale)
+
 
 	else: draw_texture(texture,-texture.get_size()/2, Color(1,1,1,depth_scale))
 

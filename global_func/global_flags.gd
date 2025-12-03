@@ -8,7 +8,7 @@ extends Node2D
 
 @onready var music_channel = get_tree().get_first_node_in_group("music")
 
-
+var battle_lineup: Array
 
 var time_played: String = "00:00"
 
@@ -45,6 +45,8 @@ var dialogDisabled: bool = false
 
 var blockInteraction: bool = false
 
+var overworld_lockdown: bool = false
+
 var wasd_lock: bool = false
 
 var menu_lock: bool = false
@@ -67,12 +69,13 @@ var room_changing: bool = false
 #enabled when text options are in play. Does not include battle buttons (Fight, act ect)
 var options_mode: bool = false
 
-var items: Array = []
-
 # 0 = no menu, 1 = overworld c menu, 2 = overworld c menu after option has been selected
 # 3 = selecting option box 
 
 var menu_layer: int = 0
+
+#Use to disable the option change sound when a button is selected to jump to it
+var first_option_entry: bool = false
 
 var use_or_toss: bool = false
 
@@ -94,7 +97,8 @@ func save():
 	"switch_puzzle" : RoomPersistance.switch_puzzle, "candy_counter": RoomPersistance.candy_counter,
 	"save_question": RoomPersistance.save_question,
 	"spike_question": RoomPersistance.spike_question,
-	"other_flower_cutscene": RoomPersistance.other_flower_cutscene})
+	"other_flower_cutscene": RoomPersistance.other_flower_cutscene,
+	"plot_value": RoomPersistance.plot_value})
 var cutscene_active: bool = false
 
 func cutscene_mode(on_or_off: bool):

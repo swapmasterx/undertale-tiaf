@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var color_rect = $"../../ColorRect"
+@onready var color_rect = $"../../overworld_hazard_filter"
 @onready var glow = $glow
 
 func _ready():
@@ -10,6 +10,7 @@ func _ready():
 	tween.tween_property(glow, "modulate:a", 0, 0.1)
 	color_rect.visible = false
 	self.visible = false
+	
 	SignalManager.enter_overworld_hazard.connect(enter_overworld_hazard)
 	SignalManager.exit_overworld_hazard.connect(exit_overworld_hazard)
 

@@ -5,7 +5,8 @@ const save_file_name: String = "user://fileP.json"
 
 const default_save_file: Dictionary = {"opening_cutscene_played": false,
 "first_puzzle": false, "switch_puzzle" : false,
-"candy_counter": 0, "save_question": false, "spike_question": false, "other_flower_cutscene": false}
+"candy_counter": 0, "save_question": false, "spike_question": false, "other_flower_cutscene": false,
+"plot_value": 0}
 
 func save_game(data: Dictionary) -> void:
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)
@@ -38,6 +39,7 @@ func _ready():
 	
 func load_the_game():
 	var dict: Dictionary = load_game()
+	plot_value = dict["plot_value"]
 	first_puzzle = dict["first_puzzle"]
 	switch_puzzle = dict["switch_puzzle"]
 	candy_counter = dict["candy_counter"]
@@ -47,6 +49,8 @@ func load_the_game():
 	other_flower_cutscene = dict["other_flower_cutscene"]
 
 #room persistancy
+
+var plot_value: float = 0
 
 var opening_cutscene = false
 

@@ -1,27 +1,40 @@
 63f7b34db8d8cdea90c76aacccf841ec
+<<<<<<< Updated upstream
 ::res://::1762982629
 default_bus_layout.tres::AudioBusLayout::2956266217040259178::1761343377::0::1::::<><><>0<>0<><>::
+=======
+::res://::1764783076
+default_bus_layout.tres::AudioBusLayout::2956266217040259178::1764621175::0::1::::<><><>0<>0<><>::
+>>>>>>> Stashed changes
 floor_button.gd::GDScript/GDScript::7385535050019264884::1752554522::0::1::::<>Node2D<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::2107369170911746076::1733943751::1752373793::1::::<><><>0<>0<>b1424506de7803f88a08b921e5e1b232<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 snd_swallow.wav::AudioStreamWAV/AudioStreamWAV::8378408964413099923::1739233300::1752373794::1::::<><><>0<>0<>664af4a400dc9631aa18c00f20b7d31a<>res://.godot/imported/snd_swallow.wav-7dce031b265ce5fc3870d23b0cc84196.sample::
 weh.tscn::PackedScene/PackedScene::858151093398329287::1742793001::0::1::::<><><>0<>0<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf
 ::res://addons/::1762903748
+<<<<<<< Updated upstream
 ::res://addons/BulletUpHell/::1762984078
+=======
+::res://addons/BulletUpHell/::1763587170
+>>>>>>> Stashed changes
 BuH.gd::GDScript::5282051448527960017::1756749230::0::1::::<>EditorPlugin<><>0<>1<><>::
-BuHSpawner.gd::GDScript::9027302839269158178::1762982487::0::1::::<>Node2D<><>0<>1<><>::
+BuHSpawner.gd::GDScript::9027302839269158178::1763586773::0::1::::<>Node2D<><>0<>1<><>::
 customFunctions.gd::GDScript::5769870841962792393::1762935347::0::1::::customFunctions<>Node<><>0<>0<><>::
 Drawer.gd::GDScript::2627548402310063743::1756749230::0::1::::<>Node2D<><>0<>0<><>::
 LICENSE.md::TextFile::-1::1756749230::0::1::::<><><>0<>0<><>::
 plugin.cfg::TextFile::-1::1756749230::0::1::::<><><>0<>0<><>::
+<<<<<<< Updated upstream
 Spawning.tscn::PackedScene::439070406509862218::1762984078::0::1::::<><><>0<>0<><>::uid://d1u5mg3r7epxy::::res://addons/BulletUpHell/BuHSpawner.gd<>uid://c1pdefy16l27t::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_3.png<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://cd6m8cvmryn7h::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_06.png<>uid://dfpcp4dx0p05w::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_11.png<>uid://cart1u265r542::::res://addons/BulletUpHell/Bullet/Hit Hurt.wav<>uid://bdo2lrcnxk0yl::::res://addons/BulletUpHell/Drawer.gd
+=======
+Spawning.tscn::PackedScene::439070406509862218::1763587170::0::1::::<><><>0<>0<><>::uid://d1u5mg3r7epxy::::res://addons/BulletUpHell/BuHSpawner.gd<>uid://c1pdefy16l27t::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_3.png<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://cd6m8cvmryn7h::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_06.png<>uid://dfpcp4dx0p05w::::res://addons/BulletUpHell/Bullet/Sprites/Bullet_11.png<>uid://cart1u265r542::::res://addons/BulletUpHell/Bullet/Hit Hurt.wav<>uid://bbkrry72kaigq::::res://sprites/bullets/f_pellets/pellet.png<>uid://cqqr4ptjmth0a::::res://sprites/bullets/f_pellets/pellet2.png<>uid://bdo2lrcnxk0yl::::res://addons/BulletUpHell/Drawer.gd<>uid://dncmlwcqsbqte::::res://sprites/bullets/fireball/p11 19a 2025.png<>uid://bec6skt7454ep::::res://sound_effects/snd_chug.wav<>uid://c2wknf2kgwn2h::::res://sprites/bullets/blank_bullet.png
+>>>>>>> Stashed changes
 ::res://addons/BulletUpHell/Bullet/::1762903758
-animStates.gd::GDScript::3775918232760597768::1756749230::0::1::::animState<>Resource<><>0<>0<><>::
-BulletNodeProps.gd::GDScript::1956432996121093153::1756749230::0::1::::BulletNodeProps<>BulletProps<><>0<>1<><>::
-BulletProps.gd::GDScript::3583495670426493584::1756749230::0::1::::BulletProps<>Resource<><>0<>1<><>::
+animStates.gd::GDScript::3775918232760597768::1756749230::0::1::::animState<>Resource<>res://addons/BulletUpHell/Sprites/NodeIcons24.png<>0<>0<><>::
+BulletNodeProps.gd::GDScript::1956432996121093153::1756749230::0::1::::BulletNodeProps<>BulletProps<>res://addons/BulletUpHell/Sprites/NodeIcons21.png<>0<>1<><>::
+BulletProps.gd::GDScript::3583495670426493584::1756749230::0::1::::BulletProps<>Resource<>res://addons/BulletUpHell/Sprites/NodeIcons15.png<>0<>1<><>::
 Hit Hurt.wav::AudioStreamWAV::4809136936335322613::1756749230::1762903722::1::::<><><>0<>0<>f22d207dbf33a306c017d8f197d1b839<>res://.godot/imported/Hit Hurt.wav-f29994c10d7415fcb4570333f048d972.sample::
-LaserBeam.gd::GDScript::489734904445065497::1756749230::0::1::::LaserBeam<>Area2D<><>0<>1<><>::
+LaserBeam.gd::GDScript::489734904445065497::1756749230::0::1::::LaserBeam<>Area2D<>res://addons/BulletUpHell/Sprites/NodeIcons22.png<>0<>1<><>::
 LaserBeam.tscn::PackedScene::3143420983640885672::1756749230::0::1::::<><><>0<>0<><>::res://addons/BulletUpHell/Bullet/LaserBeam.gd
-ObjectProps.gd::GDScript::8311447955811951680::1756749230::0::1::::ObjectProps<>Resource<><>0<>1<><>::
+ObjectProps.gd::GDScript::8311447955811951680::1756749230::0::1::::ObjectProps<>Resource<>res://addons/BulletUpHell/Sprites/NodeIcons18.png<>0<>1<><>::
 ::res://addons/BulletUpHell/Bullet/Sprites/::1762982419
 Bullet_3.png::CompressedTexture2D::6628906563355128519::1762982387::1762982419::1::::<><><>0<>0<>4d33b6e9c83141b4679da17e0d47bf1b<>res://.godot/imported/Bullet_3.png-4c11095a272b0c843f8cc78587c0cff6.ctex::
 Bullet_06.png::CompressedTexture2D::5048191281844706699::1756749230::1762903722::1::::<><><>0<>0<>87b8b6652aa78a384c430baec2338800<>res://.godot/imported/Bullet_06.png-dd304d8945654ef8efbec65e786b9fc0.ctex::
@@ -49,14 +62,14 @@ BuHPattern.gd::GDScript::7677499062477117112::1756749230::0::1::::SpawnPattern<>
 BuHSpawnPoint.gd::GDScript::3445667520363321444::1756749230::0::1::::<>Node2D<><>0<>1<><>::
 BuHTriggerContainer.gd::GDScript::8438029703957542059::1756749230::0::1::::TriggerContainer<>Node<><>0<>1<><>::
 ::res://addons/BulletUpHell/SpawnPatterns/::1762903758
-Pattern.gd::GDScript::7780792885348180084::1756749230::0::1::::Pattern<>Resource<><>0<>1<><>::
-PatternCircle.gd::GDScript::3040772063028478591::1756749230::0::1::::PatternCircle<>Pattern<><>0<>1<><>::
-PatternCustomArea.gd::GDScript::1723029360475831546::1756749230::0::1::::PatternCustomArea<>Pattern<><>0<>1<><>::
-PatternCustomPoints.gd::GDScript::604569553149293282::1756749230::0::1::::PatternCustomPoints<>Pattern<><>0<>1<><>::
-PatternCustomShape.gd::GDScript::8230312826550116206::1756749230::0::1::::PatternCustomShape<>Pattern<><>0<>1<><>::
-PatternLine.gd::GDScript::798768696193391429::1756749230::0::1::::PatternLine<>Pattern<><>0<>1<><>::
-PatternOne.gd::GDScript::5914837720095512578::1756749230::0::1::::PatternOne<>Pattern<><>0<>1<><>::
-PatternRandomizer.gd::GDScript::7034621626112315296::1756749230::0::1::::PatternRandomizer<>Resource<><>0<>0<><>::
+Pattern.gd::GDScript::7780792885348180084::1756749230::0::1::::Pattern<>Resource<>res://addons/BulletUpHell/Sprites/NodeIcons4.png<>0<>1<><>::
+PatternCircle.gd::GDScript::3040772063028478591::1756749230::0::1::::PatternCircle<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons6.png<>0<>1<><>::
+PatternCustomArea.gd::GDScript::1723029360475831546::1756749230::0::1::::PatternCustomArea<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons17.png<>0<>1<><>::
+PatternCustomPoints.gd::GDScript::604569553149293282::1756749230::0::1::::PatternCustomPoints<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons16.png<>0<>1<><>::
+PatternCustomShape.gd::GDScript::8230312826550116206::1756749230::0::1::::PatternCustomShape<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons9.png<>0<>1<><>::
+PatternLine.gd::GDScript::798768696193391429::1756749230::0::1::::PatternLine<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons7.png<>0<>1<><>::
+PatternOne.gd::GDScript::5914837720095512578::1756749230::0::1::::PatternOne<>Pattern<>res://addons/BulletUpHell/Sprites/NodeIcons8.png<>0<>1<><>::
+PatternRandomizer.gd::GDScript::7034621626112315296::1756749230::0::1::::PatternRandomizer<>Resource<>res://addons/BulletUpHell/Sprites/NodeIcons23.png<>0<>0<><>::
 ::res://addons/BulletUpHell/Sprites/::1762903759
 BulletUpHellBLAST_Icon.png::CompressedTexture2D::6600960538994912296::1756749230::1762903759::1::::<><><>0<>0<>c084f87f89503dfad5fe05debf71fd9f<>res://.godot/imported/BulletUpHellBLAST_Icon.png-615ea101d2a523de2a8a91f6a93f9502.ctex::
 BulletUpHell_Icon.png::CompressedTexture2D::5148103775549050432::1762903722::1762903722::1::::<><><>0<>0<>acb0f319dbb9e276ddf99b56d3a31eb5<>res://.godot/imported/BulletUpHell_Icon.png-66c52972c73fc81ea623b29fafeb14ab.ctex::
@@ -86,25 +99,36 @@ NodeIcons23.png::CompressedTexture2D::3018070387749929646::1756749230::176290375
 NodeIcons24.png::CompressedTexture2D::3322047060008951034::1756749230::1762903759::1::::<><><>0<>0<>f0904f50a9ae0dd39803505625337dc3<>res://.godot/imported/NodeIcons24.png-a712366ec2659ddabd41cbc1798cf742.ctex::
 ::res://addons/BulletUpHell/Triggers/::1762903758
 Trigger.gd::GDScript::8069523921280048200::1756749230::0::1::::Trigger<>Resource<><>0<>0<><>::
-TriggerCollision.gd::GDScript::2517148243898238033::1756749230::0::1::::TriggerCollision<>Trigger<><>0<>0<><>::
-TriggerPos.gd::GDScript::7964678803864883294::1756749230::0::1::::TriggerPos<>Trigger<><>0<>0<><>::
-TriggerSignal.gd::GDScript::5747533310025787544::1756749230::0::1::::TriggerSignal<>Trigger<><>0<>0<><>::
-TriggerTime.gd::GDScript::7287392130465846764::1756749230::0::1::::TriggerTime<>Trigger<><>0<>0<><>::
-::res://attacks/::1762901963
+TriggerCollision.gd::GDScript::2517148243898238033::1756749230::0::1::::TriggerCollision<>Trigger<>res://addons/BulletUpHell/Sprites/NodeIcons13.png<>0<>0<><>::
+TriggerPos.gd::GDScript::7964678803864883294::1756749230::0::1::::TriggerPos<>Trigger<>res://addons/BulletUpHell/Sprites/NodeIcons12.png<>0<>0<><>::
+TriggerSignal.gd::GDScript::5747533310025787544::1756749230::0::1::::TriggerSignal<>Trigger<>res://addons/BulletUpHell/Sprites/NodeIcons11.png<>0<>0<><>::
+TriggerTime.gd::GDScript::7287392130465846764::1756749230::0::1::::TriggerTime<>Trigger<>res://addons/BulletUpHell/Sprites/NodeIcons10.png<>0<>0<><>::
+::res://attacks/::1763584673
 monster_bullet_base.gd::GDScript::4282232918640639063::1762379591::0::1::::GenericProjectile<>RigidBody2D<><>0<>0<><>::
 monster_bullet_base.tscn::PackedScene::4765815320306847875::1762901963::0::1::::<><><>0<>0<><>::uid://b2al0ru0rytxn::::res://attacks/monster_bullet_base.gd<>uid://bu4t4wevxtisa::::res://sprites/dev/placeholder_bullet.png
+<<<<<<< Updated upstream
 ::res://attacks/other_Flowey/::1762984164
 overworld_other_flowey_ruins_attacks.tscn::PackedScene::1938223090582495377::1762983055::0::1::::<><><>0<>0<><>::uid://bpddv1t2btwnk::::res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd<>uid://dhnbj11e216q3::::res://addons/BulletUpHell/Nodes/BuHPattern.gd<>uid://lm6ur52dpq82::::res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd<>uid://c0br7kcgmtx6x::::res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://brb4wds8atbgi::::res://addons/BulletUpHell/Bullet/BulletProps.gd
 pellet2.png::CompressedTexture2D::5929977704187195174::1762984164::1762984168::1::::<><><>0<>0<>079722f8f20f81f9a945b1c35656d985<>res://.godot/imported/pellet2.png-fbc4c859842167d9a5ee34cef9bb927b.ctex::
 pellet.png::CompressedTexture2D::2478317163479418364::1762982415::1762982419::1::::<><><>0<>0<>855d281cf4559abb7f673b0a776cd23e<>res://.godot/imported/pellet.png-9d2773c84451cb62d54741ffab028c10.ctex::
 ::res://battle/::1762211024
+=======
+::res://attacks/other_Flowey/::1764614024
+bullet_trap_overworld.tscn::PackedScene::1551329543049342338::1763586523::0::1::::<><><>0<>0<><>::uid://bpddv1t2btwnk::::res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd<>uid://dhnbj11e216q3::::res://addons/BulletUpHell/Nodes/BuHPattern.gd<>uid://bjk8co11wvtsh::::res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd<>uid://c0br7kcgmtx6x::::res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://brb4wds8atbgi::::res://addons/BulletUpHell/Bullet/BulletProps.gd
+overworld_other_flowey_ruins_attacks.tscn::PackedScene::1938223090582495377::1764614024::0::1::::<><><>0<>0<><>::uid://bpddv1t2btwnk::::res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd<>uid://blx31fe31tlfr::::res://attacks/other_Flowey/remove_player_focused_attack.gd<>uid://dhnbj11e216q3::::res://addons/BulletUpHell/Nodes/BuHPattern.gd<>uid://lm6ur52dpq82::::res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd<>uid://bjk8co11wvtsh::::res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd<>uid://c0br7kcgmtx6x::::res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://brb4wds8atbgi::::res://addons/BulletUpHell/Bullet/BulletProps.gd
+remove_player_focused_attack.gd::GDScript::3207725428597485087::1763071794::0::1::::<>Node2D<><>0<>0<><>::
+::res://attacks/toriel/::1764457063
+fireball_other_flower.tscn::PackedScene::8732915134859221600::1764457063::0::1::::<><><>0<>0<><>::uid://bpddv1t2btwnk::::res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd<>uid://dhnbj11e216q3::::res://addons/BulletUpHell/Nodes/BuHPattern.gd<>uid://c0br7kcgmtx6x::::res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://cqjgrpefdpxgs::::res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd<>uid://brb4wds8atbgi::::res://addons/BulletUpHell/Bullet/BulletProps.gd
+::res://battle/::1764633682
+>>>>>>> Stashed changes
 act.png::CompressedTexture2D/CompressedTexture2D::2649440441163654569::1735951617::1752373793::1::::<><><>0<>0<>dab4d812028fd2b14243f2fb44a846f7<>res://.godot/imported/act.png-00d8a1274f48f55d22a4ad2142be8328.ctex::
 act_selected.png::CompressedTexture2D/CompressedTexture2D::7380376711272887652::1735956748::1752373793::1::::<><><>0<>0<>1d5ed5dd7618b6fc2df287aafaaaa07a<>res://.godot/imported/act_selected.png-fc6ac3cca4ed2f60159ec7ff650d2ae5.ctex::
 battle box 9rect.png::CompressedTexture2D/CompressedTexture2D::8014349042364133788::1736585918::1752373793::1::::<><><>0<>0<>0bbba3fa567b71a0219114ae73a7ec97<>res://.godot/imported/battle box 9rect.png-6b84202feddb72e85c71bbc28e370f4c.ctex::
 battle box.png::CompressedTexture2D/CompressedTexture2D::6444425638787401673::1735955950::1752373793::1::::<><><>0<>0<>1217cf917c268fce1f280875a027974b<>res://.godot/imported/battle box.png-f6409e9f99c924dbef3020492f477394.ctex::
-battle_buttons.gd::GDScript/GDScript::7276881606455812813::1737062271::0::1::::<>TextureButton<><>0<>0<><>::
+battle_buttons.gd::GDScript::7276881606455812813::1764632178::0::1::::<>TextureButton<><>0<>0<><>::
 battle_buttons.tscn::PackedScene/PackedScene::7308653068044984270::1742793001::0::1::::<><><>0<>0<><>::uid://dq4e8yinpv22c::::res://battle/fight_button_group.tres<>uid://dbw8gaqt8fafl::::res://battle/battle_buttons.gd
-battle_scene.tscn::PackedScene/PackedScene::2138411756863362170::1742793001::0::1::::<><><>0<>0<><>::uid://danbyfhnw2aup::::res://battle/fight.png<>uid://dcempie7xxmhi::::res://battle/battle_buttons.tscn<>uid://r7c2gqdd6x1k::::res://battle/fight_selected.png<>uid://bd0n5q5227sgf::::res://battle/act.png<>uid://ddfdyxor5ji81::::res://battle/act_selected.png<>uid://js1c2mo2ocdl::::res://battle/item.png<>uid://d338fj40kg5b::::res://battle/item_selected.png<>uid://cvr7w7wus40je::::res://battle/mercy.png<>uid://bqiok11mefuit::::res://battle/mercy_selected.png<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://cx2y0psa2ajdp::::res://battle/battle box.png<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn
+battle_scene.tscn::PackedScene::2138411756863362170::1764633682::0::1::::<><><>0<>0<><>::uid://danbyfhnw2aup::::res://battle/fight.png<>uid://6x1orpr8lc1y::::res://battle/battle_scene_logic.gd<>uid://dcempie7xxmhi::::res://battle/battle_buttons.tscn<>uid://r7c2gqdd6x1k::::res://battle/fight_selected.png<>uid://bd0n5q5227sgf::::res://battle/act.png<>uid://ddfdyxor5ji81::::res://battle/act_selected.png<>uid://js1c2mo2ocdl::::res://battle/item.png<>uid://d338fj40kg5b::::res://battle/item_selected.png<>uid://cvr7w7wus40je::::res://battle/mercy.png<>uid://bqiok11mefuit::::res://battle/mercy_selected.png<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://cx2y0psa2ajdp::::res://battle/battle box.png<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn<>uid://c1m5tcx0d8mcl::::res://battle/soul_cursor.tscn<>uid://ct8lhfxr4io63::::res://theme/battle_desc.tres<>uid://m8ykky77nyrk::::res://UI/Menu/stats_ui_diplay.gd<>uid://cjjw3cyrxo2fc::::res://character/hpbar.gd
+battle_scene_logic.gd::GDScript::2224939400934930908::1764633626::0::1::::<>Node2D<><>0<>0<><>::
 fight back ground.png::CompressedTexture2D/CompressedTexture2D::6057440575514978015::1735951220::1752373794::1::::<><><>0<>0<>4cabfa861a25452aaf906b55239e1fff<>res://.godot/imported/fight back ground.png-2a4bf6a199725ca1b27052670cb3385f.ctex::
 fight.png::CompressedTexture2D/CompressedTexture2D::7186202811980067663::1735951219::1752373793::1::::<><><>0<>0<>7a1c9c565c7fa3726dd076c649fc598b<>res://.godot/imported/fight.png-f84e1527ae75b6c823acd98b8f888837.ctex::
 fight_button_group.tres::ButtonGroup/ButtonGroup::8342453576855884092::1735952316::0::1::::<><><>0<>0<><>::
@@ -115,11 +139,9 @@ item.png::CompressedTexture2D/CompressedTexture2D::670442043055941849::173595122
 item_selected.png::CompressedTexture2D/CompressedTexture2D::270128392895520597::1735956749::1752373793::1::::<><><>0<>0<>17dd748b4058f57fad4032c5817099c7<>res://.godot/imported/item_selected.png-498243d565b33e5f6f2b15fb4f9d4528.ctex::
 mercy.png::CompressedTexture2D/CompressedTexture2D::6283885452505166242::1735951219::1752373793::1::::<><><>0<>0<>253563a78ef3f72d113b04289c7c6696<>res://.godot/imported/mercy.png-0442b64a93a40dfba47bb9ff3b19771d.ctex::
 mercy_selected.png::CompressedTexture2D/CompressedTexture2D::3526826506094685787::1735956749::1752373793::1::::<><><>0<>0<>d22050b5eb1a98b99f551dbc29f74137<>res://.godot/imported/mercy_selected.png-2b55ef419077ad0d9863fed307cc9d50.ctex::
-placeholder toby fox - UNDERTALE Soundtrack - 07 Anticipation.mp3::AudioStreamMP3/AudioStreamMP3::4613168690478175540::1735957795::1752373793::1::::<><><>0<>0<>5fb707a31e29cabf9a1bd5ee4d85811c<>res://.godot/imported/placeholder toby fox - UNDERTALE Soundtrack - 07 Anticipation.mp3-f077a709dac19b7a247c7daaff0201da.mp3str::
-snd_select.wav::AudioStreamWAV/AudioStreamWAV::8651219426682388695::1566247405::1752373794::1::::<><><>0<>0<>d76f94f996c0e8ad0b0a4375ab64f6cc<>res://.godot/imported/snd_select.wav-ffa37c645c5c2e9e7b23c7496e86cf8f.sample::
-snd_squeakfix.wav::AudioStreamWAV/AudioStreamWAV::663654450219884185::1640678228::1752373794::1::::<><><>0<>0<>0d34c19cb4533738ceed82f69e4fa719<>res://.godot/imported/snd_squeakfix.wav-a5542e2a2d65991eef93ad5dfcfcd1cf.sample::
-soul_cursor.gd::GDScript::205375845792231718::1762210924::0::1::::<>CharacterBody2D<><>0<>0<><>::
+soul_cursor.gd::GDScript::205375845792231718::1764631957::0::1::::<>CharacterBody2D<><>0<>0<><>::
 soul_cursor.tscn::PackedScene::6624379416609355799::1762211024::0::1::::<><><>0<>0<><>::uid://c6qrl05ox02u::::res://battle/soul_cursor.gd<>uid://cppjormdf3med::::res://battle/his soul.png
+<<<<<<< Updated upstream
 ::res://character/::1762980807
 cameracode.gd::GDScript::7230008239744127853::1762056359::0::1::::<>Camera2D<><>0<>0<><>::
 camera_2d.tscn::PackedScene::1833619412781908738::1762382067::0::1::::<><><>0<>0<><>::uid://dbajgdm14rp54::::res://character/cameracode.gd<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn<>uid://rgn47h2wk1p4::::res://UI/Menu/menu.tscn<>uid://dtckqk1qq0638::::res://UI/Menu/save_box.tscn<>uid://c1m5tcx0d8mcl::::res://battle/soul_cursor.tscn<>uid://qijiqj4o2jvd::::res://UI/Menu/text replacement.tscn<>uid://bfj008omelpw7::::res://character/overworld_hazard.gd<>uid://ct8lhfxr4io63::::res://theme/battle_desc.tres<>uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://032rp4bnt5ji::::res://character/quit_text.gd<>uid://cjjw3cyrxo2fc::::res://character/hpbar.gd
@@ -134,6 +156,23 @@ textbox.gd::GDScript::3293902308699459982::1762402151::0::1::::<>Control<><>0<>0
 ::res://cutscenes/::1762395625
 cutscene_opening_room.gd::GDScript::2225603813062920324::1762056359::0::1::::<>Node2D<><>0<>0<><>::
 cutscene_the_other_flower.gd::GDScript::5673035507238096956::1762395625::0::1::::<>Node2D<><>0<>0<><>::
+=======
+::res://character/::1764633691
+cameracode.gd::GDScript::7230008239744127853::1762056359::0::1::::<>Camera2D<><>0<>0<><>::
+camera_2d.tscn::PackedScene::1833619412781908738::1764633691::0::1::::<><><>0<>0<><>::uid://dbajgdm14rp54::::res://character/cameracode.gd<>uid://dyh37belgvscq::::res://UI/textbox stuff/textbox_control.tscn<>uid://rgn47h2wk1p4::::res://UI/Menu/menu.tscn<>uid://dtckqk1qq0638::::res://UI/Menu/save_box.tscn<>uid://c1m5tcx0d8mcl::::res://battle/soul_cursor.tscn<>uid://qijiqj4o2jvd::::res://UI/Menu/text replacement.tscn<>uid://bfj008omelpw7::::res://character/overworld_hazard.gd<>uid://ct8lhfxr4io63::::res://theme/battle_desc.tres<>uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://032rp4bnt5ji::::res://character/quit_text.gd<>uid://cjjw3cyrxo2fc::::res://character/hpbar.gd
+character_body_2d.gd::GDScript::3649556936853804424::1764633529::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hpbar.gd::GDScript::5424506278910956696::1762378637::0::1::::<>TextureProgressBar<><>0<>0<><>::
+node_2d.gd::GDScript/GDScript::1870599295780164465::1733953365::0::1::::<>Area2D<><>0<>0<><>::
+overworld_hazard.gd::GDScript::2757508626785422432::1762382027::0::1::::<>Control<><>0<>0<><>::
+overworld_soul.gd::GDScript::8557182088895608860::1764622698::0::1::::<>Sprite2D<><>0<>0<><>::
+player.tscn::PackedScene::2602763595204380410::1764633449::0::1::::<><><>0<>0<><>::uid://br84w08yp621a::::res://character/character_body_2d.gd<>uid://d32pj8kmhxngc::::res://sprites/character/flowreil/sprite_sheet.png<>uid://cppjormdf3med::::res://battle/his soul.png<>uid://1ehpdcorkt51::::res://character/camera_2d.tscn<>uid://dt6fsk3mw2fj5::::res://character/overworld_soul.gd<>uid://dvtlypipd4igy::::res://sprites/character/flowreil/p2 26 2025.png<>uid://ccrn68eg6hu0u::::res://sprites/dev/exclaim.png<>uid://ceayofjnckt23::::res://sound_effects/snd_b.wav<>uid://2y6ain603mr7::::res://sound_effects/snd_test.wav<>uid://dw28am8fnhj3y::::res://sound_effects/snd_battlefall.wav
+quit_text.gd::GDScript::1814194218078730874::1762056359::0::1::::<>RichTextLabel<><>0<>0<><>::
+textbox.gd::GDScript::3293902308699459982::1764618024::0::1::::<>Control<><>0<>0<><>::
+::res://cutscenes/::1764544338
+cutscene_opening_room.gd::GDScript::2225603813062920324::1762056359::0::1::::<>Node2D<><>0<>0<><>::
+cutscene_save_trap.gd::GDScript::6599546215953532043::1764544338::0::1::::<>Node2D<><>0<>0<><>::
+cutscene_the_other_flower.gd::GDScript::5673035507238096956::1763087344::0::1::::<>Node2D<><>0<>0<><>::
+>>>>>>> Stashed changes
 loadFailed.gd::GDScript::954208443616989551::1762111021::0::1::::<>RichTextLabel<><>0<>0<><>::
 ::res://fonts/::1762207989
 8bitoperator.ttf::FontFile::2083519521836943952::1371134424::1762206785::1::::<><><>0<>0<>635538dc77dc31aa2890751477353ce2<>res://.godot/imported/8bitoperator.ttf-e43351ef29fdb91fd28cb41892bc26c0.fontdata::
@@ -156,20 +195,35 @@ TiledImport.gd::GDScript/GDScript::703564160747937784::1733944186::0::1::::<>Edi
 TilemapCreator.gd::GDScript/GDScript::1244712382681685516::1733944186::0::1::::<>RefCounted<><>0<>1<><>::
 TilesetCreator.gd::GDScript/GDScript::1646370469286600026::1733944186::0::1::::<>RefCounted<><>0<>1<><>::
 XmlParserCtrl.gd::GDScript/GDScript::2113072572677400067::1733944186::0::1::::<>RefCounted<><>0<>1<><>::
+<<<<<<< Updated upstream
 ::res://global_func/::1762373650
+=======
+::res://global_func/::1764626502
+>>>>>>> Stashed changes
 character_stats.tscn::PackedScene/PackedScene::5237353092397393800::1752376508::0::1::::<><><>0<>0<><>::uid://wtknq4rp4vf2::::res://global_func/player_data.gd
-global_flags.gd::GDScript::6044103120644691028::1762373650::0::1::::<>Node2D<><>0<>0<><>::
+global_flags.gd::GDScript::6044103120644691028::1764623883::0::1::::<>Node2D<><>0<>0<><>::
 global_flags.tscn::PackedScene/PackedScene::6785135938003738961::1742793001::0::1::::<><><>0<>0<><>::uid://csd2q3u7asrwu::::res://global_func/global_flags.gd
 interaction_area.gd::GDScript::3479473962634897859::1752691858::0::1::::InteractionArea<>Area2D<><>0<>0<><>::
 interaction_manager.gd::GDScript/GDScript::6800672099335638085::1736575692::0::1::::<>Node2D<><>0<>0<><>::
 interaction_manager.tscn::PackedScene/PackedScene::2761734923930947843::1742793001::0::1::::<><><>0<>0<><>::uid://c35kctyuowsdh::::res://global_func/interaction_manager.gd
 loadtrigger_area.gd::GDScript::1866269091249152747::1752691795::0::1::::LoadTriggerArea<>Area2D<><>0<>0<><>::
+<<<<<<< Updated upstream
 player_data.gd::GDScript::1584009008578818385::1762373650::0::1::::<>Node2D<><>0<>0<><>::
 room_id.gd::GDScript/GDScript::5831095663353373803::1752376504::0::1::::<>Node<><>0<>0<><>::
 signal_manager.gd::GDScript::369678153039826069::1762214060::0::1::::<>Node<><>0<>0<><>::
+=======
+player_data.gd::GDScript::1584009008578818385::1763606645::0::1::::<>Node2D<><>0<>0<><>::
+room_id.gd::GDScript/GDScript::5831095663353373803::1752376504::0::1::::<>Node<><>0<>0<><>::
+signal_manager.gd::GDScript::369678153039826069::1764626502::0::1::::<>Node<><>0<>0<><>::
+>>>>>>> Stashed changes
 signal_manager.tscn::PackedScene::3008496520433630071::1752720643::0::1::::<><><>0<>0<><>::uid://fjcsshmgdjfp::::res://global_func/signal_manager.gd
-::res://interaction/::1742793001
+::res://interaction/::1763071658
 Interaction_Area.tscn::PackedScene/PackedScene::1727554617835877521::1742793001::0::1::::<><><>0<>0<><>::uid://bptqosssap4p0::::res://global_func/interaction_area.gd
+<<<<<<< Updated upstream
+=======
+overworld_hazard_trigger.gd::GDScript::3616943137604701246::1763071639::0::1::::<>Node2D<><>0<>0<><>::
+overworld_hazard_trigger.tscn::PackedScene::654161632395163790::1763071658::0::1::::<><><>0<>0<><>::uid://brscr367kara1::::res://interaction/overworld_hazard_trigger.gd
+>>>>>>> Stashed changes
 ::res://items/::1761157887
 item_table.gd::GDScript::8525252097306002020::1761157887::0::1::::<>Node2D<><>0<>0<><>::
 ::res://items/classes/::1761010949
@@ -191,16 +245,23 @@ spelling_letters.tscn::PackedScene::6614447511231911927::1761257549::0::1::::<><
 spelling_letters_small.tscn::PackedScene::3642099681221457446::1761257549::0::1::::<><><>0<>0<><>::uid://cr3780rumm76p::::res://UI/textbox stuff/selectable_text_options_letters.tscn
 ::res://misc_scripts/::1762056359
 self_remove.gd::GDScript::1027184663379737747::1762056359::0::1::::<>Node2D<><>0<>0<><>::
-::res://music/::1761250586
+::res://music/::1764614118
+placeholder toby fox - UNDERTALE Soundtrack - 07 Anticipation.mp3::AudioStreamMP3::4613168690478175540::1735957795::1764614118::1::::<><><>0<>0<>dc4f226c70227501e57df29ab18c30fd<>res://.godot/imported/placeholder toby fox - UNDERTALE Soundtrack - 07 Anticipation.mp3-a313e7d02bf9011dd5be0bcace659bef.mp3str::
 Start Menu.wav::AudioStreamWAV::8839764174516172015::1761250074::1761250586::1::::<><><>0<>0<>5515a5b8833b27bc78dc3dec68845c47<>res://.godot/imported/Start Menu.wav-12620df6ea6bf53d2f7443cb60c43f90.sample::
-::res://object prefabs/::1761787271
+::res://npcs/::1763680160
+::res://npcs/moving_npc/::1764455988
+toriel.tscn::PackedScene::2012276137869691673::1764455988::0::1::::<><><>0<>0<><>::uid://8wf7sw6rl5s3::::res://npcs/moving_npc/moving_npc_base/npc_mobile_base.gd<>uid://bb72prttgo2e3::::res://sprites/character/toriel/p11 17 2025.png
+::res://npcs/moving_npc/moving_npc_base/::1764456518
+npc_mobile_base.gd::GDScript::2362009861850856000::1764456518::0::1::::<>CharacterBody2D<><>0<>0<><>::
+npc_mobile_base.tscn::PackedScene::8110516230081460448::1763680183::0::1::::<><><>0<>0<><>::uid://8wf7sw6rl5s3::::res://npcs/moving_npc/moving_npc_base/npc_mobile_base.gd
+::res://object prefabs/::1764621835
 2_state_object.gd::GDScript/GDScript::7600331409047014820::1752373786::0::1::::<>Node2D<><>0<>0<><>::
 2_state_object.tscn::PackedScene/PackedScene::5703116420631896912::1752373786::0::1::::<><><>0<>0<><>::uid://dgjwl3fi3ldq7::::res://object prefabs/2_state_object.gd<>uid://cpqs86i4pmhb6::::res://sprites/dev/placeholder_Tile_1.png<>uid://da5i36j2qip88::::res://sprites/dev/placeholder_Tile_2.png
 button_n_lever.tscn::PackedScene/PackedScene::3907551148752610329::1752373786::0::1::::<><><>0<>0<><>::uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://ddhuxh22yh1jc::::res://floor_button.gd<>uid://cxpc2p6v2yhd7::::res://sprites/dev/button_down.png<>uid://csnfdo6xpp8n2::::res://sprites/dev/button_up.png<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn
 floor_button_correct.tscn::PackedScene::3761032180098325010::1752722250::0::1::::<><><>0<>0<><>::uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://ddhuxh22yh1jc::::res://floor_button.gd<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://cxpc2p6v2yhd7::::res://sprites/dev/button_down.png<>uid://csnfdo6xpp8n2::::res://sprites/dev/button_up.png
 floor_button_wrong.tscn::PackedScene/PackedScene::5410024335626056971::1752604876::0::1::::<><><>0<>0<><>::uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://ddhuxh22yh1jc::::res://floor_button.gd<>uid://cxpc2p6v2yhd7::::res://sprites/dev/button_down.png<>uid://csnfdo6xpp8n2::::res://sprites/dev/button_up.png<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn
 object_base.tscn::PackedScene/PackedScene::539355266097874534::1752369011::0::1::::<><><>0<>0<><>::uid://cdq4a4x8qlj1p::::res://object prefabs/object_core.gd
-object_core.gd::GDScript::5018200295384332895::1761787271::0::1::::ObjectCore<>Node2D<><>0<>0<><>::
+object_core.gd::GDScript::5018200295384332895::1764621835::0::1::::ObjectCore<>Node2D<><>0<>0<><>::
 proximity_puzzle_pannel.gd::GDScript::2845425654491527498::1752695412::0::1::::<>Node2D<><>0<>0<><>::
 proximity_puzzle_pannel.tscn::PackedScene::5561736603908283757::1752722250::0::1::::<><><>0<>0<><>::uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://bgsl0k86gnys5::::res://object prefabs/proximity_puzzle_pannel.gd<>uid://c7hyq8mcdmdml::::res://sprites/dev/floor_barricade_closed.png<>uid://iobuytiwrdbx::::res://sprites/dev/floor_barricade_left_right.png<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn
 save_point.gd::GDScript/GDScript::9187097300115506079::1747890219::0::1::::SavePoint<>ObjectCore<><>0<>0<><>::
@@ -211,17 +272,30 @@ switch.tscn::PackedScene/PackedScene::327124729703722888::1752373786::0::1::::<>
 candy_tracker.gd::GDScript::7664555072221130361::1761165649::0::1::::<>Node2D<><>0<>0<><>::
 puzzle_base.gd::GDScript/GDScript::5158611078319685670::1752613630::0::1::::<>Node2D<><>0<>0<><>::
 ruins_switch_puzzle.gd::GDScript/GDScript::6416215077834311021::1752613658::0::1::::<>Node2D<><>0<>0<><>::
-::res://save/::1762373650
-room_persistance.gd::GDScript::7616495288530854103::1762373650::0::1::::<>Node<><>0<>0<><>::
+::res://save/::1763076268
+room_persistance.gd::GDScript::7616495288530854103::1763076268::0::1::::<>Node<><>0<>0<><>::
 save_data.gd::GDScript::5400653807979359448::1762373650::0::1::::<>Node<><>0<>0<><>::
+<<<<<<< Updated upstream
 ::res://shaders/::1762977721
 echo.gdshader::Shader::7491260733729091912::1762977721::0::1::::<><><>0<>0<><>::
 echo.tres::ShaderMaterial::7547812387168780713::1761783372::0::1::::<><><>0<>0<><>::uid://dey278c6qnqyq::::res://shaders/echo.gdshader<>uid://8akff0pfgxwn::::res://sprites/dev/soul red.png
 ::res://sound_effects/::1762213973
+=======
+::res://shaders/::1764613331
+echo.gdshader::Shader::7491260733729091912::1764613331::0::1::::<><><>0<>0<><>::
+echo.tres::ShaderMaterial::7547812387168780713::1761783372::0::1::::<><><>0<>0<><>::uid://dey278c6qnqyq::::res://shaders/echo.gdshader<>uid://8akff0pfgxwn::::res://sprites/dev/soul red.png
+::res://sound_effects/::1764619062
+>>>>>>> Stashed changes
 mus_cymbal.ogg::AudioStreamOggVorbis::139026379966568160::1545901885::1761347435::1::::<><><>0<>0<>f2e08c16d8bfa99a3e4bf308eb3a5394<>res://.godot/imported/mus_cymbal.ogg-cb9f7958f401689dda00b2c057b62142.oggvorbisstr::
 mus_intronoise.ogg::AudioStreamOggVorbis::3209531351397790809::1545901890::1761248115::1::::<><><>0<>0<>c6fa5f98705b1f65f3f51b7ee8113a5d<>res://.godot/imported/mus_intronoise.ogg-7d3dc3761d9aecb8ffe4d05ae9ec54e5.oggvorbisstr::
 mus_sfx_generate.wav::AudioStreamWAV::5887460478433037712::1566247406::1761783614::1::::<><><>0<>0<>b9f19e390ff9f53f968adfd04cdd8707<>res://.godot/imported/mus_sfx_generate.wav-32ad7c8cdf2ec898b274b692499bc308.sample::
 snd_b.wav::AudioStreamWAV::5055079227993134926::1566247405::1762111310::1::::<><><>0<>0<>a748227351bcb785805673ed66f8df6d<>res://.godot/imported/snd_b.wav-b0555c82acc6ec7c744e7351e1b542a8.sample::
+<<<<<<< Updated upstream
+=======
+snd_battlefall.wav::AudioStreamWAV::8761159152740506332::1566247405::1764619062::1::::<><><>0<>0<>ea8022bd91275bee6033b00a63740776<>res://.godot/imported/snd_battlefall.wav-e14ddf0505bb1378114be98f0570b977.sample::
+snd_chug.wav::AudioStreamWAV::2673219740898084107::1566247405::1763068266::1::::<><><>0<>0<>f3b4b4c1d6f5fcc5a7fd7e6a2914a4a7<>res://.godot/imported/snd_chug.wav-5e114eb6bbedd2a95c09f41413c528b1.sample::
+snd_ehurt1.wav::AudioStreamWAV::1159408949930638255::1566247405::1763522507::1::::<><><>0<>0<>7de7f6a5de33a1d16e86632bb4e5a7b8<>res://.godot/imported/snd_ehurt1.wav-4d70a247127caed8761ace07a2796440.sample::
+>>>>>>> Stashed changes
 snd_floweylaugh.wav::AudioStreamWAV/AudioStreamWAV::6096231678065597037::1566247405::1752373794::1::::<><><>0<>0<>6d531665edc9ecf5d3f537207d97b190<>res://.godot/imported/snd_floweylaugh.wav-50e36ff3006272f86e2e0d3365983dd1.sample::
 snd_floweytalk1.wav::AudioStreamWAV/AudioStreamWAV::4241240912099875885::1566247405::1752373794::1::::<><><>0<>0<>ef4b91792993a966c9e054f83bd376f3<>res://.godot/imported/snd_floweytalk1.wav-25e472f99f21427ca71022914e3408f2.sample::
 snd_floweytalk2.wav::AudioStreamWAV/AudioStreamWAV::8088369200495751636::1566247405::1752373794::1::::<><><>0<>0<>9f30dbe06a4fb5f7edbe566064ae5eca<>res://.godot/imported/snd_floweytalk2.wav-fa65bc9ec49a01eae8b2002026f91dcc.sample::
@@ -232,6 +306,8 @@ snd_hurt1_c.wav::AudioStreamWAV::7732514673223127759::1566247405::1762213973::1:
 snd_impact.wav::AudioStreamWAV/AudioStreamWAV::4753304889836955347::1566247405::1752560199::1::::<><><>0<>0<>6879c50b28f976b25de9fa7d95fadd6a<>res://.godot/imported/snd_impact.wav-15d0856a45466ad20df095d3e1629358.sample::
 snd_power.wav::AudioStreamWAV/AudioStreamWAV::8872761319080042768::1566247405::1752373794::1::::<><><>0<>0<>672e19ddb0c2032bfb3b6e797e7f1b7c<>res://.godot/imported/snd_power.wav-cc2e080d9e2df5165266ec674dafbe8e.sample::
 snd_save.wav::AudioStreamWAV/AudioStreamWAV::1715335261824644776::1752373786::1752373786::1::::<><><>0<>0<>1f66fc2618f8304daec80bddfcaf924b<>res://.godot/imported/snd_save.wav-bfcc80bd33c65acffa95c11b652898df.sample::
+snd_select.wav::AudioStreamWAV::8651219426682388695::1566247405::1764614105::1::::<><><>0<>0<>e148c991a414468595d42645e37aa67d<>res://.godot/imported/snd_select.wav-6750e5c66646c7380929bdc88bc5fdea.sample::
+snd_squeakfix.wav::AudioStreamWAV::663654450219884185::1640678228::1764614105::1::::<><><>0<>0<>4f8999870b34ad80e286b8db04964e54<>res://.godot/imported/snd_squeakfix.wav-308868790cbf4888f1dd9fca808a4757.sample::
 snd_swallow.wav::AudioStreamWAV/AudioStreamWAV::665675228398656169::1566247405::1752373794::1::::<><><>0<>0<>cb69d99046e4e06aefd31cd6af75daa1<>res://.godot/imported/snd_swallow.wav-90a4f63584c10770ff89c739c07a0106.sample::
 snd_switchpull_n.wav::AudioStreamWAV/AudioStreamWAV::2013692277821195242::1566247405::1752603986::1::::<><><>0<>0<>e51c01ca106d9dac3f7a1028cfff3279<>res://.godot/imported/snd_switchpull_n.wav-e3b73502ea09eeae82ef658b6d1fa0ed.sample::
 snd_test.wav::AudioStreamWAV/AudioStreamWAV::1946526512812349474::1566247406::1752530802::1::::<><><>0<>0<>84bf1de745d1c0f54f4095eebd069529<>res://.godot/imported/snd_test.wav-9d3380acbe8616f06be11ae038ffd8d5.sample::
@@ -239,16 +315,26 @@ SND_TXT1.wav::AudioStreamWAV/AudioStreamWAV::9065790197809436728::1566247405::17
 SND_TXT2.wav::AudioStreamWAV/AudioStreamWAV::2309483357790934200::1566247405::1752373794::1::::<><><>0<>0<>739cf733dc87d7b9f137445ad4067d14<>res://.godot/imported/SND_TXT2.wav-ba7483334032b58e73c1f9217b87f857.sample::
 snd_txtasr2.wav::AudioStreamWAV/AudioStreamWAV::6568627914187768224::1566247405::1752373794::1::::<><><>0<>0<>f501207ee943e202a57ab467ea898566<>res://.godot/imported/snd_txtasr2.wav-3b865aa4d2827d89f87faac7dd2f3a62.sample::
 snd_txtasr.wav::AudioStreamWAV/AudioStreamWAV::2914059512480223309::1566247405::1752373794::1::::<><><>0<>0<>d0a796367ddd20c71b84b8ad173387ee<>res://.godot/imported/snd_txtasr.wav-e788554e8126c60827c4c9a8dee7cca8.sample::
+snd_txttor.wav::AudioStreamWAV::2651983231041056505::1566247405::1763668454::1::::<><><>0<>0<>f959e6bf508772be4749e074fee2b1a5<>res://.godot/imported/snd_txttor.wav-6bdc3b10a4f36ee749cea187c181692a.sample::
 snd_victor.wav::AudioStreamWAV/AudioStreamWAV::6157750047637127172::1566247405::1752373794::1::::<><><>0<>0<>4d45bbc1e7cb1bb85fde2dfc636096ed<>res://.godot/imported/snd_victor.wav-313ee1a48d64e334aa2611ae69c750d4.sample::
-::res://sprites/::1752373786
-::res://sprites/character/::1762390158
+::res://sprites/::1763582509
+::res://sprites/bullets/::1763587048
+blank_bullet.png::CompressedTexture2D::6713987146240542689::1763587038::1763587048::1::::<><><>0<>0<>7fcce14acf78d295b15ec29256d78648<>res://.godot/imported/blank_bullet.png-b870d116760dd464439b8a3e34b39a70.ctex::
+::res://sprites/bullets/fireball/::1763584468
+p11 19a 2025.png::CompressedTexture2D::8076595180882386418::1763583547::1763584468::1::::<><><>0<>0<>e04b221fe092977a8b6c99de4fd86e4c<>res://.godot/imported/p11 19a 2025.png-6c3234c608271383195cf78a6cc0514e.ctex::
+::res://sprites/bullets/f_pellets/::1763584531
+pellet2.png::CompressedTexture2D::5929977704187195174::1762984164::1763584531::1::::<><><>0<>0<>2d1957649eff2f797a7f382dce24899c<>res://.godot/imported/pellet2.png-58ead27afea0e8fa23cd4717100ab908.ctex::
+pellet.png::CompressedTexture2D::2478317163479418364::1762982415::1763584531::1::::<><><>0<>0<>35e00194ad45fd1e673674ce550b60f7<>res://.godot/imported/pellet.png-b3fa9bec8b75e61141d555fd5bf5a1cc.ctex::
+::res://sprites/character/::1763520810
 ::res://sprites/character/flowreil/::1762212086
 p2 26 2025.png::CompressedTexture2D::8673162491674644732::1762212078::1762212086::1::::<><><>0<>0<>f24d3fb914f3b64b60fad4019ca65054<>res://.godot/imported/p2 26 2025.png-4fc83badb05b8242a3208feeb02359d9.ctex::
 p10 29a 2025.png::CompressedTexture2D::766270258097680133::1761777764::1761777765::1::::<><><>0<>0<>2b8bbda0b16985ab73608fd63bbf05b5<>res://.godot/imported/p10 29a 2025.png-135cc68bdf862e4ab86df378061a70b3.ctex::
 p10 29c 2025.png::CompressedTexture2D::2215633405491256737::1761775869::1761775877::1::::<><><>0<>0<>5007efbff8adb107ffc5b19a1d1ed933<>res://.godot/imported/p10 29c 2025.png-67c47284f4426ef922519a112570c111.ctex::
 sprite_sheet.png::CompressedTexture2D/CompressedTexture2D::9181216448614562474::1742798367::1752373793::1::::<><><>0<>0<>a9170c027cb45e4f3e8499cfe03009ab<>res://.godot/imported/sprite_sheet.png-b79992c6032182e80eaa2c3e8cbcd231.ctex::
-::res://sprites/character/otherflower/::1762390848
-p11 5 2025.png::CompressedTexture2D::3377783970758455059::1762390840::1762390848::1::::<><><>0<>0<>5ae042b32bacef5f1128105e1a19964a<>res://.godot/imported/p11 5 2025.png-b52d3378cb1a2d90a4bd54bafb6d03a8.ctex::
+::res://sprites/character/otherflower/::1763605327
+p11 5 2025.png::CompressedTexture2D::3377783970758455059::1763605321::1763605327::1::::<><><>0<>0<>5ae042b32bacef5f1128105e1a19964a<>res://.godot/imported/p11 5 2025.png-b52d3378cb1a2d90a4bd54bafb6d03a8.ctex::
+::res://sprites/character/toriel/::1763687259
+p11 17 2025.png::CompressedTexture2D::2524336684294423296::1763687257::1763687259::1::::<><><>0<>0<>4a88543b44a6ad058ac8328fcc142747<>res://.godot/imported/p11 17 2025.png-b1d54ed0f3a95ccad115c28808562897.ctex::
 ::res://sprites/dev/::1762379559
 button_down.png::CompressedTexture2D/CompressedTexture2D::6418320924523174258::1752373786::1752373786::1::::<><><>0<>0<>765ba9d9cdcbad5acb101e3ebc8eab64<>res://.godot/imported/button_down.png-433d8024b2fa3548593916aa8413638f.ctex::
 button_up.png::CompressedTexture2D/CompressedTexture2D::6063387190300636001::1752373786::1752373786::1::::<><><>0<>0<>b22897534b7edab23375b1dac63944af<>res://.godot/imported/button_up.png-db310b471f342f99f98f1ae3d16ec34d.ctex::
@@ -271,37 +357,61 @@ undertale_text_box.png::CompressedTexture2D/CompressedTexture2D::495155800838287
 walk_0006.png::CompressedTexture2D/CompressedTexture2D::1650002795470851497::1733952614::1752373793::1::::<><><>0<>0<>8319e924209b5a6553f116a77454b2f2<>res://.godot/imported/walk_0006.png-8bb29d63b631e4535e53537ee01e9cfc.ctex::
 ::res://sprites/saving/::1752373786
 savestar.png::CompressedTexture2D/CompressedTexture2D::8431283043163823075::1752373786::1752373786::1::::<><><>0<>0<>7cd7842d5b909fbc952eda57b92dfcda<>res://.godot/imported/savestar.png-936dcf20eca4e7e5114dee3bc46b9984.ctex::
+<<<<<<< Updated upstream
 ::res://stages/::1762917885
+=======
+::res://stages/::1764632969
+>>>>>>> Stashed changes
 loading_spot.gd::GDScript/GDScript::5660827793536210715::1747945329::0::1::::<>Node2D<><>0<>0<><>::
 loading_spot.tscn::PackedScene/PackedScene::6985854229279776362::1747952469::0::1::::<><><>0<>0<><>::uid://cmwfah0optujr::::res://stages/loading_spot.gd
 loadscreen.tscn::PackedScene::7424430447923622635::1762917885::0::1::::<><><>0<>0<><>::uid://b6pmhyanagjsn::::res://stages/scenetransition.gd
 load_trigger_area.tscn::PackedScene/PackedScene::2249703547715003889::1742793001::0::1::::<><><>0<>0<><>::uid://1ubgdh6xadvf::::res://global_func/loadtrigger_area.gd
+<<<<<<< Updated upstream
 room_startup.gd::GDScript::8621428125160511844::1761714380::0::1::::<>Node2D<><>0<>0<><>::
 scenetransition.gd::GDScript::4593982868404844261::1762917885::0::1::::<>CanvasLayer<><>0<>0<><>::
 world_engine.gd::GDScript::5639903732059709041::1762373650::0::1::::<>Node2D<><>0<>0<><>::
 world_engine.tscn::PackedScene::3275159675992822608::1761713078::0::1::::<><><>0<>0<><>::uid://cmmanjm52rsi8::::res://stages/world_engine.gd<>uid://bdc2evna15mle::::res://character/player.tscn<>uid://dtpxwk5ufp66c::::res://items/item_table.gd<>uid://jpqj6mijg5gv::::res://battle/snd_squeakfix.wav<>uid://ci4uv5el1llbn::::res://UI/textbox stuff/DialogHandler.tscn
 ::res://stages/room_load_trigger_stuff/::1762056359
 change_room_trigger.gd::GDScript::3178171929837882817::1762056359::0::1::::<>Node2D<><>0<>0<><>::
+=======
+room_startup.gd::GDScript::8621428125160511844::1763070288::0::1::::<>Node2D<><>0<>0<><>::
+scenetransition.gd::GDScript::4593982868404844261::1763071786::0::1::::<>CanvasLayer<><>0<>0<><>::
+world_engine.gd::GDScript::5639903732059709041::1764627549::0::1::::<>Node2D<><>0<>0<><>::
+world_engine.tscn::PackedScene::3275159675992822608::1764632969::0::1::::<><><>0<>0<><>::uid://cmmanjm52rsi8::::res://stages/world_engine.gd<>uid://bdc2evna15mle::::res://character/player.tscn<>uid://dtpxwk5ufp66c::::res://items/item_table.gd<>uid://jpqj6mijg5gv::::res://sound_effects/snd_squeakfix.wav<>uid://ci4uv5el1llbn::::res://UI/textbox stuff/DialogHandler.tscn
+::res://stages/room_load_trigger_stuff/::1763079932
+change_room_trigger.gd::GDScript::3178171929837882817::1763079932::0::1::::<>Node2D<><>0<>0<><>::
+>>>>>>> Stashed changes
 loadat_point.gd::GDScript/GDScript::4309426329882541687::1752376504::0::1::::<>Node2D<><>0<>0<><>::
 loadat_point.tscn::PackedScene/PackedScene::2961254125351613836::1752373786::0::1::::<><><>0<>0<><>::uid://b2nrvfct51kjn::::res://stages/room_load_trigger_stuff/loadat_point.gd
 load_room_trigger.tscn::PackedScene/PackedScene::1866545516778396103::1742793001::0::1::::<><><>0<>0<><>::uid://bljsa6u4ylopt::::res://stages/room_load_trigger_stuff/change_room_trigger.gd
 room_change_obj.tscn::PackedScene/PackedScene::3632775512240732314::1749352143::0::1::::<><><>0<>0<><>::uid://bljsa6u4ylopt::::res://stages/room_load_trigger_stuff/change_room_trigger.gd
+<<<<<<< Updated upstream
 ::res://stages/ruins/::1762979262
+=======
+::res://stages/ruins/::1764628735
+>>>>>>> Stashed changes
 dev_test.tscn::PackedScene::9202193945141261679::1761348224::0::1::::<><><>0<>0<><>::uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://bjbb45hle13hg::::res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_1.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 dev_test_2.tscn::PackedScene/PackedScene::4850911570627108826::1752376504::0::1::::<><><>0<>0<><>::uid://dmsd2p50rwekh::::res://tilemaps/ruins/ruins_toriel_home_livinroom.tres<>uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://drbqo1ms7ecfo::::res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/dev_2.tres<>uid://ci4uv5el1llbn::::res://UI/textbox stuff/DialogHandler.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 Opening_room1.tscn::PackedScene::3860876555157259229::1761802706::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
-Opening_room2.tscn::PackedScene::1297455573997267797::1761953653::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://bp4w5lai8y6qs::::res://object prefabs/save_point.tscn<>uid://b6qgsgyjc6ib3::::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_Openingroom2.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://cl8dkauiw0bfc::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/aStar.tres<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://gdcnfwoctygp::::res://tilemaps/ruins/02ruins first save.png<>uid://ovtt1axj3xsd::::res://misc_scripts/self_remove.gd
+Opening_room2.tscn::PackedScene::1297455573997267797::1763772690::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://bp4w5lai8y6qs::::res://object prefabs/save_point.tscn<>uid://b6qgsgyjc6ib3::::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_Openingroom2.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://cl8dkauiw0bfc::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/aStar.tres<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://gdcnfwoctygp::::res://tilemaps/ruins/02ruins first save.png<>uid://ovtt1axj3xsd::::res://misc_scripts/self_remove.gd
 Opening_room.tscn::PackedScene::6493296152463583397::1761952188::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://djdedcygfwnv2::::res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://bg2a83hwrlhif::::res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/usedtowalking.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://ovtt1axj3xsd::::res://misc_scripts/self_remove.gd<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://6ydmtkgmy5ga::::res://cutscenes/cutscene_opening_room.gd<>uid://c23af5mu3bhys::::res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/open_cut_dia1.tres<>uid://k6gmhh5nnpl2::::res://sprites/character/flowreil/p10 29a 2025.png<>uid://dfshmqtc0vvp6::::res://shaders/echo.tres<>uid://8akff0pfgxwn::::res://sprites/dev/soul red.png<>uid://6tjfng584mq0::::res://sprites/character/flowreil/p10 29c 2025.png
 Ruins_room4.tscn::PackedScene::5892364725675186580::1761854572::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://uoq6xhg2udrp::::res://tilemaps/ruins/tilesets/03a_ruins puzzle room_open.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://djdedcygfwnv2::::res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://b88b78l8vow32::::res://sprites/dev/ruins_lever_down.png<>uid://hvut31th7ghk::::res://sprites/dev/ruins_lever_up.png<>uid://dgnrlynkjkm6u::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/first_puzzle_hint.tres<>uid://cfq4tn23n3hxm::::res://puzzleLogic/Ruins/puzzle_base.gd
 Ruins_room5.tscn::PackedScene::6927914754815815253::1761952245::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://b17oi2cjqujk0::::res://tilemaps/ruins/tilesets/04ruins lever puzzle.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://djdedcygfwnv2::::res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/Opening_room_flowers.tres<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://b88b78l8vow32::::res://sprites/dev/ruins_lever_down.png<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://hvut31th7ghk::::res://sprites/dev/ruins_lever_up.png<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://cc5qdqy07u34u::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/stayonpath.tres<>uid://2k27d5jiob68::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/jammedLever.tres<>uid://cxoceinrki6i8::::res://puzzleLogic/Ruins/ruins_switch_puzzle.gd<>uid://b0jkl0g22gtqn::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/spikes_changed.tres<>uid://ovtt1axj3xsd::::res://misc_scripts/self_remove.gd
 Ruins_room6.tscn::PackedScene::2879856926802101857::1762111021::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://c2nrl1jjs0qrf::::res://tilemaps/ruins/tilesets/05ruins dummy_a.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://d2fc5ipujgjhd::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/dummyroom_sign.tres<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
+<<<<<<< Updated upstream
 Ruins_room7.tscn::PackedScene::6204141087175766875::1762979262::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://ponf8mcm5sdt::::res://tilemaps/ruins/tilesets/06ruins water pit.png<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://bwtj1fjvy1edg::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://cm3cciivg21dw::::res://cutscenes/cutscene_the_other_flower.gd<>uid://dfy5jqq30aakv::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://nuhw50lei6cp::::res://cutscenes/loadFailed.gd<>uid://boehuxon0uyoh::::res://sprites/character/otherflower/p11 5 2025.png<>uid://ccrn68eg6hu0u::::res://sprites/dev/exclaim.png<>uid://dhnbj11e216q3::::res://addons/BulletUpHell/Nodes/BuHPattern.gd<>uid://cqjgrpefdpxgs::::res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd<>uid://c0br7kcgmtx6x::::res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd<>uid://bt2c262fcwmiy::::res://addons/BulletUpHell/Bullet/animStates.gd<>uid://brb4wds8atbgi::::res://addons/BulletUpHell/Bullet/BulletProps.gd<>uid://bpddv1t2btwnk::::res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd
 Ruins_room8.tscn::PackedScene::8887906208465049972::1752720643::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://0mc1ej5uqfjb::::res://tilemaps/ruins/tilesets/07a_ruinslonghall.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 Ruins_room9.tscn::PackedScene::5229147774908898169::1752720643::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://dq1nqs1631fiu::::res://tilemaps/ruins/tilesets/08b_ruins_leaves_froggit_save.png<>uid://bp4w5lai8y6qs::::res://object prefabs/save_point.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://q7dmqk3701jo::::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
+=======
+Ruins_room7.tscn::PackedScene::6204141087175766875::1763774962::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://ponf8mcm5sdt::::res://tilemaps/ruins/tilesets/06ruins water pit.png<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://bwtj1fjvy1edg::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://cm3cciivg21dw::::res://cutscenes/cutscene_the_other_flower.gd<>uid://dfy5jqq30aakv::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/other_flower_cut_dia.tres<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://nuhw50lei6cp::::res://cutscenes/loadFailed.gd<>uid://boehuxon0uyoh::::res://sprites/character/otherflower/p11 5 2025.png<>uid://ccrn68eg6hu0u::::res://sprites/dev/exclaim.png
+Ruins_room8.tscn::PackedScene::8887906208465049972::1763080064::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://0mc1ej5uqfjb::::res://tilemaps/ruins/tilesets/07a_ruinslonghall.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://jk47gfxf7lso::::res://interaction/overworld_hazard_trigger.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
+Ruins_room9.tscn::PackedScene::5229147774908898169::1764628735::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://dq1nqs1631fiu::::res://tilemaps/ruins/tilesets/08b_ruins_leaves_froggit_save.png<>uid://bp4w5lai8y6qs::::res://object prefabs/save_point.tscn<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://q7dmqk3701jo::::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn<>uid://c1a4tdvycabix::::res://cutscenes/cutscene_save_trap.gd<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://bc16ie0ds2qm8::::res://UI/textbox stuff/dialog_set_resources/Ruins/save_trap_dialouge/save_trap.tres<>uid://bwtj1fjvy1edg::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres<>uid://boehuxon0uyoh::::res://sprites/character/otherflower/p11 5 2025.png<>uid://3w05nprxkkvh::::res://npcs/moving_npc/toriel.tscn
+>>>>>>> Stashed changes
 Ruins_room9a.tscn::PackedScene::1992480984317278737::1761165945::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://dhg1dqgg631wv::::res://puzzleLogic/Ruins/candy_tracker.gd<>uid://hxjdqn8me8ba::::res://object prefabs/object_base.tscn<>uid://ctuyhnumjtqnw::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9a.tres<>uid://buwov7dk8tw::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9b.tres<>uid://bt8ok7udri1gc::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9c.tres<>uid://yu3tpob26bu4::::res://interaction/Interaction_Area.tscn<>uid://b6ser4crura8h::::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/candy_bowl_first_interactRr9d.tres<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 Ruins_room10.tscn::PackedScene/PackedScene::6197035057740665956::1752428948::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://css211mgog5uw::::res://tilemaps/ruins/tilesets/10a_ruins_pit_room_a.png<>uid://cm0otn1m2pdw1::::res://tilemaps/ruins/tilesets/10b_ruins_pit_room_a_fail.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 Ruins_room11.tscn::PackedScene/PackedScene::7120753727408623204::1752428948::0::1::::<><><>0<>0<><>::uid://du3jwq3d6fwxg::::res://stages/room_startup.gd<>uid://cll7x8gqf4262::::res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres<>uid://ba5dnxlruyr3c::::res://tilemaps/ruins/tilesets/11a_ruins_rock_1.png<>uid://br00jt6bfouqk::::res://stages/room_load_trigger_stuff/room_change_obj.tscn<>uid://7b1j213oon8l::::res://stages/load_trigger_area.tscn<>uid://bigpom0yyw1m3::::res://stages/room_load_trigger_stuff/loadat_point.tscn
 soul_red_shader.gd::GDScript::3142730833422030699::1761782188::0::1::::<>Sprite2D<><>0<>0<><>::
+<<<<<<< Updated upstream
 ::res://theme/::1762977721
 battle_desc.tres::Theme::6175234548829295330::1762977721::0::1::::<><><>0<>0<><>::uid://b7bbm7p02stwg::::res://volumesettings/blank.png<>uid://cnsqxmqge5oau::::res://fonts/Mars_Needs_Cunnilingus.ttf
 textbox_default_theme.tres::Theme::3908183628524238796::1761337431::0::1::::<><><>0<>0<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://b7bbm7p02stwg::::res://volumesettings/blank.png
@@ -310,6 +420,16 @@ textbox_default_theme_yellow.tres::Theme::2419388828639614052::1762977720::0::1:
 placeholder_Tile_1.png::CompressedTexture2D/CompressedTexture2D::7606734069795633204::1752373786::1752373786::1::::<><><>0<>0<>8b8f16ee9b3b297520dce7593b1d9b70<>res://.godot/imported/placeholder_Tile_1.png-e7e95f97708be044ffec9cee61587792.ctex::
 placeholder_Tile_2.png::CompressedTexture2D/CompressedTexture2D::6044477084562783682::1752373786::1752373786::1::::<><><>0<>0<>097bba98b42a2456aaec2540337e26fe<>res://.godot/imported/placeholder_Tile_2.png-3350846484191a3db00369d33c703c2c.ctex::
 ::res://tilemaps/ruins/::1762977721
+=======
+::res://theme/::1764613331
+battle_desc.tres::Theme::6175234548829295330::1764613331::0::1::::<><><>0<>0<><>::uid://b7bbm7p02stwg::::res://volumesettings/blank.png<>uid://cnsqxmqge5oau::::res://fonts/Mars_Needs_Cunnilingus.ttf
+textbox_default_theme.tres::Theme::3908183628524238796::1761337431::0::1::::<><><>0<>0<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://b7bbm7p02stwg::::res://volumesettings/blank.png
+textbox_default_theme_yellow.tres::Theme::2419388828639614052::1764613331::0::1::::<><><>0<>0<><>::uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://b7bbm7p02stwg::::res://volumesettings/blank.png
+::res://tilemaps/::1752373786
+placeholder_Tile_1.png::CompressedTexture2D/CompressedTexture2D::7606734069795633204::1752373786::1752373786::1::::<><><>0<>0<>8b8f16ee9b3b297520dce7593b1d9b70<>res://.godot/imported/placeholder_Tile_1.png-e7e95f97708be044ffec9cee61587792.ctex::
+placeholder_Tile_2.png::CompressedTexture2D/CompressedTexture2D::6044477084562783682::1752373786::1752373786::1::::<><><>0<>0<>097bba98b42a2456aaec2540337e26fe<>res://.godot/imported/placeholder_Tile_2.png-3350846484191a3db00369d33c703c2c.ctex::
+::res://tilemaps/ruins/::1764618361
+>>>>>>> Stashed changes
 00flower room.png::CompressedTexture2D/CompressedTexture2D::2103750348456651195::1752373786::1752373786::1::::<><><>0<>0<>b714e70be1ae94c21b5c94616d81701b<>res://.godot/imported/00flower room.png-3d11f1fbf2641c62f09b68d0000c7fa9.ctex::
 01opening room.png::CompressedTexture2D/CompressedTexture2D::8172256574093614025::1752373786::1752373786::1::::<><><>0<>0<>3c2e3dc70d5c4cf6feceade8b421b1fb<>res://.godot/imported/01opening room.png-a51e616cfb5e116f7a296a24cb963838.ctex::
 02ruins first save.png::CompressedTexture2D/CompressedTexture2D::427471141638661427::1752373786::1752373786::1::::<><><>0<>0<>ec37bbd45c04784196f964ffbad388f3<>res://.godot/imported/02ruins first save.png-73bf41c4600c8e1a6fc91f7a36abc7a4.ctex::
@@ -317,7 +437,11 @@ placeholder_Tile_2.png::CompressedTexture2D/CompressedTexture2D::604447708456278
 opening room.png::CompressedTexture2D/CompressedTexture2D::3688590123432344938::1752373786::1752373786::1::::<><><>0<>0<>2cb80bc8d75dccb0c5995321e12671eb<>res://.godot/imported/opening room.png-d93a74288aa20c6fbb9194d98edf5b34.ctex::
 ruins.png::CompressedTexture2D/CompressedTexture2D::7151588055304384524::1752707914::1752707923::1::::<><><>0<>0<>2ebbfa6435c3fdf2e859c29f259445e6<>res://.godot/imported/ruins.png-2bfc85757d051da4a09a5d7f60b8ecd3.ctex::
 ruins_toriel_home_livinroom.tres::TileSet/TileSet::8038918177076356939::1749312481::0::1::::<><><>0<>0<><>::uid://6wmjq8smqlya::::res://tilemaps/ruins/toriels_home_living_room.png
+<<<<<<< Updated upstream
 ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1762977721::0::1::::<><><>0<>0<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png<>uid://bss1smy163lmw::::res://tilemaps/ruins/opening room.png<>uid://c85ju0vt5ians::::res://tilemaps/ruins/ruins.png<>uid://cnivq2krm7x17::::res://object prefabs/2_state_object.tscn<>uid://btt4wd80ld8g1::::res://object prefabs/floor_button_correct.tscn<>uid://cjcwks2x02w6n::::res://object prefabs/floor_button_wrong.tscn<>uid://clie8vu6e1lj6::::res://object prefabs/proximity_puzzle_pannel.tscn
+=======
+ruins_toriel_home_yellow_hall.tres::TileSet::5569612563001757149::1764618361::0::1::::<><><>0<>0<><>::uid://b8ambl45c0fkk::::res://tilemaps/ruins/toriels_home_yellow_hall.png<>uid://bss1smy163lmw::::res://tilemaps/ruins/opening room.png<>uid://c85ju0vt5ians::::res://tilemaps/ruins/ruins.png<>uid://cnivq2krm7x17::::res://object prefabs/2_state_object.tscn<>uid://btt4wd80ld8g1::::res://object prefabs/floor_button_correct.tscn<>uid://cjcwks2x02w6n::::res://object prefabs/floor_button_wrong.tscn<>uid://clie8vu6e1lj6::::res://object prefabs/proximity_puzzle_pannel.tscn
+>>>>>>> Stashed changes
 switch.png::CompressedTexture2D/CompressedTexture2D::8038330772909908249::1752373786::1752373786::1::::<><><>0<>0<>808d3a5aea1bc5a21d45d0363246b947<>res://.godot/imported/switch.png-f0a8b8c833c16fb237982c7063b3b5ce.ctex::
 toriels_home_living_room.png::CompressedTexture2D/CompressedTexture2D::2222016031613324700::1735616103::1752373793::1::::<><><>0<>0<>cb5c17ba1c8072dc5924890362b7d6e7<>res://.godot/imported/toriels_home_living_room.png-eab18615960c67bdc8f4b7d550f81462.ctex::
 toriels_home_yellow_hall.png::CompressedTexture2D/CompressedTexture2D::4703383537378175962::1735273833::1752373793::1::::<><><>0<>0<>f73789e338d3ad6be24283112610762b<>res://.godot/imported/toriels_home_yellow_hall.png-95c5799ed40db6178f477e389a8c815e.ctex::
@@ -336,39 +460,40 @@ toriels_home_yellow_hall.png::CompressedTexture2D/CompressedTexture2D::470338353
 11b_ruins_rock_1.png::CompressedTexture2D/CompressedTexture2D::9061909936491761259::1752373786::1752373786::1::::<><><>0<>0<>cdaa3fec208fa66a69ca2c5ed9630831<>res://.godot/imported/11b_ruins_rock_1.png-15efcf9f6496b201cdc32209c1a32e59.ctex::
 ruins_water_pit.png::CompressedTexture2D/CompressedTexture2D::8094032099449479773::1752373786::1752373786::1::::<><><>0<>0<>816b7abf2fdf72e305f136f4c6f497aa<>res://.godot/imported/ruins_water_pit.png-164c7311b387dc5191b6d3b9aad6043e.ctex::
 ::res://UI/::1737424989
-::res://UI/Menu/::1762373650
+::res://UI/Menu/::1763087910
 fallen_name.gd::GDScript/GDScript::4317456245928090228::1752376504::0::1::::<>Label<><>0<>0<><>::
 menu.tscn::PackedScene::1206439410117530195::1762206834::0::1::::<><><>0<>0<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png<>uid://cklnwoxob43hw::::res://UI/Menu/menu_logic.gd<>uid://caw0k0vrpeinl::::res://UI/Menu/sub_menu.tscn<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://m8ykky77nyrk::::res://UI/Menu/stats_ui_diplay.gd<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn
 menu_logic.gd::GDScript::5498267338929063532::1762373650::0::1::::<>Control<><>0<>0<><>::
-save_box.gd::GDScript::6541715410587759227::1762373650::0::1::::<>MarginContainer<><>0<>0<><>::
+save_box.gd::GDScript::6541715410587759227::1763087910::0::1::::<>MarginContainer<><>0<>0<><>::
 save_box.tscn::PackedScene::8497615144487964829::1762206834::0::1::::<><><>0<>0<><>::uid://c0g4dkgxfk0l8::::res://UI/Menu/save_box.gd<>uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png<>uid://m8ykky77nyrk::::res://UI/Menu/stats_ui_diplay.gd<>uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://qijiqj4o2jvd::::res://UI/Menu/text replacement.tscn<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn
 stats_ui_diplay.gd::GDScript::911866219111848340::1762056359::0::1::::<>RichTextLabel<><>0<>0<><>::
 sub_menu.gd::GDScript::4297136366998517178::1761157448::0::1::::<>MarginContainer<><>0<>0<><>::
 sub_menu.tscn::PackedScene::4819794807050988245::1762373650::0::1::::<><><>0<>0<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png<>uid://b2hthcu6vwkfi::::res://UI/Menu/sub_menu.gd<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png<>uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://m8ykky77nyrk::::res://UI/Menu/stats_ui_diplay.gd<>uid://diqlx2w5nbue6::::res://fonts/determination.ttf<>uid://cx1gjcnsc2p8r::::res://volumesettings/Volume.tscn
 text replacement.tscn::PackedScene::1140098115141384073::1762206834::0::1::::<><><>0<>0<><>::uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://m8ykky77nyrk::::res://UI/Menu/stats_ui_diplay.gd
-::res://UI/textbox stuff/::1762373650
+::res://UI/textbox stuff/::1764616690
 DialogHandler.tscn::PackedScene/PackedScene::5395472495300228275::1742793001::0::1::::<><><>0<>0<><>::uid://2keslwmnth26::::res://UI/textbox stuff/text_data.gd
 item_text_options.gd::GDScript::2079228785972052089::1761157288::0::1::::<>TextButtonOption<><>0<>0<><>::
 item_text_options.tscn::PackedScene::3663689058279692554::1761157382::0::1::::<><><>0<>0<><>::uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://4vguhbnagh7n::::res://UI/textbox stuff/item_text_options.gd
 multi_choice.gd::GDScript::4689592060413279725::1761333424::0::1::::<>MarginContainer<><>0<>0<><>::
 multi_choice.tscn::PackedScene::3881098390132304312::1762206834::0::1::::<><><>0<>0<><>::uid://b72w5p4n85alx::::res://UI/textbox stuff/multi_choice.gd<>uid://djvuhgayxw2c2::::res://UI/textbox stuff/text_multi_option_button.tscn<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres
-selectable_text_options.gd::GDScript/GDScript::367830464890388227::1752373786::0::1::::TextButtonOption<>Button<><>0<>0<><>::
+selectable_text_options.gd::GDScript::367830464890388227::1764616690::0::1::::TextButtonOption<>Button<><>0<>0<><>::
 selectable_text_options.tscn::PackedScene::2614370870991781542::1762206834::0::1::::<><><>0<>0<><>::uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://figd42j0f7op::::res://UI/textbox stuff/selectable_text_options.gd
 selectable_text_options_letter.gd::GDScript::6276498282258399494::1761277764::0::1::::<>Button<><>0<>0<><>::
 selectable_text_options_letters.tscn::PackedScene::6025857501584497677::1762373650::0::1::::<><><>0<>0<><>::uid://bap78lq1j4pou::::res://theme/textbox_default_theme_yellow.tres<>uid://cvonalhjxo0gw::::res://UI/textbox stuff/selectable_text_options_letter.gd
 textboxrect.tscn::PackedScene/PackedScene::1880230428619065878::1742793001::0::1::::<><><>0<>0<><>::uid://dmghfmo3ee53m::::res://battle/battle box 9rect.png
-textbox_control.tscn::PackedScene::8860002223084138244::1762206834::0::1::::<><><>0<>0<><>::uid://112edilmbegs::::res://UI/textbox stuff/textboxrect.tscn<>uid://bm6udb1xc3rv7::::res://character/textbox.gd<>uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://bvkbegycs5yw3::::res://UI/textbox stuff/multi_choice.tscn
+textbox_control.tscn::PackedScene::8860002223084138244::1764537437::0::1::::<><><>0<>0<><>::uid://112edilmbegs::::res://UI/textbox stuff/textboxrect.tscn<>uid://bm6udb1xc3rv7::::res://character/textbox.gd<>uid://ba4vgeju3b35l::::res://UI/textbox stuff/textbox_control_sprite.tres<>uid://bvxfhiwix5rbg::::res://theme/textbox_default_theme.tres<>uid://bvkbegycs5yw3::::res://UI/textbox stuff/multi_choice.tscn
+textbox_control_sprite.tres::SpriteFrames::2447573635115198591::1763676705::0::1::::<><><>0<>0<><>::uid://bj5pi2l80cok::::res://sprites/dev/comicfurypageicon.png
 text_data.gd::GDScript/GDScript::1916018180334728121::1752376504::0::1::::<>Node2D<><>0<>0<><>::
 text_multioptions.gd::GDScript/GDScript::5586792759792603354::1747890219::0::1::::<>TextButtonOption<><>0<>0<><>::
 text_multi_option_button.tscn::PackedScene::7835540733331696235::1761250592::0::1::::<><><>0<>0<><>::uid://bdiokoccfgw5s::::res://UI/textbox stuff/selectable_text_options.tscn<>uid://clujwps2q44xq::::res://UI/textbox stuff/text_multioptions.gd
-::res://UI/textbox stuff/dialog_set_resources/::1762108399
-dialog_data.gd::GDScript::2520020064697481217::1762108399::0::1::::DialogData<>Resource<><>0<>0<><>::
-::res://UI/textbox stuff/dialog_set_resources/Ruins/::1761434399
+::res://UI/textbox stuff/dialog_set_resources/::1764537122
+dialog_data.gd::GDScript::2520020064697481217::1764537122::0::1::::DialogData<>Resource<><>0<>0<><>::
+::res://UI/textbox stuff/dialog_set_resources/Ruins/::1763326747
 ::res://UI/textbox stuff/dialog_set_resources/Ruins/first_room_cutscene/::1762401946
 open_cut_dia1.tres::Resource/DialogData::6725753246880606118::1762401946::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 usedtowalking.tres::Resource/DialogData::2863352358569943577::1762401217::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
-::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/::1762402031
-aStar.tres::Resource/DialogData::5613243153495834328::1762401217::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+::res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/::1763772687
+aStar.tres::Resource/DialogData::5613243153495834328::1763772687::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 candy_bowl_first_interactRr9a.tres::Resource/DialogData::6149187374231400376::1761166312::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 candy_bowl_first_interactRr9b.tres::Resource/DialogData::3318774301465952::1761164983::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 candy_bowl_first_interactRr9c.tres::Resource/DialogData::3789002786340130022::1761165806::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
@@ -376,15 +501,17 @@ candy_bowl_first_interactRr9d.tres::Resource/DialogData::4599708389579191249::17
 dummyroom_sign.tres::Resource/DialogData::9064858170159005589::1752708695::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 first_puzzle_hint.tres::Resource/DialogData::7608285137429908418::1762401298::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 jammedLever.tres::Resource/DialogData::1917439264311468243::1752605296::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
-other_flower_cut_dia.tres::Resource/DialogData::7561589783691111289::1762402031::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+other_flower_cut_dia.tres::Resource/DialogData::7561589783691111289::1763330625::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 same_blueprint_Rr7.tres::Resource/DialogData::3970391582140607788::1761239878::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 spikes_changed.tres::Resource/DialogData::4160349311706743097::1762401298::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 stayonpath.tres::Resource/DialogData::4976128095178414366::1752605062::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 ::res://UI/textbox stuff/dialog_set_resources/Ruins/Opening Area/::1761787271
 Opening_room_flowers.tres::Resource/DialogData::7797403144838735449::1761787271::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
-::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/::1752708695
+::res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/::1764536681
 save_Openingroom2.tres::Resource/DialogData::4595701679412174358::1752531248::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
-save_ruins9.tres::Resource/DialogData::1189286023981203184::1752708695::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+save_ruins9.tres::Resource/DialogData::1189286023981203184::1764536681::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
+::res://UI/textbox stuff/dialog_set_resources/Ruins/save_trap_dialouge/::1764544759
+save_trap.tres::Resource/DialogData::2582368954576670993::1764544759::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 ::res://UI/textbox stuff/dialog_set_resources/Ruins/Toriels Home/::1752373879
 dev_1.tres::Resource/DialogData::3020298746225785492::1752373879::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd
 dev_2.tres::Resource/DialogData::8355534628684362272::1752373786::0::1::::<><><>0<>0<><>::uid://bb5ymk2j4kmnx::::res://UI/textbox stuff/dialog_set_resources/dialog_data.gd

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://2u5iskf8oquj"]
+=======
+[gd_scene load_steps=21 format=3 uid="uid://2u5iskf8oquj"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bpddv1t2btwnk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="1_gdc2s"]
 [ext_resource type="Script" uid="uid://dhnbj11e216q3" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_hipjx"]
@@ -37,6 +41,50 @@ cooldown_next_spawn = 0.06
 cooldown_next_shoot = 0.1
 wait_behavior = 1
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fywpc"]
+resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("3_fywpc")
+offset = Vector2(0, 35)
+symmetric = false
+bullet = "f_pellet_straight"
+nbr = 5
+iterations = -1
+cooldown_spawn = 9.0
+cooldown_shoot = 0.3
+skip_in_list = false
+wait_behavior = 1
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s0p1d"]
+resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("3_fywpc")
+offset = Vector2(0, 35)
+symmetric = false
+bullet = "f_pellet_straight"
+nbr = 5
+iterations = -1
+cooldown_spawn = 9.0
+cooldown_shoot = 0.3
+forced_angle = 3.141592653589793
+wait_behavior = 1
+
+[sub_resource type="Resource" id="Resource_s0p1d"]
+resource_name = "PatternCircle"
+script = ExtResource("4_fywpc")
+radius = 200.0
+angle_decal = 0.7853981633974483
+bullet = "f_pellet_track"
+nbr = 6
+iterations = -1
+cooldown_spawn = 9.0
+cooldown_shoot = 0.4
+wait_behavior = 1
+metadata/_custom_type_script = "uid://bjk8co11wvtsh"
+
+>>>>>>> Stashed changes
 [sub_resource type="Curve" id="Curve_6myam"]
 
 [sub_resource type="Resource" id="Resource_hipjx"]
@@ -44,6 +92,10 @@ script = ExtResource("5_clu07")
 ID = "f_pellet_idle"
 texture = "f_pellet"
 collision = "f_pellet"
+<<<<<<< Updated upstream
+=======
+SFX = "f_pellet_spawn"
+>>>>>>> Stashed changes
 metadata/_custom_type_script = "uid://bt2c262fcwmiy"
 
 [sub_resource type="Curve" id="Curve_gmsvh"]
@@ -58,6 +110,10 @@ custom_data = {
 }
 no_rotation = true
 anim_idle = SubResource("Resource_hipjx")
+<<<<<<< Updated upstream
+=======
+anim_delete = SubResource("Resource_clu07")
+>>>>>>> Stashed changes
 a_speed_multiplier = SubResource("Curve_6myam")
 scale_multiplier = SubResource("Curve_gmsvh")
 homing_type = 3
@@ -109,6 +165,78 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="Resource" id="Resource_bp5oh"]
+script = ExtResource("5_clu07")
+texture = "NoRot"
+collision = "f_pellet"
+metadata/_custom_type_script = "uid://bt2c262fcwmiy"
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_hipjx"]
+script = ExtResource("6_bp5oh")
+damage = -4.0
+speed = 500.0
+custom_data = {
+"Iframes": 1.0,
+"persistent": false
+}
+death_after_time = 10.0
+no_rotation = true
+z_index = 3
+anim_idle = SubResource("Resource_hipjx")
+anim_delete = SubResource("Resource_bp5oh")
+a_speed_multiplier = SubResource("Curve_6myam")
+scale_multiplier = SubResource("Curve_gmsvh")
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 500.0
+homing_time_start = 0.0
+homing_duration = 0.0
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array()
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
+>>>>>>> Stashed changes
 [node name="overworld_other_flowey_attacks" type="Node2D"]
 
 [node name="spawners" type="Node2D" parent="."]

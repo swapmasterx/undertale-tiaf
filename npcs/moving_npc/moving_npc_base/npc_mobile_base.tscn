@@ -1,0 +1,85 @@
+[gd_scene load_steps=16 format=3 uid="uid://dns2aub4anrrs"]
+
+[ext_resource type="Script" uid="uid://8wf7sw6rl5s3" path="res://npcs/moving_npc/moving_npc_base/npc_mobile_base.gd" id="1_xcfrs"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xcfrs"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_byntl"]
+animation = &"idel_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bjy6h"]
+animation = &"idel_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qmmit"]
+animation = &"idel_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bogxn"]
+animation = &"idel_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ik0hc"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_byntl")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_bjy6h")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_qmmit")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_bogxn")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_auomg"]
+animation = &"walk_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tvnl0"]
+animation = &"walk_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xusom"]
+animation = &"walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hivn6"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3rk4p"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_auomg")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_tvnl0")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_xusom")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_hivn6")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nxxtg"]
+states/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_xcfrs")
+states/BlendSpace2D/position = Vector2(390, 167)
+states/Start/position = Vector2(142, 100)
+states/idel/node = SubResource("AnimationNodeBlendSpace2D_ik0hc")
+states/idel/position = Vector2(390, 33)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_3rk4p")
+states/walk/position = Vector2(390, 100)
+graph_offset = Vector2(-196, -23)
+
+[sub_resource type="Animation" id="Animation_hmapt"]
+resource_name = "idel_left"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pype"]
+_data = {
+&"idel_left": SubResource("Animation_hmapt")
+}
+
+[node name="NpcMobileBase" type="CharacterBody2D"]
+script = ExtResource("1_xcfrs")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_nxxtg")
+parameters/BlendSpace2D/blend_position = Vector2(0, 0)
+parameters/idel/blend_position = Vector2(0.0044130087, -0.9676113)
+parameters/walk/blend_position = Vector2(-0.0260286, 0.054945)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6pype")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

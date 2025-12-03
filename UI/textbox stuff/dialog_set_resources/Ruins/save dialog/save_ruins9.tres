@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_1yo6m")
-dialog_set = Array[Array]([["(The crinkling of leaves would grant some reprive...)", "(If it weren't for this numbness.)"]])
-speech_noise_id = Array[Array]([["default1", "default1"]])
-char_talk_sprite_id = Array[Array]([["none", "none"]])
-char_mood_sprite_id = Array[Array]([[0, 0]])
+dialog_set = Array[Array]([["(The fact you managed to escape that crazy flower fills you with determination.)"], ["(The sight of a familiar yet older face fills you with determination...|||||||| and questions...)"]])
+speech_noise_id = Array[Array]([["default1"], ["default1"]])
+char_talk_sprite_id = Array[Array]([["none"], ["none"]])
+char_mood_sprite_id = Array[Array]([[0], [0]])

@@ -3,10 +3,10 @@ extends Node2D
 class_name ObjectCore
 
 #0 = unset, 1 = text interactible, 2 = room load trigger
-@export_enum("Unset", "Textbox", "SavePoint", "Switch") var object_type: int
+@export_enum("Unset", "Textbox", "SavePoint", "Switch", "ScriptedBattle") var object_type: int
 @export var interaction_area: InteractionArea
 @export var load_trigger_area: LoadTriggerArea
-#@export var text_handler: DialogHandler
+@export var set_plot_value: int
 @export var dialog_data: DialogData
 @onready var text_handlerr = $"../../../DialogHandler"
 @export var itempointer: String
@@ -25,6 +25,7 @@ var interact_counter: int = 0
 @export var enable_choice_prompt: bool = false
 
 @export var sprite: Sprite2D
+
 
 func _ready():
 	if interaction_area:
@@ -54,6 +55,11 @@ func _on_interact():
 				save_point()
 			3: 
 				switch()
+			4:
+				scripted_battle()
+
+func scripted_battle():
+	SignalManager.overworld_to_battle.emit(0)
 
 func text_interact():
 	print(GlobalFlags.dialogMode)
@@ -89,9 +95,14 @@ func save_point():
 		if text_handlerr && GlobalFlags.dialogMode == false:
 			PlayerData.health_change(999)
 			GlobalFlags.is_saving = true
-			text_handlerr.dialog = dialog_data.dialog_set[interact_counter]
-			text_handlerr.speech_id = dialog_data.speech_noise_id[interact_counter]
-			text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[interact_counter]
+			if set_plot_value > RoomPersistance.plot_value:
+				text_handlerr.dialog = dialog_data.dialog_set[0]
+				text_handlerr.speech_id = dialog_data.speech_noise_id[0]
+				text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[0]
+			elif set_plot_value <= RoomPersistance.plot_value:
+				text_handlerr.dialog = dialog_data.dialog_set[1]
+				text_handlerr.speech_id = dialog_data.speech_noise_id[1]
+				text_handlerr.char_talk_sprite_id = dialog_data.char_talk_sprite_id[1]
 			#text_handler.char_mood_sprite_id = speech[interact_counter]
 			text_handlerr.on_interact()
 			if interact_counter < max_interact:
