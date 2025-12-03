@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cgrbkgv48yf6x"]
+[gd_scene load_steps=23 format=4 uid="uid://cgrbkgv48yf6x"]
 
 [ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
 [ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
@@ -8,12 +8,13 @@
 [ext_resource type="Resource" uid="uid://q7dmqk3701jo" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres" id="5_81pdr"]
 [ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_ktjmw"]
 [ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_81pdr"]
-[ext_resource type="Script" path="res://cutscenes/cutscene_save_trap.gd" id="9_noije"]
+[ext_resource type="Script" uid="uid://dtrnye7x3nfoa" path="res://cutscenes/cutscene_save_trap.gd" id="9_noije"]
 [ext_resource type="PackedScene" uid="uid://hxjdqn8me8ba" path="res://object prefabs/object_base.tscn" id="9_yt3j1"]
 [ext_resource type="Resource" uid="uid://bwtj1fjvy1edg" path="res://UI/textbox stuff/dialog_set_resources/Ruins/general_ruins/same_blueprint_Rr7.tres" id="10_hnl5s"]
 [ext_resource type="PackedScene" uid="uid://3w05nprxkkvh" path="res://npcs/moving_npc/toriel.tscn" id="11_bkk83"]
 [ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="11_hnl5s"]
 [ext_resource type="Resource" uid="uid://bc16ie0ds2qm8" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save_trap_dialouge/save_trap.tres" id="12_hnl5s"]
+[ext_resource type="AudioStream" uid="uid://cs4cbsdk34ltt" path="res://sound_effects/snd_floweylaugh.wav" id="13_uq4eo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
 size = Vector2(20, 181)
@@ -23,51 +24,6 @@ size = Vector2(20, 198)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yt3j1"]
 size = Vector2(53.00154, 1088.9998)
-
-[sub_resource type="Animation" id="Animation_bkk83"]
-resource_name = "cutscene_save_trap"
-length = 5.0
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.2),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"cornered_pattern"
-}, {
-"args": [],
-"method": &"dialogue"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("otherFlower:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.16666667, 0.23333335, 0.3, 0.36666667, 0.43333337, 0.5, 0.56666666, 0.6333334, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [10, 11, 12, 13, 14, 15, 16, 17, 1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("otherFlower:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16327754),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="Animation" id="Animation_yt3j1"]
 length = 0.001
@@ -95,12 +51,154 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("otherFlower:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -689)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("otherFlower:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("otherFlower:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bkk83"]
+resource_name = "cutscene_save_trap"
+length = 15.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.2333333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"cornered_pattern"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"close_in"
+}, {
+"args": [],
+"method": &"fire_ball_the_flower"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("otherFlower:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 0.23333335, 0.3, 0.36666667, 0.43333337, 0.5, 0.56666666, 0.6333334, 2.2, 2.2333333, 2.3, 2.3666668, 2.4333334, 2.5, 2.5666666, 2.6333334, 2.7, 2.7666667, 2.8333333, 2.9, 2.9666667, 3.0333333, 3.1, 3.1666667, 3.2333333, 3.3, 3.3666668, 3.4333334, 3.5, 3.5666666, 3.6333334, 3.7, 3.7666667, 3.8333333, 3.9, 3.9666667, 4.033333, 4.0999994, 4.166667, 4.2333336, 4.3, 4.366667, 4.4333334, 4.5, 4.5666666, 4.633333, 4.7, 4.766667, 4.8333335, 4.9, 4.9666667, 5.0333333, 5.1, 5.166667, 5.2333336, 5.3, 5.3666673, 5.433334, 5.5000005, 5.566667, 5.6333337, 5.7000003, 5.766667, 5.8333335, 5.9, 5.9666667, 6.0333333, 6.1, 6.1666675, 6.233334, 6.3000007, 6.3666673, 6.433334, 6.5000005, 6.566667, 6.6333337, 6.7000003, 6.766667, 6.8333335, 6.9, 6.9666667, 7.0333333, 7.1, 7.1666665, 8.533334, 8.666668, 8.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16, 17, 1, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 25, 24, 25, 26, 25, 24, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 25, 26, 25, 24, 26, 25, 24, 25, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 27, 28, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("otherFlower:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16327754, 9.233334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../cutscene_audio_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_uq4eo")
+}],
+"times": PackedFloat32Array(2.7)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("otherFlower:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8.766667, 8.799622, 8.933333, 9.066667, 9.232792),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -689), Vector2(0, -689), Vector2(50.496834, -783.7787), Vector2(81.0598, -800.80334), Vector2(120.205, -817)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("otherFlower:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8.766667, 8.799622, 8.933333, 9.066667, 9.232792),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.4243972, 0.73181754, 1.2740904]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("otherFlower:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(9.022632, 9.200517),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3bt8m"]
 _data = {
 &"RESET": SubResource("Animation_yt3j1"),
 &"cutscene_save_trap": SubResource("Animation_bkk83")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uq4eo"]
+radius = 40.0
 
 [node name="Room_Core" type="Node2D" groups=["room"]]
 script = ExtResource("1_u50cq")
@@ -186,10 +284,9 @@ placepoint = 3
 position = Vector2(894, 541)
 placepoint = 2
 
-[node name="puzzle_hint" parent="Scripted Events" node_paths=PackedStringArray("interaction_area", "load_trigger_area") instance=ExtResource("9_yt3j1")]
+[node name="puzzle_hint" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("9_yt3j1")]
 position = Vector2(-8, 166)
 object_type = 4
-interaction_area = NodePath("")
 load_trigger_area = NodePath("LoadTriggerArea")
 dialog_data = ExtResource("10_hnl5s")
 max_interact = 0
@@ -201,9 +298,10 @@ position = Vector2(116.499954, 16.501205)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_yt3j1")
 
-[node name="Cutscene Save Trap" type="Node2D" parent="."]
+[node name="Cutscene Save Trap" type="Node2D" parent="." node_paths=PackedStringArray("load_trigger_area")]
 script = ExtResource("9_noije")
 dialog_data = ExtResource("12_hnl5s")
+load_trigger_area = NodePath("otherFlower/LoadTriggerfireballtarget")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene Save Trap"]
 libraries = {
@@ -221,12 +319,25 @@ limit_bottom = 990
 
 [node name="otherFlower" type="Sprite2D" parent="Cutscene Save Trap"]
 visible = false
-position = Vector2(-34, -688)
+position = Vector2(0, -689)
 texture = ExtResource("11_hnl5s")
 hframes = 5
 vframes = 8
 
+[node name="LoadTriggerfireballtarget" parent="Cutscene Save Trap/otherFlower" instance=ExtResource("5_ktjmw")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene Save Trap/otherFlower/LoadTriggerfireballtarget"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_uq4eo")
+
 [node name="Toriel" parent="Cutscene Save Trap" instance=ExtResource("11_bkk83")]
 position = Vector2(186, 427)
+
+[node name="cutscene_audio_1" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[connection signal="area_shape_entered" from="Cutscene Save Trap/otherFlower/LoadTriggerfireballtarget" to="Cutscene Save Trap" method="_on_load_triggerfireballtarget_area_shape_entered"]
 
 [editable path="Interactibles/save point"]

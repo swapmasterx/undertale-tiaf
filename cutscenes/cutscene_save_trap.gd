@@ -94,10 +94,6 @@ func close_in():
 	cornered_close.global_position = player_hurtbox.global_position
 	cornered_close.spawn()
 
-func laugh():
-	GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_floweylaugh.wav")
-	GlobalFlags.sfx_2_channel.play()
-
 func _on_interact():
 	Spawning.clear_all_offscreen_bullets()
 	Spawning.clear_all_bullets()
@@ -115,7 +111,8 @@ func turn_player_to_toriel():
 	await get_tree().process_frame
 	player.direction = Vector2(0,0)
 
-func _on_load_trigger_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+
+func _on_load_triggerfireballtarget_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	await get_tree().process_frame
 	Spawning.clear_all_offscreen_bullets()
 	Spawning.clear_all_bullets()

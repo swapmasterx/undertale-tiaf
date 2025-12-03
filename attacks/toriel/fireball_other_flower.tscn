@@ -41,15 +41,26 @@ script = ExtResource("5_1muvl")
 damage = 0.0
 speed = 400.0
 custom_data = {
-"Iframes": 1.0,
+"Iframes": 0.0,
 "persistent": false
 }
+death_from_collision = false
+death_culling_overwrite = 0
 no_rotation = true
 anim_idle = SubResource("Resource_1muvl")
 anim_spawn = SubResource("Resource_iurfl")
 anim_waiting = SubResource("Resource_6a40h")
+spec_trail_modulate = Color(0, 0, 0, 1)
+spec_trail_smooth = 0.0
 a_speed_multiplier = SubResource("Curve_ewb26")
+depth_speed = 0.0
+depth_min_max = Vector2(0, 0)
+spec_only_spin_sprite = false
+spec_weight = 0.0
 scale_multiplier = SubResource("Curve_iurfl")
+scale_multi_scale = 0.0
+trigger_wait_for_shot = false
+temp_count = 0
 homing_type = 1
 homing_position = Vector2(83, -676)
 homing_steer = 500.0
@@ -123,3 +134,5 @@ pattern = SubResource("Resource_ewb26")
 script = ExtResource("3_1muvl")
 id = "fireball"
 props = SubResource("Resource_0aoc7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
