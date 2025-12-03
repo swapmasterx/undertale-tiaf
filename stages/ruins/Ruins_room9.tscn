@@ -1,470 +1,135 @@
-[gd_scene load_steps=33 format=3 uid="uid://cgrbkgv48yf6x"]
+[gd_scene load_steps=15 format=4 uid="uid://cgrbkgv48yf6x"]
 
-[ext_resource type="Script" uid="uid://6x1orpr8lc1y" path="res://battle/battle_scene_logic.gd" id="1_hrm8e"]
-[ext_resource type="Texture2D" uid="uid://cx2y0psa2ajdp" path="res://battle/battle box.png" id="2_1r2ri"]
-[ext_resource type="PackedScene" uid="uid://dyh37belgvscq" path="res://UI/textbox stuff/textbox_control.tscn" id="3_rilwp"]
-[ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="4_epodm"]
-[ext_resource type="PackedScene" uid="uid://dcempie7xxmhi" path="res://battle/battle_buttons.tscn" id="5_m8gm5"]
-[ext_resource type="Texture2D" uid="uid://danbyfhnw2aup" path="res://battle/fight.png" id="6_1dma2"]
-[ext_resource type="Texture2D" uid="uid://r7c2gqdd6x1k" path="res://battle/fight_selected.png" id="7_pc3gi"]
-[ext_resource type="Texture2D" uid="uid://bd0n5q5227sgf" path="res://battle/act.png" id="8_rsp4o"]
-[ext_resource type="Texture2D" uid="uid://ddfdyxor5ji81" path="res://battle/act_selected.png" id="9_jj3lw"]
-[ext_resource type="Texture2D" uid="uid://js1c2mo2ocdl" path="res://battle/item.png" id="10_3tlay"]
-[ext_resource type="Texture2D" uid="uid://d338fj40kg5b" path="res://battle/item_selected.png" id="11_08ka3"]
-[ext_resource type="Texture2D" uid="uid://cvr7w7wus40je" path="res://battle/mercy.png" id="12_w6fdn"]
-[ext_resource type="Texture2D" uid="uid://bqiok11mefuit" path="res://battle/mercy_selected.png" id="13_q0owm"]
-[ext_resource type="PackedScene" uid="uid://c1m5tcx0d8mcl" path="res://battle/soul_cursor.tscn" id="14_2o23d"]
-[ext_resource type="Theme" uid="uid://ct8lhfxr4io63" path="res://theme/battle_desc.tres" id="15_1ku5x"]
-[ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="16_wgs2g"]
-[ext_resource type="Script" uid="uid://cjjw3cyrxo2fc" path="res://character/hpbar.gd" id="17_emg3k"]
+[ext_resource type="Script" uid="uid://du3jwq3d6fwxg" path="res://stages/room_startup.gd" id="1_u50cq"]
+[ext_resource type="TileSet" uid="uid://cll7x8gqf4262" path="res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres" id="2_gy3nn"]
+[ext_resource type="Texture2D" uid="uid://dq1nqs1631fiu" path="res://tilemaps/ruins/tilesets/08b_ruins_leaves_froggit_save.png" id="3_u50cq"]
+[ext_resource type="PackedScene" uid="uid://bp4w5lai8y6qs" path="res://object prefabs/save_point.tscn" id="4_70h8x"]
+[ext_resource type="PackedScene" uid="uid://br00jt6bfouqk" path="res://stages/room_load_trigger_stuff/room_change_obj.tscn" id="4_81pdr"]
+[ext_resource type="Resource" uid="uid://q7dmqk3701jo" path="res://UI/textbox stuff/dialog_set_resources/Ruins/save dialog/save_ruins9.tres" id="5_81pdr"]
+[ext_resource type="PackedScene" uid="uid://7b1j213oon8l" path="res://stages/load_trigger_area.tscn" id="5_ktjmw"]
+[ext_resource type="PackedScene" uid="uid://bigpom0yyw1m3" path="res://stages/room_load_trigger_stuff/loadat_point.tscn" id="8_81pdr"]
+[ext_resource type="Script" path="res://cutscenes/cutscene_save_trap.gd" id="9_noije"]
+[ext_resource type="Texture2D" uid="uid://boehuxon0uyoh" path="res://sprites/character/otherflower/p11 5 2025.png" id="11_hnl5s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jdo1"]
-size = Vector2(234.08998, 15)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf2lj"]
+size = Vector2(20, 181)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjq6l"]
-size = Vector2(234.99997, 15)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3g1j"]
+size = Vector2(20, 198)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_68prx"]
-size = Vector2(949, 15)
+[sub_resource type="Animation" id="Animation_bkk83"]
+resource_name = "cutscene_save_trap"
+length = 5.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjpr8"]
-size = Vector2(949.00006, 15)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_okoum"]
-allow_unpress = true
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_bnu1w"]
-allow_unpress = true
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_6tt6e"]
-allow_unpress = true
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_3hp8v"]
-allow_unpress = true
-
-[sub_resource type="Animation" id="Animation_68prx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fade_in_out:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fade_in_out:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_yjq6l"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fade_in_out:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5131161),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fade_in_out:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_68prx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bt8m"]
 _data = {
-&"RESET": SubResource("Animation_68prx"),
-&"fade_in": SubResource("Animation_yjq6l")
+&"cutscene_save_trap": SubResource("Animation_bkk83")
 }
 
-[sub_resource type="Gradient" id="Gradient_u6wnt"]
-colors = PackedColorArray(1, 0.05882353, 0, 1, 1, 0.05882353, 0, 1)
+[node name="Room_Core" type="Node2D" groups=["room"]]
+script = ExtResource("1_u50cq")
+roomname = "Ruins -  Leaf Pile"
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ynflw"]
-gradient = SubResource("Gradient_u6wnt")
-width = 60
-height = 30
+[node name="Map" type="TileMapLayer" parent="." groups=["map_base"]]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD5//j/AgAIAAcAAAD6//j/AgAIAAcAAAD7//j/AgAIAAcAAAD8//f/AgAIAAcAAAD9//f/AgAIAAcAAAD+//f/AgAIAAcAAAD///f/AgAIAAcAAAACAPf/AgAIAAcAAAADAPf/AgAIAAcAAAAEAPf/AgAIAAcAAAAFAPf/AgAIAAcAAAAGAPf/AgAIAAcAAAAGAPj/AgAIAAcAAAAGAPn/AgAIAAcAAAAGAPr/AgAIAAcAAAAGAPv/AgAIAAcAAAAGAPz/AgAIAAcAAAAGAP3/AgAIAAcAAAAGAP7/AgAIAAcAAAAGAP//AgAIAAcAAAAGAAAAAgAIAAcAAAAGAAEAAgAIAAcAAAAGAAIAAgAIAAcAAAAGAAMAAgAQAAUAAAAGAAQAAgAQAAYAAAAHAAQAAgAIAAcAAAAHAAcAAgAIAAcAAAAGAAcAAgAIAAcAAAAGAAgAAgAIAAcAAAAGAAkAAgAIAAcAAAAFAAkAAgAIAAcAAAAEAAkAAgAIAAcAAAADAAkAAgAIAAcAAAACAAkAAgAIAAcAAAABAAkAAgAIAAcAAAAAAAkAAgAIAAcAAAD//wkAAgAIAAcAAAD+/wkAAgAIAAcAAAD9/wkAAgAIAAcAAAD8/wkAAgAIAAcAAAD7/wkAAgAIAAcAAAD7/wgAAgAIAAcAAAD7/wcAAgAIAAcAAAD7/wYAAgAIAAcAAAD7/wUAAgAIAAcAAAD7/wQAAgAIAAcAAAD7/wMAAgAIAAcAAAD7/wIAAgAIAAcAAAD7/wEAAgAIAAcAAAD7/wAAAgAIAAcAAAD7////AgAIAAcAAAD7//7/AgAIAAcAAAD7//3/AgAIAAcAAAD7//z/AgAIAAcAAAD7//v/AgAIAAcAAAD5//v/AgAIAAcAAAD6//v/AgAIAAcAAAD5//T/AgAIAAcAAAD6//T/AgAIAAcAAAD7//T/AgAIAAcAAAD8//T/AgAIAAcAAAD9//T/AgAIAAcAAAD+//T/AgAIAAcAAAD///T/AgAIAAcAAAAAAPT/AgAIAAcAAAABAPT/AgAIAAcAAAACAPT/AgAIAAcAAAADAPT/AgAIAAcAAAAEAPT/AgAIAAcAAAAFAPT/AgAIAAcAAAAGAPT/AgAIAAcAAAAHAPT/AgAIAAcAAAAHAAMAAgATAAUAAAAHAAIAAgAIAAcAAAAHAAEAAgAIAAcAAAAHAAAAAgAIAAcAAAAHAP//AgAIAAcAAAAHAP7/AgAIAAcAAAAHAP3/AgAIAAcAAAAHAPz/AgAIAAcAAAAHAPv/AgAIAAcAAAAHAPr/AgAIAAcAAAAHAPn/AgAIAAcAAAAHAPj/AgAIAAcAAAAHAPf/AgAIAAcAAAAHAPb/AgAIAAcAAAAHAPX/AgAIAAcAAAD5//X/AgAIAAcAAAD5//b/AgAIAAcAAAD5//f/AgAIAAcAAAD5//z/AgAIAAcAAAD5//3/AgAIAAcAAAD5//7/AgAIAAcAAAD5////AgAIAAcAAAD5/wAAAgAIAAcAAAD5/wEAAgAIAAcAAAD5/wIAAgAIAAcAAAD5/wMAAgAIAAcAAAD5/wQAAgAIAAcAAAD5/wUAAgAIAAcAAAD5/wYAAgAIAAcAAAD5/wkAAgAIAAcAAAD5/wgAAgAIAAcAAAD5/wcAAgAIAAcAAAD4//f/AgAPAAMAAAD4//j/AgAPAAQAAAD4//b/AgAPAAMAAAD4//X/AgANAAcAAAD4//T/AgAIAAcAAAD4//n/AgAIAAUAAAD4//r/AgAIAAUAAAD4//v/AgAOAAkAAAD4//z/AgAIAAcAAAD4//3/AgAIAAcAAAD4//7/AgAIAAcAAAD4////AgAIAAcAAAD4/wAAAgAIAAcAAAD4/wEAAgAIAAcAAAD4/wIAAgAIAAcAAAD4/wMAAgAIAAcAAAD4/wQAAgAIAAcAAAD4/wUAAgAIAAcAAAD4/wYAAgAIAAcAAAD4/wcAAgAIAAcAAAD4/wgAAgAIAAcAAAD4/wkAAgAIAAcAAAD4/woAAgAIAAcAAAAIAAQAAgARAAYAAAAIAAIAAgARAAUAAAAIAAMAAgATAAUAAAAIAAYAAgAIAAUAAAAIAAUAAgAIAAYAAAAIAAcAAgAOAAkAAAAIAAgAAgAIAAcAAAAIAAkAAgAIAAcAAAAIAAoAAgAIAAcAAAAIAAEAAgANAAcAAAAIAAAAAgAIAAcAAAAIAP//AgAIAAcAAAAIAP7/AgAIAAcAAAAIAP3/AgAIAAcAAAAIAPz/AgAIAAcAAAAIAPv/AgAIAAcAAAAIAPr/AgAIAAcAAAAIAPn/AgAIAAcAAAAIAPj/AgAIAAcAAAAIAPf/AgAIAAcAAAAIAPb/AgAIAAcAAAAIAPX/AgAIAAcAAAAIAPT/AgAIAAcAAAAJAAgAAgAIAAcAAAAJAAkAAgAIAAcAAAAJAAoAAgAIAAcAAAAJAAAAAgAIAAcAAAAJAP//AgAIAAcAAAAJAP7/AgAIAAcAAAAJAP3/AgAIAAcAAAAJAPz/AgAIAAcAAAAJAPv/AgAIAAcAAAAJAPr/AgAIAAcAAAAJAPn/AgAIAAcAAAAJAPj/AgAIAAcAAAAJAPf/AgAIAAcAAAAJAPb/AgAIAAcAAAAJAPX/AgAIAAcAAAAJAPT/AgAIAAcAAAAJAAcAAgAOAAkAAAAJAAEAAgANAAcAAAAJAAIAAgATAAUAAAAJAAMAAgARAAUAAAAJAAQAAgARAAYAAAAJAAYAAgAIAAYAAAD3//X/AgANAAkAAAD3//v/AgAQAAoAAAD3//n/AgAIAAYAAAD3//r/AgAIAAYAAAD3//f/AgAOAAMAAAD3//j/AgAOAAQAAAD3//b/AgAOAAMAAAD3//T/AgAMAAcAADD3//z/AgAOAAgAAAD3//3/AgAMAAkAAAD3//7/AgAIAAcAAAD3////AgAIAAcAAAD3/wAAAgAIAAcAAAD3/wEAAgAIAAcAAAD3/wIAAgAIAAcAAAD3/wMAAgAIAAcAAAD3/wQAAgAIAAcAAAD3/wUAAgAIAAcAAAD3/wYAAgAIAAcAAAD3/wcAAgAIAAcAAAD3/wgAAgAIAAcAAAD3/wkAAgAIAAcAAAD3/woAAgAIAAcAAAAKAPT/AgAIAAcAAAAKAPX/AgAIAAcAAAAKAPb/AgAIAAcAAAAKAPf/AgAIAAcAAAAKAPj/AgAIAAcAAAAKAPn/AgAIAAcAAAAKAPr/AgAIAAcAAAAKAPv/AgAIAAcAAAAKAPz/AgAIAAcAAAAKAP3/AgAIAAcAAAAKAP7/AgAIAAcAAAAKAP//AgAIAAcAAAAKAAAAAgAIAAcAAAAKAAEAAgANAAcAAAAKAAQAAgARAAYAAAAKAAIAAgATAAUAAAAKAAMAAgATAAUAAAAKAAUAAgAIAAYAAAAKAAYAAgAIAAYAAAAKAAcAAgAOAAkAAAAKAAgAAgAIAAcAAAAKAAkAAgAIAAcAAAAKAAoAAgAIAAcAAAAJAAUAAgAIAAYAAAA=")
+tile_set = ExtResource("2_gy3nn")
 
-[sub_resource type="Gradient" id="Gradient_rl05r"]
-colors = PackedColorArray(0.99215686, 1, 0.078431375, 1, 0.99215686, 1, 0.078431375, 1)
+[node name="07aRuinslonghall" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(45, -45)
+texture = ExtResource("3_u50cq")
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4f7q3"]
-gradient = SubResource("Gradient_rl05r")
-width = 80
-height = 30
+[node name="DecorA" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("2_gy3nn")
+navigation_enabled = false
 
-[node name="battle_logic" type="Node2D" node_paths=PackedStringArray("animPlayer")]
-script = ExtResource("1_hrm8e")
-animPlayer = NodePath("AnimationPlayer")
+[node name="DecorB" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_gy3nn")
+navigation_enabled = false
 
-[node name="FightBackGround" type="ColorRect" parent="."]
-offset_left = -909.0
-offset_top = -501.0
-offset_right = 897.0
-offset_bottom = 516.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="Interactibles" type="Node2D" parent="."]
 
-[node name="battle_cam" type="Camera2D" parent="."]
+[node name="save point" parent="Interactibles" instance=ExtResource("4_70h8x")]
+position = Vector2(361, -470)
+dialog_data = ExtResource("5_81pdr")
+max_interact = 0
+
+[node name="Scripted Events" type="Node2D" parent="."]
+
+[node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(991, 543)
+scene_to_load = "res://stages/ruins/Ruins_room10.tscn"
+load_at = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj/LoadTriggerArea"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_rf2lj")
+
+[node name="room_change_obj2" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(-810, -539)
+scene_to_load = "res://stages/ruins/Ruins_room8.tscn"
+load_at = 2
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj2" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj2/LoadTriggerArea"]
+shape = SubResource("RectangleShape2D_v3g1j")
+
+[node name="room_change_obj3" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_81pdr")]
+position = Vector2(90, -731)
+scene_to_load = "res://stages/ruins/Ruins_room9a.tscn"
+load_at = 1
+load_trigger_area = NodePath("LoadTriggerArea")
+
+[node name="LoadTriggerArea" parent="Scripted Events/room_change_obj3" instance=ExtResource("5_ktjmw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scripted Events/room_change_obj3/LoadTriggerArea"]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_v3g1j")
+
+[node name="LoadatPoint_default" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(361, -400)
+
+[node name="LoadatPoint_Ruins_room8" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(-705, -536)
+placepoint = 1
+
+[node name="LoadatPoint_candyroom" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(89, -675)
+placepoint = 3
+
+[node name="LoadatPoint_devTest2" parent="Scripted Events" instance=ExtResource("8_81pdr")]
+position = Vector2(894, 541)
+placepoint = 2
+
+[node name="Cutscene Save Trap" type="Node2D" parent="."]
+script = ExtResource("9_noije")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene Save Trap"]
+libraries = {
+&"": SubResource("AnimationLibrary_3bt8m")
+}
+
+[node name="CutsceneCamera" type="Camera2D" parent="Cutscene Save Trap"]
+position = Vector2(-1733, 45)
 enabled = false
 zoom = Vector2(0.657, 0.657)
+limit_left = -810
+limit_top = -1080
+limit_right = 990
+limit_bottom = 990
 
-[node name="Node2D" type="NinePatchRect" parent="."]
-texture_filter = 1
-offset_left = -490.0
-offset_top = 38.0
-offset_right = 489.0
-offset_bottom = 273.00006
-pivot_offset = Vector2(437, 117.5)
-texture = ExtResource("2_1r2ri")
-region_rect = Rect2(30, 30, 2740, 640)
-patch_margin_left = 40
-patch_margin_top = 40
-patch_margin_right = 40
-patch_margin_bottom = 40
+[node name="otherFlower" type="Sprite2D" parent="Cutscene Save Trap"]
+position = Vector2(52, -688)
+texture = ExtResource("11_hnl5s")
+hframes = 5
+vframes = 8
 
-[node name="Textbox Control" parent="Node2D" instance=ExtResource("3_rilwp")]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 4.0
-offset_right = -12.0
-offset_bottom = -12.0
-is_overworld = false
-
-[node name="textboxrect" parent="Node2D/Textbox Control" index="0"]
-visible = false
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
-gravity_scale = 0.0
-
-[node name="CollisionShapeL" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(7.5, 118.13501)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_7jdo1")
-one_way_collision = true
-one_way_collision_margin = 0.0
-
-[node name="CollisionShapeR" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(971.5, 117.67999)
-rotation = 1.5707964
-shape = SubResource("RectangleShape2D_yjq6l")
-one_way_collision = true
-
-[node name="CollisionShapeT" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(489.5, 7.5)
-shape = SubResource("RectangleShape2D_68prx")
-one_way_collision = true
-
-[node name="CollisionShapeB" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(489.5, 227.68)
-rotation = -3.1415925
-shape = SubResource("RectangleShape2D_yjpr8")
-one_way_collision = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
-layout_mode = 1
-offset_left = 80.0
-offset_top = 30.0
-offset_right = 220.0
-offset_bottom = 206.0
-
-[node name="TextButton1" parent="Node2D/VBoxContainer" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton4")
-focus_neighbor_top = NodePath("../TextButton3")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton4")
-focus_neighbor_bottom = NodePath("../TextButton2")
-
-[node name="TextButton2" parent="Node2D/VBoxContainer" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton5")
-focus_neighbor_top = NodePath("../TextButton1")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton5")
-focus_neighbor_bottom = NodePath("../TextButton3")
-
-[node name="TextButton3" parent="Node2D/VBoxContainer" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton6")
-focus_neighbor_top = NodePath("../TextButton2")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton6")
-focus_neighbor_bottom = NodePath("../TextButton1")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Node2D"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 10.0
-offset_top = 30.0
-offset_right = 150.0
-offset_bottom = 206.0
-grow_horizontal = 2
-
-[node name="TextButton4" parent="Node2D/VBoxContainer2" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton1")
-focus_neighbor_top = NodePath("../TextButton6")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton1")
-focus_neighbor_bottom = NodePath("../TextButton5")
-
-[node name="TextButton5" parent="Node2D/VBoxContainer2" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton2")
-focus_neighbor_top = NodePath("../TextButton4")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton2")
-focus_neighbor_bottom = NodePath("../TextButton6")
-
-[node name="TextButton6" parent="Node2D/VBoxContainer2" instance=ExtResource("4_epodm")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton3")
-focus_neighbor_top = NodePath("../TextButton5")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton3")
-focus_neighbor_bottom = NodePath("../TextButton4")
-
-[node name="action_buttons" type="GridContainer" parent="."]
-offset_left = -1255.0
-offset_top = 300.745
-offset_right = 1255.0
-offset_bottom = 508.745
-scale = Vector2(0.4, 0.4)
-pivot_offset = Vector2(1255, 104)
-size_flags_vertical = 8
-mouse_filter = 2
-theme_override_constants/h_separation = 120
-columns = 4
-
-[node name="Fight" parent="action_buttons" instance=ExtResource("5_m8gm5")]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../Mercy")
-focus_neighbor_top = NodePath("../Mercy")
-focus_neighbor_right = NodePath("../Act")
-focus_neighbor_bottom = NodePath("../Act")
-focus_next = NodePath("../Act")
-focus_previous = NodePath("../Mercy")
-button_mask = 0
-button_group = SubResource("ButtonGroup_okoum")
-texture_normal = ExtResource("6_1dma2")
-texture_pressed = ExtResource("7_pc3gi")
-texture_hover = ExtResource("7_pc3gi")
-texture_focused = ExtResource("7_pc3gi")
-
-[node name="Act" parent="action_buttons" instance=ExtResource("5_m8gm5")]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../Fight")
-focus_neighbor_top = NodePath("../Fight")
-focus_neighbor_right = NodePath("../Item")
-focus_neighbor_bottom = NodePath("../Item")
-focus_next = NodePath("../Item")
-focus_previous = NodePath("../Fight")
-mouse_filter = 2
-button_group = SubResource("ButtonGroup_bnu1w")
-texture_normal = ExtResource("8_rsp4o")
-texture_pressed = ExtResource("9_jj3lw")
-texture_focused = ExtResource("9_jj3lw")
-battle_button_type = "Act"
-
-[node name="Item" parent="action_buttons" instance=ExtResource("5_m8gm5")]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../Act")
-focus_neighbor_top = NodePath("../Act")
-focus_neighbor_right = NodePath("../Mercy")
-focus_neighbor_bottom = NodePath("../Mercy")
-focus_next = NodePath("../Mercy")
-focus_previous = NodePath("../Act")
-mouse_filter = 2
-button_group = SubResource("ButtonGroup_6tt6e")
-texture_normal = ExtResource("10_3tlay")
-texture_pressed = ExtResource("11_08ka3")
-texture_focused = ExtResource("11_08ka3")
-battle_button_type = "Item"
-
-[node name="Mercy" parent="action_buttons" instance=ExtResource("5_m8gm5")]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../Item")
-focus_neighbor_top = NodePath("../Item")
-focus_neighbor_right = NodePath("../Fight")
-focus_neighbor_bottom = NodePath("../Fight")
-focus_next = NodePath("../Fight")
-focus_previous = NodePath("../Item")
-mouse_filter = 2
-button_group = SubResource("ButtonGroup_3hp8v")
-texture_normal = ExtResource("12_w6fdn")
-texture_pressed = ExtResource("13_q0owm")
-texture_focused = ExtResource("13_q0owm")
-battle_button_type = "Mercy"
-
-[node name="battle_1" type="AudioStreamPlayer" parent="."]
-max_polyphony = 10
-bus = &"sfx"
-
-[node name="battle_2" type="AudioStreamPlayer" parent="."]
-max_polyphony = 10
-bus = &"sfx_2"
-
-[node name="player_soul" parent="." instance=ExtResource("14_2o23d")]
-z_index = 3
-position = Vector2(-468.00006, 403)
-scale = Vector2(0.4, 0.4)
-disable_mode = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_68prx")
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -490.0
-offset_top = 284.18
-offset_right = 610.0
-offset_bottom = 318.18
-
-[node name="FallenName" type="RichTextLabel" parent="HBoxContainer"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-custom_minimum_size = Vector2(170, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("15_1ku5x")
-theme_override_colors/default_color = Color(0.389287, 0.389287, 0.389287, 1)
-text = "{name}"
-scroll_active = false
-autowrap_mode = 2
-text_direction = 1
-script = ExtResource("16_wgs2g")
-stat_line = "{name}"
-
-[node name="HisName" type="Label" parent="HBoxContainer/FallenName"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-texture_filter = 1
-custom_minimum_size = Vector2(200, 0)
-layout_direction = 2
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 203.0
-offset_bottom = 39.820007
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource("15_1ku5x")
-theme_override_constants/line_spacing = 10
-theme_override_font_sizes/font_size = 32
-text = "Asriel"
-autowrap_mode = 2
-text_direction = 1
-
-[node name="stats" type="RichTextLabel" parent="HBoxContainer"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-texture_filter = 1
-custom_minimum_size = Vector2(200, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("15_1ku5x")
-theme_override_font_sizes/normal_font_size = 32
-text = "LV 1"
-scroll_active = false
-autowrap_mode = 2
-text_direction = 1
-script = ExtResource("16_wgs2g")
-stat_line = "LV {LVnum}"
-
-[node name="stats2" type="RichTextLabel" parent="HBoxContainer"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-texture_filter = 1
-custom_minimum_size = Vector2(34.745, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("15_1ku5x")
-theme_override_font_sizes/normal_font_size = 24
-text = "HP"
-scroll_active = false
-autowrap_mode = 2
-vertical_alignment = 1
-text_direction = 1
-script = ExtResource("16_wgs2g")
-stat_line = "HP"
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-max_value = 30.0
-value = 30.0
-texture_under = SubResource("GradientTexture2D_ynflw")
-texture_progress = SubResource("GradientTexture2D_4f7q3")
-script = ExtResource("17_emg3k")
-
-[node name="stats3" type="RichTextLabel" parent="HBoxContainer"]
-modulate = Color(0.955963, 0.955963, 0.955963, 1)
-self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
-texture_filter = 1
-custom_minimum_size = Vector2(150, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 0
-theme = ExtResource("15_1ku5x")
-theme_override_font_sizes/normal_font_size = 32
-text = "  35 / 35"
-scroll_active = false
-autowrap_mode = 2
-text_direction = 1
-script = ExtResource("16_wgs2g")
-stat_line = "  {HPcur} / {HPmax}"
-
-[node name="fade_in_out" type="ColorRect" parent="."]
-z_index = 2
-offset_left = -859.0
-offset_top = -467.0
-offset_right = 864.0
-offset_bottom = 496.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton1" to="." method="_on_text_button_1_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton2" to="." method="_on_text_button_2_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton3" to="." method="_on_text_button_3_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton4" to="." method="_on_text_button_4_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton5" to="." method="_on_text_button_5_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton6" to="." method="_on_text_button_6_pressed"]
-
-[editable path="Node2D/Textbox Control"]
+[editable path="Interactibles/save point"]
