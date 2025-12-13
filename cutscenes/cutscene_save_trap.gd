@@ -42,8 +42,8 @@ func cutscene_start():
 	
 func cutscene_end():
 	RoomPersistance.plot_value = 5
-	cutscene_camera.enabled = false
 	SignalManager.endCutscene.emit()
+	cutscene_camera.enabled = false
 
 func cutscene_close():
 	self.queue_free()

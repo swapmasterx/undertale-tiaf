@@ -87,6 +87,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Toriel:direction")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Toriel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bkk83"]
 resource_name = "cutscene_save_trap"
@@ -99,8 +123,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.2, 2.2333333, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.2, 2.2333333, 6, 10.7, 10.733334, 13.000182, 13.233334, 13.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"cornered_pattern"
@@ -113,6 +137,21 @@ tracks/0/keys = {
 }, {
 "args": [],
 "method": &"fire_ball_the_flower"
+}, {
+"args": [],
+"method": &"turn_player_to_toriel"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"dialogue"
+}, {
+"args": [],
+"method": &"cutscene_end"
+}, {
+"args": [],
+"method": &"cutscene_close"
 }]
 }
 tracks/1/type = "value"
@@ -189,6 +228,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Toriel:direction")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(9.466666, 9.5, 10.7, 10.766666, 12.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Toriel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(9.466666, 9.5, 12.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3bt8m"]
@@ -333,7 +396,9 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_uq4eo")
 
 [node name="Toriel" parent="Cutscene Save Trap" instance=ExtResource("11_bkk83")]
-position = Vector2(186, 427)
+visible = false
+position = Vector2(95, 419)
+state_of_mood = 0
 
 [node name="cutscene_audio_1" type="AudioStreamPlayer" parent="."]
 bus = &"sfx"

@@ -1,6 +1,7 @@
-res://attacks/toriel/fireball_other_flower.tscn
+res://stages/ruins/Ruins_room9.tscn
 res://theme/textbox_default_theme_yellow.tres
 res://theme/battle_desc.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://shaders/echo.gdshader
-res://stages/ruins/Ruins_room9.tscn
+res://cutscenes/cutscene_save_trap.gd
+res://stages/world_engine.tscn
