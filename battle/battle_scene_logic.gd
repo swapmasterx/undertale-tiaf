@@ -19,25 +19,19 @@ func _ready():
 	SignalManager.battle_loaded.emit()
 	battle_cam.enabled = true
 
-func battle_item_handler():
-	text_button_1.focus_mode = 2
-	if PlayerData.items == []:
-		text_button_1.text = "[NONE]"
-	else:
-		text_button_1.text = []
-	text_button_3.text = "ITEM 1/8"
+
 
 func set_option_context():
 	match set_battle_option:
 		#Fight
 		0:
-			pass
+			set_fight_or_act()
 		#Act
 		1:
-			pass
+			set_fight_or_act()
 		#Item
 		2:
-			pass
+			battle_item_handler()
 		#Mercy
 		3:
 			set_mercy()
@@ -45,11 +39,13 @@ func set_option_context():
 func set_fight_or_act():
 	text_button_1.text = GlobalFlags.battle_lineup[0]
 	text_button_1.focus_mode = 2
-	text_button_2.text = GlobalFlags.battle_lineup[1]
-	if GlobalFlags.battle_lineup[1] != "":
+	
+	if GlobalFlags.battle_lineup[1] != null:
+		text_button_2.text = GlobalFlags.battle_lineup[1]
 		text_button_2.focus_mode = 2
-	text_button_3.text = GlobalFlags.battle_lineup[2]
-	if GlobalFlags.battle_lineup[2] != "":
+	
+	if GlobalFlags.battle_lineup[2] != null:
+		text_button_3.text = GlobalFlags.battle_lineup[2]
 		text_button_3.focus_mode = 2
 	
 	if GlobalFlags.set_battle_option == 1:
@@ -58,6 +54,13 @@ func set_fight_or_act():
 func set_act_cont():
 	pass
 	
+func battle_item_handler():
+	text_button_1.focus_mode = 2
+	if PlayerData.inventory == []:
+		text_button_1.text = "[NONE]"
+	else:
+		text_button_1.text = []
+	text_button_3.text = "ITEM 1/8"
 
 func set_mercy():
 	text_button_1.text = "Spare"
@@ -74,16 +77,16 @@ func _on_text_button_2_pressed():
 	text_choice_selected(1)
 
 func _on_text_button_3_pressed():
-	text_choice_selected(3)
+	text_choice_selected(2)
 
 func _on_text_button_4_pressed():
-	text_choice_selected(4)
+	text_choice_selected(3)
 
 func _on_text_button_5_pressed():
-	text_choice_selected(5)
+	text_choice_selected(4)
 
 func _on_text_button_6_pressed():
-	text_choice_selected(6)
+	text_choice_selected(5)
 
 func text_choice_selected(choice_option):
 	match set_battle_option:
