@@ -4,3 +4,6 @@ res://theme/battle_desc.tres
 res://tilemaps/ruins/ruins_toriel_home_yellow_hall.tres
 res://shaders/echo.gdshader
 res://battle/battle_scene_logic.gd
+res://global_func/global_flags.gd
+res://UI/Menu/sub_menu.tscn
+res://battle/battle_buttons.gd

@@ -1,3 +1,5 @@
+GridContainer
+HBoxContainer
 Camera2D
 AudioStreamPlayer
 AnimationPlayer
@@ -11,5 +13,3 @@ BulletNode
 Area2D
 Timer
 RigidBody2D
-CanvasLayer
-HBoxContainer

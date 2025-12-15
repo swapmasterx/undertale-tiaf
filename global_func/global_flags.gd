@@ -8,7 +8,7 @@ extends Node2D
 
 @onready var music_channel = get_tree().get_first_node_in_group("music")
 
-var battle_lineup: Array
+var battle_lineup: Array = ["Frogget", "Whimsun"]
 
 var time_played: String = "00:00"
 

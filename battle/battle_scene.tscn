@@ -1,12 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://5p4lgti0a6i5"]
+[gd_scene load_steps=36 format=3 uid="uid://5p4lgti0a6i5"]
 
 [ext_resource type="Texture2D" uid="uid://danbyfhnw2aup" path="res://battle/fight.png" id="1_65d6c"]
-[ext_resource type="Script" path="res://battle/battle_scene_logic.gd" id="1_68prx"]
+[ext_resource type="Script" uid="uid://6x1orpr8lc1y" path="res://battle/battle_scene_logic.gd" id="1_68prx"]
 [ext_resource type="PackedScene" uid="uid://dcempie7xxmhi" path="res://battle/battle_buttons.tscn" id="1_oykiv"]
 [ext_resource type="Texture2D" uid="uid://r7c2gqdd6x1k" path="res://battle/fight_selected.png" id="2_7fc1u"]
 [ext_resource type="Texture2D" uid="uid://bd0n5q5227sgf" path="res://battle/act.png" id="3_p1e6k"]
 [ext_resource type="Texture2D" uid="uid://ddfdyxor5ji81" path="res://battle/act_selected.png" id="4_jhr1y"]
 [ext_resource type="Texture2D" uid="uid://js1c2mo2ocdl" path="res://battle/item.png" id="5_0h3dm"]
+[ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="5_ynflw"]
 [ext_resource type="Texture2D" uid="uid://d338fj40kg5b" path="res://battle/item_selected.png" id="6_wbam7"]
 [ext_resource type="Texture2D" uid="uid://cvr7w7wus40je" path="res://battle/mercy.png" id="7_5px82"]
 [ext_resource type="Texture2D" uid="uid://bqiok11mefuit" path="res://battle/mercy_selected.png" id="8_smfk1"]
@@ -19,7 +20,7 @@
 [ext_resource type="Script" uid="uid://cjjw3cyrxo2fc" path="res://character/hpbar.gd" id="17_f5t32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jdo1"]
-size = Vector2(234.08998, 15)
+size = Vector2(235.18001, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjq6l"]
 size = Vector2(234.99997, 15)
@@ -29,6 +30,11 @@ size = Vector2(949, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjpr8"]
 size = Vector2(949.00006, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5t32"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynflw"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_okoum"]
 allow_unpress = true
@@ -169,7 +175,7 @@ visible = false
 gravity_scale = 0.0
 
 [node name="CollisionShapeL" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(7.5, 118.13501)
+position = Vector2(7.5, 117.59)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_7jdo1")
 one_way_collision = true
@@ -192,65 +198,176 @@ rotation = -3.1415925
 shape = SubResource("RectangleShape2D_yjpr8")
 one_way_collision = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
+[node name="option_set" type="TabContainer" parent="Node2D"]
 layout_mode = 1
-offset_left = 80.0
-offset_top = 30.0
-offset_right = 220.0
-offset_bottom = 206.0
-
-[node name="TextButton1" parent="Node2D/VBoxContainer" instance=ExtResource("10_exmuc")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton4")
-focus_neighbor_top = NodePath("../TextButton3")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton4")
-focus_neighbor_bottom = NodePath("../TextButton2")
-
-[node name="TextButton2" parent="Node2D/VBoxContainer" instance=ExtResource("10_exmuc")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton5")
-focus_neighbor_top = NodePath("../TextButton1")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton5")
-focus_neighbor_bottom = NodePath("../TextButton3")
-
-[node name="TextButton3" parent="Node2D/VBoxContainer" instance=ExtResource("10_exmuc")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer2/TextButton6")
-focus_neighbor_top = NodePath("../TextButton2")
-focus_neighbor_right = NodePath("../../VBoxContainer2/TextButton6")
-focus_neighbor_bottom = NodePath("../TextButton1")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Node2D"]
-layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = 10.0
-offset_top = 30.0
-offset_right = 150.0
-offset_bottom = 206.0
+anchor_bottom = 0.5
+offset_left = -409.5
+offset_top = -87.50003
+offset_right = 474.5
+offset_bottom = 102.5
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5t32")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_ynflw")
+current_tab = 1
+clip_tabs = false
+tabs_visible = false
 
-[node name="TextButton4" parent="Node2D/VBoxContainer2" instance=ExtResource("10_exmuc")]
+[node name="Fight" type="VBoxContainer" parent="Node2D/option_set"]
+visible = false
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton1")
-focus_neighbor_top = NodePath("../TextButton6")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton1")
-focus_neighbor_bottom = NodePath("../TextButton5")
+metadata/_tab_index = 0
 
-[node name="TextButton5" parent="Node2D/VBoxContainer2" instance=ExtResource("10_exmuc")]
+[node name="Fight1" parent="Node2D/option_set/Fight" instance=ExtResource("10_exmuc")]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton2")
-focus_neighbor_top = NodePath("../TextButton4")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton2")
-focus_neighbor_bottom = NodePath("../TextButton6")
+size_flags_horizontal = 0
+text = "* Enim 1"
 
-[node name="TextButton6" parent="Node2D/VBoxContainer2" instance=ExtResource("10_exmuc")]
+[node name="Fight2" parent="Node2D/option_set/Fight" instance=ExtResource("10_exmuc")]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/TextButton3")
-focus_neighbor_top = NodePath("../TextButton5")
-focus_neighbor_right = NodePath("../../VBoxContainer/TextButton3")
-focus_neighbor_bottom = NodePath("../TextButton4")
+size_flags_horizontal = 0
+text = "* Enim 2"
+
+[node name="Fight3" parent="Node2D/option_set/Fight" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+text = "* Enim 3"
+
+[node name="Act" type="VBoxContainer" parent="Node2D/option_set"]
+layout_mode = 2
+focus_mode = 2
+metadata/_tab_index = 1
+
+[node name="Act1" parent="Node2D/option_set/Act" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+text = "* Enim 1"
+
+[node name="Act2" parent="Node2D/option_set/Act" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+text = "* Enim 2"
+
+[node name="Act3" parent="Node2D/option_set/Act" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+text = "* Enim 3"
+
+[node name="Item1" type="GridContainer" parent="Node2D/option_set"]
+visible = false
+layout_mode = 2
+focus_mode = 2
+theme_override_constants/h_separation = 200
+columns = 2
+metadata/_tab_index = 2
+
+[node name="ItemA" parent="Node2D/option_set/Item1" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 1"
+
+[node name="ItemB" parent="Node2D/option_set/Item1" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 2"
+
+[node name="ItemC" parent="Node2D/option_set/Item1" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 3"
+
+[node name="ItemD" parent="Node2D/option_set/Item1" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 4"
+
+[node name="page" type="RichTextLabel" parent="Node2D/option_set/Item1"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 2
+theme = ExtResource("5_ynflw")
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+text = "Page 1"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("16_f5t32")
+stat_line = "Page 1"
+
+[node name="Item2" type="GridContainer" parent="Node2D/option_set"]
+visible = false
+layout_mode = 2
+focus_mode = 2
+theme_override_constants/h_separation = 200
+columns = 2
+metadata/_tab_index = 3
+
+[node name="ItemE" parent="Node2D/option_set/Item2" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 1"
+
+[node name="ItemF" parent="Node2D/option_set/Item2" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 2"
+
+[node name="ItemG" parent="Node2D/option_set/Item2" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 3"
+
+[node name="ItemH" parent="Node2D/option_set/Item2" instance=ExtResource("10_exmuc")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "* Item 4"
+
+[node name="page" type="RichTextLabel" parent="Node2D/option_set/Item2"]
+modulate = Color(0.955963, 0.955963, 0.955963, 1)
+self_modulate = Color(0.973535, 0.973535, 0.973535, 1)
+z_index = 20
+custom_minimum_size = Vector2(200, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 2
+theme = ExtResource("5_ynflw")
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+text = "Page 2"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+script = ExtResource("16_f5t32")
+stat_line = "Page 2"
+
+[node name="Mercy" type="VBoxContainer" parent="Node2D/option_set"]
+visible = false
+layout_mode = 2
+focus_mode = 2
+metadata/_tab_index = 4
+
+[node name="Mercy1" parent="Node2D/option_set/Mercy" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "* Spare"
+
+[node name="Mercy2" parent="Node2D/option_set/Mercy" instance=ExtResource("10_exmuc")]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "* Flee"
 
 [node name="action_buttons" type="GridContainer" parent="."]
 offset_left = -1255.0
@@ -460,12 +577,5 @@ offset_right = 864.0
 offset_bottom = 496.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton1" to="." method="_on_text_button_1_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton2" to="." method="_on_text_button_2_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer/TextButton3" to="." method="_on_text_button_3_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton4" to="." method="_on_text_button_4_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton5" to="." method="_on_text_button_5_pressed"]
-[connection signal="pressed" from="Node2D/VBoxContainer2/TextButton6" to="." method="_on_text_button_6_pressed"]
 
 [editable path="Node2D/Textbox Control"]

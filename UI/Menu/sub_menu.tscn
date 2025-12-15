@@ -53,12 +53,11 @@ theme_override_constants/margin_bottom = 34
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g6vll")
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_15102")
-current_tab = 3
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 
 [node name="items" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 0
 metadata/_tab_index = 0
@@ -227,6 +226,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 50
 
 [node name="options" type="HBoxContainer" parent="uibackdrop2/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 metadata/_tab_index = 3
