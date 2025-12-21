@@ -1,11 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://qr0higa5tln7"]
+[gd_scene load_steps=26 format=3 uid="uid://qr0higa5tln7"]
 
 [ext_resource type="Texture2D" uid="uid://dj0tdshxh6p07" path="res://mainmenu/p10 23 2025.png" id="1_8vcyq"]
 [ext_resource type="Script" uid="uid://bttxk88l124h5" path="res://mainmenu/main_menu_fab.gd" id="1_btskj"]
 [ext_resource type="Theme" uid="uid://bvxfhiwix5rbg" path="res://theme/textbox_default_theme.tres" id="3_gb46f"]
 [ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="4_d1yry"]
+[ext_resource type="Script" uid="uid://bhs4sxia6peq6" path="res://mainmenu/ball.gd" id="5_20v70"]
 [ext_resource type="FontFile" uid="uid://diqlx2w5nbue6" path="res://fonts/determination.ttf" id="5_d1yry"]
 [ext_resource type="PackedScene" uid="uid://bdiokoccfgw5s" path="res://UI/textbox stuff/selectable_text_options.tscn" id="6_eiujm"]
+[ext_resource type="AudioStream" uid="uid://bomevm4u3gcd1" path="res://sound_effects/snd_ballchime.ogg" id="6_g6qu5"]
 [ext_resource type="Script" uid="uid://cm3hf0cu3a4um" path="res://mainmenu/name_creation.gd" id="7_8t1aa"]
 [ext_resource type="PackedScene" uid="uid://cr3780rumm76p" path="res://UI/textbox stuff/selectable_text_options_letters.tscn" id="7_vik2k"]
 [ext_resource type="Theme" uid="uid://bap78lq1j4pou" path="res://theme/textbox_default_theme_yellow.tres" id="8_kk0hu"]
@@ -169,12 +171,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eiujm")
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_vik2k")
-current_tab = 4
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 
 [node name="titleCard" type="Control" parent="CanvasLayer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -213,6 +214,13 @@ vertical_alignment = 1
 text_direction = 1
 script = ExtResource("4_d1yry")
 stat_line = "[PRESS Z OR ENTER]"
+
+[node name="Ball" type="Node" parent="CanvasLayer/TabContainer/titleCard"]
+script = ExtResource("5_20v70")
+
+[node name="Chime" type="AudioStreamPlayer" parent="CanvasLayer/TabContainer/titleCard/Ball"]
+stream = ExtResource("6_g6qu5")
+bus = &"sfx"
 
 [node name="instructions" type="Control" parent="CanvasLayer/TabContainer"]
 visible = false
@@ -1048,6 +1056,7 @@ stat_line = "Settings
 "
 
 [node name="confirm_name" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 

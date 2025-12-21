@@ -72,7 +72,11 @@ func start_dialog(use_cinima_mode: bool, boxes: Array):
 		dialog_boxes = boxes
 		can_advance_segment = false
 		#print(dialog_boxes[box_index])
+<<<<<<< HEAD
 		
+=======
+	
+>>>>>>> 5a9701598499f8b1bac5d91830336ebadbfaa4a4
 		if is_overworld == true && GlobalFlags.game_state != 1:
 			self.visible = true
 		if is_overworld == false && GlobalFlags.game_state == 1:
