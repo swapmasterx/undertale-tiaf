@@ -8,3 +8,7 @@ res://stages/ruins/Ruins_room7.tscn
 res://character/camera_2d.tscn
 res://character/textbox.gd
 res://battle/soul_cursor.gd
+res://mainmenu/main_menu_fab.tscn
+res://UI/Menu/menu_logic.gd
+res://UI/Menu/sub_menu.gd
+res://UI/textbox stuff/text_multioptions.gd

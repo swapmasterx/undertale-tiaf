@@ -48,11 +48,7 @@ navigation_enabled = false
 [node name="Scripted Events" type="Node2D" parent="."]
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
-<<<<<<< HEAD
 position = Vector2(3150, 90)
-=======
-position = Vector2(2610, 3)
->>>>>>> 5a9701598499f8b1bac5d91830336ebadbfaa4a4
 scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
