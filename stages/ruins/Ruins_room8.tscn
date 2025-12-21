@@ -175,7 +175,7 @@ shape = SubResource("RectangleShape2D_osd82")
 
 [node name="room_change_obj" parent="Scripted Events" node_paths=PackedStringArray("load_trigger_area") instance=ExtResource("4_1r2hu")]
 position = Vector2(2610, 3)
-scene_to_load = "res://stages/ruins/Ruins_room8.tscn"
+scene_to_load = "res://stages/ruins/Ruins_room9.tscn"
 load_at = 1
 load_trigger_area = NodePath("LoadTriggerArea")
 

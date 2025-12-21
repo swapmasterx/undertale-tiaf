@@ -85,8 +85,9 @@ func _on_item_pressed():
 	GlobalFlags.options_mode = false
 	menu_option_memory = item
 	GlobalFlags.choice_prompt_function = 0
-	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/test_button"
-	if test_button == null:
+	#var all_buttons = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/".get_children()
+	var test_button = $"sub_menu/uibackdrop2/MarginContainer/TabContainer/items/item_list/".get_node_or_null("test_button")
+	if(test_button == null):
 		GlobalFlags.menu_layer = 0
 		GlobalFlags.options_mode = true
 		GlobalFlags.sfx_2_channel.stream = load("res://sound_effects/snd_victor.wav")

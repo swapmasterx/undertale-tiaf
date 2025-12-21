@@ -96,7 +96,7 @@ func _close_choose_option():
 	use.disabled = true
 	toss.focus_mode = FOCUS_NONE
 	toss.disabled = true
-	var test_button = $"uibackdrop2/MarginContainer/TabContainer/items/item_list/test_button"
+	var test_button = $"uibackdrop2/MarginContainer/TabContainer/items/item_list/".get_node_or_null("test_button")
 	if test_button == null:
 		return
 	test_button.focus_mode = FOCUS_ALL
