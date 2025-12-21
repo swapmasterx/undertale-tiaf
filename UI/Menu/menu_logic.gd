@@ -17,7 +17,7 @@ extends Control
 var menu_option_memory
 
 func _ready():
-	player_soul.visible = false
+	SignalManager.soul_cursor_visible.emit(false)
 	self.visible = false
 	menu_option_memory = item
 	
@@ -57,7 +57,7 @@ func menu_flag_handler():
 			SignalManager.lockWasd.emit()
 			self.visible = true
 			
-			player_soul.visible = true
+			SignalManager.soul_cursor_visible.emit(true)
 			
 			item.focus_mode = FOCUS_ALL
 			stat.focus_mode = FOCUS_ALL
@@ -71,7 +71,7 @@ func menu_flag_handler():
 		1:
 			sub_menu.visible = false
 			self.visible = false
-			player_soul.visible = false
+			SignalManager.soul_cursor_visible.emit(false)
 			GlobalFlags.blockInteraction = false
 			GlobalFlags.wasd_lock = false
 			GlobalFlags.menu_active = false

@@ -69,6 +69,16 @@ signal save_activate()
 
 signal get_item()
 
+signal soul_cursor_visible(bool)
+
+# Combat system signals
+signal direct_item_use()
+
+signal player_turn_finished()
+
+signal enemy_turn_finished()
+
+
 #switch/button signal
 signal switchpuzzle()
 

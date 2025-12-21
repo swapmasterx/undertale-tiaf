@@ -19,6 +19,7 @@ offset_right = 70.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 mouse_filter = 2
 theme = ExtResource("1_4lpcn")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_4a3nm")

@@ -5,7 +5,6 @@ extends MarginContainer
 @onready var option_b = $VBoxContainer/HBoxContainer/optionB
 @onready var option_c = $VBoxContainer/HBoxContainer/optionC
 @onready var option_d = $VBoxContainer/HBoxContainer/optionD
-@onready var player_soul = $"../../../player_soul"
 
 var dialog_question: String = "{action_ph} the {item}?"
 var dialog_responce_a: String = "You consumed the {item}. You recovered {itemHP}."
@@ -20,11 +19,12 @@ var enabled = false
 func _ready():
 	self.visible = false
 	SignalManager.activate_choose_option.connect(_activate_choose_option)
+	SignalManager.direct_item_use.connect(item_type)
 
 func _activate_choose_option():
 	
 	enabled = true
-	player_soul.visible = false
+	SignalManager.soul_cursor_visible.emit(false)
 	match option_count:
 		2:
 			option_a.focus_mode = FOCUS_ALL
@@ -59,7 +59,7 @@ func _activate_choose_option():
 func _on_textbox_control_finished_dispo():
 	if enabled == true:
 		self.visible = true
-		player_soul.visible = true
+		SignalManager.soul_cursor_visible.emit(true)
 		match option_count:
 			2:
 				option_a.visible = true
@@ -172,6 +172,6 @@ func _close_choose_option():
 	if GlobalFlags.menu_layer == 3:
 		GlobalFlags.set_deferred("menu_layer", 2)
 	else:
-		player_soul.visible = false
+		SignalManager.soul_cursor_visible.emit(false)
 	SignalManager.closed_choose_option.emit()
 	await get_tree().process_frame

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var is_overworld: bool = true
 #@onready var collision_hitbox = $collision_hitbox
 #
 #@export_enum("Standard", "Gravity_Blue", "Stationary_Green", 
@@ -9,43 +10,28 @@ extends CharacterBody2D
 
 
 func _ready():
+	SignalManager.soul_cursor_visible.connect(soul_visibility)
 	get_viewport().gui_focus_changed.connect(_on_focus_changed)
+	SignalManager.soul_cursor_visible.emit(false)
 	
+func soul_visibility(set_visibility):
+	
+	if is_overworld == true && GlobalFlags.game_state != 1:
+		if set_visibility == true:
+			self.visible = true
+			return
+		if set_visibility == false:
+			self.visible = false
+			return
+	if is_overworld == false && GlobalFlags.game_state == 1:
+		if set_visibility == true:
+			self.visible = true
+			return
+		if set_visibility == false:
+			self.visible = false
+			return
 
-#func _physics_process(delta):
-	## Get the input direction and handle the movement/deceleration.
-	#if GlobalFlags.wasd_lock == false:
-		#collision_hitbox.disabled = false
-		#match soul_mode:
-			#"Standard":
-				#standard_soul_mode()
-			#"Gravity_Blue":
-				#pass
-			#"Stationary_Green":
-				#pass
-			#"Shooty_Yellow":
-				#pass
-			#"Web_Purple":
-				#pass
-#
-	#else:
-		#collision_hitbox.disabled = true
-		#velocity.x = 0
-		#velocity.y = 0
-	#
-	#
-	#move_and_slide()
-	#
-#
-#
-#func standard_soul_mode():
-	#var direction = Input.get_vector("left", "right","up","down")
-	#if direction:
-		#velocity = direction * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#velocity.y = move_toward(velocity.y, 0, SPEED)
-	
+
 
 #signal toggles
 func _on_focus_changed(node:Control):

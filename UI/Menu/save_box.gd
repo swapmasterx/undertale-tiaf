@@ -2,7 +2,6 @@ extends MarginContainer
 var save_pressed = false
 @onready var save = %save
 @onready var cancel = %cancel
-@onready var player_soul = $"../player_soul"
 @onready var save_confirmation = %save_confirmation
 @onready var item_discription = $uibackdrop2/MarginContainer/item_list/metrics/item_list/item_discription
 @onready var item_discription_3 = $uibackdrop2/MarginContainer/item_list/item_discription3
@@ -30,7 +29,7 @@ func closed_dialog():
 		self.visible = true
 		GlobalFlags.wasd_lock = true
 		SignalManager.lockWasd.emit()
-		player_soul.visible = true
+		SignalManager.soul_cursor_visible.emit(true)
 		save.call_deferred("grab_focus")
 
 func _on_save_pressed():
@@ -39,7 +38,7 @@ func _on_save_pressed():
 		item_discription.stat_line = "{name}"
 		item_discription.text = "{name}"
 	GlobalFlags.save()
-	player_soul.visible = false
+	SignalManager.soul_cursor_visible.emit(false)
 	save_pressed = true
 	save_confirmation.visible = true
 	save.visible = false
@@ -70,7 +69,7 @@ func close_save_box():
 	SignalManager.saved_menu_closed.emit()
 	self.visible = false
 	GlobalFlags.wasd_lock = false
-	player_soul.visible = false
+	SignalManager.soul_cursor_visible.emit(false)
 	await get_tree().create_timer(0.07).timeout
 	GlobalFlags.is_saving = false
 	item_discription.remove_theme_color_override("default_color")
