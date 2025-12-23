@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://by114alda47fc"]
+
+[ext_resource type="FontFile" uid="uid://4xji6aktwy7q" path="res://fonts/8bitoperator.ttf" id="1_hgr7c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqyob"]
+font = ExtResource("1_hgr7c")
+font_size = 32
+
+[node name="EnemyName" type="Label"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 48)
+offset_right = 72.0
+offset_bottom = 23.0
+text = "* Test"
+label_settings = SubResource("LabelSettings_rqyob")

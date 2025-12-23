@@ -1,0 +1,395 @@
+[gd_scene load_steps=30 format=3 uid="uid://d4kvqqth8qkvg"]
+
+[ext_resource type="Texture2D" uid="uid://cwbrnh7870u0f" path="res://battle/screenshot.png" id="1_3rxu8"]
+[ext_resource type="Script" uid="uid://ovoa87d7yvpk" path="res://battle/battlestate_class.gd" id="1_87ykq"]
+[ext_resource type="Texture2D" uid="uid://danbyfhnw2aup" path="res://battle/fight.png" id="1_d0rpk"]
+[ext_resource type="AudioStream" uid="uid://ej0dvhynn10k" path="res://music/Strongerer_Monsters.wav" id="2_00vip"]
+[ext_resource type="FontFile" uid="uid://cnsqxmqge5oau" path="res://fonts/Mars_Needs_Cunnilingus.ttf" id="2_8qmja"]
+[ext_resource type="Texture2D" uid="uid://bd0n5q5227sgf" path="res://battle/act.png" id="2_wvilg"]
+[ext_resource type="Texture2D" uid="uid://p6ppcwp1c1qt" path="res://battle/hp.png" id="3_2hrcs"]
+[ext_resource type="Texture2D" uid="uid://js1c2mo2ocdl" path="res://battle/item.png" id="3_8qmja"]
+[ext_resource type="PackedScene" uid="uid://dxkmora1nah51" path="res://battle/encounters/test/TestEncounter.tscn" id="3_p8kdw"]
+[ext_resource type="Texture2D" uid="uid://cvr7w7wus40je" path="res://battle/mercy.png" id="4_2hrcs"]
+[ext_resource type="Script" uid="uid://m8ykky77nyrk" path="res://UI/Menu/stats_ui_diplay.gd" id="6_s8ost"]
+[ext_resource type="FontFile" uid="uid://4xji6aktwy7q" path="res://fonts/8bitoperator.ttf" id="9_o1yex"]
+[ext_resource type="Script" uid="uid://uoof0317ehqt" path="res://battle/enemy_list.gd" id="11_s766l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2hrcs"]
+font = ExtResource("2_8qmja")
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87ykq"]
+bg_color = Color(1, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1yex"]
+bg_color = Color(1, 1, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8kdw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8kdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8kdw"]
+size = Vector2(968, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s766l"]
+size = Vector2(16, 504)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2hrcs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_87ykq"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o1yex"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p8kdw"]
+normal = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_o1yex"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_87ykq"]
+resource_name = "in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p8kdw"]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s766l"]
+_data = {
+&"RESET": SubResource("Animation_o1yex"),
+&"in": SubResource("Animation_87ykq"),
+&"out": SubResource("Animation_p8kdw")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s8ost"]
+blend_mode = 3
+
+[node name="BattleTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleState" type="Node" parent="." node_paths=PackedStringArray("encounter")]
+unique_name_in_owner = true
+script = ExtResource("1_87ykq")
+encounter = NodePath("../TestEncounter")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_00vip")
+autoplay = true
+bus = &"music"
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -999
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Screenshot" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.49019608)
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_3rxu8")
+
+[node name="TestEncounter" parent="." instance=ExtResource("3_p8kdw")]
+position = Vector2(576, 336)
+
+[node name="Name" type="Label" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 185.0
+offset_top = 540.0
+offset_right = 305.0
+offset_bottom = 572.0
+text = "FUCHER"
+label_settings = SubResource("LabelSettings_2hrcs")
+
+[node name="Violence" type="Label" parent="Name"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 37.0
+offset_right = 143.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "LV 1"
+label_settings = SubResource("LabelSettings_2hrcs")
+
+[node name="Health" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = 515.0
+offset_top = 540.0
+offset_right = 568.0
+offset_bottom = 568.0
+theme_override_styles/background = SubResource("StyleBoxFlat_87ykq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o1yex")
+max_value = 1.0
+value = 0.51
+allow_greater = true
+show_percentage = false
+
+[node name="HP" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(-42, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_2hrcs")
+centered = false
+
+[node name="Number" type="Label" parent="Health"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 16.0
+offset_right = 216.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "20 / 20"
+label_settings = SubResource("LabelSettings_2hrcs")
+autowrap_trim_flags = 0
+script = ExtResource("6_s8ost")
+stat_line = "{HPcur} / {HPmax}"
+
+[node name="Actions" type="Control" parent="."]
+unique_name_in_owner = true
+editor_description = "Kinda gross bc the locations are hard coded but whatever."
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Fight" type="Sprite2D" parent="Actions"]
+position = Vector2(-387, -64)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("1_d0rpk")
+centered = false
+hframes = 2
+
+[node name="Act" type="Sprite2D" parent="Actions"]
+position = Vector2(-181, -64)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_wvilg")
+centered = false
+hframes = 2
+
+[node name="Items" type="Sprite2D" parent="Actions"]
+position = Vector2(35, -64)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("3_8qmja")
+centered = false
+hframes = 2
+
+[node name="Mercy" type="Sprite2D" parent="Actions"]
+position = Vector2(245, -64)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("4_2hrcs")
+centered = false
+hframes = 2
+
+[node name="Box" type="Panel" parent="."]
+unique_name_in_owner = true
+editor_description = "The way i handle this is kinda gross, but i can't be bothered to write code for this."
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -304.0
+offset_right = 384.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8kdw")
+
+[node name="Dialogue" type="RichTextLabel" parent="Box"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_o1yex")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "* Test test test"
+fit_content = true
+scroll_active = false
+
+[node name="Menu" type="TabContainer" parent="Box"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p8kdw")
+current_tab = 0
+tabs_visible = false
+
+[node name="Fight" type="VBoxContainer" parent="Box/Menu"]
+layout_mode = 2
+script = ExtResource("11_s766l")
+metadata/_tab_index = 0
+
+[node name="TopLeft" type="Control" parent="Box"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="BoxBounds" type="StaticBody2D" parent="Box/TopLeft"]
+
+[node name="Top" type="CollisionShape2D" parent="Box/TopLeft/BoxBounds"]
+position = Vector2(476, -8)
+shape = SubResource("RectangleShape2D_p8kdw")
+
+[node name="Left" type="CollisionShape2D" parent="Box/TopLeft/BoxBounds"]
+position = Vector2(-8, 236)
+shape = SubResource("RectangleShape2D_s766l")
+
+[node name="BottomRight" type="Control" parent="Box"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BoxBounds" type="StaticBody2D" parent="Box/BottomRight"]
+
+[node name="Bottom" type="CollisionShape2D" parent="Box/BottomRight/BoxBounds"]
+position = Vector2(-476, 8)
+shape = SubResource("RectangleShape2D_p8kdw")
+
+[node name="Right" type="CollisionShape2D" parent="Box/BottomRight/BoxBounds"]
+position = Vector2(8, -236)
+shape = SubResource("RectangleShape2D_s766l")
+
+[node name="Battle" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="EnforcedArea" type="StaticBody2D" parent="Battle"]
+editor_description = "This area is to force the soul to stay inside the screen area."
+
+[node name="Bottom" type="CollisionShape2D" parent="Battle/EnforcedArea"]
+position = Vector2(544, 648)
+shape = SubResource("WorldBoundaryShape2D_2hrcs")
+
+[node name="Left" type="CollisionShape2D" parent="Battle/EnforcedArea"]
+position = Vector2(0, 320)
+shape = SubResource("WorldBoundaryShape2D_87ykq")
+
+[node name="Right" type="CollisionShape2D" parent="Battle/EnforcedArea"]
+position = Vector2(1152, 320)
+shape = SubResource("WorldBoundaryShape2D_o1yex")
+
+[node name="Top" type="CollisionShape2D" parent="Battle/EnforcedArea"]
+position = Vector2(576, 0)
+shape = SubResource("WorldBoundaryShape2D_p8kdw")
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s766l")
+}
+autoplay = "in"
+
+[node name="Fade" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_s8ost")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 108.0
+offset_bottom = 39.0
+text = "Default Size"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 108.0
+offset_bottom = 79.0
+text = "Box Size"
+
+[connection signal="pressed" from="Button" to="BattleState" method="transition_box_to_dialogue"]
+[connection signal="pressed" from="Button2" to="BattleState" method="transition_box_to_battle"]

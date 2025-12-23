@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvr7w7wus40je"
-path="res://.godot/imported/mercy.png-0442b64a93a40dfba47bb9ff3b19771d.ctex"
+uid="uid://p6ppcwp1c1qt"
+path="res://.godot/imported/hp.png-e19e4c05f7631975a9edcdd73e5929c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://battle/mercy.png"
-dest_files=["res://.godot/imported/mercy.png-0442b64a93a40dfba47bb9ff3b19771d.ctex"]
+source_file="res://battle/hp.png"
+dest_files=["res://.godot/imported/hp.png-e19e4c05f7631975a9edcdd73e5929c8.ctex"]
 
 [params]
 

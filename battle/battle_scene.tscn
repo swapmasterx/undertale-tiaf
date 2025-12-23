@@ -83,7 +83,7 @@ tracks/0/path = NodePath("fade_in_out:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5131161),
+"times": PackedFloat32Array(0, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -170,8 +170,7 @@ is_overworld = false
 [node name="textboxrect" parent="Node2D/Textbox Control" index="0"]
 visible = false
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
-gravity_scale = 0.0
+[node name="RigidBody2D" type="AnimatableBody2D" parent="Node2D"]
 
 [node name="CollisionShapeL" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
 position = Vector2(7.5, 117.59)
@@ -212,7 +211,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_f5t32")
 theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_ynflw")
-current_tab = 2
+current_tab = 3
 clip_tabs = false
 tabs_visible = false
 
@@ -252,6 +251,7 @@ layout_mode = 2
 text = "* Enim 3"
 
 [node name="Item1" type="ScrollContainer" parent="Node2D/option_set"]
+visible = false
 layout_mode = 2
 focus_mode = 2
 mouse_filter = 2
@@ -266,7 +266,6 @@ size_flags_horizontal = 0
 theme_override_constants/separation = 4
 
 [node name="Mercy" type="VBoxContainer" parent="Node2D/option_set"]
-visible = false
 layout_mode = 2
 focus_mode = 2
 metadata/_tab_index = 3

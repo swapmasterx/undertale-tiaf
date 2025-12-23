@@ -1,4 +1,5 @@
-extends RichTextLabel
+# Don't change this. This is so it can be used on both labels and rich text labels. ~ ChrisFurry
+extends Control
 
 
 @onready var format_text = stat_line.format(GlobalFlags.text_swaper)
