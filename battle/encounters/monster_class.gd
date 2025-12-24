@@ -5,12 +5,16 @@ class_name BattleMonster extends Node2D
 @export var spared_or_dead:bool = false
 ## If true, the monster is able to be spared.
 @export var can_spare:bool = false
-
+## Health.
 @export var health:int = 100
+## Maximum health, used for health bar.
 @export var health_max:int = 100
-
+## Attack, used in player damage calculation.
 @export var attack:int = 1
+## Defense, used in damage calculation
 @export var defense:int = 1
+## Gold to give on death
+@export var gold:int = 10
 
 @export var act_options:PackedStringArray = ["CHECK"]
 
